@@ -1,0 +1,96 @@
+---
+import CollapseDiv from '@components/utils/CollapseDiv.astro';
+import type { NavEntry } from './nav-items'
+
+
+interface Props {
+  item: NavEntry,
+  depth: number,
+}
+
+const { item, depth } = Astro.props;
+
+if (depth < 0) {
+  console.error("Invalid nav entry:")
+  console.error(item)
+  throw new Error("Invalid nav entry")
+}
+
+let leafTextStyles = "text-zinc-400 md:hover:text-white focus:text-white cursor-pointer"
+if (item.type === "LEAF" && Astro.url.pathname.toLocaleLowerCase().includes(item.url.toLocaleLowerCase())) {
+  leafTextStyles = "text-white cursor-pointer"
+}
+
+
+
+
+// Logic
+
+// Depth 0 = return the outer container
+
+// Depth 1 leaves = Return a direct link (on the navbar)
+// Depth 1 lists = Return a text element (on the navbar) that creates its children in a floating dropdown
+
+// Depth 2+ leaves = Return a direct link that places itself in a dropdown
+// Depth 2+ lists = Return a text element that creates a nested dropdown for its children?
+// Depth 2+ lists alt = Return a divider + all of its children?
+---
+
+<!-- Top-level (0) -->
+{(depth === 0 && item.type === "LEAF") &&
+  <Astro.self item={item} depth={-1} />
+}
+
+{(depth === 0 && item.type === "LIST") &&
+  <div class="items-start md:items-center md:justify-center md:content-center flex flex-col md:flex-row pb-7 md:pb-0 px-6 md:px-0 w-[100vw] md:w-auto">
+    {item.children.map(child => 
+      <Astro.self item={child} depth={depth + 1} />
+    )}
+  </div>
+}
+
+<!-- Level 1 -->
+{(depth === 1 && item.type === "LEAF") &&
+  <div class="py-3 md:py-0 ps-0 md:ps-10">
+    <a class={`${leafTextStyles}`} href={item.url}>{item.title}</a>
+  </div>
+}
+
+{(depth === 1 && item.type === "LIST") &&
+
+<div class="relative">
+
+  <div class="py-3 md:py-0 ps-0 md:ps-10">
+    <p tabindex="0" class={`${leafTextStyles}`} data-collapse-target-id={`nav-collapse-${item.title}`} >{item.title}</p>
+  </div>
+  
+  <div class="md:absolute md:top-[57px] md:right-0">
+    
+    <CollapseDiv id={`nav-collapse-${item.title}`} closeOnClickOutDesktop={true}>
+      <div class="flex flex-col ps-4 md:px-6 md:pb-4 md:pt-2 md:bg-zinc-800 w-max">
+        {item.children.map(child => 
+          <Astro.self item={child} depth={depth + 1} />
+        )}
+      </div>
+    </CollapseDiv>
+
+  </div>
+</div>
+
+}
+
+<!-- Level 2 -->
+{(depth >= 2 && item.type === "LEAF") &&
+  <a class={`${leafTextStyles} py-3 ps-0`} href={item.url}>{item.title}</a>
+}
+
+{(depth >= 2 && item.type === "LIST") &&
+  <p tabindex="0" class={`${leafTextStyles} py-3 ps-0`} data-collapse-target-id={`nav-collapse-${item.title}`} >{item.title}</p>
+  <CollapseDiv id={`nav-collapse-${item.title}`} permanentDisplayDesktop>
+    <div class="flex flex-col ps-4 md:ps-0">
+      {item.children.map(child => 
+        <Astro.self item={child} depth={depth + 1} />
+      )}
+    </div>
+  </CollapseDiv>
+}

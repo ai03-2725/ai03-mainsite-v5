@@ -1,3 +1,24 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "compilerOptions": {
+    "paths": {
+      "react": ["node_modules/preact/compat/"],
+      "react/jsx-runtime": ["node_modules/preact/jsx-runtime"],
+      "react-dom": ["node_modules/preact/compat/"],
+      "react-dom/*": ["node_modules/preact/compat/*"],
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
+      "@styles/*": ["src/styles/*"],
+    },
+    // Preact specific settings
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "skipLibCheck": true,
+    "baseUrl": "./"
+  },
+  "plugins": [
+    {
+      "name": "@astrojs/ts-plugin"
+    },
+  ],
+  "extends": "astro/tsconfigs/base",
 }

@@ -1,0 +1,16 @@
+---
+import '@fontsource/m-plus-rounded-1c/latin-300.css';
+
+interface Props {
+  title: string;
+  slogan: string;
+}
+
+const { title, slogan } = Astro.props;
+---
+
+<div class="text-center mx-auto container my-12">
+  <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[72px] m-0">{title}</h1>
+  <p class="!font-[450] !text-[18px] mt-3 mb-8">{slogan}</p>
+  <slot />
+</div>

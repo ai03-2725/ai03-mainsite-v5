@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/DefaultLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+const allProjects = await getCollection('projects')
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		Test projects index
+
+		<ul>
+			<li>{allProjects.map(project => project.data.title)}</li>
+		</ul>
+	</main>
+</Layout>

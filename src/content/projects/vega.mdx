@@ -1,0 +1,55 @@
+---
+layout: ../../layouts/ProjectPage-Classic.astro
+draft: false
+title: Vega
+slogan: Reference series 65% keyboard
+coverImage:
+  url: "/assets/projects/vega/img_0044_largesize.avif"
+  alt: Vega cover image
+---
+import { Carousel } from '../../components/display/Carousel.tsx'
+import Center from '@components/utils/Center.astro'
+import ClassicHeaderBlock from '@components/display/ClassicHeaderBlock.astro'
+
+{/* <Center> */}
+
+<ClassicHeaderBlock 
+  title="VEGA"
+  slogan="Screwless seamless gasket 65% keyboard by Kevinplus and ai03"
+  >
+
+Refining upon Polaris and its gasket typing feel, acoustics, and aesthetics, Vega takes things one step further with a steel weight, completely screwless exterior, and refined build process.
+
+</ClassicHeaderBlock>
+
+
+
+{/* </Center> */}
+
+
+<Carousel slides={[
+  {
+    url: "/assets/projects/vega/img_0044_largesize.avif",
+    alt: "Cover image",
+  },
+  {
+    url: "/assets/projects/vega/img_0040_largesize.avif",
+    alt: "Cover image",
+  },
+]} client:load/>
+
+<Center>
+
+### Tailor-Made Typing Experience
+Vega brings the extreme typing comfort and acoustic tuning to the 65% form factor, using 28 custom gaskets to completely isolate the plate from the case. A precision-cut foam midlayer and dual stack bottom foam layer allows for precise tuning to balance acoustics and typing feel to your exact preference.
+
+### The Reference Aesthetic
+The clean, sleek, seamless exterior of Vega has no visible exterior screws, which are conveniently hidden under the keycaps for an uninterrupted minimal aesthetic regardless of the viewing angle. The immense rear-angled weight is made entirely of stainless steel, providing the elegance and heft worthy of being the centerpiece of your desk.
+
+### Stress-Free Circuitry
+The thin, flex-slotted hotswap PCB comes pre-installed with VIA Configurator compatible firmware, ready for lightning-fast assembly and easy keymap editing without the headaches of drivers and firmware flashing. A solderable PCB kit is available for those who prefer soldering or non-stock layouts.
+
+### Thorough Engineering
+The centered USB cutout allows for a neutral cable position fit for any desk, and careful design allows for maximized comfort and acoustics even with a hotswap structure. Temporary plate retention screws aid the build process while also protecting the plate inside the case during shipping.
+
+</Center>

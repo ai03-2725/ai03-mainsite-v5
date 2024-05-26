@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/DefaultLayout.astro';
+import ProjectsGrid from '../../components/display/ProjectsGrid.astro'
+import { getEntries } from 'astro:content';
+import { getCollection } from 'astro:content';
+import ProseMarkdownDefault from '../../components/utils/Prose-Markdown-Default.astro';
+
+export async function getStaticPaths() {
+  const collections = await getCollection('project_collections');
+
+  const test = await Promise.all(collections.map(async (collection) => {
+    const projectsInCollection = await getEntries(collection.data.projects)
+    return {
+      params: { slug: collection.slug },
+      props: {
+        collection: collection,
+        projects: projectsInCollection
+      }
+    }
+  }))
+
+  return test
+
+}
+
+// Expose props
+const { 
+  collection, 
+  projects
+} = Astro.props;
+const { Content, headings } = await collection.render();
+
+// Build primary content div classes
+let mainDivClasses = []
+if (!collection.data.fullWidth) {
+  mainDivClasses.push("container", "mx-auto")
+} else {
+  mainDivClasses.push("w-100", "m-0")
+}
+if (collection.data.centerText) {
+  mainDivClasses.push("text-center")
+}
+const mainDivClassesString = mainDivClasses.join(" ")
+
+---
+
+<Layout title={collection.data.title}>
+
+  <!-- The main page contents are defined by the MDX file. -->
+  <ProseMarkdownDefault>
+    <div class={mainDivClassesString}>
+      <Content />
+    </div>
+  </ProseMarkdownDefault>
+
+  <!-- The projects list is rendered in after. -->
+  {collection.data.projectsListStyle !== "none" &&
+    <ProjectsGrid projectsList={projects} style={collection.data.projectsListStyle} />
+  }
+
+</Layout>
+
