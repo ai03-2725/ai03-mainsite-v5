@@ -1,7 +1,7 @@
 # ai03-mainsite-v5
 
 The fifth iteration of [ai03.com](https://ai03.com/), designed for lightweightness, simplicity, sustainability, and versatility.  
-Primarily ses [Astro](https://astro.build/) and [Tailwind](https://tailwindcss.com/).  
+Primarily uses [Astro](https://astro.build/) and [Tailwind](https://tailwindcss.com/).  
 
 ### Dependencies
 

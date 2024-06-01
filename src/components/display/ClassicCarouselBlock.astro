@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import { Carousel } from "./Carousel";
 
 interface Props {
@@ -14,8 +15,14 @@ const {
   links
 } = Astro.props;
 
+// Testing
+// const resources = await getCollection('resources', ({ data }) => {
+//   return data.draft !== true
+// });
+
+// console.log(resources)
+
 ---
 
 
 <Carousel slides={slides} ratio={undefined} showThumbnails={undefined} client:load />
-

@@ -38,7 +38,7 @@ const projectCollections = defineCollection({
 const updates = defineCollection({ 
   type: 'content',
   schema: ({image}) => z.object({
-    draft: z.boolean(),
+    draft: z.optional(z.boolean()),
     date: z.date(),
     status: z.enum([
       // Early statuses
@@ -76,15 +76,14 @@ const updates = defineCollection({
       'on-hold',
       'archived',
     ]),
-    project: reference('projects'),
   })
 });
 
 const resources = defineCollection({ 
   type: 'content',
   schema: ({image}) => z.object({
-    draft: z.boolean(),
-    project: reference('projects'),
+    draft: z.optional(z.boolean()),
+    label: z.string(),
     fileUrl: z.optional(z.string()),
   })
 });
@@ -92,7 +91,7 @@ const resources = defineCollection({
 const newsPosts = defineCollection({ 
   type: 'content',
   schema: ({image}) => z.object({
-    draft: z.boolean(),
+    draft: z.optional(z.boolean()),
     date: z.date(),
     type: z.enum(['announcement', 'blog']),
     coverImage: z.object({
