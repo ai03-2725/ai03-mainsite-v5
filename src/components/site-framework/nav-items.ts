@@ -6,6 +6,8 @@ export type NavEntry = {
   type: "LIST";
   title: string;
   children: NavEntry[];
+} | {
+  type: "DIVIDER";
 }
 
 // For desktop, truncate at 4 first entries at top + rest as a dropdown under "Other"
@@ -16,34 +18,39 @@ export const NAV_ENTRIES_ROOT: NavEntry = {
   children: [
 
     // Projects
-    // -> Portfolio, single link
-    {
-      type: "LEAF",
-      title: "Projects",
-      url: "/collections/",
-    },
-    // Info
-    // - Project Status and Updates
-    // - Build Guides, Resources, and Downloads
     {
       type: "LIST",
-      title: "Info",
+      title: "Projects",
       children: [
         {
           type: "LEAF",
-          title: "Project updates",
-          url: "/status/"
+          title: "Portfolio",
+          url: "/collections/",
+        },
+        {
+          type: "DIVIDER",
         },
         {
           type: "LEAF",
-          title: "Build guides, downloads",
+          title: "Project Updates",
+          url: "/updates/"
+        },
+        {
+          type: "LEAF",
+          title: "Downloads and Manuals",
           url: "/resources/"
         },
+        {
+          type: "DIVIDER",
+        },
+        {
+          type: "LEAF",
+          title: "Designer Tools and Resources",
+          url: "/designer-resources/",
+        }
       ]
     },
-    // News
-    // - Announcements
-    // - Blog
+    // Info
     {
       type: "LIST",
       title: "News",
@@ -57,8 +64,14 @@ export const NAV_ENTRIES_ROOT: NavEntry = {
           type: "LEAF",
           title: "Blog",
           url: "/blog/"
-        }
+        },
       ]
+    },
+    // Discord
+    {
+      type: "LEAF",
+      title: "Discord",
+      url: "/discord/"
     },
     // Social
     {
@@ -66,54 +79,20 @@ export const NAV_ENTRIES_ROOT: NavEntry = {
       title: "Social",
       url: "/social/"
     },
-    // Other
-    // - Designer Resources
-    //   - Atelier
-    //   - Plate Generator
+    // About
     {
       type: "LIST",
-      title: "Other",
+      title: "About",
       children: [
-        {
-          type: "LIST",
-          title: "Designer Resources",
-          children: [
-            {
-              type: "LEAF",
-              title: "Atelier",
-              url: "https://kbatelier.org/"
-            },
-            {
-              type: "LEAF",
-              title: "Plate Generator",
-              url: "https://kbplate.ai03.com/"
-            }
-          ]
-        },
-        // - Contact
-        //   - Commissions
-        //   - Contact Form
-        {
-          type: "LIST",
-          title: "Contact",
-          children: [
-            {
-              type: "LEAF",
-              title: "Commissions",
-              url: "/commissions/"
-            },
-            {
-              type: "LEAF",
-              title: "Contact Form",
-              url: "/contact/"
-            }
-          ]
-        },
-        // - About
         {
           type: "LEAF",
           title: "About",
           url: "/about/"
+        },
+        {
+          type: "LEAF",
+          title: "Contact",
+          url: "/contact/"
         }
       ]
     },

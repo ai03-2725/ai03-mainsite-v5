@@ -10,6 +10,7 @@ coverImage:
 import { Carousel } from '../../components/display/Carousel.tsx'
 import Center from '@components/utils/Center.astro'
 import ClassicHeaderBlock from '@components/display/ClassicHeaderBlock.astro'
+import ClassicCarouselBlock from '@components/display/ClassicCarouselBlock.astro'
 
 {/* <Center> */}
 
@@ -27,16 +28,22 @@ Refining upon Polaris and its gasket typing feel, acoustics, and aesthetics, Veg
 {/* </Center> */}
 
 
-<Carousel slides={[
-  {
-    url: "/assets/projects/vega/img_0044_largesize.avif",
-    alt: "Cover image",
-  },
-  {
-    url: "/assets/projects/vega/img_0040_largesize.avif",
-    alt: "Cover image",
-  },
-]} client:load/>
+<ClassicCarouselBlock 
+  project={'vega'} 
+  slides={[
+    {
+      url: "/assets/projects/vega/img_0044_largesize.avif",
+      alt: "Cover image",
+    },
+    {
+      url: "/assets/projects/vega/img_0040_largesize.avif",
+      alt: "Cover image",
+    },
+  ]} 
+  links={[
+    
+  ]}
+/>
 
 <Center>
 

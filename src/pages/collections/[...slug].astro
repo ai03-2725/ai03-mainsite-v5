@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 import ProseMarkdownDefault from '../../components/utils/Prose-Markdown-Default.astro';
 
 export async function getStaticPaths() {
-  const collections = await getCollection('project_collections');
+  const collections = await getCollection('project-collections');
 
   const test = await Promise.all(collections.map(async (collection) => {
     const projectsInCollection = await getEntries(collection.data.projects)

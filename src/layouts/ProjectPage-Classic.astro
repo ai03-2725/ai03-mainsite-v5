@@ -1,37 +1,18 @@
 ---
-import Favicon from '../components/site-framework/Favicon.astro';
-import Nav from '../components/site-framework/Nav.astro'
+import DefaultLayout from './DefaultLayout.astro';
 import ProseMarkdownDefault from '../components/utils/Prose-Markdown-Default.astro';
-import '@fontsource-variable/inter';
 
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
----
+---	
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<Favicon />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Nav transparent={false} lightMode={false} />
-		<div class="container mx-auto">
-			<ProseMarkdownDefault>
-				<slot />
-			</ProseMarkdownDefault>
-		</div>
-	</body>
-</html>
-
-<!-- <style is:global>
-	h1 { font-size: 36px; }
-</style> -->
-
+<DefaultLayout title={title}>
+	<div class="container mx-auto">
+		<ProseMarkdownDefault>
+			<slot />
+		</ProseMarkdownDefault>
+	</div>
+</DefaultLayout>

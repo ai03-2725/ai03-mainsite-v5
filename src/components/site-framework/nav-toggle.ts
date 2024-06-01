@@ -43,8 +43,8 @@ window.NavToggleData = {
 
   handleWindowResize: () => {
     const newDesktopMode = (window.matchMedia('(min-width: 768px)').matches) ? true : false;
-    // If transitioning to desktop mode, close open collapses
-    if (newDesktopMode && !window.NavToggleData.desktopMode) {
+    // If transitioning between modes, close open collapses
+    if (newDesktopMode !== window.NavToggleData.desktopMode) {
       for (const activeDropdown of window.NavToggleData.activeDropdowns) {
         window.NavToggleData.toggleCollapse(activeDropdown)
       }

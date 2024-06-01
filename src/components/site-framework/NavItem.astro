@@ -16,11 +16,16 @@ if (depth < 0) {
   throw new Error("Invalid nav entry")
 }
 
-let leafTextStyles = "text-zinc-400 md:hover:text-white focus:text-white cursor-pointer"
-if (item.type === "LEAF" && Astro.url.pathname.toLocaleLowerCase().includes(item.url.toLocaleLowerCase())) {
-  leafTextStyles = "text-white cursor-pointer"
+let leafTextStyles = "text-zinc-400 md:hover:text-white focus:text-white cursor-pointer p-3"
+if (item.type === "LEAF" && Astro.url.pathname.toLocaleLowerCase().replaceAll("/", "") === item.url.toLocaleLowerCase().replaceAll("/", "")) {
+  leafTextStyles = "text-white cursor-pointer p-3"
 }
 
+if (item.type === "LIST") {
+  for (const child of item.children) {
+
+  }
+}
 
 
 
@@ -35,6 +40,11 @@ if (item.type === "LEAF" && Astro.url.pathname.toLocaleLowerCase().includes(item
 // Depth 2+ lists = Return a text element that creates a nested dropdown for its children?
 // Depth 2+ lists alt = Return a divider + all of its children?
 ---
+
+<!-- Handle all dividers -->
+{item.type === "DIVIDER" && 
+  <div class="w-full h-[1px] bg-zinc-600 my-3" />
+} 
 
 <!-- Top-level (0) -->
 {(depth === 0 && item.type === "LEAF") &&
@@ -51,8 +61,8 @@ if (item.type === "LEAF" && Astro.url.pathname.toLocaleLowerCase().includes(item
 
 <!-- Level 1 -->
 {(depth === 1 && item.type === "LEAF") &&
-  <div class="py-3 md:py-0 ps-0 md:ps-10">
-    <a class={`${leafTextStyles}`} href={item.url}>{item.title}</a>
+  <div class="ps-0 md:ps-4">
+    <a class={`${leafTextStyles} block`} href={item.url}>{item.title}</a>
   </div>
 }
 
@@ -60,14 +70,14 @@ if (item.type === "LEAF" && Astro.url.pathname.toLocaleLowerCase().includes(item
 
 <div class="relative">
 
-  <div class="py-3 md:py-0 ps-0 md:ps-10">
+  <div class="ps-0 md:ps-4">
     <p tabindex="0" class={`${leafTextStyles}`} data-collapse-target-id={`nav-collapse-${item.title}`} >{item.title}</p>
   </div>
   
   <div class="md:absolute md:top-[57px] md:right-0">
     
     <CollapseDiv id={`nav-collapse-${item.title}`} closeOnClickOutDesktop={true}>
-      <div class="flex flex-col ps-4 md:px-6 md:pb-4 md:pt-2 md:bg-zinc-800 w-max">
+      <div class="flex flex-col ps-4 md:px-6 md:pb-4 md:pt-4 md:bg-zinc-800 w-max">
         {item.children.map(child => 
           <Astro.self item={child} depth={depth + 1} />
         )}
@@ -86,7 +96,7 @@ if (item.type === "LEAF" && Astro.url.pathname.toLocaleLowerCase().includes(item
 
 {(depth >= 2 && item.type === "LIST") &&
   <p tabindex="0" class={`${leafTextStyles} py-3 ps-0`} data-collapse-target-id={`nav-collapse-${item.title}`} >{item.title}</p>
-  <CollapseDiv id={`nav-collapse-${item.title}`} permanentDisplayDesktop>
+  <CollapseDiv id={`nav-collapse-${item.title}`}>
     <div class="flex flex-col ps-4 md:ps-0">
       {item.children.map(child => 
         <Astro.self item={child} depth={depth + 1} />

@@ -11,6 +11,5 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const { Content, headings } = await project.render();
 
-console.log(headings)
 ---
 <Content />

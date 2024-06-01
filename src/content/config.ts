@@ -25,9 +25,7 @@ const projectCollections = defineCollection({
     title: z.string(),
     slogan: z.string(),
     coverImage: z.object({
-      img: image().refine((img) => img.width >= 540, {
-        message: "Cover image must be at least 540 pixels wide",
-      }),
+      url: z.string(),
       alt: z.string(),
     }),
     projects: z.array(reference('projects')),
@@ -37,7 +35,80 @@ const projectCollections = defineCollection({
   })
 })
 
+const updates = defineCollection({ 
+  type: 'content',
+  schema: ({image}) => z.object({
+    draft: z.boolean(),
+    date: z.date(),
+    status: z.enum([
+      // Early statuses
+      'pre-announcement',
+      'announced', 
+
+      // Early GB flow
+      'pending-gb',
+      'group-buy',
+      'gb-closed',
+
+      // Early preorder flow
+      'pending-preorder',
+      'preorder',
+      'preorder-closed',
+
+      // Post-early-sale flow
+      'ordered', 
+      'manufacturing', 
+      'en-route', 
+      'shipping', 
+      'extras-sale',
+
+      // In-stock flow
+      'preparing-sale',
+      'in-stock',
+      'sold-out',
+      'restocking',
+      'final-sale',
+
+      // Completion states
+      'complete',
+      'cancelled',
+      'eol',
+      'on-hold',
+      'archived',
+    ]),
+    project: reference('projects'),
+  })
+});
+
+const resources = defineCollection({ 
+  type: 'content',
+  schema: ({image}) => z.object({
+    draft: z.boolean(),
+    project: reference('projects'),
+    fileUrl: z.optional(z.string()),
+  })
+});
+
+const newsPosts = defineCollection({ 
+  type: 'content',
+  schema: ({image}) => z.object({
+    draft: z.boolean(),
+    date: z.date(),
+    type: z.enum(['announcement', 'blog']),
+    coverImage: z.object({
+      url: z.string(),
+      alt: z.string(),
+    }),
+    relatedProjects: z.array(reference('projects')),
+    relatedPosts: z.array(reference('news-posts')),
+  })
+});
+
+
 export const collections = {
   'projects': projects,
-  'project_collections': projectCollections,
+  'project-collections': projectCollections,
+  'updates': updates,
+  'resources': resources,
+  'news-posts': newsPosts,
 };

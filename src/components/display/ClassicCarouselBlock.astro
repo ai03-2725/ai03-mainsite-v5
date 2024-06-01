@@ -1,0 +1,21 @@
+---
+import { Carousel } from "./Carousel";
+
+interface Props {
+  project: string,
+  slides: { url: string; alt: string; thumbnailUrl?: string | undefined }[],
+  links: { label: string, url?: string | undefined }[],
+  
+}
+
+const { 
+  project,
+  slides,
+  links
+} = Astro.props;
+
+---
+
+
+<Carousel slides={slides} ratio={undefined} showThumbnails={undefined} client:load />
+
