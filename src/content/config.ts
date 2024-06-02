@@ -4,6 +4,7 @@ import {
   z,
 } from 'astro:content';
 import { PROJECT_GRID_STYLES } from '../types';
+import { PROJECT_STATUSES } from './enum';
 
 const projects = defineCollection({ 
   type: 'content',
@@ -40,44 +41,18 @@ const updates = defineCollection({
   schema: ({image}) => z.object({
     draft: z.optional(z.boolean()),
     date: z.date(),
-    status: z.enum([
-      // Early statuses
-      'pre-announcement',
-      'announced', 
-
-      // Early GB flow
-      'pending-gb',
-      'group-buy',
-      'gb-closed',
-
-      // Early preorder flow
-      'pending-preorder',
-      'preorder',
-      'preorder-closed',
-
-      // Post-early-sale flow
-      'ordered', 
-      'manufacturing', 
-      'en-route', 
-      'shipping', 
-      'extras-sale',
-
-      // In-stock flow
-      'preparing-sale',
-      'in-stock',
-      'sold-out',
-      'restocking',
-      'final-sale',
-
-      // Completion states
-      'complete',
-      'cancelled',
-      'eol',
-      'on-hold',
-      'archived',
-    ]),
+    status: PROJECT_STATUSES,
   })
 });
+
+// const projectUpdates = defineCollection({
+//   type: 'data',
+//   schema: z.array(z.object({
+//     draft: z.optional(z.boolean()),
+//     date: z.date(),
+//     status: PROJECT_STATUSES,
+//   }))
+// })
 
 const resources = defineCollection({ 
   type: 'content',
@@ -108,6 +83,7 @@ export const collections = {
   'projects': projects,
   'project-collections': projectCollections,
   'updates': updates,
+  // 'project-updates': projectUpdates,
   'resources': resources,
   'news-posts': newsPosts,
 };

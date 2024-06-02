@@ -1,4 +1,4 @@
-import { useRef, useState, type FunctionComponent } from "react";
+import { useEffect, useRef, useState, type FunctionComponent } from "react";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Pagination, Thumbs } from 'swiper/modules';
@@ -34,6 +34,7 @@ export const Carousel: FunctionComponent<{
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const currentSlide = useRef<number>(0)
     const [showExpanded, setShowExpanded] = useState<boolean>(false)
+    const showExpandedMirrorRef = useRef<boolean>(showExpanded)
 
     const thumbnailsToggle = showThumbnails === undefined ? true : showThumbnails
     let pluginsList = [FreeMode, Navigation]
@@ -43,8 +44,30 @@ export const Carousel: FunctionComponent<{
       pluginsList.push(Pagination)
     }
 
+    // Handle esc keystroke for exiting fullscreen image view
+    const escHandler = (event: KeyboardEvent) => {
+      if (showExpandedMirrorRef.current && event.key === "Escape") {
+        setShowExpanded(false)
+      }
+    }
+
+    useEffect(() => {
+      showExpandedMirrorRef.current = showExpanded
+    }, [showExpanded])
+
+    useEffect(() => {
+      document.addEventListener("keydown", escHandler)
+
+      return () => {
+        document.removeEventListener("keydown", escHandler)
+      }
+    }, [])
+
+    // TODO: Handle ratio properly
+
     return (
-      <div class="overflow-hidden rounded-[3.75px] bg-zinc-700 mx-2">
+      // <div class="overflow-hidden rounded-[3.75px] bg-zinc-700 mx-2">
+      <div class="overflow-hidden">
 
         {/* Styles */}
         <style>{swiperCustomStyles}</style>
@@ -65,7 +88,7 @@ export const Carousel: FunctionComponent<{
         >
           {slides.map(slide =>
             <SwiperSlide key={slide.url} onClick={() => setShowExpanded(true)}>
-              <div class={`w-full overflow-clip relative aspect-[${ratio || 1.618}]`}>
+              <div class={`w-full overflow-clip relative aspect-[1.618] cursor-pointer`}>
                 <img src={slide.url} class={`absolute w-full h-full object-cover object-center m-0`} loading="lazy" />
               </div>
             </SwiperSlide>
@@ -85,7 +108,7 @@ export const Carousel: FunctionComponent<{
           >
             {slides.map(slide =>
               <SwiperSlide key={slide.url} className="!w-auto !overflow-clip">
-                <div class="w-[80px] h-[80px] md:w-[120px] md:h-[120px] xl:w-[150px] xl:h-[150px] overflow-clip">
+                <div class="w-[80px] h-[80px] md:w-[120px] md:h-[120px] xl:w-[150px] xl:h-[150px] overflow-clip cursor-pointer">
                   <img src={slide.thumbnailUrl || getThumbnailUrl(slide.url)} class="w-full h-full object-cover object-center m-0" loading="lazy" />
                 </div>
               </SwiperSlide>

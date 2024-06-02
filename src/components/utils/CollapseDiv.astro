@@ -4,6 +4,7 @@ interface Props {
   permanentDisplayDesktop?: boolean | undefined, // Whether or not to never collapse on desktop views (>=md) 
   closeOnClickOutDesktop?: boolean | undefined, // Whether clicking away from the collapse or opening another will cause the collapse to auto-close
   closeOnClickOutMobile?: boolean | undefined, // Whether clicking away from the collapse or opening another will cause the collapse to auto-close
+  wmax?: boolean | undefined, // Whether to apply w-max; true by default
 }
 
 const { 
@@ -11,13 +12,14 @@ const {
   permanentDisplayDesktop,
   closeOnClickOutDesktop,
   closeOnClickOutMobile,
+  wmax
 } = Astro.props
 ---
 
 <div class={`grid ${permanentDisplayDesktop && "grid md:block"}
              items-start 
              grid-cols-[5fc]
-             w-max
+             ${wmax !== false && "w-max"}
              overflow-hidden ${permanentDisplayDesktop && "md:overflow-visible"}
              grid-rows-[0fr] ${permanentDisplayDesktop && "md:grid-rows-[1fr]"} 
              transition-[grid-template-rows] ease-[var(--spring-easing)] duration-[var(--spring-duration)]`
@@ -25,7 +27,7 @@ const {
              id={id}
              data-clickout-close-desktop={!!closeOnClickOutDesktop} 
              data-clickout-close-mobile={!!closeOnClickOutMobile}>             
-  <div class=`overflow-hidden ${permanentDisplayDesktop && "md:overflow-visible"} w-max`>
+  <div class=`overflow-hidden ${permanentDisplayDesktop && "md:overflow-visible"} `>
     <slot />
   </div>
 </div>

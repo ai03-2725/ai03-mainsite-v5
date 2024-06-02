@@ -11,6 +11,7 @@ import { Carousel } from '../../components/display/Carousel.tsx'
 import Center from '@components/utils/Center.astro'
 import ClassicHeaderBlock from '@components/display/ClassicHeaderBlock.astro'
 import ClassicCarouselBlock from '@components/display/ClassicCarouselBlock.astro'
+import ProseMarkdownDefault from '@components/utils/Prose-Markdown-Default.astro'
 
 {/* <Center> */}
 
@@ -18,9 +19,9 @@ import ClassicCarouselBlock from '@components/display/ClassicCarouselBlock.astro
   title="VEGA"
   slogan="Screwless seamless gasket 65% keyboard by Kevinplus and ai03"
   >
-
-Refining upon Polaris and its gasket typing feel, acoustics, and aesthetics, Vega takes things one step further with a steel weight, completely screwless exterior, and refined build process.
-
+  <ProseMarkdownDefault>
+    Refining upon Polaris and its gasket typing feel, acoustics, and aesthetics, Vega takes things one step further with a steel weight, completely screwless exterior, and refined build process.
+  </ProseMarkdownDefault>
 </ClassicHeaderBlock>
 
 
@@ -41,11 +42,19 @@ Refining upon Polaris and its gasket typing feel, acoustics, and aesthetics, Veg
     },
   ]} 
   links={[
-    
+    {
+      label: "GeekHack IC Thread",
+      url: "https://geekhack.org/index.php?topic=106983.0",
+    },
+    {
+      label: "Build Guide",
+      url: "https://info.ai03.com/books/vega-build-guide",
+    },
   ]}
 />
 
 <Center>
+<ProseMarkdownDefault>
 
 ### Tailor-Made Typing Experience
 Vega brings the extreme typing comfort and acoustic tuning to the 65% form factor, using 28 custom gaskets to completely isolate the plate from the case. A precision-cut foam midlayer and dual stack bottom foam layer allows for precise tuning to balance acoustics and typing feel to your exact preference.
@@ -59,4 +68,5 @@ The thin, flex-slotted hotswap PCB comes pre-installed with VIA Configurator com
 ### Thorough Engineering
 The centered USB cutout allows for a neutral cable position fit for any desk, and careful design allows for maximized comfort and acoustics even with a hotswap structure. Temporary plate retention screws aid the build process while also protecting the plate inside the case during shipping.
 
+</ProseMarkdownDefault>
 </Center>

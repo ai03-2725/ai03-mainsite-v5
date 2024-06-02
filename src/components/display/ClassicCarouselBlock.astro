@@ -1,6 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import { Carousel } from "./Carousel";
+import UpdateEntryRenderer from "./UpdateEntryRenderer.astro";
+import SimpleButton from "@components/utils/SimpleButton.astro";
+import { statusToDisplayText, statusToIcon, statusToProgress } from "./util";
+import CollapseDiv from "@components/utils/CollapseDiv.astro";
+import { Icon } from "astro-icon/components";
+import CircularProgress from "./CircularProgress.astro";
 
 interface Props {
   project: string,
@@ -15,14 +21,101 @@ const {
   links
 } = Astro.props;
 
-// Testing
-// const resources = await getCollection('resources', ({ data }) => {
-//   return data.draft !== true
+// Fetch resources related to the project 
+// TODO: Use in resources block component
+// const resources = await getCollection('resources', ({ data, id }) => {
+//   return data.draft !== true && id.startsWith(project)
 // });
 
-// console.log(resources)
+// Fetch updates related to the project
+const updatesRaw = await getCollection('updates', ({ data, id }) => {
+  return data.draft !== true && id.startsWith(project)
+});
+
+const updates = updatesRaw.sort((a, b) => a.data.date > b.data.date ? -1 : 1)
+const firstUpdate = updates.length > 0 ? updates[0] : null
 
 ---
 
+<div class="flex flex-col rounded-[3.75px] overflow-hidden my-12">
 
-<Carousel slides={slides} ratio={undefined} showThumbnails={undefined} client:load />
+  <div class="flex flex-col lg:flex-row overflow-hidden">
+
+    <!-- Carousel area -->
+    <div class="w-full lg:w-2/3 overflow-hidden  bg-zinc-700">
+      <Carousel slides={slides} ratio={undefined} showThumbnails={undefined} client:load />
+    </div>
+
+    <!-- Info pane -->
+    <div class="bg-zinc-200 w-full lg:w-1/3 flex flex-col">
+      <div class="grow flex flex-col p-6 lg:p-8 gap-4 lg:gap-5">
+        {links.map(link => 
+          <SimpleButton label={link.label} url={link.url} />
+        )}
+      </div>
+      <div class="bg-zinc-300 p-6 lg:p-8">
+        {firstUpdate ?
+          <>
+          <div class="flex flex-row items-center mb-4 gap-4">
+            <div>
+              {/* <Icon name={statusToIcon(firstUpdate.data.status)} size={32} /> */}
+              <CircularProgress size={64} progress={statusToProgress(firstUpdate.data.status)} >
+                <Icon name={statusToIcon(firstUpdate.data.status)} size={40} />
+              </CircularProgress>
+            </div>
+            <div>
+              <p class="text-md m-0">Project Status</p>
+              <h2 class="m-0 text-2xl font-[550]">{statusToDisplayText(firstUpdate.data.status)}</h2>
+            </div>
+          </div>
+          <div>
+            <UpdateEntryRenderer update={firstUpdate} />
+            <button data-collapse-target-id={`collapse-${project}-updates`} class="mt-4 p-3 bg-zinc-100 hover:bg-zinc-50 rounded-sm">
+              Toggle Updates Log
+            </button>
+          </div>
+          </>
+        :
+          <>
+          <div>
+            <h3 class="m-0">Project Status: Unknown</h3>
+            <p class="m-0">This project has no updates.</p>
+          </div>
+          </>
+        }
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <CollapseDiv id={`collapse-${project}-updates`} wmax={false}>
+    <div class="bg-zinc-100 flex flex-col">
+      <div class="flex flex-col p-6 lg:p-8 gap-12">
+        {updates.map(update => 
+          <div class="flex flex-col md:flex-row gap-3 md:gap-4">
+            <div class="md:w-1/4 flex flex-row gap-4">
+              <div>
+                <CircularProgress size={48} progress={statusToProgress(update.data.status)} bgColor="rgb(212, 212, 216)">
+                  <Icon name={statusToIcon(update.data.status)} size={24} />
+                </CircularProgress>
+              </div>
+              <div>
+                <p class="m-0 text-xl font-[550]">{statusToDisplayText(update.data.status)}</p>
+                <p class="m-0">{update.data.date.getFullYear()}-{update.data.date.getMonth()}-{update.data.date.getDate()}</p>
+              </div>
+            </div>
+            <div class="md:w-3/4">
+              <UpdateEntryRenderer update={update} />
+            </div>
+          </div>
+        )}
+      </div>
+      <div data-collapse-target-id={`collapse-${project}-updates`} class="mt-4 p-3 bg-zinc-300 hover:bg-zinc-200 rounded-sm text-center cursor-pointer">
+          Hide Updates Log
+      </div>
+    </div>
+  </CollapseDiv>
+
+</div>
+

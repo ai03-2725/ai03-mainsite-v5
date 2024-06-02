@@ -1,0 +1,27 @@
+---
+interface Props {
+  label: string;
+  url: string | undefined;
+}
+
+const { label, url } = Astro.props;
+---
+
+<div class="
+  bg-zinc-800 
+  text-white 
+  text-center 
+  rounded-sm 
+  hover:bg-zinc-600
+  transition-all ease-[var(--spring-easing)] duration-[138ms]
+">
+  <a
+    href={url ? url : null}
+    aria-disabled={url ? false : true}
+    class="h-full text-white no-underline"
+  >
+    <div class="p-3">
+      {label}
+    </div>
+  </a>
+</div>

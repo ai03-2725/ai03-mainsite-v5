@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  update: CollectionEntry<'updates'>;
+}
+
+const { 
+  update,
+} = Astro.props;
+
+const { Content } = await update.render()
+
+---
+
+<Content />
