@@ -1,9 +1,9 @@
 ---
-import Layout from '../../layouts/DefaultLayout.astro';
-import ProjectsGrid from '../../components/display/ProjectsGrid.astro'
+import Layout from '@layouts/DefaultLayout.astro';
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
 import { getEntries } from 'astro:content';
 import { getCollection } from 'astro:content';
-import ProseMarkdownDefault from '../../components/utils/Prose-Markdown-Default.astro';
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro';
 
 export async function getStaticPaths() {
   const collections = await getCollection('project-collections');
@@ -47,11 +47,11 @@ const mainDivClassesString = mainDivClasses.join(" ")
 <Layout title={collection.data.title}>
 
   <!-- The main page contents are defined by the MDX file. -->
-  <ProseMarkdownDefault>
+  <DefaultMarkdownRenderer>
     <div class={mainDivClassesString}>
       <Content />
     </div>
-  </ProseMarkdownDefault>
+  </DefaultMarkdownRenderer>
 
   <!-- The projects list is rendered in after. -->
   {collection.data.projectsListStyle !== "none" &&

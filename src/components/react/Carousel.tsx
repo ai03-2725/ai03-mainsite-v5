@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FunctionComponent } from "react";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Pagination, Thumbs } from 'swiper/modules';
-import { getThumbnailUrl } from "./util";
+import { getThumbnailUrl } from "@scripts/util";
 
 // import spinnerSvg from 'node_modules/svg-loaders/svg-css-loaders/oval.svg'; // svgReference === '/src/image.svg'
 
@@ -123,7 +123,7 @@ export const Carousel: FunctionComponent<{
               <div class="absolute w-full h-full bg-zinc-900 opacity-90 top-0 left-0" />
               <div class="absolute p-0 md:p-8 xl:p-16 w-full h-full flex items-center justify-center">
                 <div class="flow-root">
-                {/* <img src={spinnerSvg.src} /> */}
+                  {/* <Spinner size={64} fgColor="#FFFFFF"/> */}
                 </div>
                 <img src={slides[currentSlide.current].url} alt={slides[currentSlide.current].alt} loading="lazy" class="max-h-full m-0 rounded-0 md:rounded-[3.75px]" />
               </div>

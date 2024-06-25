@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage-Classic.astro
 draft: false
 title: Vega
 slogan: Reference series 65% keyboard
@@ -7,66 +6,84 @@ coverImage:
   url: "/assets/projects/vega/img_0044_largesize.avif"
   alt: Vega cover image
 ---
-import { Carousel } from '../../components/display/Carousel.tsx'
-import Center from '@components/utils/Center.astro'
-import ClassicHeaderBlock from '@components/display/ClassicHeaderBlock.astro'
-import ClassicCarouselBlock from '@components/display/ClassicCarouselBlock.astro'
-import ProseMarkdownDefault from '@components/utils/Prose-Markdown-Default.astro'
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
 
-{/* <Center> */}
+<DefaultLayout title={frontmatter.title}>
 
-<ClassicHeaderBlock 
-  title="VEGA"
-  slogan="Screwless seamless gasket 65% keyboard by Kevinplus and ai03"
-  >
-  <ProseMarkdownDefault>
-    Refining upon Polaris and its gasket typing feel, acoustics, and aesthetics, Vega takes things one step further with a steel weight, completely screwless exterior, and refined build process.
-  </ProseMarkdownDefault>
-</ClassicHeaderBlock>
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="VEGA"
+      slogan="Screwless seamless gasket 65% keyboard by Kevinplus and ai03"
+      >
+      <DefaultMarkdownRenderer>
+        Refining upon Polaris and its gasket typing feel, acoustics, and aesthetics, Vega takes things one step further with a steel weight, completely screwless exterior, and refined build process.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
 
 
+    <ClassicCarouselBlock 
+      project={'vega'} 
+      slides={[
+        {
+          url: "/assets/projects/vega/img_0044_largesize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/vega/img_0040_largesize.avif",
+          alt: "Cover image",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=106983.0",
+        },
+        {
+          label: "Build Guide",
+          url: "https://info.ai03.com/books/vega-build-guide",
+        },
+      ]}
+    />
 
-{/* </Center> */}
+    <Center>
+      <DefaultMarkdownRenderer>
 
+        <SimpleImage src="/assets/projects/vega/img_0043_largesize.avif" preset="SIMPLE_CENTERED" />
+        ### Tailor-Made Typing Experience
+        Vega brings the extreme typing comfort and acoustic tuning to the 65% form factor, using 28 custom gaskets to completely isolate the plate from the case.  
+        A precision-cut foam midlayer and dual stack bottom foam layer allows for precise tuning to balance acoustics and typing feel to your exact preference.
+        <br/> 
 
-<ClassicCarouselBlock 
-  project={'vega'} 
-  slides={[
-    {
-      url: "/assets/projects/vega/img_0044_largesize.avif",
-      alt: "Cover image",
-    },
-    {
-      url: "/assets/projects/vega/img_0040_largesize.avif",
-      alt: "Cover image",
-    },
-  ]} 
-  links={[
-    {
-      label: "GeekHack IC Thread",
-      url: "https://geekhack.org/index.php?topic=106983.0",
-    },
-    {
-      label: "Build Guide",
-      url: "https://info.ai03.com/books/vega-build-guide",
-    },
-  ]}
-/>
+        <SimpleImage src="/assets/projects/vega/img_0040_largesize.avif" preset="SIMPLE_CENTERED" />
+        ### The Reference Aesthetic
+        The clean, sleek, seamless exterior of Vega has no visible exterior screws, which are conveniently hidden under the keycaps for an uninterrupted minimal aesthetic regardless of the viewing angle.  
+        The immense rear-angled weight is made entirely of stainless steel, providing the elegance and heft worthy of being the centerpiece of your desk.
+        <br/> 
 
-<Center>
-<ProseMarkdownDefault>
+        <SimpleImage src="/assets/projects/vega/img_0042_largesize.avif" preset="SIMPLE_CENTERED" />
+        ### Stress-Free Circuitry
+        The thin, flex-slotted hotswap PCB comes pre-installed with VIA Configurator compatible firmware, ready for lightning-fast assembly and easy keymap editing without the headaches of drivers and firmware flashing.  
+        A solderable PCB kit is available for those who prefer soldering or non-stock layouts.
+        <br/> 
 
-### Tailor-Made Typing Experience
-Vega brings the extreme typing comfort and acoustic tuning to the 65% form factor, using 28 custom gaskets to completely isolate the plate from the case. A precision-cut foam midlayer and dual stack bottom foam layer allows for precise tuning to balance acoustics and typing feel to your exact preference.
+        <SimpleImage src="/assets/projects/vega/img_0047_largesize.jpg" preset="SIMPLE_CENTERED" />
+        ### Thorough Engineering
+        The centered USB cutout allows for a neutral cable position fit for any desk, and careful design allows for maximized comfort and acoustics even with a hotswap structure.  
+        Temporary plate retention screws aid the build process while also protecting the plate inside the case during shipping.
 
-### The Reference Aesthetic
-The clean, sleek, seamless exterior of Vega has no visible exterior screws, which are conveniently hidden under the keycaps for an uninterrupted minimal aesthetic regardless of the viewing angle. The immense rear-angled weight is made entirely of stainless steel, providing the elegance and heft worthy of being the centerpiece of your desk.
+      </DefaultMarkdownRenderer>
+    </Center>
 
-### Stress-Free Circuitry
-The thin, flex-slotted hotswap PCB comes pre-installed with VIA Configurator compatible firmware, ready for lightning-fast assembly and easy keymap editing without the headaches of drivers and firmware flashing. A solderable PCB kit is available for those who prefer soldering or non-stock layouts.
+  </div>
 
-### Thorough Engineering
-The centered USB cutout allows for a neutral cable position fit for any desk, and careful design allows for maximized comfort and acoustics even with a hotswap structure. Temporary plate retention screws aid the build process while also protecting the plate inside the case during shipping.
-
-</ProseMarkdownDefault>
-</Center>
+</DefaultLayout>

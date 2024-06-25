@@ -1,0 +1,37 @@
+---
+
+interface Props {
+  src: string,
+  ratio?: number | undefined,
+  rounded?: boolean | undefined,
+  preset?: "SIMPLE" | "SIMPLE_CENTERED"
+}
+
+const { src, ratio, rounded, preset } = Astro.props;
+
+const ratioString = ratio ? `aspect-[${ratio}]` : "aspect-[1.618]"
+const roundedString = rounded || rounded === undefined ? "rounded-[3.75px] overflow-hidden" : ""
+
+let presetStringOuterDiv = ""
+let presetStringInnerDiv = ""
+switch(preset)  {
+  case "SIMPLE":
+    presetStringOuterDiv = ""
+    presetStringInnerDiv = "w-full lg:w-3/4 xl:w-1/2"
+    break;
+
+  case "SIMPLE_CENTERED":
+    presetStringOuterDiv = "flex flex-row justify-center"
+    presetStringInnerDiv = "w-full lg:w-3/4 xl:w-1/2"
+}
+
+const OuterElement = presetStringOuterDiv === "" ? 'Fragment' : 'div'
+
+
+---
+
+<OuterElement class={presetStringOuterDiv}>
+  <div class=`${ratioString} ${roundedString} ${presetStringInnerDiv}`>
+    <img src={src} class="w-full h-full object-cover m-0" />
+  </div>  
+</OuterElement>

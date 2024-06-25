@@ -1,12 +1,15 @@
 ---
+// Legacy carousel/links object for feature parity transition from old site
+
 import { getCollection } from "astro:content";
-import { Carousel } from "./Carousel";
+import { Carousel } from "@components/react/Carousel.tsx";
 import UpdateEntryRenderer from "./UpdateEntryRenderer.astro";
-import SimpleButton from "@components/utils/SimpleButton.astro";
-import { statusToDisplayText, statusToIcon, statusToProgress } from "./util";
-import CollapseDiv from "@components/utils/CollapseDiv.astro";
+import SimpleButton from "@components/astro/SimpleButton.astro";
+import { statusToDisplayText, statusToIcon, statusToProgress } from "@scripts/util";
+import CollapseDiv from "@components/astro/CollapseDiv.astro";
 import { Icon } from "astro-icon/components";
 import CircularProgress from "./CircularProgress.astro";
+import Spinner from "./Spinner.astro";
 
 interface Props {
   project: string,
@@ -62,6 +65,7 @@ const firstUpdate = updates.length > 0 ? updates[0] : null
               <CircularProgress size={64} progress={statusToProgress(firstUpdate.data.status)} >
                 <Icon name={statusToIcon(firstUpdate.data.status)} size={40} />
               </CircularProgress>
+              {/* <Spinner size={64} fgColor="#FFF"/> */}
             </div>
             <div>
               <p class="text-md m-0">Project Status</p>
@@ -112,7 +116,7 @@ const firstUpdate = updates.length > 0 ? updates[0] : null
         )}
       </div>
       <div data-collapse-target-id={`collapse-${project}-updates`} class="mt-4 p-3 bg-zinc-300 hover:bg-zinc-200 rounded-sm text-center cursor-pointer">
-          Hide Updates Log
+        Hide Updates Log
       </div>
     </div>
   </CollapseDiv>

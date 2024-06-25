@@ -1,4 +1,6 @@
 ---
+// Legacy header title/description object for feature parity transition from old site
+
 import '@fontsource/m-plus-rounded-1c/latin-300.css';
 
 interface Props {
@@ -9,7 +11,7 @@ interface Props {
 const { title, slogan } = Astro.props;
 ---
 
-<div class="text-center mx-auto container mt-8 mb-16">
+<div class="text-center mx-auto container mt-10 mb-16">
   <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[72px] m-0">{title}</h1>
   <p class="!font-[450] !text-[18px] mt-3 mb-8">{slogan}</p>
   <slot />

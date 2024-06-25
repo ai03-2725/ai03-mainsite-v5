@@ -16,11 +16,5 @@ export default {
 	},
 	plugins: [
 		require('@tailwindcss/typography'),
-		require('daisyui'),
 	],
-	daisyui: {
-    themes: [],
-		base: false,
-		styled: false,
-	}
 }

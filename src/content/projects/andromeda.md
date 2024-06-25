@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ProjectPage-Classic.astro
 draft: false
 title: Andromeda
 slogan: Premium Sculpted Tenkeyless Keyboard

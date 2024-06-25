@@ -1,0 +1,22 @@
+---
+// Legacy blurred header object for feature parity transition from old site
+
+interface Props {
+  src: string,
+}
+
+const { src } = Astro.props;
+
+---
+
+<div class="h-[285px] min-w-full overflow-hidden flex flex-row justify-center">
+  <img src={src} alt="Blurred header image of project" class="header-blur grow object-cover"/>
+</div>
+
+<style>
+  .header-blur {
+    filter: blur(5px) brightness(62%);
+    -webkit-filter: blur(5px) brightness(62%);
+    transform: scale(1.1);
+}
+</style>
