@@ -5,12 +5,22 @@ slogan: A careful balance of sleek aesthetics, fine-tuned acoustics, and cutting
 coverImage:
   url: "/assets/projects/vega/img_0044_largesize.avif"
   alt: Vega cover image
-projects: ['polaris', 'vega']
-fullWidth: false
-centerText: true
-projectsListStyle: "light"
+projects: ['vega', 'polaris']
 ---
-<div class="pt-6" />
-# Reference Series
-A fine balance of performance and affordability.  
-Experience unparalleled typing comfort and acoustic performance at accessible pricing.
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <DefaultMarkdownRenderer>
+    <div class="container mx-auto text-center">
+      # Reference Series
+      A fine balance of performance and affordability.  
+      Experience unparalleled typing comfort and acoustic performance at accessible pricing.
+    </div>
+  </DefaultMarkdownRenderer>
+
+  <ProjectsGrid collection='reference-series' style="light" />
+
+</DefaultLayout>

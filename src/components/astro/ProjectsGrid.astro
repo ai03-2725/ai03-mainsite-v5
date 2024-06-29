@@ -1,16 +1,19 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { getEntries, type CollectionEntry } from "astro:content";
 import type { ProjectGridStylesType } from "../../types";
 import { Image } from 'astro:assets';
 import { Icon } from "astro-icon/components";
+import { getEntry } from "astro:content";
 
 
 interface Props {
-  projectsList: CollectionEntry<"projects">[];
+  collection: string;
   style: ProjectGridStylesType;
 }
 
-const { projectsList, style } = Astro.props;
+const { collection, style } = Astro.props;
+const collectionData = await getEntry("project-collections", collection)
+const projectsList = await getEntries(collectionData.data.projects)
 
 let outermostContainerClasses: string[] = [
   "w-full"

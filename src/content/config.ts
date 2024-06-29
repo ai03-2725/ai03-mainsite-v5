@@ -30,9 +30,6 @@ const projectCollections = defineCollection({
       alt: z.string(),
     }),
     projects: z.array(reference('projects')),
-    fullWidth: z.boolean(),
-    centerText: z.boolean(),
-    projectsListStyle: z.enum(PROJECT_GRID_STYLES)
   })
 })
 

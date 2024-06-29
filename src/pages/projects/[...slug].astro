@@ -1,7 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import DefaultLayout from '@layouts/DefaultLayout.astro';
-import ProjectPageClassic from '@layouts/ProjectPage-Classic.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -11,7 +9,7 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { Content, headings } = await project.render();
+const { Content } = await project.render();
 
 ---
 
