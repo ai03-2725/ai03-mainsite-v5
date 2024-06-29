@@ -1,5 +1,57 @@
 ---
 // Legacy files/downloads table for feature parity transition from old site
 
+import { getCollection } from 'astro:content';
+import DefaultMarkdownRenderer from './DefaultMarkdownRenderer.astro';
+
+interface Props {
+  project: string;
+}
+
+const { project } = Astro.props;
+
+const resourcesRaw = await getCollection('resources', ({ data, id }) => {
+  return data.draft !== true && id.startsWith(project)
+});
+
+let resourcesRendered = []
+for (const resource of resourcesRaw) { 
+  const {Content} = await resource.render()
+  resourcesRendered.push({label: resource.data.label, fileUrl: resource.data.fileUrl, markdown: Content})
+}
+
 ---
 
+{resourcesRendered.length > 0 &&
+  <div class="flex flex-col bg-zinc-100 rounded-[3.75px] overflow-hidden my-16">
+
+    <div class="text-center w-full pt-6 pb-4">
+      <h3 class="text-2xl font-medium">Files and Resources</h3>
+    </div>
+
+    <div class="mx-2">
+      <table class="table-auto w-full my-2">    
+        <tbody>
+          {resourcesRendered.map((resource, index) => 
+            <tr>
+              <td class={`${index % 2 === 0 && "bg-white"} py-6 px-8 rounded-s-[3.75px] overflow-hidden`}>
+                <p>{resource.label}</p>
+              </td>
+              <td class={`${index % 2 === 0 && "bg-white"} py-6 px-8 rounded-e-[3.75px] overflow-hidden`}>
+                {resource.fileUrl ? 
+                  <a href={resource.fileUrl} class="underline">Download</a>
+                  :
+                  <DefaultMarkdownRenderer>
+                    <resource.markdown />
+                  </DefaultMarkdownRenderer>
+                }
+                
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+}

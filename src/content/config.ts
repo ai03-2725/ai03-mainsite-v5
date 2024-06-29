@@ -45,15 +45,6 @@ const updates = defineCollection({
   })
 });
 
-// const projectUpdates = defineCollection({
-//   type: 'data',
-//   schema: z.array(z.object({
-//     draft: z.optional(z.boolean()),
-//     date: z.date(),
-//     status: PROJECT_STATUSES,
-//   }))
-// })
-
 const resources = defineCollection({ 
   type: 'content',
   schema: ({image}) => z.object({

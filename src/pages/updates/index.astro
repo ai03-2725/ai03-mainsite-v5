@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/DefaultLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+const allProjects = await getCollection('projects')
+---
+
+<Layout title="Project Updates">
+	<main>
+		Project Updates Page
+
+		<div>
+			{allProjects.map(project => 
+        <div>
+          {project.data.title}
+        </div>
+      )}
+		</div>
+	</main>
+</Layout>

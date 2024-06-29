@@ -1,9 +1,64 @@
 ---
 // Legacy specs table for feature parity transition from old site
 
-interface Props {
-  headerImageSrc?: string | undefined,
+import DefaultMarkdownRenderer from './DefaultMarkdownRenderer.astro';
+import {remark} from 'remark'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
 
+interface Props {
+  headerImageSrc?: string | undefined;
+  specs: [string, string][];
+  footerNote?: string | undefined;
+}
+
+const { headerImageSrc, specs, footerNote } = Astro.props;
+
+const rowHighlight = headerImageSrc ? 1 : 0;
+
+let renderSpecs = []
+for (const spec of specs) {
+  const htmlString = await remark().use(remarkRehype).use(rehypeStringify).process(spec[1])
+  renderSpecs.push([spec[0], htmlString])
 }
 
 ---
+
+<div class="flex flex-col bg-zinc-100 rounded-[3.75px] overflow-hidden my-16">
+
+  <div class="text-center w-full pt-6 pb-4">
+    <h3 class="text-2xl font-medium">Specifications</h3>
+  </div>
+
+  {headerImageSrc && 
+    <div class="w-full px-2">
+      <img src={headerImageSrc} alt="Specifications Table Header" class="w-full rounded-[3.75px] overflow-hidden" />
+    </div>
+  }
+
+  <div class="mx-2">
+    <table class="table-auto w-full my-2">    
+      <tbody>
+        {renderSpecs.map((spec, index) => 
+          <tr>
+            <td class={`${index % 2 === rowHighlight && "bg-white"} py-6 px-8 rounded-s-[3.75px] overflow-hidden`}>
+              <p>{spec[0]}</p>
+            </td>
+            <td class={`${index % 2 === rowHighlight && "bg-white"} py-6 px-8 rounded-e-[3.75px] overflow-hidden`}>
+              <DefaultMarkdownRenderer>
+                {spec[1]}
+              </DefaultMarkdownRenderer>
+            </td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  </div>
+
+  {footerNote && 
+    <div class="text-center w-full py-6">
+      <p>{footerNote}</p>
+    </div>
+  }
+
+</div>

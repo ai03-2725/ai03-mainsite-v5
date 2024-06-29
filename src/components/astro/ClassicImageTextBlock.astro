@@ -1,0 +1,22 @@
+---
+// Legacy image-paragraph pair block for feature parity transition from old site
+
+import DefaultMarkdownRenderer from './DefaultMarkdownRenderer.astro';
+import SimpleImage from './SimpleImage.astro';
+
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+
+---
+
+<div class="my-16">
+  <SimpleImage src={src} preset="SIMPLE_CENTERED" />
+  <div class="mt-7">
+    <DefaultMarkdownRenderer>
+      <slot />
+    </DefaultMarkdownRenderer>
+  </div>
+</div>
