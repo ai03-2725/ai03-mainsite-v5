@@ -72,7 +72,7 @@ const firstUpdate = updates.length > 0 ? updates[0] : null
               <h2 class="m-0 text-2xl font-[550]">{statusToDisplayText(firstUpdate.data.status)}</h2>
             </div>
           </div>
-          <div class="text-center">
+          <div class="text-center md:text-start">
             <UpdateEntryRenderer update={firstUpdate} />
             <button data-collapse-target-id={`collapse-${project}-updates`} class="mt-4 p-3 bg-zinc-100 hover:bg-zinc-50 rounded-sm">
               Toggle Updates Log
@@ -81,7 +81,7 @@ const firstUpdate = updates.length > 0 ? updates[0] : null
           </>
         :
           <>
-          <div>
+          <div class="text-center md:text-start">
             <h3 class="m-0">Project Status: Unknown</h3>
             <p class="m-0">This project has no updates.</p>
           </div>
