@@ -40,7 +40,7 @@ const firstUpdate = updates.length > 0 ? updates[0] : null
 
 ---
 
-<div class="flex flex-col rounded-[3.75px] overflow-hidden my-12">
+<div class="flex flex-col md:rounded-[3.75px] overflow-hidden my-12">
 
   <div class="flex flex-col lg:flex-row overflow-hidden">
 
@@ -59,7 +59,7 @@ const firstUpdate = updates.length > 0 ? updates[0] : null
       <div class="bg-zinc-300 p-6 lg:p-8">
         {firstUpdate ?
           <>
-          <div class="flex flex-row items-center mb-4 gap-4">
+          <div class="flex flex-row items-center mb-4 gap-4 justify-center md:justify-start pe-2 md:pe-0">
             <div>
               {/* <Icon name={statusToIcon(firstUpdate.data.status)} size={32} /> */}
               <CircularProgress size={64} progress={statusToProgress(firstUpdate.data.status)} >
@@ -72,7 +72,7 @@ const firstUpdate = updates.length > 0 ? updates[0] : null
               <h2 class="m-0 text-2xl font-[550]">{statusToDisplayText(firstUpdate.data.status)}</h2>
             </div>
           </div>
-          <div>
+          <div class="text-center">
             <UpdateEntryRenderer update={firstUpdate} />
             <button data-collapse-target-id={`collapse-${project}-updates`} class="mt-4 p-3 bg-zinc-100 hover:bg-zinc-50 rounded-sm">
               Toggle Updates Log
