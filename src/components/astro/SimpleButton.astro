@@ -7,14 +7,14 @@ interface Props {
 const { label, url } = Astro.props;
 ---
 
-<div class="
-  bg-zinc-700 
+<div class=`
+  ${url ? "bg-zinc-700" : "bg-zinc-500"}
   text-white 
   text-center 
   rounded-sm 
-  hover:bg-zinc-600
-  transition-all ease-[var(--spring-easing)] duration-[138ms]
-">
+  ${url && "hover:bg-zinc-600"}
+  ${url && "transition-all ease-[var(--spring-easing)] duration-[138ms]"}
+`>
   <a
     href={url ? url : null}
     aria-disabled={url ? false : true}

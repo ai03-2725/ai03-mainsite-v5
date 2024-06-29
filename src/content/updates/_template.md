@@ -1,7 +1,6 @@
 ---
-#draft: false
-date: "2010-01-01"
-status: 'announced'
+date: 2019-12-07
+status: 'pre-announcement'
 ---
 
-Test update
+Board prototype displayed to the public at SoCal meetup

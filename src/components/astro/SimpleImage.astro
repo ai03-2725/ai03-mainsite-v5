@@ -1,13 +1,14 @@
 ---
 
 interface Props {
-  src: string,
-  ratio?: number | undefined,
-  rounded?: boolean | undefined,
-  preset?: "SIMPLE" | "SIMPLE_CENTERED"
+  src: string;
+  ratio?: number | undefined;
+  rounded?: boolean | undefined;
+  preset?: "SIMPLE" | "SIMPLE_CENTERED";
+  loading?: "eager" | "lazy" | undefined;
 }
 
-const { src, ratio, rounded, preset } = Astro.props;
+const { src, ratio, rounded, preset, loading } = Astro.props;
 
 const ratioString = ratio ? `aspect-[${ratio}]` : "aspect-[1.618]"
 const roundedString = rounded || rounded === undefined ? "rounded-[3.75px] overflow-hidden" : ""
@@ -32,6 +33,6 @@ const OuterElement = presetStringOuterDiv === "" ? 'Fragment' : 'div'
 
 <OuterElement class={presetStringOuterDiv}>
   <div class=`${ratioString} ${roundedString} ${presetStringInnerDiv}`>
-    <img src={src} class="w-full h-full object-cover m-0" />
+    <img src={src} class="!w-full h-full object-cover m-0" loading={loading === "eager" ? "eager" : "lazy"} />
   </div>  
 </OuterElement>

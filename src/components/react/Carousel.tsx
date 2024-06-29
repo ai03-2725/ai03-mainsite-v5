@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FunctionComponent } from "react";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { FreeMode, Navigation, Pagination, Thumbs, Autoplay } from 'swiper/modules';
 import { getThumbnailUrl } from "@scripts/util";
 
 // import spinnerSvg from 'node_modules/svg-loaders/svg-css-loaders/oval.svg'; // svgReference === '/src/image.svg'
@@ -37,7 +37,7 @@ export const Carousel: FunctionComponent<{
     const showExpandedMirrorRef = useRef<boolean>(showExpanded)
 
     const thumbnailsToggle = showThumbnails === undefined ? true : showThumbnails
-    let pluginsList = [FreeMode, Navigation]
+    let pluginsList = [FreeMode, Navigation, Autoplay]
     if (thumbnailsToggle) {
       pluginsList.push(Thumbs)
     } else {
@@ -63,6 +63,11 @@ export const Carousel: FunctionComponent<{
       }
     }, [])
 
+    const autoplayOptions: any = {
+      delay: 10 * 1000,
+      pauseOnMouseEnter: true,
+    }
+
     // TODO: Handle ratio properly
 
     return (
@@ -85,6 +90,8 @@ export const Carousel: FunctionComponent<{
           pagination={!thumbnailsToggle}
           onSlideChange={e => {currentSlide.current = e.activeIndex}}
           className="mySwiper2"
+          autoplay={autoplayOptions}
+          speed={425}
         >
           {slides.map(slide =>
             <SwiperSlide key={slide.url} onClick={() => setShowExpanded(true)}>
@@ -103,8 +110,8 @@ export const Carousel: FunctionComponent<{
             slidesPerView={"auto"}
             freeMode={true}
             watchSlidesProgress={true}
-            modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper"
+            modules={[FreeMode, Navigation, Thumbs]}
           >
             {slides.map(slide =>
               <SwiperSlide key={slide.url} className="!w-auto !overflow-clip">

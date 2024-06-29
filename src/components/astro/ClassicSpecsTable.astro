@@ -5,6 +5,7 @@ import DefaultMarkdownRenderer from './DefaultMarkdownRenderer.astro';
 import {remark} from 'remark'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
+import rehypeRewrite from 'rehype-rewrite'
 
 interface Props {
   headerImageSrc?: string | undefined;
@@ -18,13 +19,24 @@ const rowHighlight = headerImageSrc ? 1 : 0;
 
 let renderSpecs = []
 for (const spec of specs) {
-  const htmlString = await remark().use(remarkRehype).use(rehypeStringify).process(spec[1])
+  const htmlString = await remark()
+    .use(remarkRehype)
+    .use(rehypeRewrite, {
+      selector: 'img',
+      rewrite: (node) => {
+        if (node.type === 'element') {
+          node.properties.loading = 'lazy';
+        }
+      }
+    })
+    .use(rehypeStringify)
+    .process(spec[1])
   renderSpecs.push([spec[0], htmlString])
 }
 
 ---
 
-<div class="flex flex-col bg-zinc-100 md:rounded-[3.75px] overflow-hidden my-16">
+<div class="flex flex-col bg-zinc-100 md:rounded-[3.75px] overflow-hidden my-16" id="specs-table">
 
   <div class="text-center w-full pt-6 pb-4">
     <h3 class="text-2xl font-medium">Specifications</h3>

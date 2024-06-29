@@ -6,10 +6,176 @@ coverImage:
   url: "/assets/projects/polaris/img_0016_largesize.avif"
   alt: Polaris cover image
 ---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
 
-# Test mdx content
-Hello world!
+<DefaultLayout title={frontmatter.title}>
 
-## Test header 2
-Some additional content  
-Another line of text
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="POLARIS"
+      slogan="Gaskets. Seamless. 60%. $265 Shipped."
+      >
+      <DefaultMarkdownRenderer>
+Offering a quality typing experience without the high price tag, Polaris redefines the expectations from custom keyboards.  
+With proper gasket plate mounting, flex-slotted 1.2mm thin PCB, sleek seamless aesthetic, and accessible pricing, experience a top-tier 60% keyboard for a mid-range price.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'polaris'} 
+      slides={[
+        {
+          url: "/assets/projects/polaris/img_0016_largesize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/polaris/img_0003_largesize.jpg",
+          alt: "Exploded view",
+        },
+        {
+          url: "/assets/projects/polaris/img_0010_largesize.jpg",
+          alt: "Rear view",
+        },
+        {
+          url: "/assets/projects/polaris/img_0012_largesize.jpg",
+          alt: "Side view",
+        },
+        {
+          url: "/assets/projects/polaris/img_0005_largesize.avif",
+          alt: "Top view with keyset, grey",
+        },
+        {
+          url: "/assets/projects/polaris/img_0006_largesize.avif",
+          alt: "Top view without keyset, grey",
+        },
+        {
+          url: "/assets/projects/polaris/img_0004_largesize.avif",
+          alt: "Top view with keyset, black",
+        },
+        {
+          url: "/assets/projects/polaris/img_0002_largesize.jpg",
+          alt: "Exploded view from side",
+        },
+        {
+          url: "/assets/projects/polaris/img_0009_largesize.avif",
+          alt: "PCB view",
+        },
+        {
+          url: "/assets/projects/polaris/img_0011_largesize.avif",
+          alt: "Two units rear view",
+        },
+        {
+          url: "/assets/projects/polaris/img_0015_largesize.avif",
+          alt: "Two units top view",
+        },
+        {
+          url: "/assets/projects/polaris/img_0001_largesize.avif",
+          alt: "Bottom view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=100383.0",
+        },
+        {
+          label: "Product Page",
+        },
+        {
+          label: "Assembly Instructions",
+          url: "https://info.ai03.com/books/polaris-build-guide",
+        },
+        {
+          label: "Build Guide",
+          url: "https://info.ai03.com/books/vega-build-guide",
+        },
+        {
+          label: "Files and Resources",
+          url: "#resources-table",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/polaris/img_0011_largesize.avif">
+          ### Gasket Comfort
+          Cutting no corners, a total of 18 gaskets hold the plate in place for maximum typing comfort, improved acoustics, and easy assembly.
+          Careful engineering from 8 full redesigns and multiple prototypes are tucked away within the slim bezels.
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/polaris/img_0001_largesize.avif">
+          ### Refined Aesthetic
+          The seamless chassis borrows the clean look praised in the KBD8X MKII, while adding a rear-angled weight which adds a touch of visible elegance.  
+          Thin bezels are combined with sharp chamfers for a striking modern look.
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/polaris/img_0009_largesize.avif">
+          ### Taking Things Further
+          The 1.2mm thick, slot-cut super flexible PCB offers typing comfort that extends the gasket mount benefits.  
+          Rubber pads applied to the PCB make sure that the stabilizers fit into place without issues.
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/polaris/img_0015_largesize.avif" >
+          ### Made For You
+          The plate is offered in brass and polycarbonate, WKL and universal layouts, and half- and full-plate options to meet the exact aesthetic and comfort you desire.  
+          Choose between regular, WKL, and corner blocker style tops to suit your needs.
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/polaris/img_0002_largesize.jpg" >
+          ### Cutting No Corners
+          Two foam mid-layers, one below the plate and one below the PCB, fill the case to cancel vibrations and echoing.  
+          The plate is completely isolated by gaskets, leaving no metal-to-metal contact between the plate and chassis once assembled.
+        </ClassicImageTextBlock>
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/polaris/img_0013_largesize.jpg' 
+      specs={[
+        ["Case weight", "~1.3kg",],
+        ["Dimensions", "296 x 110 x 28mm",],
+        ["Typing angle", "6.5deg",],
+        ["Price (At time of sale)", "265 USD, free shipping included",],
+        ["Case colors", `- E-White
+- Black
+- Space gray
+- Blue grey
+- Burgundy red
+- Olive green
+- Rose gold
+- Purple
+- Polycarbonate`,],
+        ["Case tops", `Regular, winkeyless, corner blocker  
+![Layout Diagrams](/assets/projects/polaris/img_0014_mediumsize.jpg)`,],
+        ["Plate options", `- Layouts: WKL, Universal
+- Style: Full, Half
+- Material: Brass, Polycarbonate`,],
+        ["Layouts", `- Universal Plate:
+![Universal Layout Diagram](/assets/projects/polaris/img_0007_largesize.avif)  
+- WKL Plate:
+![WKL Layout Diagram](/assets/projects/polaris/img_0008_largesize.jpg)  
+`,],
+    ]} />
+
+    <ClassicResourcesTable project='vega' />
+
+  </div>
+
+</DefaultLayout>
