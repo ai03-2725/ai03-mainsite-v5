@@ -21,7 +21,7 @@ export default defineConfig({
   ],
   vite: {
     ssr: {
-      noExternal: ['swiper']
+      noExternal: ['swiper', 'iconify-icon', '@iconify-icon/react']
     },
   },
 

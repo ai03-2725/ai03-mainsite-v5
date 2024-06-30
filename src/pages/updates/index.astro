@@ -1,20 +1,18 @@
 ---
+import { UpdatesPage } from '@components/react/UpdatesPage';
 import Layout from '../../layouts/DefaultLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
 
 const allProjects = await getCollection('projects')
+
+// This page relies mostly on preact real-time for filtering the displayed projects and fetching updates from the /api endpoint
+// Prepare static data to pass to the script
+
+
 ---
 
 <Layout title="Project Updates">
-	<main>
-		Project Updates Page
-
-		<div>
-			{allProjects.map(project => 
-        <div>
-          {project.data.title}
-        </div>
-      )}
-		</div>
-	</main>
+	<div class="container mx-auto">
+		<UpdatesPage projects={allProjects} client:load />
+	</div>
 </Layout>

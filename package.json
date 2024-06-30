@@ -20,11 +20,13 @@
     "@fontsource-variable/inter": "^5.0.16",
     "@fontsource-variable/inter-tight": "^5.0.19",
     "@fontsource/m-plus-rounded-1c": "^5.0.11",
+    "@iconify-icons/ph": "^1.2.5",
     "@iconify-json/iconoir": "^1.1.41",
     "@iconify-json/ph": "^1.1.13",
     "@types/alpinejs": "^3.13.6",
     "astro": "^4.4.1",
     "astro-icon": "^1.1.0",
+    "axios": "^1.7.2",
     "preact": "^10.22.0",
     "rehype-rewrite": "^4.0.2",
     "rehype-stringify": "^10.0.0",
@@ -36,6 +38,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@iconify-icon/react": "^2.1.0",
     "@tailwindcss/typography": "^0.5.12",
     "@types/alpinejs__collapse": "^3.13.3"
   },
