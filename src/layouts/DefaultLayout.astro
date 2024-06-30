@@ -6,9 +6,10 @@ import '@fontsource-variable/inter';
 
 interface Props {
 	title: string;
+	noFooterPadding?: boolean | undefined;
 }
 
-const { title } = Astro.props;
+const { title, noFooterPadding } = Astro.props;
 
 const siteName = "ai03 Design Studio"
 
@@ -30,7 +31,7 @@ const titleString = title === "Home" ? siteName : title + " - " + siteName
 			<div class="order-2 grow">
 				<slot />
 			</div>
-			<div class="order-3">
+			<div class={`order-3 ${noFooterPadding !== true && "mt-20"}`}>
 				<Footer />
 			</div>
 			<div class="order-1 z-10">
