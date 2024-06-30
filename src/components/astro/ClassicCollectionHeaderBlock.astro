@@ -1,0 +1,21 @@
+---
+// Legacy header title/description object for feature parity transition from old site
+
+import '@fontsource/m-plus-rounded-1c/latin-300.css';
+import DefaultMarkdownRenderer from './DefaultMarkdownRenderer.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="mt-14 mb-12">
+  <div class="container mx-auto text-center">
+    <h1 class="text-[38px] font-[575] mb-3">{title}</h1>
+    <DefaultMarkdownRenderer>
+      <slot />
+    </DefaultMarkdownRenderer>
+  </div>
+</div>

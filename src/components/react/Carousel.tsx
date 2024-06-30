@@ -92,6 +92,7 @@ export const Carousel: FunctionComponent<{
           className="mySwiper2"
           autoplay={autoplayOptions}
           speed={425}
+          loop={true}
         >
           {slides.map(slide =>
             <SwiperSlide key={slide.url} onClick={() => setShowExpanded(true)}>
