@@ -1,0 +1,119 @@
+---
+draft: false
+title: KBDPAD MKII
+slogan: Numpad collaboration with KBDfans
+coverImage:
+  url: "/assets/projects/kbdpad-mkii/img_0003_largesize.jpg"
+  alt: KBDPAD MKII cover image
+releaseDate: 2019-03-08
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+import '@fontsource/m-plus-rounded-1c/latin-300.css';
+
+<DefaultLayout title={frontmatter.title}>
+
+  <div class="w-full h-[350px] overflow-hidden">
+    <img src="/assets/projects/kbdpad-mkii/img_0008_largesize.avif" alt="Cover banner" class="object-cover w-full" />
+  </div>
+
+  <div class="text-center pt-20 pb-24">
+    <h1 class="!font-['M_PLUS_Rounded_1c'] font-[300] text-[60px]">KBDPAD MKII</h1>
+    <p>The numpad companion to the <a href="/projects/kbdpad-mkii" class="underline">KBD8X MKII</a>.</p>
+  </div>
+
+  <div class="bg-zinc-800 text-center py-28 px-6">
+    <DefaultMarkdownRenderer invert>
+      ### Humble Beginnings
+      In late 2018, custom keyboard availability was very grim.  
+      Constantly available products were limited in design or quality.  
+      Group buys had high barriers to entry in both cost and connections for joining.  
+        
+      To make higher quality keyboards available for all, I partnered with KBDfans to fully overhaul their first generation KBD8X tenkeyless design.  
+      Alongside the main keyboard, I also decided to revise their KBDPAD with a design to match.
+    </DefaultMarkdownRenderer>
+  </div>
+
+  <HorizontalStackBlock
+    src="/assets/projects/kbdpad-mkii/img_0003_largesize.jpg" 
+    alt="Top renders"
+    bgColor='EED9D8'
+  >
+    ### Minimal and elegant
+    Just like the KBD8X MKII, the KBDPAD MKII borrowed from the earlier [Lunar](/projects/lunar) design to implement a seamless exterior.  
+    A neutral design language was chosen, allowing the keyboard to pair well with any keyset.  
+
+    The brass weight installed on the KBD8X MKII was skipped on the KBDPAD MKII due to cost constraints and questionable benefits in such a small size.  
+  </HorizontalStackBlock>
+
+  <HorizontalStackBlock
+    src="/assets/projects/kbdpad-mkii/img_0002_largesize.jpg" 
+    alt="Exploded view"
+    bgColor='E4BDBE'
+    reverse
+  >
+    ### A keyboard-grade numpad
+    The KBDPAD MKII implemented nearly identical internals to the larger KBD8X MKII design - a top-mounted plate structure and all, shrunken down to numpad size.
+
+    In an era where quality internals could be difficult to have even on a larger keyboard, the KBDPAD MKII transformed expectations of what could be available in smaller dimensions.
+  </HorizontalStackBlock>
+
+  <HorizontalStackBlock
+    src="/assets/projects/kbdpad-mkii/img_0004_fullsize.jpg"
+    alt="PCB render"
+    bgColor='FFD2BD'
+  >
+    ### PCBs done right
+    At a time when PCBs were often poorly implemented or a mere afterthought even on full size keyboards, the KBD8X MKII put just as much care into its circuitry as with the larger KBD8X MKII, carrying USB-C, overcurrent protection, and ESD protection when competitors were usually equipped with USB mini.
+  </HorizontalStackBlock>
+
+  <HorizontalStackBlock
+    src="/assets/projects/kbdpad-mkii/img_0005_largesize.jpg" 
+    alt="Paired view"
+    bgColor='F0C6DC'
+    reverse
+  >
+    ### A perfect pair
+    As described, the KBDPAD MKII was designed in tandem with the [KBD8X MKII](/projects/kbd8x-mkii), offering a perfectly matching keyboard for use along with the numpad.  
+
+  </HorizontalStackBlock>
+
+  <div class="container mx-auto">
+
+    <div class="text-center pt-20 px-6">
+      <DefaultMarkdownRenderer>
+        ### A Lasting Legacy
+        From its launch in early 2019, the KBDPAD MKII served as an always-accessible premium numpad for years until its discontinuation.  
+        Its highly-rated visual language common to the KBD8X MKII would serve as a starting point for developing the [Polaris](/projects/polaris), which would eventually turn into the Reference series of designs.  
+      </DefaultMarkdownRenderer>
+    </div>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/kbdpad-mkii/img_0006_fullsize.jpg' 
+      specs={[
+        ["Case Weight", "370g",],
+        ["Dimensions", "87 x 134 x 32mm",],
+        ["Material", "Anodized aluminum case, brass plate",],
+        ["PCB Features", `- In-switch backlighting
+- Num lock indicator/backlight switch
+- All-1U switch compatibility
+- RGB underglow
+- USB Type C
+- ESD and overcurrent protection`,],
+        ["Layouts", "![Layout diagram](/assets/projects/kbdpad-mkii/img_0007_mediumsize.jpg)",],        
+    ]} />
+
+    <ClassicResourcesTable project='kbdpad-mkii' />
+  </div>
+  
+</DefaultLayout>
