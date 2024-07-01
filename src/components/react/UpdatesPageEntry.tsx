@@ -111,6 +111,7 @@ export const UpdatesPageEntry: React.FC<{
           <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-6 flex flex-col-reverse">
             <h2 class="text-3xl font-[335] text-white">{project.title}</h2>
           </div>
+          <a href={`/projects/${project.slug}`} class="w-full h-full absolute" />
           
         </div>
 

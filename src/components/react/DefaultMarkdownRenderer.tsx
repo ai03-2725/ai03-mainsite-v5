@@ -1,0 +1,32 @@
+import type React from "preact/compat";
+
+export const DefaultMarkdownRenderer: React.FC<{
+  children: React.ReactNode
+}> = ({
+  children
+}) => {
+  return (
+    <div class="prose w-full max-w-full
+      prose-h1:text-4xl
+      prose-h1:font-[750]
+      prose-h2:text-3xl
+      prose-h2:font-[675]
+      prose-h3:text-2xl
+      prose-h3:font-[600]
+      prose-h4:text-xl
+      prose-h4:font-[500]
+      prose-h5:text-lg
+      prose-h5:font-[500]
+      prose-h6:text-md
+      prose-h6:font-[500]
+      prose-img:w-full
+      prose-img:lg:w-2/3
+      prose-img:overflow-hidden
+      prose-img:rounded-[3.75px]
+    " >
+
+      {children}
+    </div>
+
+  )
+}

@@ -8,6 +8,9 @@ import { CollapseDiv } from '@components/react/CollapseDiv.tsx'
 import { Spinner } from './Spinner';
 import type { MinimumProjectsIndex } from './SearchableProjectInfiniteScrollWrapper';
 import type { APIResourceEntry } from '@pages/api/resources/[projectId]';
+import { markdownToHTML } from '@scripts/MarkdownToHTML';
+import Markdown from 'react-markdown'
+import { DefaultMarkdownRenderer } from './DefaultMarkdownRenderer';
 
 // The fetch function
 async function fetchResources(project: string): Promise<APIResourceEntry[]> {
@@ -57,23 +60,40 @@ const DownloadsRenderer: React.FC<{
     )
   } else {
     return (
-      <div class="flex flex-col gap-8">
-        {resources.map(resource => {
-          if (resource.fileUrl) {
-            return (
-              <div>
-              </div>
-            )
-          } 
-          else {
-            return (
-              <div key={resource}>
-                <p>{resource.body}</p>
-              </div>
-            )
-          }
-        })}
-      </div>
+      <table class="table-auto">
+        <tbody>
+          {resources.map((resource, index) => {
+            if (resource.fileUrl) {
+              return (
+                <tr key={resource}>
+                  <td class={`ps-8 pe-4 py-6 ${index % 2 === 1 && "bg-zinc-200"}`}>
+                    <p>{resource.label}</p>
+                  </td>
+                  <td class={`pe-8 py-6 ${index % 2 === 1 && "bg-zinc-200"}`}>
+                    <a href={resource.fileUrl} class="underline">Download</a>
+                  </td>
+                </tr>
+              )
+            } 
+            else {
+              return (
+                <tr key={resource}>
+                  <td class={`ps-8 pe-4 py-6 ${index % 2 === 1 && "bg-zinc-200"}`}>
+                    <p>{resource.label}</p>
+                  </td>
+                  <td class={`pe-8 py-6 ${index % 2 === 1 && "bg-zinc-200"}`}>
+                    <DefaultMarkdownRenderer>
+                      <Markdown>
+                        {resource.body}
+                      </Markdown>
+                    </DefaultMarkdownRenderer>
+                  </td>
+                </tr>
+              )
+            }
+          })}
+        </tbody>
+      </table>
     )
   }
 }
@@ -94,8 +114,6 @@ export const DownloadsPageEntry: React.FC<{
     queryFn: async () => fetchResources(project.slug),
     staleTime: Infinity, // Data doesn't change often, and users will likely refresh the page anyways
   })
-
-  const [updatesPaneOpen, setUpdatesPaneOpen] = useState<boolean>(false)
   
 
   return (
@@ -115,11 +133,12 @@ export const DownloadsPageEntry: React.FC<{
           <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-6 flex flex-col-reverse">
             <h2 class="text-3xl font-[335] text-white">{project.title}</h2>
           </div>
+          <a href={`/projects/${project.slug}`} class="w-full h-full absolute" />
           
         </div>
 
         {/* Lower section */}
-        <div class="p-8 w-full">
+        <div class="w-full">
           {isError &&
             // TODO
             <p>Error.</p> 

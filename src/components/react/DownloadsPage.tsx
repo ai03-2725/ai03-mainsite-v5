@@ -1,5 +1,4 @@
 import React from 'preact/compat';
-import { UpdatesPageEntry } from './UpdatesPageEntry';
 import { SearchableInfiniteScroll, type MinimumProjectsIndex } from './SearchableProjectInfiniteScrollWrapper';
 import { DownloadsPageEntry } from './DownloadsPageEntry';
 

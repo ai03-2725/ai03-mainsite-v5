@@ -1,8 +1,7 @@
 ---
 import Layout from '../../layouts/DefaultLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import type { MinimumProjectsIndex } from '@components/react/SearchableProjectInfiniteScrollWrapper';
-import { DownloadsPage } from '@components/react/DownloadsPage';
 
 const allProjects = await getCollection('projects')
 
@@ -17,11 +16,11 @@ const minimumProjectData: MinimumProjectsIndex[] = allProjects.map(project => { 
 
 ---
 
-<Layout title="Downloads">
+<Layout title="About">
 	<div class="container mx-auto pt-12">
 		<div class="w-full text-center">
-			<h1 class="text-[38px] font-[575] mb-3">Downloads and Manuals</h1>
+			<h1 class="text-[38px] font-[575] mb-3">About</h1>
 		</div>
-		<DownloadsPage projects={minimumProjectData} client:only="preact" />
+    <p>Test</p>
 	</div>
 </Layout>

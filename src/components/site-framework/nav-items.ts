@@ -58,6 +58,14 @@ export const NAV_ENTRIES_ROOT: NavEntry = {
         },
         {
           type: "LEAF",
+          title: "Guides and FAQ",
+          url: "/info/",
+        },
+        {
+          type: "DIVIDER"
+        },
+        {
+          type: "LEAF",
           title: "Designer Resources and Utilities",
           url: "/designer-resources/",
         }

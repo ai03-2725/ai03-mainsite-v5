@@ -48,9 +48,6 @@ dependencies:
   '@tanstack/react-query':
     specifier: ^5.49.2
     version: 5.49.2(@preact/compat@17.1.2)
-  '@types/alpinejs':
-    specifier: ^3.13.6
-    version: 3.13.6
   astro:
     specifier: ^4.4.1
     version: 4.4.1(typescript@5.3.3)
@@ -72,6 +69,9 @@ dependencies:
   react-infinite-scroll-hook:
     specifier: ^4.1.1
     version: 4.1.1(@preact/compat@17.1.2)
+  react-markdown:
+    specifier: ^9.0.1
+    version: 9.0.1(@preact/compat@17.1.2)(@types/react@18.3.3)
   rehype-rewrite:
     specifier: ^4.0.2
     version: 4.0.2
@@ -104,9 +104,6 @@ devDependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.12
     version: 0.5.12(tailwindcss@3.4.1)
-  '@types/alpinejs__collapse':
-    specifier: ^3.13.3
-    version: 3.13.3
 
 packages:
 
@@ -1942,15 +1939,6 @@ packages:
       '@types/estree': 1.0.5
     dev: false
 
-  /@types/alpinejs@3.13.6:
-    resolution: {integrity: sha512-BMi1/2uQz7mp30VFn69SzjN7YwQ0QzE4Hn3RMBt4iMpQeasdbMiImv1f5yvK1bYmvjIyG/YFg+CgPxbjIXZk0g==}
-
-  /@types/alpinejs__collapse@3.13.3:
-    resolution: {integrity: sha512-k8Xyov6K9zY32qbjeX5rdbiO2gONm5A2YhI6cWWETlrmM6r9EcZp6G/CfwxKBpRPRSS/MnCWMZQb8paIPw+z1Q==}
-    dependencies:
-      '@types/alpinejs': 3.13.6
-    dev: true
-
   /@types/babel__core@7.20.5:
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
     dependencies:
@@ -2036,6 +2024,17 @@ packages:
     resolution: {integrity: sha512-7xMnVEcZFu0DikYjWOlRq7NTPETrm7teqUT2WkQjrTIkEgUyyGdWsj/Zg8bEJt5TNklzbPD1X3fqfsHw3SpapQ==}
     dependencies:
       undici-types: 5.26.5
+    dev: false
+
+  /@types/prop-types@15.7.12:
+    resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
+    dev: false
+
+  /@types/react@18.3.3:
+    resolution: {integrity: sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==}
+    dependencies:
+      '@types/prop-types': 15.7.12
+      csstype: 3.1.3
     dev: false
 
   /@types/sax@1.2.7:
@@ -2809,6 +2808,10 @@ packages:
       css-tree: 2.2.1
     dev: false
 
+  /csstype@3.1.3:
+    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+    dev: false
+
   /debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -3556,6 +3559,10 @@ packages:
 
   /html-escaper@3.0.3:
     resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
+    dev: false
+
+  /html-url-attributes@3.0.0:
+    resolution: {integrity: sha512-/sXbVCWayk6GDVg3ctOX6nxaVj7So40FcFAnWlWGNAB1LpYKcV5Cd10APjPjW80O7zYW2MsjBV4zZ7IZO5fVow==}
     dev: false
 
   /html-void-elements@3.0.0:
@@ -5083,6 +5090,28 @@ packages:
       react: '>=16.8.0'
     dependencies:
       react: /@preact/compat@17.1.2(preact@10.22.0)
+    dev: false
+
+  /react-markdown@9.0.1(@preact/compat@17.1.2)(@types/react@18.3.3):
+    resolution: {integrity: sha512-186Gw/vF1uRkydbsOIkcGXw7aHq0sZOCRFFjGrr7b9+nVZg4UfA4enXCaxm4fUzecU38sWfrNDitGhshuU7rdg==}
+    peerDependencies:
+      '@types/react': '>=18'
+      react: '>=18'
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/react': 18.3.3
+      devlop: 1.1.0
+      hast-util-to-jsx-runtime: 2.3.0
+      html-url-attributes: 3.0.0
+      mdast-util-to-hast: 13.0.2
+      react: /@preact/compat@17.1.2(preact@10.22.0)
+      remark-parse: 11.0.0
+      remark-rehype: 11.1.0
+      unified: 11.0.4
+      unist-util-visit: 5.0.0
+      vfile: 6.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /read-cache@1.0.0:

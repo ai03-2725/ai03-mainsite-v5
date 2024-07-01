@@ -1,5 +1,6 @@
 // Returns files/downloads for a given project
 
+import { sortResources } from '@scripts/sortResources';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
@@ -17,9 +18,11 @@ export const GET: APIRoute = async ({ params, request }) => {
 
   return new Response(
     JSON.stringify(
-      allResources
-      .filter(resource => resource.id.includes(projectId))
-      .filter(resource => resource.data.draft !== true)
+      sortResources(
+        allResources
+        .filter(resource => resource.id.includes(projectId))
+        .filter(resource => resource.data.draft !== true)
+      )
       .map(resource => ({label: resource.data.label, fileUrl: resource.data.fileUrl || null, body: resource.body}))
     )
   )
