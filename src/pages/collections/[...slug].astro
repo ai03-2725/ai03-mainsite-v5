@@ -28,5 +28,10 @@ const { Content } = await collection.render();
 
 ---
 
-<Content />
+{collection.data.projects.length !== 1 ?
+  <Content />
+  :
+  <meta http-equiv="refresh" content={`0; URL='https://ai03.com/projects/${collection.data.projects[0].slug}'`} />
+}
+
 

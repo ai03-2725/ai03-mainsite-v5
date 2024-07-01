@@ -1,16 +1,11 @@
-import { Icon } from '@iconify-icon/react';
-import type { CollectionEntry } from "astro:content";
 import type React from "preact/compat";
-import { useState } from 'preact/compat';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
-import type { APIUpdateEntry } from '@pages/api/updates/[projectId]';
-import { CollapseDiv } from '@components/react/CollapseDiv.tsx'
+import { useQuery } from '@tanstack/react-query';
 import { Spinner } from './Spinner';
 import type { MinimumProjectsIndex } from './SearchableProjectInfiniteScrollWrapper';
 import type { APIResourceEntry } from '@pages/api/resources/[projectId]';
-import { markdownToHTML } from '@scripts/MarkdownToHTML';
 import Markdown from 'react-markdown'
 import { DefaultMarkdownRenderer } from './DefaultMarkdownRenderer';
+import rehypeRewrite from 'rehype-rewrite'
 
 // The fetch function
 async function fetchResources(project: string): Promise<APIResourceEntry[]> {
@@ -83,7 +78,14 @@ const DownloadsRenderer: React.FC<{
                   </td>
                   <td class={`pe-8 py-6 ${index % 2 === 1 && "bg-zinc-200"}`}>
                     <DefaultMarkdownRenderer>
-                      <Markdown>
+                      <Markdown rehypePlugins={[[rehypeRewrite, {
+                        selector: 'img',
+                        rewrite: (node) => {
+                          if (node.type === 'element') {
+                            node.properties.loading = 'lazy';
+                          }
+                        }
+                      }]]}>
                         {resource.body}
                       </Markdown>
                     </DefaultMarkdownRenderer>
@@ -119,53 +121,51 @@ export const DownloadsPageEntry: React.FC<{
   return (
 
     // Outer wrapper
-    <div class="flex flex-col bg-zinc-100 rounded-[3.75px] overflow-hidden" >
+    <div class="flex flex-col bg-zinc-100 rounded-[3.75px] overflow-hidden mb-5" >
 
-
-
-        {/* Header */}
-        <div class="
-          aspect-[1.618] w-full overflow-hidden relative
-        ">
-          <div class="absolute w-full h-full bg-zinc-500">
-            <img src={project.src} alt={`Cover image for ${project.title}`} loading="lazy" class="object-cover w-full" />
-          </div>
-          <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-6 flex flex-col-reverse">
-            <h2 class="text-3xl font-[335] text-white">{project.title}</h2>
-          </div>
-          <a href={`/projects/${project.slug}`} class="w-full h-full absolute" />
-          
+      {/* Header */}
+      <div class="
+        aspect-[1.618] w-full overflow-hidden relative
+      ">
+        <div class="absolute w-full h-full bg-zinc-500">
+          <img src={project.src} alt={`Cover image for ${project.title}`} loading="lazy" class="object-cover w-full" />
         </div>
+        <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-6 flex flex-col-reverse">
+          <h2 class="text-3xl font-[335] text-white">{project.title}</h2>
+        </div>
+        <a href={`/projects/${project.slug}`} class="w-full h-full absolute" />
+        
+      </div>
 
-        {/* Lower section */}
-        <div class="w-full">
-          {isError &&
-            // TODO
-            <p>Error.</p> 
-          }
-          {isLoading || !data && 
-            // TODO
-            <div class="w-full h-full flex flex-row justify-center items-center">
-              <div>
-                <Spinner size={36} width={3} />
+      {/* Lower section */}
+      <div class="w-full">
+        {isError &&
+          // TODO
+          <p>Error.</p> 
+        }
+        {isLoading || !data && 
+          // TODO
+          <div class="w-full h-full flex flex-row justify-center items-center">
+            <div>
+              <Spinner size={36} width={3} />
+            </div>
+          </div>
+        }
+        {!isLoading && data && 
+          <div class="h-full">
+            {data.length > 0 ?
+              <div class="flex flex-col h-full">
+                <DownloadsRenderer loading={isLoading} error={isError} resources={data} project={project.slug} />
               </div>
-            </div>
-          }
-          {!isLoading && data && 
-            <div class="h-full">
-              {data.length > 0 ?
-                <div class="flex flex-col h-full">
-                  <DownloadsRenderer loading={isLoading} error={isError} resources={data} project={project.slug} />
-                </div>
-              :
-                <div>
-                  No resources exist for this project.
-                </div>
-              }
-            </div>
-          }
+            :
+              <div class="px-8 py-6">
+                <p>No resources exist for this project.</p>
+              </div>
+            }
+          </div>
+        }
 
-        </div>
+      </div>
 
     </div>
 

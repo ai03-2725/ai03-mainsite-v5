@@ -32,7 +32,7 @@ const {
 
 // Fetch updates related to the project
 const updatesRaw = await getCollection('updates', ({ data, id }) => {
-  return data.draft !== true && id.startsWith(project)
+  return data.draft !== true && id.startsWith(`${project}/`)
 });
 
 const updates = updatesRaw.sort((a, b) => a.data.date > b.data.date ? -1 : 1)

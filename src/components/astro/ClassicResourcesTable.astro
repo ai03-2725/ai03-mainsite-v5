@@ -11,7 +11,7 @@ interface Props {
 const { project } = Astro.props;
 
 const resourcesRaw = await getCollection('resources', ({ data, id }) => {
-  return data.draft !== true && id.startsWith(project)
+  return data.draft !== true && id.startsWith(`${project}/`)
 });
 
 let resourcesRendered = []

@@ -7,10 +7,128 @@ coverImage:
   alt: Andromeda cover image
 releaseDate: 2020-01-01
 ---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
 
-# Test mdx content
-Hello world!
+<DefaultLayout title={frontmatter.title}>
 
-## Test header 2
-Some additional content  
-Another line of text
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="ANDROMEDA"
+      >
+      <DefaultMarkdownRenderer>
+        For those who demand the best of the best, Andromeda offers a carefully sculpted design coupled with proven gasket internals for extreme levels of typing comfort and stunning visuals.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'andromeda'} 
+      slides={[
+        {
+          url: "/assets/projects/andromeda/img_0010_largesize.jpg",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/andromeda/img_0002_largesize.avif",
+          alt: "Top render",
+        },
+        {
+          url: "/assets/projects/andromeda/img_0001_largesize.avif",
+          alt: "Bottom-rear render",
+        },
+        {
+          url: "/assets/projects/andromeda/img_0015_largesize.avif",
+          alt: "Bottom-front render",
+        },
+        {
+          url: "/assets/projects/andromeda/img_0013_fullsize.avif",
+          alt: "Side macro view",
+        },
+        {
+          url: "/assets/projects/andromeda/img_0011_fullsize.avif",
+          alt: "Weight view through plate",
+        },
+        {
+          url: "/assets/projects/andromeda/img_0012_fullsize.avif",
+          alt: "Top TKL cluster area view",
+        },
+        {
+          url: "/assets/projects/andromeda/img_0014_largesize.jpg",
+          alt: "Alternative side view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "hhttps://geekhack.org/index.php?topic=106983.0",
+        },
+        {
+          label: "Product Page",
+        },
+        {
+          label: "Build Guide",
+          url: "https://info.ai03.com/books/andromeda-build-guide",
+        },
+        {
+          label: "Files and Resources",
+          url: "#resources-table",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/andromeda/img_0002_largesize.avif">
+          ### The Beauty and the Beast
+          Designed as a cost-no-object keyboard, Andromeda’s sculpted side profiles have been modelled to provide a satin fabric-like elegance, which combined with the soft curvatures used throughout the board give a delicate feel which lead the eyes throughout the design.  
+          Strong straight horizontals strike a heavy contrast to the softer elements to offer the bold, rigid impression to accompany the elegance. The careful balance of both constructs an elegant yet minimal, graceful yet powerful aesthetic fit for any environment.
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/andromeda/img_0013_fullsize.avif">
+          ### The Journey to the Peak
+          The design knowledge acquired through many of ai03’s designs in the past have been put forth to full effect with Andromeda, taking elements such as the rear-angled weight and gasket mounting of Polaris and refining them to their ultimate levels.
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/andromeda/img_0011_fullsize.avif">
+          ### Commitment To Detail
+          The small details make the biggest differences, and no detail has been left unchecked with Andromeda.
+          Interior screws provides a beautiful screwless exterior that does not interfere with the overall form, and a USB daughterboard separate from the main PCB allows for replacing the USB connector in case it wears out.
+        </ClassicImageTextBlock> 
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/andromeda/img_0014_largesize.jpg' 
+      specs={[
+        ["Case", "Aluminum, anodized silver or grey",],
+        ["Weight", "Steel, matte PVD; paired grey weight to silver case and silver weight to grey case",],
+        ["Plate", "Aluminum, minimal compat, gasket mount",],
+        ["PCB", "Soldered (non-hotswap), STM32 ARM microcontroller; USB-C via unified daughterboard",],
+        ["Case Mass", "~3.2kg (Case, weight, plate)",],
+        ["Typing Angle", "8 degrees",],
+        ["Layouts supported", "![Layout Diagram](/assets/projects/andromeda/img_0016_largesize.png)",],
+        ["Units Produced", "100 per vendor; 200 total",],
+        ["Price (At time of original sale)", "750USD",],
+        ["Vendors (At time of original sale)", "CannonKeys (North America), Deskeys (Asia)",],
+    ]} />
+
+    <ClassicResourcesTable project='andromeda' />
+
+  </div>
+
+</DefaultLayout>

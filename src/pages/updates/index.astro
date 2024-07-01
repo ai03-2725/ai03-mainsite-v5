@@ -9,11 +9,13 @@ const allProjects = await getCollection('projects')
 // This page relies mostly on preact real-time for filtering the displayed projects and fetching updates from the /api endpoint
 // Prepare static data to pass to the script
 
-const minimumProjectData: MinimumProjectsIndex[] = allProjects.map(project => { return {
-	slug: project.slug,
-	title: project.data.title,
-	src: project.data.coverImage.url
-}})
+const minimumProjectData: MinimumProjectsIndex[] = allProjects
+	.sort((a, b) => a.data.releaseDate < b.data.releaseDate ? 1 : -1)
+	.map(project => { return {
+		slug: project.slug,
+		title: project.data.title,
+		src: project.data.coverImage.url
+	}})
 
 ---
 

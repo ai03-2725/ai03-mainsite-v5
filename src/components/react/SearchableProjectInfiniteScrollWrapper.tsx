@@ -43,7 +43,7 @@ export const SearchableInfiniteScroll: React.FC<{
   switch(displayStyle) {
 
     case "COLUMNS":
-      childrenContainerClasses = "columns-1 md:columns-2 xl:columns-3"
+      childrenContainerClasses = "columns-1 md:columns-2 xl:columns-3 gap-5"
       initialDisplayedItems = 6
       itemsFetchedPerPage = 6
       break
