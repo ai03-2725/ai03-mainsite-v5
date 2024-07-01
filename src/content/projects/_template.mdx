@@ -1,0 +1,133 @@
+---
+draft: false
+title: BoardNameDisplay
+slogan: Slogan
+coverImage:
+  url: "/assets/projects/boardslug/img_0044_largesize.avif"
+  alt: BoardNameDisplay cover image
+releaseDate: 2020-06-16
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="BOARDNAMECAPS"
+      slogan="SloganTextIfExists"
+      >
+      <DefaultMarkdownRenderer>
+        Header description text if exists
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'boardslug'} 
+      slides={[
+        {
+          url: "/assets/projects/boardslug/img_0044_largesize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/boardslug/img_0043_largesize.avif",
+          alt: "AAA view",
+        },
+        {
+          url: "/assets/projects/boardslug/img_0040_largesize.avif",
+          alt: "BBB view",
+        },
+        {
+          url: "/assets/projects/boardslug/img_0047_largesize.avif",
+          alt: "CCC view",
+        },
+        {
+          url: "/assets/projects/boardslug/img_0043_largesize.avif",
+          alt: "AAA view",
+        },
+        {
+          url: "/assets/projects/boardslug/img_0040_largesize.avif",
+          alt: "BBB view",
+        },
+        {
+          url: "/assets/projects/boardslug/img_0047_largesize.avif",
+          alt: "CCC view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=106983.0",
+        },
+        {
+          label: "Product Page",
+        },
+        {
+          label: "Build Guide",
+          url: "https://info.ai03.com/books/boardslug-build-guide",
+        },
+        {
+          label: "Files and Resources",
+          url: "#resources-table",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/boardslug/img_0043_largesize.avif">
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/boardslug/img_0040_largesize.avif">
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/boardslug/img_0042_largesize.avif">
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/boardslug/img_0047_largesize.jpg" >
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock>
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/boardslug/img_0045_largesize.avif' 
+      footerNote='Footer note if exists'
+      specs={[
+        ["Key", "Value",],
+        ["Key", "Value",],
+        ["Key", "Value",],
+        ["ImageKey", "![Alt](/assets/projects/boardslug/img_0045_largesize.avif)"]
+    ]} />
+
+    <ClassicResourcesTable project='boardslug' />
+
+  </div>
+
+</DefaultLayout>

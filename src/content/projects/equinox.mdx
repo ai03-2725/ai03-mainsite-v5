@@ -1,0 +1,128 @@
+---
+draft: false
+title: Equinox
+slogan: Compact 40% Keyboard
+coverImage:
+  url: "/assets/projects/equinox/img_0009_mediumsize.jpg"
+  alt: Equinox cover image
+releaseDate: 2020-06-16
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="EQUINOX"
+      >
+      <DefaultMarkdownRenderer>
+        Introducing the Equinox, a custom keyboard designed for premium aesthetics and typing feel in a compact package.      
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'equinox'} 
+      slides={[
+        {
+          url: "/assets/projects/equinox/img_0009_mediumsize.jpg",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/equinox/img_0005_fullsize.avif",
+          alt: "Top photo ANSI",
+        },
+        {
+          url: "/assets/projects/equinox/img_0008_fullsize.avif",
+          alt: "Weight photo",
+        },
+        {
+          url: "/assets/projects/equinox/img_0001_fullsize.avif",
+          alt: "Rear photo",
+        },
+        {
+          url: "/assets/projects/equinox/img_0003_fullsize.avif",
+          alt: "Top photo ANSI angled",
+        },
+        {
+          url: "/assets/projects/equinox/img_0007_largesize.avif",
+          alt: "Exploded view",
+        },
+        {
+          url: "/assets/projects/equinox/img_0010_mediumsize.avif",
+          alt: "Top photo angled ISO",
+        },
+        {
+          url: "/assets/projects/equinox/img_0004_mediumsize.avif",
+          alt: "Top photo ISO",
+        },
+        {
+          url: "/assets/projects/equinox/img_0002_mediumsize.avif",
+          alt: "Top render",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=101303.0",
+        },
+        {
+          label: "Product Page",
+        },
+        {
+          label: "Files and Resources",
+          url: "#resources-table",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/equinox/img_0005_fullsize.avif">
+          ### Beyond the Typical
+          Equinox skips the plate to offer maximum flex.  
+          The PCB is secured by its tabs from below by rubber gaskets directly to the case, earning the name of tabbed "gasket" PCB mount.  
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/equinox/img_0001_fullsize.avif">
+          ### Compact and Classy
+          The winkeyless blockers have been implemented for a classic aesthetic, regardless of the board's small footprint.  
+          An internal weight adds sufficient mass for use at a desk, while the all-aluminum exterior provides durability on the go.
+        </ClassicImageTextBlock> 
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      footerNote='Credits to ChrisSwires and Ion Keyboards for photos'
+      specs={[
+        ["Typing Angle", "6deg",],
+        ["Case Material", `Aluminum
+Brass internal weight`,],
+        ["Front Ledge Height", "17.25mm",],
+        ["PCB", "Soldered (non-hotswap), backlight and underglow LED support",],
+        ["Weight", "740g",],
+        ["Vendors", "Cannonkeys, Yusha Kobo, Mykeyboard.eu",],
+        ["Price (at time of sale)", "Roughly 270USD",],
+        ["Supported Layouts", "![Layout diagram](/assets/projects/equinox/img_0006_largesize.png)",],
+    ]} />
+
+    <ClassicResourcesTable project='equinox' />
+
+  </div>
+
+</DefaultLayout>

@@ -10,6 +10,7 @@ import CollapseDiv from "@components/astro/CollapseDiv.astro";
 import { Icon } from "astro-icon/components";
 import CircularProgress from "./CircularProgress.astro";
 import Spinner from "./Spinner.astro";
+import { getUpdateDateString, sortUpdates } from "@scripts/sortUpdates";
 
 interface Props {
   project: string,
@@ -35,7 +36,7 @@ const updatesRaw = await getCollection('updates', ({ data, id }) => {
   return data.draft !== true && id.startsWith(`${project}/`)
 });
 
-const updates = updatesRaw.sort((a, b) => a.data.date > b.data.date ? -1 : 1)
+const updates = sortUpdates(updatesRaw)
 const firstUpdate = updates.length > 0 ? updates[0] : null
 
 ---
@@ -106,7 +107,7 @@ const firstUpdate = updates.length > 0 ? updates[0] : null
               </div>
               <div>
                 <p class="m-0 text-xl font-[550]">{statusToDisplayText(update.data.status)}</p>
-                <p class="m-0">{update.data.date.getFullYear()}-{update.data.date.getMonth()}-{update.data.date.getDate()}</p>
+                <p class="m-0">{getUpdateDateString(update)}</p>
               </div>
             </div>
             <div class="md:w-3/4">

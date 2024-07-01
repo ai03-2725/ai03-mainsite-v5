@@ -1,5 +1,6 @@
 // Returns updates for a given project
 
+import { getUpdateDateString, sortUpdates } from '@scripts/sortUpdates';
 import { dateToDisplayString } from '@scripts/util';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
@@ -19,11 +20,12 @@ export const GET: APIRoute = async ({ params, request }) => {
 
   return new Response(
     JSON.stringify(
-      allUpdates
-      .filter(update => update.id.includes(projectId))
-      .filter(update => update.data.draft !== true)
-      .sort((a, b) => a.data.date > b.data.date ? -1 : 1)
-      .map(update => ({date: dateToDisplayString(update.data.date), status: update.data.status, body: update.body}))
+      sortUpdates(
+        allUpdates
+        .filter(update => update.id.includes(projectId))
+        .filter(update => update.data.draft !== true)
+      )
+      .map(update => ({date: getUpdateDateString(update), status: update.data.status, body: update.body}))
     )
   )
 }

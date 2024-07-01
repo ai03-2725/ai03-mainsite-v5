@@ -37,7 +37,6 @@ const updates = defineCollection({
   type: 'content',
   schema: z.object({
     draft: z.optional(z.boolean()),
-    date: z.date(),
     status: PROJECT_STATUSES,
   })
 });

@@ -1,0 +1,136 @@
+---
+draft: false
+title: Equinox XL
+slogan: Compact 50% Keyboard
+coverImage:
+  url: "/assets/projects/equinox-xl/img_0045_largesize.avif"
+  alt: Equinox XL cover image
+releaseDate: 2020-06-16
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="EQUINOX XL"
+      >
+      <DefaultMarkdownRenderer>
+        Equinox is back - The compact size and PCB-mount structure remain, but this time with more keys and a screwless exterior.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'equinox-xl'} 
+      slides={[
+        {
+          url: "/assets/projects/equinox-xl/img_0045_largesize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/equinox-xl/img_0038_fullsize.avif",
+          alt: "Side view",
+        },
+        {
+          url: "/assets/projects/equinox-xl/img_0039_fullsize.avif",
+          alt: "Weight view",
+        },
+        {
+          url: "/assets/projects/equinox-xl/img_0046_fullsize.avif",
+          alt: "Bottom side view",
+        },
+        {
+          url: "/assets/projects/equinox-xl/img_0042_fullsize.avif",
+          alt: "Bottom view",
+        },
+        {
+          url: "/assets/projects/equinox-xl/img_0037_fullsize.avif",
+          alt: "Side view",
+        },
+        {
+          url: "/assets/projects/equinox-xl/img_0040_fullsize.avif",
+          alt: "PCB view",
+        },
+        {
+          url: "/assets/projects/equinox-xl/img_0041_fullsize.avif",
+          alt: "Assembly view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=106983.0",
+        },
+        {
+          label: "Product Page",
+        },
+        {
+          label: "Build Guide",
+          url: "https://info.ai03.com/books/equinox-xl-build-guide",
+        },
+        {
+          label: "Files and Resources",
+          url: "#resources-table",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/equinox-xl/img_0043_largesize.avif">
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/equinox-xl/img_0040_largesize.avif">
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/equinox-xl/img_0042_largesize.avif">
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/equinox-xl/img_0047_largesize.jpg" >
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock>
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/equinox-xl/img_0045_largesize.avif' 
+      footerNote='Footer note if exists'
+      specs={[
+        ["Key", "Value",],
+        ["Key", "Value",],
+        ["Key", "Value",],
+        ["ImageKey", "![Alt](/assets/projects/equinox-xl/img_0045_largesize.avif)"]
+    ]} />
+
+    <ClassicResourcesTable project='equinox-xl' />
+
+  </div>
+
+</DefaultLayout>
