@@ -21,29 +21,46 @@ export type MinimumProjectsIndex = {
   src: string
 }
 
-
 // React-query preparations
 const queryClient = new QueryClient()
 
-
-// Inf scrolling
-const INITIAL_DISPLAYED_ITEMS = 1
-const ITEMS_FETCHED_PER_PAGE = 1
-
-
+// Main component
 export const SearchableInfiniteScroll: React.FC<{
   projects: MinimumProjectsIndex[],
+  displayStyle: 'FULL_WIDTH' | 'COLUMNS'
   ChildElement: React.ComponentType<{project: MinimumProjectsIndex}>
 }> = ({
   projects,
+  displayStyle,
   ChildElement
 }) => {
 
+  // Display configuration
+  let childrenContainerClasses = ""
+  let initialDisplayedItems = 1
+  let itemsFetchedPerPage = 1
+
+  switch(displayStyle) {
+
+    case "COLUMNS":
+      childrenContainerClasses = "columns-1 md:columns-2 xl:columns-3"
+      initialDisplayedItems = 6
+      itemsFetchedPerPage = 6
+      break
+
+    case "FULL_WIDTH":
+      childrenContainerClasses = "flex flex-col gap-8"
+      initialDisplayedItems = 3
+      itemsFetchedPerPage = 6
+      break
+
+  }
+
+  // Debounce the input to prevent excessive redraws
   const [searchTerm, setSearchTerm] = useState<string>("")
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>(searchTerm)
   const timer = useRef<NodeJS.Timeout>();
 
-  // Debounce the input to prevent excessive redraws
   useEffect(() => {
     timer.current = setTimeout(() => setDebouncedSearchTerm(searchTerm), 300);
     return () => {
@@ -61,18 +78,18 @@ export const SearchableInfiniteScroll: React.FC<{
   }, [debouncedSearchTerm])
 
   // Infinite scrolling data
-  const [displayedItemsList, setDisplayedItemsList] = useState<MinimumProjectsIndex[]>(filteredProjects.slice(0, INITIAL_DISPLAYED_ITEMS))
+  const [displayedItemsList, setDisplayedItemsList] = useState<MinimumProjectsIndex[]>(filteredProjects.slice(0, initialDisplayedItems))
   const [loadingMoreItems, setLoadingMoreItems] = useState<boolean>(false)
   const displayMoreItems = () => {
     setLoadingMoreItems(true)
-    setDisplayedItemsList([...displayedItemsList, ...filteredProjects.slice(displayedItemsList.length, displayedItemsList.length + ITEMS_FETCHED_PER_PAGE)])
+    setDisplayedItemsList([...displayedItemsList, ...filteredProjects.slice(displayedItemsList.length, displayedItemsList.length + itemsFetchedPerPage)])
     setLoadingMoreItems(false)
   }
   const hasNextPage = displayedItemsList.length < filteredProjects.length
 
   // Reset the displayed items when the filtered projects list changes
   useEffect(() => {
-    setDisplayedItemsList(filteredProjects.slice(0, INITIAL_DISPLAYED_ITEMS))
+    setDisplayedItemsList(filteredProjects.slice(0, initialDisplayedItems))
   }, [filteredProjects])
 
   // Infinite scrolling hook
@@ -101,8 +118,8 @@ export const SearchableInfiniteScroll: React.FC<{
 
         </div>
 
-
-        <div class="flex flex-col gap-8">  
+        {/* Child items list */}
+        <div class={childrenContainerClasses}>  
           {displayedItemsList.map(project => {
             return (
               <ChildElement project={project} />

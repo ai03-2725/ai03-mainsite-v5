@@ -1,6 +1,7 @@
 import React from 'preact/compat';
 import { UpdatesPageEntry } from './UpdatesPageEntry';
 import { SearchableInfiniteScroll, type MinimumProjectsIndex } from './SearchableProjectInfiniteScrollWrapper';
+import { DownloadsPageEntry } from './DownloadsPageEntry';
 
 export const DownloadsPage: React.FC<{
   projects: MinimumProjectsIndex[]
@@ -9,6 +10,6 @@ export const DownloadsPage: React.FC<{
 }) => {
 
   return (
-    <SearchableInfiniteScroll projects={projects} ChildElement={UpdatesPageEntry} />
+    <SearchableInfiniteScroll projects={projects} displayStyle='COLUMNS' ChildElement={DownloadsPageEntry} />
   )
 }

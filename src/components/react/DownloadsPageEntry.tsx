@@ -7,10 +7,11 @@ import type { APIUpdateEntry } from '@pages/api/updates/[projectId]';
 import { CollapseDiv } from '@components/react/CollapseDiv.tsx'
 import { Spinner } from './Spinner';
 import type { MinimumProjectsIndex } from './SearchableProjectInfiniteScrollWrapper';
+import type { APIResourceEntry } from '@pages/api/resources/[projectId]';
 
 // The fetch function
-async function fetchUpdates(project: string): Promise<APIUpdateEntry[]> {
-  return fetch(`/api/updates/${project}`)
+async function fetchResources(project: string): Promise<APIResourceEntry[]> {
+  return fetch(`/api/resources/${project}`)
   .then((response) => {
     if (response.status === 429) {
       throw new Error("429")
@@ -25,15 +26,15 @@ async function fetchUpdates(project: string): Promise<APIUpdateEntry[]> {
   })
 }
 
-// The right pane display for updates
-const UpdatesRenderer: React.FC<{
+// The right pane display for resources/downloads
+const DownloadsRenderer: React.FC<{
   project: string,
-  updates: APIUpdateEntry[] | undefined,
+  resources: APIResourceEntry[] | undefined,
   loading: boolean,
   error: boolean
 }> = ({
   project,
-  updates,
+  resources,
   loading,
   error
 }) => {
@@ -46,7 +47,7 @@ const UpdatesRenderer: React.FC<{
       </div>
     )
   }
-  else if (loading || !updates) {
+  else if (loading || !resources) {
     return (
       <div class="flex flex-row justify-center items-center">
         <div>
@@ -57,32 +58,40 @@ const UpdatesRenderer: React.FC<{
   } else {
     return (
       <div class="flex flex-col gap-8">
-        {updates.map(updateEntry => (
-          <div key={updateEntry}>
-            <p>{updateEntry.body}</p>
-          </div>
-        ))}
+        {resources.map(resource => {
+          if (resource.fileUrl) {
+            return (
+              <div>
+              </div>
+            )
+          } 
+          else {
+            return (
+              <div key={resource}>
+                <p>{resource.body}</p>
+              </div>
+            )
+          }
+        })}
       </div>
     )
   }
 }
 
 // The whole card
-export const UpdatesPageEntry: React.FC<{
+export const DownloadsPageEntry: React.FC<{
   project: MinimumProjectsIndex
 }> = ({
   project
 }) => {
-
-  const queryClient = useQueryClient()
 
   const { 
     data,
     isLoading,
     isError
   } = useQuery({
-    queryKey: ['fetchProjectUpdates', project.slug],
-    queryFn: async () => fetchUpdates(project.slug),
+    queryKey: ['fetchProjectResources', project.slug],
+    queryFn: async () => fetchResources(project.slug),
     staleTime: Infinity, // Data doesn't change often, and users will likely refresh the page anyways
   })
 
@@ -94,16 +103,11 @@ export const UpdatesPageEntry: React.FC<{
     // Outer wrapper
     <div class="flex flex-col bg-zinc-100 rounded-[3.75px] overflow-hidden" >
 
-      {/* Upper horizontal stack */}
-      <div class="flex flex-col md:flex-row">
 
-        {/* Left col */}
+
+        {/* Header */}
         <div class="
-          aspect-[1.618] 
-          w-full 
-          md:w-1/2
-          xl:w-1/3
-          overflow-hidden relative
+          aspect-[1.618] w-full overflow-hidden relative
         ">
           <div class="absolute w-full h-full bg-zinc-500">
             <img src={project.src} alt={`Cover image for ${project.title}`} loading="lazy" class="object-cover w-full" />
@@ -114,13 +118,8 @@ export const UpdatesPageEntry: React.FC<{
           
         </div>
 
-        {/* Right col */}
-        <div class="
-          p-8
-          w-full
-          md:w-1/2
-          xl:w-2/3
-        ">
+        {/* Lower section */}
+        <div class="p-8 w-full">
           {isError &&
             // TODO
             <p>Error.</p> 
@@ -137,52 +136,17 @@ export const UpdatesPageEntry: React.FC<{
             <div class="h-full">
               {data.length > 0 ?
                 <div class="flex flex-col h-full">
-                  <div class="grow">
-                    {/* Todo - Latest status */}
-                  </div>
-                  <div class="flex flex-col items-start gap-2">
-                    <p>Last Updated {data[0].date}</p>
-                    {data.length > 1 ?
-                      <button 
-                        class={`py-2 px-4 bg-zinc-600 text-white rounded-[2.375px]`}
-                        onClick={() => setUpdatesPaneOpen(!updatesPaneOpen)}
-                      >
-                        Show Update History
-                      </button>
-                    :
-                      <button
-                        class={`py-2 px-4 bg-zinc-400 text-white rounded-[2.375px]`}
-                        disabled
-                      >
-                        All Updates Shown
-                      </button>
-                    }
-
-                  </div>
+                  <DownloadsRenderer loading={isLoading} error={isError} resources={data} project={project.slug} />
                 </div>
               :
                 <div>
-                  No updates exist for this project.
+                  No resources exist for this project.
                 </div>
               }
             </div>
           }
 
         </div>
-
-      </div>
-
-      {/* Lower updates pane, collapsed by default*/}
-      <div class="bg-zinc-200">
-        <CollapseDiv open={updatesPaneOpen}>
-          <div>
-            <div class="m-8">
-              <UpdatesRenderer loading={isLoading} error={isError} updates={data} project={project.slug} />
-            </div>
-          </div>
-        </CollapseDiv>
-      </div>
-
 
     </div>
 

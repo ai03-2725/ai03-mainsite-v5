@@ -16,6 +16,17 @@ export const GET: APIRoute = async ({ params, request }) => {
   const projectId = params.projectId
 
   return new Response(
-    JSON.stringify(allResources.filter(resource => resource.id.includes(projectId)))
+    JSON.stringify(
+      allResources
+      .filter(resource => resource.id.includes(projectId))
+      .filter(resource => resource.data.draft !== true)
+      .map(resource => ({label: resource.data.label, fileUrl: resource.data.fileUrl || null, body: resource.body}))
+    )
   )
+}
+
+export type APIResourceEntry = {
+  label: string,
+  fileUrl: string | null,
+  body: string
 }

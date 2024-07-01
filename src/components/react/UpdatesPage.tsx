@@ -9,6 +9,6 @@ export const UpdatesPage: React.FC<{
 }) => {
 
   return (
-    <SearchableInfiniteScroll projects={projects} ChildElement={UpdatesPageEntry} />
+    <SearchableInfiniteScroll projects={projects} displayStyle='FULL_WIDTH' ChildElement={UpdatesPageEntry} />
   )
 }
