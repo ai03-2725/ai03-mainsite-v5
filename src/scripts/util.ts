@@ -4,7 +4,7 @@ export const getThumbnailUrl: (originalUrl: string) => string = (originalUrl) =>
 
   const fileName = originalUrl.split(new RegExp("giantsize|fullsize|largesize|mediumsize"))[0]
   return `${fileName}thumbnail.avif`
-  
+
 }
 
 export const statusToDisplayText: (status: ProjectStatuses) => string = (status) => {
@@ -23,7 +23,7 @@ export const statusToDisplayText: (status: ProjectStatuses) => string = (status)
 
     case "preparing-sale":
       return "Preparing for sale"
-    
+
     default:
       const dashesReplacedString = status.replaceAll("-", " ")
       return dashesReplacedString.charAt(0).toUpperCase() + dashesReplacedString.substring(1)
@@ -32,7 +32,7 @@ export const statusToDisplayText: (status: ProjectStatuses) => string = (status)
 
 export const statusToIcon: (status: ProjectStatuses | undefined | null) => string = (status) => {
 
-  switch(status) {
+  switch (status) {
 
     case "announced":
       return "ph:bell-ringing"
@@ -54,11 +54,11 @@ export const statusToIcon: (status: ProjectStatuses | undefined | null) => strin
     case "extras-sale":
     case "final-sale":
       return "ph:clock-countdown"
-      
+
     case "preorder-closed":
     case "gb-closed":
       return "ph:calendar-check"
-      
+
     case "preorder":
     case "group-buy":
     case "ordered":
@@ -78,10 +78,10 @@ export const statusToIcon: (status: ProjectStatuses | undefined | null) => strin
 
     case "restocking":
       return "ph:clock-clockwise"
-      
+
     case "sold-out":
       return "ph:tote"
-      
+
     case "pre-announcement":
     default:
       return "ph:flag-banner-fold"
@@ -90,60 +90,64 @@ export const statusToIcon: (status: ProjectStatuses | undefined | null) => strin
 
 export const statusToProgress: (status: ProjectStatuses | undefined | null) => number = (status) => {
 
-switch(status) {
+  switch (status) {
 
-  case "pre-announcement":
-  case "archived":
-  case "eol":
-  case "cancelled":
-  case "on-hold":
-    return 0
+    case "pre-announcement":
+    case "archived":
+    case "eol":
+    case "cancelled":
+    case "on-hold":
+      return 0
 
-  case "announced":
-    return 10
-    
-  case "pending-gb":
-  case "pending-preorder":
-    return 15
+    case "announced":
+      return 10
 
-  case "preorder":
-  case "group-buy":
-    return 20
+    case "pending-gb":
+    case "pending-preorder":
+      return 15
 
-  case "preorder-closed":
-  case "gb-closed":
-    return 30
+    case "preorder":
+    case "group-buy":
+      return 20
 
-  case "ordered":
-    return 40
+    case "preorder-closed":
+    case "gb-closed":
+      return 30
 
-  case "manufacturing":
-    return 50
+    case "ordered":
+      return 40
 
-  case "en-route":
-    return 60
+    case "manufacturing":
+      return 50
 
-  case "shipping":
-    return 80
+    case "en-route":
+      return 60
 
-  case "extras-sale":
-    return 90
+    case "shipping":
+      return 80
 
-  case "complete":
-    return 100
+    case "extras-sale":
+      return 90
 
-  case "preparing-sale":
-    return 30
+    case "complete":
+      return 100
 
-  case "in-stock":
-  case "sold-out":
-  case "restocking":
-    return 75
+    case "preparing-sale":
+      return 30
 
-  case "final-sale":
-    return 90
+    case "in-stock":
+    case "sold-out":
+    case "restocking":
+      return 75
 
-  default:
-    return 0
+    case "final-sale":
+      return 90
+
+    default:
+      return 0
+  }
 }
+
+export const dateToDisplayString = (date: Date) => {
+  return date.toISOString().split('T')[0]
 }

@@ -21,7 +21,13 @@ export default defineConfig({
   ],
   vite: {
     ssr: {
-      noExternal: ['swiper', 'iconify-icon', '@iconify-icon/react']
+      noExternal: [
+        'swiper', 
+        'iconify-icon', 
+        '@iconify-icon/react', 
+        'react-infinite-scroll-hook',
+        '@tanstack/react-query',
+      ]
     },
   },
 

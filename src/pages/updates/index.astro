@@ -1,5 +1,5 @@
 ---
-import { UpdatesPage } from '@components/react/UpdatesPage';
+import { UpdatesPage, type MinimumProjectsIndex } from '@components/react/UpdatesPage';
 import Layout from '../../layouts/DefaultLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
 
@@ -8,11 +8,16 @@ const allProjects = await getCollection('projects')
 // This page relies mostly on preact real-time for filtering the displayed projects and fetching updates from the /api endpoint
 // Prepare static data to pass to the script
 
+const minimumProjectData: MinimumProjectsIndex[] = allProjects.map(project => { return {
+	slug: project.slug,
+	title: project.data.title,
+	src: project.data.coverImage.url
+}})
 
 ---
 
 <Layout title="Project Updates">
 	<div class="container mx-auto">
-		<UpdatesPage projects={allProjects} client:load />
+		<UpdatesPage projects={minimumProjectData} client:only="preact" />
 	</div>
 </Layout>
