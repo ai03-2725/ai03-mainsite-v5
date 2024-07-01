@@ -1,0 +1,155 @@
+---
+draft: false
+title: Keychain Switch Opener
+slogan: Portable switch modding tool
+coverImage:
+  url: "/assets/projects/keychain/img_0010_largesize.avif"
+  alt: Keychain cover image
+releaseDate: 2019-02-16
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="KEYCHAIN"
+      slogan="Portable Switch Opener"
+      >
+      <DefaultMarkdownRenderer>
+        Switch modding, wherever you go.  
+        A magnetic closure system keeps the opening blades safe during transit and storage.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'keychain'} 
+      slides={[
+        {
+          url: "/assets/projects/keychain/img_0003_largesize.jpg",
+          alt: "Silver render",
+        },
+        {
+          url: "/assets/projects/keychain/img_0001_largesize.avif",
+          alt: "Photo",
+        },
+        {
+          url: "/assets/projects/keychain/img_0002_largesize.jpg",
+          alt: "Render alt",
+        },
+        {
+          url: "/assets/projects/keychain/img_0011_mediumsize.avif",
+          alt: "Red photo",
+        },
+        {
+          url: "/assets/projects/keychain/img_0006_mediumsize.avif",
+          alt: "Blue Grey photo",
+        },
+        {
+          url: "/assets/projects/keychain/img_0012_mediumsize.webp",
+          alt: "Grey photo",
+        },
+        {
+          url: "/assets/projects/keychain/img_0007_mediumsize.avif",
+          alt: "Silver photo",
+        },
+        {
+          url: "/assets/projects/keychain/img_0008_mediumsize.avif",
+          alt: "Black photo",
+        },
+        {
+          url: "/assets/projects/keychain/img_0010_largesize.avif",
+          alt: "Blue photo",
+        },
+        {
+          url: "/assets/projects/keychain/img_0009_largesize.avif",
+          alt: "Green photo",
+        },
+      ]} 
+      links={[
+        {
+          label: "Product Page (Archived)",
+          url: "https://web.archive.org/web/20211024020556/https://kbdfans.com/collections/keyboard-part/products/gb-2-in-1-machined-aluminum-switch-opener",
+        },
+      ]}
+    />
+
+    <div class="grid grid-cols-2 place-items-center gap-8">
+      <div>
+        <div class="aspect-[1.5] overflow-hidden rounded-[3.75px]">
+          <img src="/assets/projects/keychain/img_0005_largesize.avif" loading="lazy" class="w-full h-full object-contain" />
+        </div>
+      </div>
+      <div>
+        <DefaultMarkdownRenderer>
+          ### A tool that defined an era
+          In early 2019 when the Keychain was released, the keyboard community looked very different from how it does now.  
+          Keyswitch modding tools were expensive and rare, and both the 4-clip MX-type and 2-clip Kailh-type housing switches 
+          were in demand due to limited switch variety and demand for tactile switch modding.  
+
+          In an attempt to create a reliable, versatile, and compact switch modding tool, I began this project with Kevinplus 
+          and KBDfans as a solution - two sets of interlocking switch opening teeth that could handle both types of switches, 
+          and a latching magnetic mechanism which would protect the teeth during transit while compacting the assembly down.  
+        </DefaultMarkdownRenderer>
+      </div>
+    </div>
+
+    <div class="columns-3">
+      <div>
+        <img src="/assets/projects/keychain/img_0010_largesize.avif" loading="lazy" class="w-full h-full object-cover" />
+      </div>
+      <div>
+        <img src="/assets/projects/keychain/img_0012_mediumsize.webp" loading="lazy" class="w-full h-full object-cover" />
+      </div>
+      <div>
+        <img src="/assets/projects/keychain/img_0009_largesize.avif" loading="lazy" class="w-full h-full object-cover" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 place-items-center gap-8">
+      <div>
+        <div class="aspect-[1.5] overflow-hidden rounded-[3.75px]">
+          <img src="/assets/projects/keychain/img_0001_largesize.avif" loading="lazy" class="w-full h-full object-cover" />
+        </div>
+      </div>
+      <div>
+        <DefaultMarkdownRenderer>
+          ### The test of time
+          The teeth's dimensions were dialed in over numerous prototypes to achieve the ideal angles for easy switch opening 
+          across various switch types, and at long last the opener became available at KBDfans for $25 - less than the cost of 
+          single switch openers at the time.  
+
+          Needless to say, the design got cloned instantly and the attack of the clones flooded the AliExpress shelves; the 
+          genuine opener still had quite a long product life of many years.  
+          Since then, the original keychain has been discontinued - leaving a legacy visible in the imitators that followed.  
+        </DefaultMarkdownRenderer>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <Center>
+        <DefaultMarkdownRenderer>
+          Looking for a quality successor?  
+          You may be interested in the [Pillar Switch Opener](/projects/pillar) - a design revised for easier handling and 
+          better visuals, with teeth re-designed for modern switches and their dimension variations.  
+        </DefaultMarkdownRenderer>
+      </Center>
+    </div>
+
+  </div>
+
+</DefaultLayout>

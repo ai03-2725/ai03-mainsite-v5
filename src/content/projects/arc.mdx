@@ -1,0 +1,70 @@
+---
+draft: false
+title: Arc
+slogan: Retro-Styled 65% Keyboard
+coverImage:
+  url: "/assets/projects/arc/img_0006_largesize.avif"
+  alt: Arc cover image
+releaseDate: 2018-08-20
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="ARC"
+      >
+      <DefaultMarkdownRenderer>
+        One of ai03's earliest designs, used as a testbench for planning later board internals.  
+        Under consideration for modernization and public sale.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'arc'} 
+      slides={[
+        {
+          url: "/assets/projects/arc/img_0006_fullsize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/arc/img_0004_fullsize.avif",
+          alt: "Top view",
+        },
+        {
+          url: "/assets/projects/arc/img_0003_fullsize.avif",
+          alt: "Scenic view A",
+        },
+        {
+          url: "/assets/projects/arc/img_0002_fullsize.avif",
+          alt: "Scenic view B",
+        },
+      ]} 
+      links={[
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+  </div>
+
+</DefaultLayout>

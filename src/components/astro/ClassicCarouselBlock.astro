@@ -56,6 +56,9 @@ const firstUpdate = updates.length > 0 ? updates[0] : null
         {links.map(link => 
           <SimpleButton label={link.label} url={link.url} />
         )}
+        {links.length <= 0 &&
+          <SimpleButton label="No links available for project" url="" />
+        }
       </div>
       <div class="bg-zinc-300 p-6 lg:p-8">
         {firstUpdate ?

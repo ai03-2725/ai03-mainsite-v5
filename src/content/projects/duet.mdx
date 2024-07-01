@@ -1,0 +1,100 @@
+---
+draft: false
+title: Duet
+slogan: Purpose-built switch tester
+coverImage:
+  url: "/assets/projects/duet/img_0004_fullsize.avif"
+  alt: Duet cover image
+releaseDate: 2023-10-30
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="DUET"
+      >
+      <DefaultMarkdownRenderer>
+        A purpose-built switch display tester for vendors.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'duet'} 
+      slides={[
+        {
+          url: "/assets/projects/duet/img_0004_fullsize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/duet/img_0007_fullsize.avif",
+          alt: "Display view",
+        },
+        {
+          url: "/assets/projects/duet/img_0001_fullsize.avif",
+          alt: "Components view",
+        },
+        {
+          url: "/assets/projects/duet/img_0003_fullsize.avif",
+          alt: "Microcontroller view",
+        },
+        {
+          url: "/assets/projects/duet/img_0005_fullsize.avif",
+          alt: "Bottom logo view",
+        },
+      ]} 
+      links={[
+        {
+          label: "Design Source Files",
+          url: "https://github.com/ai03-2725/duet-switch-tester",
+        },
+        {
+          label: "Example Kiosk Frontend",
+          url: "https://cannonkeys-switch-tester-frontend.pages.dev/",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/duet/img_0007_fullsize.avif">
+          ### A Purpose-Built Tester
+          Designed to overcome the challenges of displaying switches at meetup vendor booths and similar events.  
+
+          The tester is designed for two of each switch - one with a keycap installed for type-testing, and another without a keycap for visual presentation.  
+          With a 54-switch-types capacity, a large variety of switches can be presented in a unit the size of roughly one keyboard.  
+
+          The tester is a fully functional keyboard inside - in the example of the use case above, the PCB is configured to send two keystrokes corresponding to the row and column of the key pressed.  
+          This is received by a display of choice - for example a full-screen webapp running on a tablet that displays the corresponding switch's information.
+
+          In the example kiosk frontend implementation linked above, a full-screen React app cycles through general keyboard photos when idle, and displays the corresponding switch info for several seconds when pressed.  
+          (Long-press the logo in the idle screen, configure the upper left switch, then type a coordinate such as "a0" to see it in action.)  
+          
+          This removes the need for piles of printed description cards, saving limited table space at a meetup vendor booth and simplifying booth preparation.  
+          
+        </ClassicImageTextBlock>
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicResourcesTable project='duet' />
+
+  </div>
+
+</DefaultLayout>

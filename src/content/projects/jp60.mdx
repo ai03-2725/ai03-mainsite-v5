@@ -1,0 +1,96 @@
+---
+draft: false
+title: JP60
+slogan: Open-source GH60-compatible JIS PCB
+coverImage:
+  url: "/assets/projects/jp60/img_0004_fullsize.avif"
+  alt: JP60 cover image
+releaseDate: 2021-08-07
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="JP60"
+      >
+      <DefaultMarkdownRenderer>
+        An open-source 60% PCB kit designed to offer a convenient, obtainable keyboard kit in the JIS layout.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'jp60'} 
+      slides={[
+        {
+          url: "/assets/projects/jp60/img_0004_fullsize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/jp60/img_0005_fullsize.avif",
+          alt: "Bottom view",
+        },
+        {
+          url: "/assets/projects/jp60/img_0003_fullsize.avif",
+          alt: "Macro view",
+        },
+        {
+          url: "/assets/projects/jp60/img_0002_fullsize.avif",
+          alt: "Kit view",
+        },
+        {
+          url: "/assets/projects/jp60/img_0001_largesize.png",
+          alt: "Layout diagram",
+        },
+      ]} 
+      links={[
+        {
+          label: "Design Source Files",
+          url: "https://github.com/ai03-2725/JP60",
+        },
+        {
+          label: "Keyboard-Layout-Editor Data",
+          url: "http://www.keyboard-layout-editor.com/#/gists/8acf5e6dbc672aa6a96d8ddba1245e7f"
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <div class="w-full flex flex-row justify-center">
+          <img src="/assets/projects/jp60/img_0001_largesize.png" loading="lazy" class="w-full lg:w-3/4" />
+        </div>
+        
+        ### An Accessible Solution for Japan's Hobbyist Community
+        Designed to overcome the challenges of a lack of JIS-like options with realistic keyset compatibility.  
+
+        The JIS keyboard standard does not specify any key sizes - over the years, this has led to a complete lack of standardization of modifier key sizes and layouts.  
+        This project aims to offer a fully functional JIS layout which uses common key/modifier sizes, allowing for easy parts sourcing.  
+
+        The PCB is designed with hotswap sockets and GH60 dimensions, allowing for use of readily available and accessible cases.  
+        The plate design is also made in FR4, lowering the cost of entry even further.        
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicResourcesTable project='jp60' />
+
+  </div>
+
+</DefaultLayout>

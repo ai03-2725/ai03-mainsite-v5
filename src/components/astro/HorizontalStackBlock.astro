@@ -1,0 +1,40 @@
+---
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+
+
+interface Props {
+  src: string,
+  alt: string,
+  bgColor?: string | undefined,
+  container?: boolean | undefined,
+  invert?: boolean | undefined,
+  reverse?: boolean | undefined,
+}
+
+const {
+  src,
+  alt,
+  bgColor,
+  container,
+  invert,
+  reverse, 
+} = Astro.props
+
+const containerClassString = container ? "container mx-auto " : ""
+
+---
+
+<div style={`background-color: ${bgColor ? `#${bgColor}` : ""}`}>
+  <div class={`${containerClassString} grid grid-cols-1 lg:grid-cols-2 gap-8 place-items-center`}>
+    <div class={`${reverse && "lg:order-last"}`}>
+      <div>
+        <img src={src} alt={alt} class="object-cover w-full" loading="lazy" />
+      </div>
+    </div>
+    <div class={`w-full ${reverse ? "lg:ps-24" : "lg:pe-24"} pb-12 lg:pt-16 lg:pb-16 px-6 md:px-8 lg:px-0`}>
+      <DefaultMarkdownRenderer invert={invert || false}>
+        <slot />  
+      </DefaultMarkdownRenderer>
+    </div>
+  </div>
+</div>

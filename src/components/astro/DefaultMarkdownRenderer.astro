@@ -1,7 +1,14 @@
 ---
+
+interface Props {
+  invert?: boolean | undefined;
+}
+
+const { invert } = Astro.props;
+
 ---
 
-<div class="prose w-full max-w-full
+<div class={`prose w-full max-w-full
   prose-h1:text-4xl
   prose-h1:font-[750]
   prose-h2:text-3xl
@@ -18,8 +25,8 @@
   prose-img:lg:w-2/3
   prose-img:overflow-hidden
   prose-img:rounded-[3.75px]
-  prose-a:underline
-" >
-
+  prose-a:underline 
+  ${invert && "prose-invert"}
+`} >
   <slot />
 </div>

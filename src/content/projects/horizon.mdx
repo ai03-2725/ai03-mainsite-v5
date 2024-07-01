@@ -1,0 +1,130 @@
+---
+draft: false
+title: Horizon
+slogan: Premium keyboard display stand
+coverImage:
+  url: "/assets/projects/horizon/img_0002_largesize.avif"
+  alt: Horizon cover image
+releaseDate: 2020-03-13
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="HORIZON"
+      >
+      <DefaultMarkdownRenderer>
+        A premium keyboard display stand.  
+        Built using thick acrylic and aluminum beams, this stand is durable enough to display the most heavy of keyboards with style and elegance.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'horizon'} 
+      slides={[
+        {
+          url: "/assets/projects/horizon/img_0002_largesize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/horizon/img_0003_largesize.avif",
+          alt: "Macro view",
+        },
+        {
+          url: "/assets/projects/horizon/img_0005_largesize.avif",
+          alt: "Regular front view, clear",
+        },
+        {
+          url: "/assets/projects/horizon/img_0006_largesize.avif",
+          alt: "Kit view, clear",
+        },
+        {
+          url: "/assets/projects/horizon/img_0017_largesize.jpg",
+          alt: "Display view, smoky",
+        },
+        {
+          url: "/assets/projects/horizon/img_0008_largesize.avif",
+          alt: "Regular front view, smoky",
+        },
+        {
+          url: "/assets/projects/horizon/img_0009_largesize.avif",
+          alt: "Kit view, smoky",
+        },
+        {
+          url: "/assets/projects/horizon/img_0013_fullsize.avif",
+          alt: "Stress test view",
+        },
+      ]} 
+      links={[
+        {
+          label: "Product Page",
+          url: "https://cannonkeys.com/products/horizon-keyboard-stand",
+        },
+        {
+          label: "Assembly Guide",
+          url: "https://docs.cannonkeys.com/horizon-guide/",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/horizon/img_0001_fullsize.avif">
+          ### The Zero-Compromise Display Stand
+          Your efforts in perfecting your keyboard shouldn't be let down by the stand it's placed on.  
+          Horizon compromises nothing in visuals and durability to ensure that your keyboard is displayed at its finest.
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/horizon/img_0006_largesize.avif">
+          ### The Intention You Desire
+          Carefully drawn curves and defining straight edges form the side panels, carefully accented by metal hardware that balances an industrial and elegant look.  
+          Horizon is designed with equal care to the keyboards it is to display.
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/horizon/img_0013_fullsize.avif">
+          ### The Gentle Giant
+          Constructed with custom-cast 10mm-thick acrylic panels and tailor-made heavy-duty aluminum rods, Horizon is ready for the heaviest of keyboards.  
+          Real-world testing has confirmed load-bearing of at least 8000g with ease.
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/horizon/img_0016_largesize.jpg" >
+          ### The Perfect Match
+          Whether full-height or low-profile, compact 40% or massive full-size, or even irregularly-shaped Alice-likes, Horizon is designed for the entire collection.  
+          The side panels are available in transparent clear and smoky black to match the displayed keyboard as desired.
+        </ClassicImageTextBlock>
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      specs={[
+        ["Materials", `- Side panels: Custom injection-molded acrylic, 10mm thick
+- Metal rods: Custom-machined aluminum, 8mm diameter, sandblasted and anodized clear
+- Hardware: Stainless steel`,],
+        ["Minimum supported keyboard width", "170mm",],
+        ["Maximum recommended keyboard front height", "35mm",],
+        ["Maximum tested weight", "8000g"]
+    ]} />
+
+    <ClassicResourcesTable project='horizon' />
+
+  </div>
+
+</DefaultLayout>

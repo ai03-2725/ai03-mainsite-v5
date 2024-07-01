@@ -1,0 +1,106 @@
+---
+draft: false
+title: Contra
+slogan: Budget ortholinear keyboard designed for Cartel Keyboards
+coverImage:
+  url: "/assets/projects/contra/img_0002_largesize.avif"
+  alt: Contra cover image
+releaseDate: 2017-12-07
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="CONTRA"
+      >
+      <DefaultMarkdownRenderer>
+        A budget ortholinear keyboard.  
+        The first of ai03's keyboard designs sold to the general public.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'contra'} 
+      slides={[
+        {
+          url: "/assets/projects/contra/img_0002_largesize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/contra/img_0001_fullsize.jpg",
+          alt: "PCB view",
+        },
+        {
+          url: "/assets/projects/contra/img_0006_largesize.png",
+          alt: "PCB view production design",
+        },
+        {
+          url: "/assets/projects/contra/img_0005_largesize.png",
+          alt: "Plate view",
+        },
+        {
+          url: "/assets/projects/contra/img_0003_largesize.png",
+          alt: "Bottom view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack Thread",
+          url: "https://geekhack.org/index.php?topic=93061.0",
+        },
+        {
+          label: "Product Page",
+        },
+        {
+          label: "GitHub Source",
+          url: "https://github.com/ai03-2725/contra",
+        },
+        {
+          label: "Files and Resources",
+          url: "#resources-table",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        {/* <ClassicImageTextBlock src="/assets/projects/contra/img_0043_largesize.avif">
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock> */}
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/contra/img_0001_fullsize.jpg' 
+      footerNote='Photos taken by End of Cartel Keyboards'
+      specs={[
+        ["Layout", "40% Ortholinear",],
+        ["Compatibility", "Cherry MX and cross-compatible, Alps SKCM/L and cross-compatible",],
+        ["Material", "FR-4",],
+    ]} />
+
+    <ClassicResourcesTable project='contra' />
+
+  </div>
+
+</DefaultLayout>

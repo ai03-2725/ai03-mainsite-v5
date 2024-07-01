@@ -1,0 +1,138 @@
+---
+draft: false
+title: KBD8X MKII
+slogan: TKL collaboration with KBDfans
+coverImage:
+  url: "/assets/projects/kbd8x-mkii/img_0002_largesize.avif"
+  alt: KBD8X MKII cover image
+releaseDate: 2019-03-08
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+import '@fontsource/m-plus-rounded-1c/latin-300.css';
+
+<DefaultLayout title={frontmatter.title}>
+
+  <div class="w-full h-[350px] overflow-hidden">
+    <img src="/assets/projects/kbd8x-mkii/img_0009_largesize.avif" alt="Cover banner" class="object-cover w-full" />
+  </div>
+
+  <div class="text-center pt-20 pb-24">
+    <h1 class="!font-['M_PLUS_Rounded_1c'] font-[300] text-[60px]">KBD8X MKII</h1>
+    <p>A tenkeyless keyboard that redefined accessbility.</p>
+  </div>
+
+  <div class="bg-zinc-800 text-center py-28 px-6">
+    <DefaultMarkdownRenderer invert>
+      ### Humble Beginnings
+      In late 2018, custom keyboard availability was very grim.  
+      Constantly available products were limited in design or quality.  
+      Group buys had high barriers to entry in both cost and connections for joining.  
+        
+      To make higher quality keyboards available for all, I partnered with KBDfans to fully overhaul their first generation KBD8X tenkeyless design.  
+      The goal was to bring the visuals and internals in-line with the higher-end market to a more accessible price point and availability.
+    </DefaultMarkdownRenderer>
+  </div>
+
+  <HorizontalStackBlock
+    src="/assets/projects/kbd8x-mkii/img_0002_largesize.jpg" 
+    alt="Top render"
+    bgColor='E2F6F5'
+  >
+    ### Minimal and elegant
+    Taking learnings from the earlier [Lunar](/projects/lunar) design, seamless exterior design was applied to a more conventional MX-switch keyboard.  
+    A neutral design language was chosen, allowing the keyboard to pair well with any keyset.  
+
+    A classic brass bottom weight added stability and acoustic control while creating simple visual flair - a simple visual flair which was so difficult to obtain at the time. 
+  </HorizontalStackBlock>
+
+  <HorizontalStackBlock
+    src="/assets/projects/kbd8x-mkii/img_0004_fullsize.jpg"
+    alt="Bottom renders"
+    bgColor='CEF0DF'
+    reverse
+  >
+    ### Tailor-ordered
+    For the initial group buy sale, the top and bottom colors were individually selectable - offering a level of customizability never seen before in the world of custom keyboards.  
+    Considering that the $300 price tag was exceptionally affordable against all competitors of the time, 
+
+    Following the group buy, the design was turned into a permanent in-stock product, satisfying the demand for a constantly avaialble high-quality keyboard kit for years.
+  </HorizontalStackBlock>
+
+  <HorizontalStackBlock
+    src="/assets/projects/kbd8x-mkii/img_0003_largesize.avif" 
+    alt="Exploded view"
+    bgColor='A7DCD4'
+  >
+    ### An eye on internals
+    The KBD8X MKII was one of the first affordable keyboards to push internals as a major feature, implementing classic top-mount internals with the plate screwed to the case top half at carefully chosen mount points.  
+    
+    The brass plates shown in the render showcases the trends of the time - a dense and rigid plate for acoustic benefits.
+  </HorizontalStackBlock>
+
+  <HorizontalStackBlock
+    src="/assets/projects/kbd8x-mkii/img_0005_fullsize.avif"
+    alt="PCB render"
+    bgColor='B9EBF1'
+    reverse
+  >
+    ### PCBs done right
+    At a time when PCBs were often poorly implemented or a mere afterthought, the KBD8X MKII put plenty of care into the circuitry - the PCB was robustly designed for reliable operation, and also revived custom flex-slotted geometry found in earlier keyboards to reduce the stiffness of the board.
+
+    The USB connector was Type-C when the majority of competitors were still on USB mini, and also included overcurrent and ESD protection.  
+  </HorizontalStackBlock>
+
+  <HorizontalStackBlock
+    src="/assets/projects/kbd8x-mkii/img_0006_largesize.jpg" 
+    alt="Numpad view"
+    bgColor='9BC5D3'
+  >
+    ### A perfect pair
+    The KBD8X MKII was designed in tandem with the [KBDPAD MKII](/projects/kbdpad-mkii), offering a perfectly matching numpad for use along with the keyboard.  
+
+  </HorizontalStackBlock>
+
+  <div class="container mx-auto">
+
+    <div class="text-center pt-20 px-6">
+      <DefaultMarkdownRenderer>
+        ### A Lasting Legacy
+        The KBD8X MKII served as an always-accessible, premium yet affordable TKL for years until it was superceded by a MKIII design created by another designer.  
+        Its highly-rated design would serve as a starting point for developing the [Polaris](/projects/polaris), which would eventually turn into the Reference series of designs.  
+
+        The [PCB design source](https://github.com/ai03-2725/KBD8X-MKII-PCB) still serves as a design reference and starting point for the keyboard design community.
+      </DefaultMarkdownRenderer>
+    </div>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/kbd8x-mkii/img_0007_fullsize.jpg' 
+      specs={[
+        ["Case Weight", "2370g",],
+        ["Dimensions", "358 x 134 x 32mm",],
+        ["Case Material", "Anodized aluminum",],
+        ["Weight Material", "Bead-blasted brass, clear-coated to prevent tarnish",],
+        ["PCB Features", `- In-switch backlighting
+- Num lock indicator/backlight switch
+- Dual flex slot cutouts
+- RGB underglow
+- USB Type C
+- ESD and overcurrent protection`,],
+        ["Options", `Plate options: Brass full plate, Polycarbonate half plate  
+Case options: Full or WKL top`,],
+        ["Layouts", "![Layout diagram](/assets/projects/kbd8x-mkii/img_0008_largesize.avif)",],        
+    ]} />
+
+    <ClassicResourcesTable project='kbd8x-mkii' />
+  </div>
+  
+</DefaultLayout>
