@@ -19,66 +19,51 @@ export const NAV_ENTRIES_ROOT: NavEntry = {
 
     // Projects
     {
-      type: "LIST",
+      type: "LEAF",
       title: "Projects",
-      children: [
-        {
-          type: "LEAF",
-          title: "Portfolio",
-          url: "/collections/",
-        },
-        {
-          type: "DIVIDER",
-        },
-        {
-          type: "LEAF",
-          title: "Project Updates",
-          url: "/updates/"
-        },
-        {
-          type: "LEAF",
-          title: "Downloads and Manuals",
-          url: "/resources/"
-        },
-        {
-          type: "DIVIDER",
-        },
-        {
-          type: "LEAF",
-          title: "Designer Tools and Resources",
-          url: "/designer-resources/",
-        }
-      ]
+      url: "/collections/"
     },
-    // Info
-    {
-      type: "LIST",
-      title: "News",
-      children: [
-        {
-          type: "LEAF",
-          title: "Announcements",
-          url: "/news/"
-        },
-        {
-          type: "LEAF",
-          title: "Blog",
-          url: "/blog/"
-        },
-      ]
-    },
-    // Discord
+
+    // Blog
     {
       type: "LEAF",
-      title: "Discord",
-      url: "/discord/"
+      title: "Blog",
+      url: "/blog/"
     },
+
     // Social
     {
       type: "LEAF",
       title: "Social",
       url: "/social/"
     },
+
+    // Info
+    {
+      type: "LIST",
+      title: "Info",
+      children: [
+        {
+          type: "LEAF",
+          title: "Project Updates",
+          url: "/updates/",
+        },
+        {
+          type: "LEAF",
+          title: "Downloads and Manuals",
+          url: "/downloads/",
+        },
+        {
+          type: "DIVIDER",
+        },
+        {
+          type: "LEAF",
+          title: "Designer Resources and Utilities",
+          url: "/designer-resources/",
+        }
+      ]
+    },
+
     // About
     {
       type: "LIST",
