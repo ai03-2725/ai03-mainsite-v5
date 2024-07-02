@@ -1,0 +1,85 @@
+---
+draft: false
+title: Orbit
+slogan: Slogan
+coverImage:
+  url: "/assets/projects/orbit/img_0002_largesize.avif"
+  alt: Orbit cover image
+releaseDate: 2018-11-05
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="ORBIT"
+      >
+      <DefaultMarkdownRenderer>
+        A large ergonomic split keyboard.  
+        One of the earliest and rarest of ai03's keyboards with only 10 units produced.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'orbit'} 
+      slides={[
+        {
+          url: "/assets/projects/orbit/img_0001_fullsize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/orbit/img_0003_fullsize.avif",
+          alt: "Pair view",
+        },
+        {
+          url: "/assets/projects/orbit/img_0004_fullsize.avif",
+          alt: "Bottom view",
+        },
+        {
+          url: "/assets/projects/orbit/img_0002_largesize.avif",
+          alt: "Center view",
+        },
+      ]} 
+      links={[
+        {
+          label: "PCB Source",
+          url: "https://github.com/ai03-2725/Orbit/tree/master/Orbit-PCB",
+        },
+        {
+          label: "Files and Resources",
+          url: "#resources-table",
+        },
+      ]}
+    />
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/orbit/img_0004_fullsize.avif' 
+      specs={[
+        ["Layout", "5x7 layout, 2U key compat layouts",],
+        ["Case Structure", `Top mount, three-part construction per half  
+Aluminum 6061 housing and plate`,],
+        ["Connectivity", "USB Type-C for host connection, TRRS 3.5mm for split connection",],
+        ["Weight", "Roughly 1.2kg with both halves",],
+        ["Price (at time of sale)", "550USD",],
+    ]} />
+
+    <ClassicResourcesTable project='orbit' />
+
+  </div>
+
+</DefaultLayout>

@@ -11,8 +11,6 @@ Project pages
 - ModernJA
 - SimpleJA
 
-- Orbit
-- Orbit-X
 - Altair
 
 - Summit

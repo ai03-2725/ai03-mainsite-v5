@@ -1,0 +1,134 @@
+---
+draft: false
+title: Orbit-X
+slogan: Compact Split Ergonomic Keyboard
+coverImage:
+  url: "/assets/projects/orbit-x/img_0002_largesize.avif"
+  alt: Orbit-X cover image
+releaseDate: 2020-01-01
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="ORBIT-X"
+      >
+      <DefaultMarkdownRenderer>
+        Small board, bold design.  
+        Orbit-X unites a comfortable ergonomic layout with a high-end CNC-milled case to create a luxurious experience that's easy to learn and enjoyable to use.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'orbit-x'} 
+      slides={[
+        {
+          url: "/assets/projects/orbit-x/img_0002_fullsize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/orbit-x/img_0001_fullsize.avif",
+          alt: "Desk view",
+        },
+        {
+          url: "/assets/projects/orbit-x/img_0004_fullsize.avif",
+          alt: "Open view",
+        },
+        {
+          url: "/assets/projects/orbit-x/img_0003_fullsize.avif",
+          alt: "Vertical placement view",
+        },
+        {
+          url: "/assets/projects/orbit-x/img_0005_fullsize.avif",
+          alt: "Internals macro view",
+        },
+        {
+          url: "/assets/projects/orbit-x/img_0007_fullsize.avif",
+          alt: "Bottom view",
+        },
+        {
+          url: "/assets/projects/orbit-x/img_0006_fullsize.avif",
+          alt: "Bottom pair view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=104057.0",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/orbit-x/img_0001_largesize.avif">
+          ### Ready By Design
+          An unusual layout can be daunting to use, especially if coming from something very different.  
+          Orbit-X has been designed specifically to be easy to migrate to, regardless of what your current layout preferences are.  
+
+          Typical modifier key placements means your fingers move where they should.  
+          A carefully devised layout makes use of symmetric key placements to keep layout memorization to an absolute minimum while offering functionality comparable to a board as large as a TKL.   
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/orbit-x/img_0003_largesize.avif">
+          ### Tailored To You
+          The Orbit-X layout packs in function as close to the home position as possible to minimize finger movement.  
+          The bottom row modifiers allow for easy migration from typical keyboard layouts, and the thumb cluster is reduced to two keys to reduce thumb strain as much as possible.  
+          A top-mounted polycarbonate plate matches the layout with the typing comfort required.  
+
+          The case is designed with light-catching curves that adorn the front and rear, paired with strong straight sides that give the tiny board a daring look well beyond its size.  
+          The "screwless" internal screw design hides all screws out of sight once assembled, leaving the curvatures unbroken even on the bottom.  
+          A specially designed polycarbonate wristrest matches the Orbit-X's aesthetic perfectly while supporting your wrists for the most demanding typing sessions.  
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/orbit-x/img_0004_largesize.avif">
+          ### The Do-Everything Keyboard
+          Just as the layout is tailored to the hand, the entire board can be tailored to your preferences.  
+          Leave the supplied foam layer out for the extreme flex and typing comfort of a top-mounted polycarbonate plate, or drop it in to obtain maximized acoustics rare for a board of this size.  
+
+          Both halves have a USB-C connector, so you can pick which one to use based on which is convenient for your cable.  
+          The wristrests can be placed in front of the board for extended typing sessions, or removed to maximize desk estate.  
+          If you only need one hand's worth of keys for a task, you can plug in only one half of Orbit-X and extend available desk space even further.   
+        </ClassicImageTextBlock> 
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/orbit-x/img_0002_fullsize.avif' 
+      specs={[
+        ["Case", "Aluminum, grey",],
+        ["Plate", "Polycarbonate, top mount",],
+        ["PCB", "Soldered switches (non-hotswap)",],
+        ["Wristrests", `Polycarbonate  
+Note: Polycarbonate is prone to visual damage due to its soft finish. The wristrest will pick up wear and tear over time.`,],
+        ["Connections", "USB-C to PC, 3.5mm TRRS between halves",],
+        ["Case Mass", "~350g per half, ~700g both halves, ~1kg with wristrests",],
+        ["Layout and Default Keymap", "![Alt](/assets/projects/orbit-x/img_0008_largesize.png)"],
+        ["Units", "100 total",],
+        ["Price", "To be announced",],
+        ["Vendors", "TypePlus",],
+    ]} />
+
+    <ClassicResourcesTable project='orbit-x' />
+
+  </div>
+
+</DefaultLayout>
