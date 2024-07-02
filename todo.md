@@ -5,8 +5,6 @@ Project pages
 - Brutal V2 65%
 - Brutal V2 1800
 
-- Lunar II
-- Meridian
 - UT47.2
 - Vector
 
@@ -20,12 +18,15 @@ Project pages
 - Summit
 - Pillar
 
-
 Collection pages
+
+Blog pages xfer
+
+Designer resources
 
 
 
 
 Long-term redos
 - Ref series pages
-- 
+- Andro

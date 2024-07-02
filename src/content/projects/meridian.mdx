@@ -1,0 +1,116 @@
+---
+draft: false
+title: Meridian
+slogan: Ergonomic 60% Keyboard
+coverImage:
+  url: "/assets/projects/meridian/img_0002_largesize.avif"
+  alt: Meridian cover image
+releaseDate: 2020-07-27
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="MERIDIAN"
+      >
+      <DefaultMarkdownRenderer>
+        Ergonomic 60% Keyboard
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'meridian'} 
+      slides={[
+        {
+          url: "/assets/projects/meridian/img_0002_fullsize.avif",
+          alt: "Top view",
+        },
+        {
+          url: "/assets/projects/meridian/img_0005_fullsize.avif",
+          alt: "Side view",
+        },
+        {
+          url: "/assets/projects/meridian/img_0004_fullsize.avif",
+          alt: "Indicators view",
+        },
+        {
+          url: "/assets/projects/meridian/img_0001_fullsize.avif",
+          alt: "Triple view",
+        },
+        {
+          url: "/assets/projects/meridian/img_0006_largesize.avif",
+          alt: "Cover render",
+        },
+        {
+          url: "/assets/projects/meridian/img_0003_fullsize.avif",
+          alt: "Bottom view",
+        },
+      ]} 
+      links={[
+        {
+          label: "Product Page",
+          url: "https://www.primekb.com/products/meridian-r3"
+        },
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=107945.0",
+        },
+        {
+          label: "Files and Resources",
+          url: "#resources-table",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/meridian/img_0005_largesize.avif">
+          ### Trustworthy Typing Experience
+          An aluminum top-mounted plate offers typing comfort and a middle-ground rigidity which pairs well with various switch types.  
+          The internal brass weight adds enough heft to keep the board stable during heavy use.
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/meridian/img_0004_largesize.avif">
+          ### The Ergonomic Factor
+          Based on the Prime_E, the alphas bend in at a soft 8 degree angle rather than the aggressive 12 degree bend of most Alice-esque boards.  
+          The layout is built around common keycap sizes for maximized compatibility with existing keysets.
+        </ClassicImageTextBlock> 
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/meridian/img_0006_largesize.avif' 
+      footerNote='Credits to Prime Keyboards for photos'
+      specs={[
+        ["PCB", "Soldered, USB-C, ESD protected",],
+        ["Indicators", "Physical LED indicators - RGB for initial batches; in-switch caps lock LED support",],
+        ["Plate", "Aluminum, top mount",],
+        ["Typing Angle", "7deg",],
+        ["Alphanumerics Bend Angle", "8deg",],
+        ["Weight", "Brass, internal, bead blasted",],
+        ["Layout", "![Layout Diagram](/assets/projects/meridian/img_0007_fullsize.avif)"]
+    ]} />
+
+    <ClassicResourcesTable project='meridian' />
+
+  </div>
+
+</DefaultLayout>
