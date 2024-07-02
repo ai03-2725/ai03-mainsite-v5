@@ -1,0 +1,96 @@
+---
+draft: false
+title: Parallax
+slogan: Slogan
+coverImage:
+  url: "/assets/projects/parallax/img_0003_largesize.avif"
+  alt: Parallax cover image
+releaseDate: 2020-06-16
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="PARALLAX"
+      >
+      <DefaultMarkdownRenderer>
+        Merging the past with the current, ai03 Design Studio and ION Keyboards revives the compact battleship unsaver form factor with a modern design.  
+        Fittingly announced on April Fools' day of 2020.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'parallax'} 
+      slides={[
+        {
+          url: "/assets/projects/parallax/img_0003_largesize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/parallax/img_0002_largesize.avif",
+          alt: "Top view",
+        },
+        {
+          url: "/assets/projects/parallax/img_0001_largesize.avif",
+          alt: "Side view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=105440.0",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/parallax/img_0002_largesize.avif">
+          ### Specially Engineered Comfort
+          Building upon previous development with Equinox, Parallax uses a gasket sandwich PCB mount for thorough typing comfort.  
+          For those who prefer builds with a plate, the open-sourced plate file can convert the design to a traditional top mount.
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/parallax/img_0001_largesize.avif">
+          ### A Layout Adapted For Today And Tomorrow
+          With 34 function keys and up to 9 arrow keys, Parallax allows for unparalleled direct input and macros while having fewer keys than a typical 108 key keyboard.
+          Modular blockers allow switching the right cluster between full, unsaver, and TKL modes.
+        </ClassicImageTextBlock> 
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/parallax/img_0003_largesize.avif' 
+      specs={[
+        ["Typing Angle", "7deg",],
+        ["Internals", "PCB-mount, optional plate",],
+        ["Layout", "![Alt](/assets/projects/parallax/img_0004_largesize.png)"],
+        ["Mass", "~3.2kg without a weight, ~4kg with",],
+        ["Case Colors", "TBD",],
+        ["Cost", "TBD",],
+        ["Vendors", "TBD",],
+    ]} />
+
+    <ClassicResourcesTable project='parallax' />
+
+  </div>
+
+</DefaultLayout>
