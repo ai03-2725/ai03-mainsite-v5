@@ -5,7 +5,7 @@ Project pages
 - Brutal V2 65%
 - Brutal V2 1800
 
-- UT47.2
+- Parallax
 - Vector
 
 - ModernJA

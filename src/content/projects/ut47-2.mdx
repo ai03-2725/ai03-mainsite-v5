@@ -1,0 +1,68 @@
+---
+draft: false
+title: UT47.2
+slogan: 40% collaboration with Keyhive
+coverImage:
+  url: "/assets/projects/ut47-2/img_0001_largesize.avif"
+  alt: UT47.2 cover image
+releaseDate: 2019-02-14
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="UT47.2"
+      >
+      <DefaultMarkdownRenderer>
+        A revised version of Keyhive's earlier UT47 keyboard kit with hotswap socketing and RGB underglow.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'ut47-2'} 
+      slides={[
+        {
+          url: "/assets/projects/ut47-2/img_0001_largesize.avif",
+          alt: "Cover image",
+        },
+      ]} 
+      links={[
+        {
+          label: "Product Page",
+          url: "https://keyhive.xyz/shop/ut472-kit",
+        },
+        {
+          label: "GitHub Source",
+          url: "https://github.com/ai03-2725/UT47.2",
+        },
+      ]}
+    />
+
+    <ClassicSpecsTable 
+      specs={[
+        ["Material", "FR-4",],
+        ["PCB Features", "USB-C, RGB underglow, hotswap",],
+        ["Layout", "![Alt](/assets/projects/ut47-2/img_0002_largesize.png)"]
+    ]} />
+
+    <ClassicResourcesTable project='ut47-2' />
+
+  </div>
+
+</DefaultLayout>
