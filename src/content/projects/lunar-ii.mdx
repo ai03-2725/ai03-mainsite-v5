@@ -1,0 +1,177 @@
+---
+draft: false
+title: Lunar II
+slogan: 60% AEK Keyboard
+coverImage:
+  url: "/assets/projects/lunar-ii/img_0048_fullsize.avif"
+  alt: Lunar II cover image
+releaseDate: 2020-09-18
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="LUNAR II"
+      slogan="Second generation compact AEK keyboard by Switchplate Peripherals and ai03"
+      >
+      <DefaultMarkdownRenderer>
+        Building upon the legacy of the first generation design, Lunar II brings the acclaimed curved design to a more accessible price, complete with an entirely seamless exterior, increased typing comfort, and solenoid support.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'lunar-ii'} 
+      slides={[
+        {
+          url: "/assets/projects/lunar-ii/img_0048_fullsize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0054_fullsize.avif",
+          alt: "Bottom view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0047_fullsize.avif",
+          alt: "Top view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0052_fullsize.avif",
+          alt: "Bottom macro view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0051_fullsize.avif",
+          alt: "Top angled view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0009_fullsize.avif",
+          alt: "Rear view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0016_fullsize.avif",
+          alt: "Bottom corner view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0015_fullsize.avif",
+          alt: "Bottom flat view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0019_fullsize.avif",
+          alt: "Kit contents view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0029_fullsize.avif",
+          alt: "PCB view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0032_fullsize.avif",
+          alt: "Plate view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0038_fullsize.avif",
+          alt: "Grey top view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0040_fullsize.avif",
+          alt: "Grey bottom view",
+        },
+        {
+          url: "/assets/projects/lunar-ii/img_0045_fullsize.avif",
+          alt: "Triple color view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=106983.0",
+        },
+        {
+          label: "GeekHack GB Thread",
+          url: "https://geekhack.org/index.php?topic=117922.0",
+        },
+        {
+          label: "Build Guide",
+          url: "https://info.ai03.com/books/lunar-ii-build-guide",
+        },
+        {
+          label: "Files and Resources",
+          url: "#resources-table",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/lunar-ii/img_0016_fullsize.avif">
+          ### A Worthy Successor
+          Lunar II takes user feedback into mind as it improves upon the first generation design.  
+          The curvature has been refreshed completely to reduce the front ledge height for easier typing, and the 1.2mm aluminum plate balances typing comfort, acoustics, and ease of assembly.  
+          A weight has been added for additional heft and aesthetic accent while retaining the low typing angle.
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/lunar-ii/img_0015_fullsize.avif">
+          ### Zero-Seam Design
+          Whereas the original Lunar hid the seam on the bottomside, Lunar II removes the seam completely with a single-piece case, with nothing to break the continuous smooth curvature.  
+          A carefully engineered mounting method secures the plate to the case via O-ring-tipped standoffs, allowing for maximized flex on the typing surface without the stiffness of a typical tray mount.
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/lunar-ii/img_0058_largesize.avif">
+          ### Making Noise
+          Solenoid support allows for audible feedback at will.
+          Use the electromagnetic hammer to add clickiness to tactile or linear switch without changing feel, or supplement and amplify the sound of clicky switches to a further level.
+          When in need of quiet, simply toggle the solenoid off. 
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/lunar-ii/img_0051_fullsize.avif" >
+          ### Alps For All
+          The Lunar II brings the mini-AEK form to a more affordable price point with easier assembly.  
+          Lunar II only requires a single Apple Extended Keyboard's worth of keycaps and stabilizers to build, making the task of sourcing parts much easier than the original.  
+          Choose between the unified and split backspace plate options to tailor the build to your needs.
+        </ClassicImageTextBlock>
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/lunar-ii/img_0049_fullsize.avif' 
+      footerNote='Photo credits go to Switchplate Peripherals.'
+      specs={[
+        ["Case", "Aluminum, single part design",],
+        ["Case Colors", "Silver, Grey",],
+        ["Weight", "Stainless Steel",],
+        ["Plate", "Aluminum, through-PCB standoff mount, unified and split backspace variants",],
+        ["PCB", "ESD protection, in-switch caps lock LED support for SKCL-LED variants, solenoid switching support (Solenoid included in kit)",],
+        ["Case Mass", "~1.2kg (Case, weight, plate)",],
+        ["Layouts", `Note: Each layout requires its own plate; select the correct one as necessary.  
+![Layout diagram](/assets/projects/lunar-ii/img_0060_largesize.png)`,],
+        ["Units", "100 total",],
+        ["Price (at time of group buy)", "419USD at Switchplate Peripherals, 399USD at TypePlus",],
+        ["Vendors", "Switchplate Peripherals, TypePlus",],
+        ["Advice and Notes", `- Tweezers may be helpful for hooking the stabilizer wires. 
+- Prepare and test all switches before building. 
+- Solenoid installation requires slightly advanced soldering and assembly. 
+- Tweezers and soldering helping hands may be useful. 
+- The prototype case is an early unit with a brass weight; a solenoid cutout has been added in a later revision.`,],
+    ]} />
+
+    <ClassicResourcesTable project='lunar-ii' />
+
+  </div>
+
+</DefaultLayout>
