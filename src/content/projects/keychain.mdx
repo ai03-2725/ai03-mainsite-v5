@@ -16,6 +16,7 @@ import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
 import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
 import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
 import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
 import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
 import SimpleImage from '@components/astro/SimpleImage.astro'
 
@@ -88,27 +89,18 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
       ]}
     />
 
-    <div class="grid grid-cols-2 place-items-center gap-8">
-      <div>
-        <div class="aspect-[1.5] overflow-hidden rounded-[3.75px]">
-          <img src="/assets/projects/keychain/img_0005_largesize.avif" loading="lazy" class="w-full h-full object-contain" />
-        </div>
-      </div>
-      <div>
-        <DefaultMarkdownRenderer>
-          ### A tool that defined an era
-          In early 2019 when the Keychain was released, the keyboard community looked very different from how it does now.  
-          Keyswitch modding tools were expensive and rare, and both the 4-clip MX-type and 2-clip Kailh-type housing switches 
-          were in demand due to limited switch variety and demand for tactile switch modding.  
+    <HorizontalStackBlock src="/assets/projects/keychain/img_0005_largesize.avif" alt="Diagram image" rounded>
+      ### A tool that defined an era
+      In early 2019 when the Keychain was released, the keyboard community looked very different from how it does now.  
+      Keyswitch modding tools were expensive and rare, and both the 4-clip MX-type and 2-clip Kailh-type housing switches 
+      were in demand due to limited switch variety and demand for tactile switch modding.  
 
-          In an attempt to create a reliable, versatile, and compact switch modding tool, I began this project with Kevinplus 
-          and KBDfans as a solution - two sets of interlocking switch opening teeth that could handle both types of switches, 
-          and a latching magnetic mechanism which would protect the teeth during transit while compacting the assembly down.  
-        </DefaultMarkdownRenderer>
-      </div>
-    </div>
+      In an attempt to create a reliable, versatile, and compact switch modding tool, I began this project with Kevinplus 
+      and KBDfans as a solution - two sets of interlocking switch opening teeth that could handle both types of switches, 
+      and a latching magnetic mechanism which would protect the teeth during transit while compacting the assembly down.  
+    </HorizontalStackBlock>
 
-    <div class="columns-3">
+    <div class="columns-1 md:columns-3">
       <div>
         <img src="/assets/projects/keychain/img_0010_largesize.avif" loading="lazy" class="w-full h-full object-cover" />
       </div>
@@ -120,27 +112,18 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
       </div>
     </div>
 
-    <div class="grid grid-cols-2 place-items-center gap-8">
-      <div>
-        <div class="aspect-[1.5] overflow-hidden rounded-[3.75px]">
-          <img src="/assets/projects/keychain/img_0001_largesize.avif" loading="lazy" class="w-full h-full object-cover" />
-        </div>
-      </div>
-      <div>
-        <DefaultMarkdownRenderer>
-          ### The test of time
-          The teeth's dimensions were dialed in over numerous prototypes to achieve the ideal angles for easy switch opening 
-          across various switch types, and at long last the opener became available at KBDfans for $25 - less than the cost of 
-          single switch openers at the time.  
+    <HorizontalStackBlock src="/assets/projects/keychain/img_0001_largesize.avif" alt="Desk photo" rounded reverse>
+      ### The test of time
+      The teeth's dimensions were dialed in over numerous prototypes to achieve the ideal angles for easy switch opening 
+      across various switch types, and at long last the opener became available at KBDfans for $25 - less than the cost of 
+      single switch openers at the time.  
 
-          Needless to say, the design got cloned instantly and the attack of the clones flooded the AliExpress shelves; the 
-          genuine opener still had quite a long product life of many years.  
-          Since then, the original keychain has been discontinued - leaving a legacy visible in the imitators that followed.  
-        </DefaultMarkdownRenderer>
-      </div>
-    </div>
+      Needless to say, the design got cloned instantly and the attack of the clones flooded the AliExpress shelves; the 
+      genuine opener still had quite a long product life of many years.  
+      Since then, the original keychain has been discontinued - leaving a legacy visible in the imitators that followed.  
+    </HorizontalStackBlock>
 
-    <div class="mt-12">
+    <div class="mt-12 px-6">
       <Center>
         <DefaultMarkdownRenderer>
           Looking for a quality successor?  

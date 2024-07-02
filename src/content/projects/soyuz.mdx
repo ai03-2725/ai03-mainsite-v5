@@ -1,0 +1,64 @@
+---
+draft: false
+title: Soyuz
+slogan: Single-PCB numpad kit
+coverImage:
+  url: "/assets/projects/soyuz/img_0001_largesize.avif"
+  alt: Soyuz cover image
+releaseDate: 2019-06-08
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="SOYUZ"
+      >
+      <DefaultMarkdownRenderer>
+        A single-PCB numpad kit designed to be an entry kit for soldering practice.  
+        Both available from vendors as well as open-source for manufacturing your own.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'soyuz'} 
+      slides={[
+        {
+          url: "/assets/projects/soyuz/img_0001_fullsize.avif",
+          alt: "Cover image",
+        },
+      ]} 
+      links={[
+        {
+          label: "PCB Source",
+          url: "https://github.com/ai03-2725/Soyuz",
+        },
+        {
+          label: "Build Guide - English",
+          url: "https://github.com/ai03-2725/Soyuz/blob/master/BuildGuide-English.md",
+        },
+        {
+          label: "Build Guide - Japanese",
+          url: "https://github.com/ai03-2725/Soyuz/blob/master/BuildGuide-Japanese.md",
+        },
+      ]}
+    />
+
+  </div>
+
+</DefaultLayout>

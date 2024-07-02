@@ -1,0 +1,112 @@
+---
+draft: false
+title: Lunar
+slogan: 65% AEK Keyboard
+coverImage:
+  url: "/assets/projects/lunar/img_0010_largesize.avif"
+  alt: Lunar cover image
+releaseDate: 2018-06-11
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="LUNAR"
+      >
+      <DefaultMarkdownRenderer>
+        Sculpted around the original curved keycap profile of the Apple Extended Keyboards, Lunar brings back an icon of the Alps keyswitch era in a modern compact form factor.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'lunar'} 
+      slides={[
+        {
+          url: "/assets/projects/lunar/img_0010_fullsize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/lunar/img_0009_fullsize.avif",
+          alt: "Top view",
+        },
+        {
+          url: "/assets/projects/lunar/img_0006_fullsize.avif",
+          alt: "Side front view",
+        },
+        {
+          url: "/assets/projects/lunar/img_0007_fullsize.avif",
+          alt: "Side rear view",
+        },
+        {
+          url: "/assets/projects/lunar/img_0008_fullsize.avif",
+          alt: "Bottom view",
+        },
+        {
+          url: "/assets/projects/lunar/img_0004_fullsize.avif",
+          alt: "Inner view",
+        },
+        {
+          url: "/assets/projects/lunar/img_0005_fullsize.avif",
+          alt: "Inner angled view",
+        },
+        {
+          url: "/assets/projects/lunar/img_0003_fullsize.avif",
+          alt: "Internals view A",
+        },
+        {
+          url: "/assets/projects/lunar/img_0002_fullsize.avif",
+          alt: "Internals view B",
+        },
+        {
+          url: "/assets/projects/lunar/img_0001_fullsize.avif",
+          alt: "Bottom view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=96112.0",
+        },
+        {
+          label: "Product Page",
+        },
+        {
+          label: "Build Guide",
+          url: "https://info.ai03.com/books/lunar-build-guide",
+        },
+      ]}
+    />
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/lunar/img_0011_largesize.png' 
+      footerNote='Credits go to Switchplate Peripherals for photos'
+      specs={[
+        ["Pricing (at time of sale)", `Chassis - $350
+PCB - $40
+Resin 1.75u Shift - $25`,],
+        ["Variants", "Unified spacebar; Split spacebar",],
+        ["Structure", "Integrated 4mm plate",],
+        ["Typing Angle", "5deg"]
+    ]} />
+
+    <ClassicResourcesTable project='lunar' />
+
+  </div>
+
+</DefaultLayout>

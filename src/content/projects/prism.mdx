@@ -1,0 +1,99 @@
+---
+draft: false
+title: Prism Switch Opener
+slogan: Switch opener with an aesthetic twist
+coverImage:
+  url: "/assets/projects/prism/img_0002_largesize.avif"
+  alt: Prism Switch Opener cover image
+releaseDate: 2019-04-21	
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="PRISM"
+      >
+      <DefaultMarkdownRenderer>
+        A switch opener that's elegant on the desk and efficient in your hands.  
+        The Prism switch opener combined the 2-in-1 opening teeth from the [keychain switch opener](/projects/keychain) with a unique, larger design that is easier to grip.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'prism'} 
+      slides={[
+        {
+          url: "/assets/projects/prism/img_0002_fullsize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/prism/img_0005_fullsize.avif",
+          alt: "Single render, grey",
+        },
+        {
+          url: "/assets/projects/prism/img_0001_fullsize.avif",
+          alt: "Multiple render, hex",
+        },
+        {
+          url: "/assets/projects/prism/img_0004_fullsize.avif",
+          alt: "Multiple render, grid",
+        },
+      ]} 
+      links={[
+
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/prism/img_0005_fullsize.avif">
+          ### The Switch Modding Multitool
+          Countless prototypes were made to ensure that the single switch opener can open a wide variety of switches, including Cherry MX-style 4-clip, larger Panda-style housings, and 2-clip Kailh-style variants.
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/prism/img_0001_fullsize.avif">
+          ### An Elegant Solution
+          The unique geometry of the Prism opener provides grip in the hand, while also serving as an artful object on the desk when not in use.  
+          Magnetic closure protects the opener’s teeth from damaging nearby objects.
+        </ClassicImageTextBlock> 
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/prism/img_0006_largesize.jpg' 
+      specs={[
+        ["Size", "Roughly 50 x 43 x 30mm (15mm height per half)",],
+        ["Weight", "110g",],
+        ["Material", "Aluminum, anodized",],
+        ["Colors", `- Black
+- Silver
+- Burgundy Red
+- Blue Grey
+- Rose Gold
+- Olive Green
+- Purple`]
+    ]} />
+
+    <ClassicResourcesTable project='prism' />
+
+  </div>
+
+</DefaultLayout>

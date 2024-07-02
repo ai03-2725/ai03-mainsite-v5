@@ -1,0 +1,64 @@
+---
+draft: false
+title: Quasar
+slogan: SSK Replacement Controller
+coverImage:
+  url: "/assets/projects/quasar/img_0001_largesize.avif"
+  alt: Quasar cover image
+releaseDate: 2019-06-08
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="QUASAR"
+      >
+      <DefaultMarkdownRenderer>
+        An IBM Model M SSK replacement controller.  
+        Runs QMK firmware; uses a USB-B connector.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'quasar'} 
+      slides={[
+        {
+          url: "/assets/projects/quasar/img_0003_fullsize.avif",
+          alt: "Comparison image",
+        },
+        {
+          url: "/assets/projects/quasar/img_0001_fullsize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/quasar/img_0002_fullsize.avif",
+          alt: "Assembled PCB image",
+        },
+      ]} 
+      links={[
+        {
+          label: "PCB Source",
+          url: "https://github.com/ai03-2725/Quasar",
+        },
+      ]}
+    />
+
+  </div>
+
+</DefaultLayout>
