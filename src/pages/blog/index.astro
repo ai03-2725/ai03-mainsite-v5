@@ -3,16 +3,7 @@ import Layout from '../../layouts/DefaultLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import type { MinimumProjectsIndex } from '@components/react/SearchableProjectInfiniteScrollWrapper';
 
-const allProjects = await getCollection('projects')
-
-// This page relies mostly on preact real-time for filtering the displayed projects and fetching updates from the /api endpoint
-// Prepare static data to pass to the script
-
-const minimumProjectData: MinimumProjectsIndex[] = allProjects.map(project => { return {
-	slug: project.slug,
-	title: project.data.title,
-	src: project.data.coverImage.url
-}})
+const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date < b.data.date ? 1 : -1)
 
 ---
 
@@ -21,6 +12,14 @@ const minimumProjectData: MinimumProjectsIndex[] = allProjects.map(project => { 
 		<div class="w-full text-center">
 			<h1 class="text-[38px] font-[575] mb-3">Blog</h1>
 		</div>
-    <p>Test</p>
+		<div>
+    {blogPosts.map(post => (
+			<a href={post.slug} >
+				<div class="">
+					<h2>{post.data.title}</h2>
+				</div>
+			</a>
+		))}
+		</div>
 	</div>
 </Layout>

@@ -1,17 +1,18 @@
 ---
 interface Props {
   label: string;
-  url: string | undefined;
+  url?: string | undefined;
+  extern?: boolean | undefined;
 }
 
-const { label, url } = Astro.props;
+const { label, url, extern } = Astro.props;
 ---
 
 <div class=`
   ${url ? "bg-zinc-700" : "bg-zinc-500"}
   text-white 
   text-center 
-  rounded-sm 
+  rounded-[2.375px] 
   ${url && "hover:bg-zinc-600"}
   ${url && "transition-all ease-[var(--spring-easing)] duration-[138ms]"}
 `>
@@ -19,8 +20,9 @@ const { label, url } = Astro.props;
     href={url ? url : null}
     aria-disabled={url ? false : true}
     class="h-full text-white no-underline"
+    target={extern === false ? "_self" : "_blank"} rel={extern !== false && "noopener noreferrer"}
   >
-    <div class="p-3">
+    <div class="py-3 px-5">
       {label}
     </div>
   </a>

@@ -1,0 +1,22 @@
+---
+import SimpleButton from "@components/astro/SimpleButton.astro";
+
+---
+<div class="col-span-1 md:col-span-2 bg-zinc-100 rounded-[3.75px] overflow-hidden p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div class="flex flex-col gap-2">
+    <img src="/assets/projects/misc/img_0002_mediumsize.png" class="aspect-square object-cover w-[100px] rounded-[2.375px] mb-3" />
+    <h2 class="text-2xl font-[500] pb-1">Atelier</h2>
+    <p>A community of keyboard designers, for keyboard designers, by keyboard designers.</p>
+    <p>Whether you're an experienced designer or just starting, you might find this community helpful for sharing ideas and collaborating on works.</p>
+    <div class="grow" />
+    <div class="flex flex-row gap-4">
+      <SimpleButton label="Website" url="https://kbatelier.org/" />
+      <SimpleButton label="Discord" url="https://discord.gg/b7vwhHS" />
+      <SimpleButton label="Wiki" url="https://wiki.kbatelier.org/" />
+    </div>
+  </div>
+  <div>
+    <iframe class="min-h-[375px]" src="https://discord.com/widget?id=728571839529353216&amp;theme=dark" width="100%" height="100%" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+  </div>
+
+</div>

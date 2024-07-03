@@ -1,0 +1,36 @@
+---
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro';
+import Layout from '../../layouts/DefaultLayout.astro';
+import { getCollection } from 'astro:content';
+import { dateToDisplayString } from '@scripts/util';
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog-posts');
+  return blogPosts.map(post => ({
+    params: { slug: post.slug }, props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const positionString = post.data.coverImage.anchor ? post.data.coverImage.anchor.join(" ") : null
+
+---
+<Layout title={`${post.data.title} | Blog`}`>
+	<div class="container mx-auto pt-12">
+		<div class="w-full text-center">
+			<h1 class="text-[38px] font-[575] mb-2">{post.data.title}</h1>
+      <p class="mb-2">{dateToDisplayString(post.data.date)}</p>
+
+      <div class="w-full flex flex-row justify-center pt-8 pb-20">
+        <div class="overflow-hidden rounded-[3.75px] w-full lg:w-3/4 aspect-[1.618]">
+          <img src={post.data.coverImage.url} loading="lazy" class="object-cover" style={positionString ? `object-position: ${positionString};` : ""} />
+        </div>
+      </div>
+		</div>
+    <DefaultMarkdownRenderer>
+      <Content />
+    </DefaultMarkdownRenderer>
+	</div>
+</Layout>

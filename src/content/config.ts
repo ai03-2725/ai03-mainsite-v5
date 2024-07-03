@@ -54,11 +54,13 @@ const blogPosts = defineCollection({
   type: 'content',
   schema: z.object({
     draft: z.optional(z.boolean()),
+    title: z.string(),
     date: z.date(),
     tags: z.array(z.string()),
     coverImage: z.object({
       url: z.string(),
       alt: z.string(),
+      anchor: z.optional(z.array(z.enum(['top', 'bottom', 'left', 'right'])))
     }),
     relatedProjects: z.array(reference('projects')),
     relatedPosts: z.array(reference('blog-posts')),
