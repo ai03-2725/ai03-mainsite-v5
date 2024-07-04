@@ -1,12 +1,17 @@
-import { Icon } from '@iconify-icon/react';
-import type { CollectionEntry } from "astro:content";
 import type React from "preact/compat";
 import { useState } from 'preact/compat';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import type { APIUpdateEntry } from '@pages/api/updates/[projectId]';
 import { CollapseDiv } from '@components/react/CollapseDiv.tsx'
 import { Spinner } from './Spinner';
 import type { MinimumProjectsIndex } from './SearchableProjectInfiniteScrollWrapper';
+import { UpdateLogEntryRenderer } from './UpdateLogEntryRenderer';
+import { CircularProgressbarWithChildren } from "react-circular-progressbar";
+import { statusToDisplayText, statusToIcon, statusToProgress } from "@scripts/util";
+import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
+import Markdown from 'react-markdown'
+import { DefaultMarkdownRenderer } from './DefaultMarkdownRenderer';
+import rehypeRewrite from 'rehype-rewrite'
 
 // The fetch function
 async function fetchUpdates(project: string): Promise<APIUpdateEntry[]> {
@@ -25,7 +30,7 @@ async function fetchUpdates(project: string): Promise<APIUpdateEntry[]> {
   })
 }
 
-// The right pane display for updates
+// The bottom pane display for updates
 const UpdatesRenderer: React.FC<{
   project: string,
   updates: APIUpdateEntry[] | undefined,
@@ -59,7 +64,7 @@ const UpdatesRenderer: React.FC<{
       <div class="flex flex-col gap-8">
         {updates.map(updateEntry => (
           <div key={updateEntry}>
-            <p>{updateEntry.body}</p>
+            <UpdateLogEntryRenderer update={updateEntry} />
           </div>
         ))}
       </div>
@@ -73,8 +78,6 @@ export const UpdatesPageEntry: React.FC<{
 }> = ({
   project
 }) => {
-
-  const queryClient = useQueryClient()
 
   const { 
     data,
@@ -127,7 +130,6 @@ export const UpdatesPageEntry: React.FC<{
             <p>Error.</p> 
           }
           {isLoading || !data && 
-            // TODO
             <div class="w-full h-full flex flex-row justify-center items-center">
               <div>
                 <Spinner size={36} width={3} />
@@ -138,8 +140,28 @@ export const UpdatesPageEntry: React.FC<{
             <div class="h-full">
               {data.length > 0 ?
                 <div class="flex flex-col h-full">
-                  <div class="grow">
-                    {/* Todo - Latest status */}
+                  <div class="grow flex flex-row">
+                    {/* Todo - Repair this */}
+                    <div class="aspect-square" style="width: 32px; height: 32px;">
+                      <CircularProgressbarWithChildren value={statusToProgress(data[0].status)}>
+                        <Icon icon={statusToIcon(data[0].status)} size={48}/>
+                      </CircularProgressbarWithChildren>
+                    </div>
+                    <div class="flex flex-col justify-start">
+                      <h3 class="text-xl font-[550]">Status: {statusToDisplayText(data[0].status)}</h3>
+                      <DefaultMarkdownRenderer>
+                        <Markdown rehypePlugins={[[rehypeRewrite, {
+                          selector: 'img',
+                          rewrite: (node) => {
+                            if (node.type === 'element') {
+                              node.properties.loading = 'lazy';
+                            }
+                          }
+                        }]]}>
+                          {data[0].body}
+                        </Markdown>
+                      </DefaultMarkdownRenderer>
+                    </div>
                   </div>
                   <div class="flex flex-col items-start gap-2">
                     <p>Last Updated {data[0].date}</p>

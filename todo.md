@@ -13,6 +13,13 @@ Project pages
 - Summit
 - Pillar
 
-Collection pages
-Blog pages xfer
-Designer resources
+Todo
+- Construct the last few product pages
+- Make the collections/series pages
+- Make the home page with the knowledge gained from making grid layouts today
+- Migrate blog posts
+- SEO, sitemap, all those misc things
+
+Long term
+- Migrate build guides and general info
+- Rewrite feature parity product pages to retrospective style
