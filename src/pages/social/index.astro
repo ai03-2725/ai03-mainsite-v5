@@ -1,9 +1,9 @@
 ---
 import IconButton from '@components/astro/IconButton.astro';
 import Layout from '../../layouts/DefaultLayout.astro';
-import SimpleButton from '@components/astro/SimpleButton.astro';
 
 import CardDiscord from '@components/single-use/social/card-discord.astro'
+import SocialLinksList from '@components/astro/SocialLinksList.astro';
 
 ---
 
@@ -14,13 +14,7 @@ import CardDiscord from '@components/single-use/social/card-discord.astro'
 		</div>
 
 		<div class="flex flex-row justify-center items-center pb-12 text-zinc-700 gap-4">
-			<IconButton size={42} icon="ri:discord-fill" url="https://discord.gg/qA5JD9y"  />
-			<IconButton size={42} icon="ri:instagram-line" url="https://www.instagram.com/ai03_2725/"  />
-			<IconButton size={42} icon="ri:github-fill" url="https://github.com/ai03-2725"  />
-			<IconButton size={42} icon="ri:youtube-fill" url="https://www.youtube.com/@ai03"  />
-			<IconButton size={42} icon="ri:threads-fill" url="https://www.threads.net/@ai03_2725"  />
-			<IconButton size={42} icon="ri:twitter-fill" url="https://twitter.com/ai03_2725"  />
-			
+			<SocialLinksList size={42} />			
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

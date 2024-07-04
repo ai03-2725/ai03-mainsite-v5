@@ -1,26 +1,44 @@
 ---
 import Layout from '../../layouts/DefaultLayout.astro';
-import { getCollection, getEntry } from 'astro:content';
-import type { MinimumProjectsIndex } from '@components/react/SearchableProjectInfiniteScrollWrapper';
-
-const allProjects = await getCollection('projects')
-
-// This page relies mostly on preact real-time for filtering the displayed projects and fetching updates from the /api endpoint
-// Prepare static data to pass to the script
-
-const minimumProjectData: MinimumProjectsIndex[] = allProjects.map(project => { return {
-	slug: project.slug,
-	title: project.data.title,
-	src: project.data.coverImage.url
-}})
+import IconButton from '@components/astro/IconButton.astro';
+import Logo from '@assets/site/ai-logo-ring.astro'
+import SocialLinksList from '@components/astro/SocialLinksList.astro';
 
 ---
 
 <Layout title="About">
-	<div class="container mx-auto pt-12">
-		<div class="w-full text-center">
-			<h1 class="text-[38px] font-[575] mb-3">About</h1>
+	<div class="container mx-auto pt-20 px-4 md:px-0">
+		<div class="w-full text-center pb-14 flex flex-row justify-center">
+			<Logo classList={["max-w-[225px]", "w-1/2"]} />
 		</div>
-    <p>Test</p>
+
+		<div class="flex flex-row justify-center items-center gap-5 flex-wrap">
+			<SocialLinksList size={36} />
+		</div>
+
+		<div class="text-center flex flex-col gap-4 pt-14 max-w-[875px] mx-auto px-4">
+			<h2 class="text-2xl font-[500] pb-1">About the brand</h2>
+			<p>Since its first keyboard designs in 2017, ai03 Design Studio has been at the forefront of the pursuit of the best input - developing new technologies, sculpting new works, and catering to audiences both wide and niche.</p>
+			<p>With the goal of creating the best possible keyboards to empower those who change the world, ai03 Design Studio has created a vast variety of designs to fulfill the promise - ranging from the most accessible DIY practice kits to the most premium of limited runs, while refusing to compromise in either design or performance regardless of the project.</p>
+		</div>
+
+		<div class="text-center flex flex-col gap-6 pt-14 max-w-[875px] mx-auto px-4">
+			<h2 class="text-2xl font-[500] pb-1">About the person</h2>
+			<div class="flex flex-col gap-2">
+				<p>ai03</p>
+				<p>Keyboard addict</p>
+				<p>Product Designer and Software Developer at CannonKeys LLC</p>
+				<p>Bachelor of Science in Computer Science and Engineering at UCLA</p>
+			</div>
+			<div />
+			<p>Life is unpredictable.</p>
+			<p>Sometimes, a short excursion that begins at attempting to make the best possible tool for a life in software development turns into a years-long journey of making the tool the goal.</p>
+			<p>Sometimes, that journey gets tossed around by education, global pandemics, opportunities vanishing from such events, miraculous opportunities being offered in such situations, and a career starting on the other side of the planet compared to previously intended - all while pursuing the passion that started it all.</p>
+			<p>Sometimes, I don't know if this life is well-executed, completely dictated by chance, or somewhere in between.</p>
+			<div />
+			<p>But hey, if you're finding this interesting enough to read up to this point, and if my works are making a positive impact on your life, all's worthwhile in the end.</p>
+
+		</div>
+
 	</div>
 </Layout>
