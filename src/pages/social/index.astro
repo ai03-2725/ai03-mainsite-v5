@@ -1,26 +1,30 @@
 ---
+import IconButton from '@components/astro/IconButton.astro';
 import Layout from '../../layouts/DefaultLayout.astro';
-import { getCollection, getEntry } from 'astro:content';
-import type { MinimumProjectsIndex } from '@components/react/SearchableProjectInfiniteScrollWrapper';
+import SimpleButton from '@components/astro/SimpleButton.astro';
 
-const allProjects = await getCollection('projects')
-
-// This page relies mostly on preact real-time for filtering the displayed projects and fetching updates from the /api endpoint
-// Prepare static data to pass to the script
-
-const minimumProjectData: MinimumProjectsIndex[] = allProjects.map(project => { return {
-	slug: project.slug,
-	title: project.data.title,
-	src: project.data.coverImage.url
-}})
+import CardDiscord from '@components/single-use/social/card-discord.astro'
 
 ---
 
-<Layout title="Social">
-	<div class="container mx-auto pt-12">
-		<div class="w-full text-center">
-			<h1 class="text-[38px] font-[575] mb-3">Social</h1>
+<Layout title="Socials">
+	<div class="container mx-auto pt-12 px-4 md:px-0">
+		<div class="w-full text-center pb-6">
+			<h1 class="text-[38px] font-[575] mb-1">Socials</h1>
 		</div>
-    <p>Test</p>
+
+		<div class="flex flex-row justify-center items-center pb-12 text-zinc-700 gap-4">
+			<IconButton size={42} icon="ri:discord-fill" url="https://discord.gg/qA5JD9y"  />
+			<IconButton size={42} icon="ri:instagram-line" url="https://www.instagram.com/ai03_2725/"  />
+			<IconButton size={42} icon="ri:github-fill" url="https://github.com/ai03-2725"  />
+			<IconButton size={42} icon="ri:youtube-fill" url="https://www.youtube.com/@ai03"  />
+			<IconButton size={42} icon="ri:threads-fill" url="https://www.threads.net/@ai03_2725"  />
+			<IconButton size={42} icon="ri:twitter-fill" url="https://twitter.com/ai03_2725"  />
+			
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<CardDiscord />
+		</div>
 	</div>
 </Layout>

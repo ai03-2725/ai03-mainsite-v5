@@ -39,12 +39,18 @@ dependencies:
   '@iconify-icons/ph':
     specifier: ^1.2.5
     version: 1.2.5
+  '@iconify-icons/ri':
+    specifier: ^1.2.10
+    version: 1.2.10
   '@iconify-json/iconoir':
     specifier: ^1.1.41
     version: 1.1.41
   '@iconify-json/ph':
     specifier: ^1.1.13
     version: 1.1.13
+  '@iconify-json/ri':
+    specifier: ^1.1.21
+    version: 1.1.21
   '@tanstack/react-query':
     specifier: ^5.49.2
     version: 5.49.2(@preact/compat@17.1.2)
@@ -1236,6 +1242,12 @@ packages:
       '@iconify/types': 2.0.0
     dev: false
 
+  /@iconify-icons/ri@1.2.10:
+    resolution: {integrity: sha512-wNaXsQYK55WDUWCbcjvnwnODV4Jtsp+VC0duPanibEVu876TUYf6kdgTGtH7/GErBCNdJuJJbncG7vbOaeQi7w==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
   /@iconify-json/iconoir@1.1.41:
     resolution: {integrity: sha512-0M8L0EyYVqNfOvnIu6W2Y4EdYiRkQ4dWg7P42/S73LgNCseWqY/ZaZQvwedMALPux5l0EZa9kRkw0WW8IComhA==}
     dependencies:
@@ -1244,6 +1256,12 @@ packages:
 
   /@iconify-json/ph@1.1.13:
     resolution: {integrity: sha512-xtM4JJ63HCKj09WRqrBswXiHrpliBlqboWSZH8odcmqYXbvIFceU9/Til4V+MQr6+MoUC+KB72cxhky2+A6r/g==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/ri@1.1.21:
+    resolution: {integrity: sha512-ssU2CRaB4T83Q3cncCZtITholhYkH6gEL5XLmdMII6Xzn8bTCpDCkt+HdX4URc24uUMD0PGIaNLJUIAgdfLMjQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false

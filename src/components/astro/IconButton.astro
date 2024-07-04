@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  icon: string,
+  url: string,
+  size: number,
+  bgColor?: string | undefined,
+}
+
+const {
+  icon,
+  url,
+  size,
+  bgColor
+} = Astro.props;
+
+---
+
+<a href={url} class={`${bgColor && `p-4 bg-[#${bgColor}]`}`}>
+  <Icon name={icon} size={size} />
+</a>

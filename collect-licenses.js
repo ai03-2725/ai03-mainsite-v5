@@ -28,6 +28,10 @@ const CUSTOM_LICENSE_URLS = [
     name: "@iconify-json/ph",
     url: "https://github.com/phosphor-icons/core/raw/main/LICENSE",
   },
+  {
+    name: "@iconify-json/ri",
+    url: "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/License",
+  },
   // {
   //   name: "alpinejs",
   //   url: "https://github.com/alpinejs/alpine/raw/main/LICENSE.md",
