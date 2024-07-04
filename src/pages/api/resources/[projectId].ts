@@ -20,7 +20,7 @@ export const GET: APIRoute = async ({ params, request }) => {
     JSON.stringify(
       sortResources(
         allResources
-        .filter(resource => resource.id.includes(projectId))
+        .filter(resource => resource.id.startsWith(projectId + '/'))
         .filter(resource => resource.data.draft !== true)
       )
       .map(resource => ({label: resource.data.label, fileUrl: resource.data.fileUrl || null, body: resource.body}))

@@ -22,7 +22,7 @@ export const GET: APIRoute = async ({ params, request }) => {
     JSON.stringify(
       sortUpdates(
         allUpdates
-        .filter(update => update.id.includes(projectId))
+        .filter(update => update.id.startsWith(projectId + '/'))
         .filter(update => update.data.draft !== true)
       )
       .map(update => ({date: getUpdateDateString(update), status: update.data.status, body: update.body}))
