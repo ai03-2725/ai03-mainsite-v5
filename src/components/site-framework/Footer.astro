@@ -1,4 +1,6 @@
 ---
+import SocialLinksList from '@components/astro/SocialLinksList.astro'
+
 
 interface Props {
   
@@ -19,7 +21,9 @@ const {  } = Astro.props
       </div>
 
       <div class="w-full md:w-1/2 text-center md:text-end">
-        <p>Socials</p>
+        <div class="flex flex-row justify-center md:justify-end gap-3 flex-wrap">
+          <SocialLinksList size={26} />
+        </div>
       </div>
 
     </div>
