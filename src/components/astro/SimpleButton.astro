@@ -6,6 +6,12 @@ interface Props {
 }
 
 const { label, url, extern } = Astro.props;
+
+let openInNewTab = (extern !== false);
+if (extern === undefined && url && url.charAt(0) === "#") {
+  openInNewTab = false
+}
+
 ---
 
 <div class=`
@@ -20,7 +26,7 @@ const { label, url, extern } = Astro.props;
     href={url ? url : null}
     aria-disabled={url ? false : true}
     class="h-full text-white no-underline"
-    target={extern === false ? "_self" : "_blank"} rel={extern !== false && "noopener noreferrer"}
+    target={openInNewTab === false ? "_self" : "_blank"} rel={openInNewTab !== false && "noopener noreferrer"}
   >
     <div class="py-3 px-5">
       {label}
