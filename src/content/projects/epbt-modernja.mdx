@@ -1,0 +1,90 @@
+---
+draft: false
+title: ePBT ModernJA
+slogan: Vintage Japanese Keyset with a Modern Touch
+cover:
+  image: "/images/epbt-modernja/epbt-modernja-aligned-diagonal-leftmacroview-medium.avif"
+  alt: ePBT ModernJA cover image
+releaseDate: 2020-06-16
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="ePBT ModernJA"
+      >
+      <DefaultMarkdownRenderer>
+        ModernJA unites the classic "cross-positioned" legends of vintage Japanese keyboards with a modern ANSI legend layout and minimal black-on-white colorway.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'epbt-modernja'} 
+      slides={[
+        { url: "/images/epbt-modernja/epbt-modernja-aligned-diagonal-leftmacroview-large.avif" },
+        { url: "/images/epbt-modernja/epbt-modernja-aligned-front-large.avif" },
+        { url: "/images/epbt-modernja/epbt-modernja-aligned-diagonal-rightmacroview-large.avif" },
+        { url: "/images/epbt-modernja/epbt-modernja-loose-large.avif" },
+        { url: "/images/epbt-modernja/epbt-modernja-aligned-diagonal-largeview-large.avif" },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=109341.0",
+        },
+        {
+          label: "Product Page",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/images/epbt-modernja/epbt-modernja-aligned-front-medium.avif">
+          ### A Timeless Look
+          ModernJA updates the legends from the historically-oriented SimpleJA keyset to current ANSI usage while maintaining most of its genuine legendwork and character.  
+          The neutral colorway of black print on bright white base plastic matches well with nearly any color keyboard, preventing design obsolescence and allowing the retro legends to carry forward many decades into the future.
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/images/epbt-modernja/epbt-modernja-aligned-diagonal-rightmacroview-medium.avif">
+          ### A Touch of Authenticity
+          Many hours of research were conducted to implement historically used legends from vintage boards wherever possible; those that did not exist historically were crafted carefully to match the others.  
+          The modifier keys were kept all-Japanese for a uniform look throughout the keyset.
+        </ClassicImageTextBlock> 
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/images/epbt-modernja/epbt-modernja-loose-medium.avif' 
+      footerNote='Credits to PENG Photography Studio (@xrehpargotohp) for photos'
+      specs={[
+        ["Manufacturer", "EnjoyPBT",],
+        ["Vendor (Primary)", "KBDfans",],
+        ["Sales Format", "Group Buy",],
+        ["Material", "PBT, dye-sub",],
+        ["Colors", `EnjoyPBT's default "bright white" (not milky/off-white) with black print`,],
+    ]} />
+
+    <ClassicResourcesTable project='epbt-modernja' />
+
+  </div>
+
+</DefaultLayout>

@@ -5,9 +5,6 @@ Project pages
 - Brutal V2 65%
 - Brutal V2 1800
 
-- ModernJA
-- SimpleJA
-
 - Altair
 - Summit
 - Pillar
