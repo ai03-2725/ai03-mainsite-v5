@@ -8,7 +8,6 @@ Project pages
 - ModernJA
 - SimpleJA
 
-- Vector
 - Altair
 - Summit
 - Pillar
@@ -18,8 +17,9 @@ Todo
 - Make the collections/series pages
 - Make the home page with the knowledge gained from making grid layouts today
 - Migrate blog posts
-- SEO, sitemap, all those misc things
+- SEO
 
 Long term
 - Migrate build guides and general info
 - Rewrite feature parity product pages to retrospective style
+- Repair updates page styling

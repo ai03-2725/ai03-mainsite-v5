@@ -1,0 +1,136 @@
+---
+draft: false
+title: Vector
+slogan: Slogan
+coverImage:
+  url: "/assets/projects/vector/img_0023_mediumsize.avif"
+  alt: Vector cover image
+releaseDate: 2022-07-16	
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="VECTOR"
+      >
+      <DefaultMarkdownRenderer>
+        Blending the past with the present, Vector renews vintage keyboard elements with modern functions and stylings to create a distinctly retro board that blends into desk environments of the present.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'vector'} 
+      slides={[
+        {
+          url: "/assets/projects/vector/img_0023_fullsize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/vector/img_0026_fullsize.avif",
+          alt: "Rear view",
+        },
+        {
+          url: "/assets/projects/vector/img_0028_fullsize.avif",
+          alt: "Bottom rear view",
+        },
+        {
+          url: "/assets/projects/vector/img_0029_fullsize.avif",
+          alt: "Parts view",
+        },
+        {
+          url: "/assets/projects/vector/img_0030_fullsize.avif",
+          alt: "Unbuilt top view",
+        },
+        {
+          url: "/assets/projects/vector/img_0024_fullsize.avif",
+          alt: "Bottom front view",
+        },
+        {
+          url: "/assets/projects/vector/img_0022_fullsize.avif",
+          alt: "Rear view",
+        },
+        {
+          url: "/assets/projects/vector/img_0021_fullsize.avif",
+          alt: "Front side view",
+        },
+        {
+          url: "/assets/projects/vector/img_0027_fullsize.avif",
+          alt: "Top view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread",
+          url: "https://geekhack.org/index.php?topic=117798.0",
+        },
+        {
+          label: "Product Page",
+          url: "https://cannonkeys.com/products/vector"
+        },
+        {
+          label: "Files and Resources",
+          url: "#resources-table",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/vector/img_0021_largesize.avif">
+          ### A Leap Across Time
+          Large seams, tapered front ledges, rounded edges, large bezels, pen rails - Vector revives the elements of early keyboards and reshapes them to fit the modern.
+          Use the default penrail matched to the case for an undeniably retro feel; swap it for an accent color to create an entirely new impression that pairs well with vibrant keysets.
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/vector/img_0024_largesize.avif">
+          ### Bold Brushstrokes
+          An uniform visual seam journeys around the board's faces, defining the case parts and outlining the massive polished weight overlaid with accent laser engravings.
+          With large, blocky faces that wrap around the keyboard's form with both a sense of roundness and overall sharpness, Vector blurs the lines between retro and current stylings.
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/vector/img_0029_largesize.avif">
+          ### Classic, Timeless Internals
+          Vector's homage to the past carries over to its internals with a plateless PCB-mount structure from early keyboards.
+          With full gasket isolation from the case and internal case screws, Vector brings the early inspiration to custom keyboard standards.
+        </ClassicImageTextBlock> 
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/vector/img_0034_largesize.avif' 
+      footerNote='Early prototype revisions did not have a detachable penrail, had a flex-slotted PCB, and were anodized in non-production colors - some of the photos shown differ from the final product.'
+      specs={[
+        ["Case", "Anodized Aluminum",],
+        ["Weight", "Polished PVDed steel, overlay laser engraving patternwork",],
+        ["Accent Parts", "Penrail (default aluminum matched to case color, optional add-on accent colors)",],
+        ["Case Weight", "2.4kg",],
+        ["Case Colors", "Black, Silver, Burgundy, Blue-Grey",],
+        ["Internals", "Gasket-mounted PCB mount; internal screw; USB daughterboard",],
+        ["PCB", "Solderable (non-hotswap)",],
+        ["Plate", "Optional FR4 plate included but not recommended",],
+        ["Vendors", "CannonKeys",],
+    ]} />
+
+    <ClassicResourcesTable project='vector' />
+
+  </div>
+
+</DefaultLayout>
