@@ -2,8 +2,8 @@
 draft: false
 title: ePBT SimpleJA
 slogan: Vintage Legend Japanese Keyset for the Current Era
-coverImage:
-  url: "/assets/projects/epbt-simpleja/img_0044_largesize.avif"
+cover:
+  image: "/images/epbt-simpleja/epbt-simpleja-render-andromeda-right-medium.avif"
   alt: ePBT SimpleJA cover image
 releaseDate: 2019-06-01
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -37,34 +37,13 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'epbt-simpleja'} 
       slides={[
-        {
-          url: "/assets/projects/epbt-simpleja/img_0044_largesize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/epbt-simpleja/img_0043_largesize.avif",
-          alt: "AAA view",
-        },
-        {
-          url: "/assets/projects/epbt-simpleja/img_0040_largesize.avif",
-          alt: "BBB view",
-        },
-        {
-          url: "/assets/projects/epbt-simpleja/img_0047_largesize.avif",
-          alt: "CCC view",
-        },
-        {
-          url: "/assets/projects/epbt-simpleja/img_0043_largesize.avif",
-          alt: "AAA view",
-        },
-        {
-          url: "/assets/projects/epbt-simpleja/img_0040_largesize.avif",
-          alt: "BBB view",
-        },
-        {
-          url: "/assets/projects/epbt-simpleja/img_0047_largesize.avif",
-          alt: "CCC view",
-        },
+        { url: "/images/epbt-simpleja/epbt-simpleja-render-andromeda-right-large.avif" },
+        { url: "/images/epbt-simpleja/epbt-simpleja-render-andromeda-front-macro-large.avif" },
+        { url: "/images/epbt-simpleja/epbt-simpleja-r1-sample-loose-medium.jpg" },
+        { url: "/images/epbt-simpleja/epbt-simpleja-render-vega-front-large.avif" },
+        { url: "/images/epbt-simpleja/epbt-simpleja-render-polaris-front-large.avif" },
+        { url: "/images/epbt-simpleja/epbt-simpleja-render-kbd8x-mkii-large.avif" },
+        { url: "/images/epbt-simpleja/epbt-simpleja-render-polaris-diagonal-large.avif" },
       ]} 
       links={[
         {
@@ -81,41 +60,40 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/epbt-simpleja/img_0043_largesize.avif">
-          ### Header
-          Markdown body text  
-          Markdown body text  
+        <ClassicImageTextBlock src="/images/epbt-simpleja/epbt-simpleja-render-andromeda-front-macro-medium.avif">
+          ### The Past In The Present
+          ePBT SimpleJA recreates the vintage "cross-positioned" legends of vintage Japanese keyboards with legends as faithful to historical examples as possible.  
+          Countless hours of research were conducted to implement historically-accurate legends; those that did not exist in the past were crafted anew to match the rest.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/epbt-simpleja/img_0040_largesize.avif">
-          ### Header
-          Markdown body text  
-          Markdown body text  
+        <ClassicImageTextBlock src="/images/epbt-simpleja/epbt-simpleja-r1-sample-loose-medium.jpg">
+          ### Adapting For What's Next
+          For its round 2 batch, ePBT SimpleJA's kitting was revised significantly to improve compatibility with a wider variety of layouts including ergo, ortho, and compact boards.  
+          In addition to an optimized base kit which covers the typical, niche kits such as the ortho and JIS/ISO kits have been revamped to bring the retro aesthetic to the most unique of keyboards. 
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/epbt-simpleja/img_0042_largesize.avif">
-          ### Header
-          Markdown body text  
-          Markdown body text  
+        <ClassicImageTextBlock src="/images/epbt-simpleja/epbt-simpleja-render-polaris-diagonal-medium.avif">
+          ### Upon The Best Canvas
+          SimpleJA R2 implements EnjoyPBT's newest toolings for more than just warp-resistant spacebars.  
+          Scoop-only homing keys help to accurately reproduce the original vintage keysets, and short convex spacebars deliver a tangibly- and visually-pleasing typing experience to various key layouts.
         </ClassicImageTextBlock> 
-
-        <ClassicImageTextBlock src="/assets/projects/epbt-simpleja/img_0047_largesize.jpg" >
-          ### Header
-          Markdown body text  
-          Markdown body text  
-        </ClassicImageTextBlock>
 
       </DefaultMarkdownRenderer>
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/epbt-simpleja/img_0045_largesize.avif' 
-      footerNote='Footer note if exists'
       specs={[
-        ["Key", "Value",],
-        ["Key", "Value",],
-        ["Key", "Value",],
-        ["ImageKey", "![Alt](/assets/projects/epbt-simpleja/img_0045_largesize.avif)"]
+        ["Manufacturer", "EnjoyPBT",],
+        ["Vendor", "KBDfans",],
+        ["Price (at time of sale)", "75USD for the base kit",],
+        ["Group Buy Date", `Round 1: 2019-08-02  
+Round 2: 2021-10-15`,],
+        ["Material", "PBT",],
+        ["Legends Print Method", "Dye Sublimation",],
+        ["Kitting (for round 1)", "![R1 Base](/images/epbt-simpleja/epbt-simpleja-r1-kit-diagram-base-medium.avif)"],
+        ["Kitting (for round 2)", `![R2 Base](/images/epbt-simpleja/epbt-simpleja-r2-kit-diagram-base-medium.avif)
+![R2 Extra Kits](/images/epbt-simpleja/epbt-simpleja-r2-kit-diagram-extrakits-medium.avif)`]
+        
     ]} />
 
     <ClassicResourcesTable project='epbt-simpleja' />

@@ -2,8 +2,8 @@
 draft: false
 title: Arc
 slogan: Retro-Styled 65% Keyboard
-coverImage:
-  url: "/assets/projects/arc/img_0006_mediumsize.avif"
+cover:
+  image: "/images/arc/arc-oceanside-01-cropped-medium.avif"
   alt: Arc cover image
 releaseDate: 2018-08-20
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,22 +38,10 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'arc'} 
       slides={[
-        {
-          url: "/assets/projects/arc/img_0006_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/arc/img_0004_fullsize.avif",
-          alt: "Top view",
-        },
-        {
-          url: "/assets/projects/arc/img_0003_fullsize.avif",
-          alt: "Scenic view A",
-        },
-        {
-          url: "/assets/projects/arc/img_0002_fullsize.avif",
-          alt: "Scenic view B",
-        },
+        { url: "/images/arc/arc-oceanside-01-cropped-large.avif" },
+        { url: "/images/arc/arc-desk-02-large.avif" },
+        { url: "/images/arc/arc-oceanside-03-large.avif" },
+        { url: "/images/arc/arc-oceanside-02-large.avif" },
       ]} 
       links={[
       ]}

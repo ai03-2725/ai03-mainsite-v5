@@ -2,8 +2,8 @@
 draft: false
 title: BoardNameDisplay
 slogan: Slogan
-coverImage:
-  url: "/assets/projects/boardslug/img_0044_largesize.avif"
+cover:
+  image: "/images/boardslug/img_0044_largesize.avif"
   alt: BoardNameDisplay cover image
 releaseDate: 2020-06-16
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,34 +38,11 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'boardslug'} 
       slides={[
-        {
-          url: "/assets/projects/boardslug/img_0044_largesize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/boardslug/img_0043_largesize.avif",
-          alt: "AAA view",
-        },
-        {
-          url: "/assets/projects/boardslug/img_0040_largesize.avif",
-          alt: "BBB view",
-        },
-        {
-          url: "/assets/projects/boardslug/img_0047_largesize.avif",
-          alt: "CCC view",
-        },
-        {
-          url: "/assets/projects/boardslug/img_0043_largesize.avif",
-          alt: "AAA view",
-        },
-        {
-          url: "/assets/projects/boardslug/img_0040_largesize.avif",
-          alt: "BBB view",
-        },
-        {
-          url: "/assets/projects/boardslug/img_0047_largesize.avif",
-          alt: "CCC view",
-        },
+        { url: "/images/boardslug/medium.avif" },
+        { url: "/images/boardslug/medium.avif" },
+        { url: "/images/boardslug/medium.avif" },
+        { url: "/images/boardslug/medium.avif" },
+        { url: "/images/boardslug/medium.avif" },
       ]} 
       links={[
         {
@@ -89,25 +66,25 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/boardslug/img_0043_largesize.avif">
+        <ClassicImageTextBlock src="/images/boardslug/medium.avif">
           ### Header
           Markdown body text  
           Markdown body text  
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/boardslug/img_0040_largesize.avif">
+        <ClassicImageTextBlock src="/images/boardslug/medium.avif">
           ### Header
           Markdown body text  
           Markdown body text  
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/boardslug/img_0042_largesize.avif">
+        <ClassicImageTextBlock src="/images/boardslug/medium.avif">
           ### Header
           Markdown body text  
           Markdown body text  
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/boardslug/img_0047_largesize.jpg" >
+        <ClassicImageTextBlock src="/images/boardslug/medium.jpg" >
           ### Header
           Markdown body text  
           Markdown body text  
@@ -117,13 +94,13 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/boardslug/img_0045_largesize.avif' 
+      headerImageSrc='/images/boardslug/medium.avif' 
       footerNote='Footer note if exists'
       specs={[
         ["Key", "Value",],
         ["Key", "Value",],
         ["Key", "Value",],
-        ["ImageKey", "![Alt](/assets/projects/boardslug/img_0045_largesize.avif)"]
+        ["ImageKey", "![Alt](/images/boardslug/medium.avif)"]
     ]} />
 
     <ClassicResourcesTable project='boardslug' />

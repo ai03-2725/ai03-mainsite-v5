@@ -2,8 +2,8 @@
 draft: false
 title: Orbit-X
 slogan: Compact Split Ergonomic Keyboard
-coverImage:
-  url: "/assets/projects/orbit-x/img_0002_mediumsize.avif"
+cover:
+  image: "/images/orbit-x/orbit-x-tiled-medium.avif"
   alt: Orbit-X cover image
 releaseDate: 2020-01-01
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,34 +38,13 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'orbit-x'} 
       slides={[
-        {
-          url: "/assets/projects/orbit-x/img_0002_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/orbit-x/img_0001_fullsize.avif",
-          alt: "Desk view",
-        },
-        {
-          url: "/assets/projects/orbit-x/img_0004_fullsize.avif",
-          alt: "Open view",
-        },
-        {
-          url: "/assets/projects/orbit-x/img_0003_fullsize.avif",
-          alt: "Vertical placement view",
-        },
-        {
-          url: "/assets/projects/orbit-x/img_0005_fullsize.avif",
-          alt: "Internals macro view",
-        },
-        {
-          url: "/assets/projects/orbit-x/img_0007_fullsize.avif",
-          alt: "Bottom view",
-        },
-        {
-          url: "/assets/projects/orbit-x/img_0006_fullsize.avif",
-          alt: "Bottom pair view",
-        },
+        { url: "/images/orbit-x/orbit-x-front-medium.avif" }, 
+        { url: "/images/orbit-x/orbit-x-tiled-large.avif" }, 
+        { url: "/images/orbit-x/orbit-x-internals-large.avif" }, 
+        { url: "/images/orbit-x/orbit-x-disassembled-large.avif" }, 
+        { url: "/images/orbit-x/orbit-x-pcb-large.avif" }, 
+        { url: "/images/orbit-x/orbit-x-bottom-large.avif" }, 
+        { url: "/images/orbit-x/orbit-x-desk-large.avif" }, 
       ]} 
       links={[
         {
@@ -78,7 +57,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/orbit-x/img_0001_largesize.avif">
+        <ClassicImageTextBlock src="/images/orbit-x/orbit-x-front-medium.avif">
           ### Ready By Design
           An unusual layout can be daunting to use, especially if coming from something very different.  
           Orbit-X has been designed specifically to be easy to migrate to, regardless of what your current layout preferences are.  
@@ -87,7 +66,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
           A carefully devised layout makes use of symmetric key placements to keep layout memorization to an absolute minimum while offering functionality comparable to a board as large as a TKL.   
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/orbit-x/img_0003_largesize.avif">
+        <ClassicImageTextBlock src="/images/orbit-x/orbit-x-desk-medium.avif">
           ### Tailored To You
           The Orbit-X layout packs in function as close to the home position as possible to minimize finger movement.  
           The bottom row modifiers allow for easy migration from typical keyboard layouts, and the thumb cluster is reduced to two keys to reduce thumb strain as much as possible.  
@@ -98,7 +77,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
           A specially designed polycarbonate wristrest matches the Orbit-X's aesthetic perfectly while supporting your wrists for the most demanding typing sessions.  
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/orbit-x/img_0004_largesize.avif">
+        <ClassicImageTextBlock src="/images/orbit-x/orbit-x-disassembled-medium.avif">
           ### The Do-Everything Keyboard
           Just as the layout is tailored to the hand, the entire board can be tailored to your preferences.  
           Leave the supplied foam layer out for the extreme flex and typing comfort of a top-mounted polycarbonate plate, or drop it in to obtain maximized acoustics rare for a board of this size.  
@@ -112,7 +91,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/orbit-x/img_0002_fullsize.avif' 
+      headerImageSrc='/images/orbit-x/orbit-x-bottom-medium.avif' 
       specs={[
         ["Case", "Aluminum, grey",],
         ["Plate", "Polycarbonate, top mount",],
@@ -121,7 +100,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 Note: Polycarbonate is prone to visual damage due to its soft finish. The wristrest will pick up wear and tear over time.`,],
         ["Connections", "USB-C to PC, 3.5mm TRRS between halves",],
         ["Case Mass", "~350g per half, ~700g both halves, ~1kg with wristrests",],
-        ["Layout and Default Keymap", "![Alt](/assets/projects/orbit-x/img_0008_largesize.png)"],
+        ["Layout and Default Keymap", "![Alt](/images/orbit-x/orbit-x-layout-diagram-medium.png)"],
         ["Units", "100 total",],
         ["Price", "To be announced",],
         ["Vendors", "TypePlus",],

@@ -2,8 +2,8 @@
 draft: false
 title: Soyuz
 slogan: Single-PCB numpad kit
-coverImage:
-  url: "/assets/projects/soyuz/img_0001_mediumsize.avif"
+cover:
+  image: "/images/soyuz/soyuz-render-medium.avif"
   alt: Soyuz cover image
 releaseDate: 2019-06-08
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,10 +38,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'soyuz'} 
       slides={[
-        {
-          url: "/assets/projects/soyuz/img_0001_fullsize.avif",
-          alt: "Cover image",
-        },
+        { url: "/images/soyuz/soyuz-render-large.avif" },
       ]} 
       links={[
         {

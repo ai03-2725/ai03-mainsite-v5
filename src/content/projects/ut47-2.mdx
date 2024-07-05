@@ -1,9 +1,9 @@
 ---
 draft: false
 title: UT47.2
-slogan: 40% collaboration with Keyhive
-coverImage:
-  url: "/assets/projects/ut47-2/img_0001_mediumsize.avif"
+slogan: Compact collaboration design with Keyhive
+cover:
+  image: "/images/ut47-2/ut47-2-kit-medium.avif"
   alt: UT47.2 cover image
 releaseDate: 2019-02-14
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,7 +38,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
       project={'ut47-2'} 
       slides={[
         {
-          url: "/assets/projects/ut47-2/img_0001_largesize.avif",
+          url: "/images/ut47-2/ut47-2-kit-large.avif",
           alt: "Cover image",
         },
       ]} 
@@ -58,7 +58,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
       specs={[
         ["Material", "FR-4",],
         ["PCB Features", "USB-C, RGB underglow, hotswap",],
-        ["Layout", "![Alt](/assets/projects/ut47-2/img_0002_largesize.png)"]
+        ["Layout", "![Alt](/images/ut47-2/ut47-2-layout-diagram-medium.png)"]
     ]} />
 
     <ClassicResourcesTable project='ut47-2' />

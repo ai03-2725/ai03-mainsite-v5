@@ -2,8 +2,8 @@
 draft: false
 title: Parallax
 slogan: Slogan
-coverImage:
-  url: "/assets/projects/parallax/img_0003_mediumsize.avif"
+cover:
+  image: "/images/parallax/parallax-red-medium.avif"
   alt: Parallax cover image
 releaseDate: 2020-06-16
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,18 +38,9 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'parallax'} 
       slides={[
-        {
-          url: "/assets/projects/parallax/img_0003_largesize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/parallax/img_0002_largesize.avif",
-          alt: "Top view",
-        },
-        {
-          url: "/assets/projects/parallax/img_0001_largesize.avif",
-          alt: "Side view",
-        },
+        { url: "/images/parallax/parallax-red-large.avif" },
+        { url: "/images/parallax/parallax-blue-large.avif" },
+        { url: "/images/parallax/parallax-side-large.avif" },
       ]} 
       links={[
         {
@@ -62,13 +53,13 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/parallax/img_0002_largesize.avif">
+        <ClassicImageTextBlock src="/images/parallax/parallax-blue-medium.avif">
           ### Specially Engineered Comfort
           Building upon previous development with Equinox, Parallax uses a gasket sandwich PCB mount for thorough typing comfort.  
           For those who prefer builds with a plate, the open-sourced plate file can convert the design to a traditional top mount.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/parallax/img_0001_largesize.avif">
+        <ClassicImageTextBlock src="/images/parallax/parallax-side-medium.avif">
           ### A Layout Adapted For Today And Tomorrow
           With 34 function keys and up to 9 arrow keys, Parallax allows for unparalleled direct input and macros while having fewer keys than a typical 108 key keyboard.
           Modular blockers allow switching the right cluster between full, unsaver, and TKL modes.
@@ -78,11 +69,11 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/parallax/img_0003_largesize.avif' 
+      headerImageSrc='/images/parallax/parallax-red-medium.avif' 
       specs={[
         ["Typing Angle", "7deg",],
         ["Internals", "PCB-mount, optional plate",],
-        ["Layout", "![Alt](/assets/projects/parallax/img_0004_largesize.png)"],
+        ["Layout", "![Alt](/images/parallax/parallax-layout-diagram-medium.png)"],
         ["Mass", "~3.2kg without a weight, ~4kg with",],
         ["Case Colors", "TBD",],
         ["Cost", "TBD",],

@@ -11,6 +11,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
+import { imageAltFromFilename } from "@scripts/imageAltFromFilename";
 
 const swiperCustomStyles = `
 .mySwiper .swiper-slide {
@@ -23,7 +24,7 @@ const swiperCustomStyles = `
 `
 
 export const Carousel: FunctionComponent<{
-  slides: { url: string; alt: string; thumbnailUrl?: string | undefined }[],
+  slides: { url: string; thumbnailUrl?: string | undefined }[],
   ratio: number | undefined,
   showThumbnails: boolean | undefined,
 }> = ({
@@ -97,7 +98,7 @@ export const Carousel: FunctionComponent<{
           {slides.map(slide =>
             <SwiperSlide key={slide.url} onClick={() => setShowExpanded(true)}>
               <div class={`w-full overflow-clip relative aspect-[1.618] cursor-pointer`}>
-                <img src={slide.url} class={`absolute w-full h-full object-cover object-center m-0`} loading="lazy" />
+                <img src={slide.url} class={`absolute w-full h-full object-cover object-center m-0`} alt={imageAltFromFilename(slide.url)} loading="lazy" />
               </div>
             </SwiperSlide>
           )}
@@ -117,7 +118,7 @@ export const Carousel: FunctionComponent<{
             {slides.map(slide =>
               <SwiperSlide key={slide.url} className="!w-auto !overflow-clip">
                 <div class="w-[80px] h-[80px] md:w-[120px] md:h-[120px] xl:w-[150px] xl:h-[150px] overflow-clip cursor-pointer">
-                  <img src={slide.thumbnailUrl || getThumbnailUrl(slide.url)} class="w-full h-full object-cover object-center m-0" loading="lazy" />
+                  <img src={slide.thumbnailUrl || getThumbnailUrl(slide.url)} alt=""  class="w-full h-full object-cover object-center m-0" loading="lazy" />
                 </div>
               </SwiperSlide>
             )}
@@ -133,7 +134,12 @@ export const Carousel: FunctionComponent<{
                 <div class="flow-root">
                   {/* <Spinner size={64} fgColor="#FFFFFF"/> */}
                 </div>
-                <img src={slides[currentSlide.current].url} alt={slides[currentSlide.current].alt} loading="lazy" class="max-h-full m-0 rounded-0 md:rounded-[3.75px]" />
+                <img 
+                  src={slides[currentSlide.current].url} 
+                  alt={imageAltFromFilename(slides[currentSlide.current].url)} 
+                  loading="lazy" 
+                  class="max-h-full m-0 rounded-0 md:rounded-[3.75px]" 
+                />
               </div>
             </div>
           </div>

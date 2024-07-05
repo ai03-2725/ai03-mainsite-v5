@@ -2,8 +2,8 @@
 draft: false
 title: Vector
 slogan: Retro-Modern Plateless 60% Keyboard
-coverImage:
-  url: "/assets/projects/vector/img_0023_mediumsize.avif"
+cover:
+  image: "/images/vector/vector-proto-front-medium.avif"
   alt: Vector cover image
 releaseDate: 2022-07-16	
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -37,42 +37,17 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'vector'} 
       slides={[
-        {
-          url: "/assets/projects/vector/img_0023_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/vector/img_0026_fullsize.avif",
-          alt: "Rear view",
-        },
-        {
-          url: "/assets/projects/vector/img_0028_fullsize.avif",
-          alt: "Bottom rear view",
-        },
-        {
-          url: "/assets/projects/vector/img_0029_fullsize.avif",
-          alt: "Parts view",
-        },
-        {
-          url: "/assets/projects/vector/img_0030_fullsize.avif",
-          alt: "Unbuilt top view",
-        },
-        {
-          url: "/assets/projects/vector/img_0024_fullsize.avif",
-          alt: "Bottom front view",
-        },
-        {
-          url: "/assets/projects/vector/img_0022_fullsize.avif",
-          alt: "Rear view",
-        },
-        {
-          url: "/assets/projects/vector/img_0021_fullsize.avif",
-          alt: "Front side view",
-        },
-        {
-          url: "/assets/projects/vector/img_0027_fullsize.avif",
-          alt: "Top view",
-        },
+        { url: "/images/vector/vector-proto-front-large.avif" },
+        { url: "/images/vector/vector-proto-parts-bottom-large.avif" },
+        { url: "/images/vector/vector-proto-bottom-pair-large.avif" },
+        { url: "/images/vector/vector-proto-parts-tiled-large.avif" },
+        { url: "/images/vector/vector-proto-bottom-large.avif" },
+        { url: "/images/vector/vector-proto-front-side-large.avif" },
+        { url: "/images/vector/vector-proto-unbuilt-front-diagonal-large.avif" },
+        { url: "/images/vector/vector-silver-bottom-large.avif" },
+        { url: "/images/vector/vector-top-mirror-large.avif" },
+        { url: "/images/vector/vector-proto-pen-rail-large.avif" },
+        { url: "/images/vector/vector-black-bottom-large.avif" },
       ]} 
       links={[
         {
@@ -93,19 +68,19 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/vector/img_0021_largesize.avif">
+        <ClassicImageTextBlock src="/images/vector/vector-proto-front-side-medium.avif">
           ### A Leap Across Time
           Large seams, tapered front ledges, rounded edges, large bezels, pen rails - Vector revives the elements of early keyboards and reshapes them to fit the modern.
           Use the default penrail matched to the case for an undeniably retro feel; swap it for an accent color to create an entirely new impression that pairs well with vibrant keysets.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/vector/img_0024_largesize.avif">
+        <ClassicImageTextBlock src="/images/vector/vector-proto-bottom-pair-medium.avif">
           ### Bold Brushstrokes
           An uniform visual seam journeys around the board's faces, defining the case parts and outlining the massive polished weight overlaid with accent laser engravings.
           With large, blocky faces that wrap around the keyboard's form with both a sense of roundness and overall sharpness, Vector blurs the lines between retro and current stylings.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/vector/img_0029_largesize.avif">
+        <ClassicImageTextBlock src="/images/vector/vector-proto-parts-tiled-medium.avif">
           ### Classic, Timeless Internals
           Vector's homage to the past carries over to its internals with a plateless PCB-mount structure from early keyboards.
           With full gasket isolation from the case and internal case screws, Vector brings the early inspiration to custom keyboard standards.
@@ -115,7 +90,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/vector/img_0034_largesize.avif' 
+      headerImageSrc='/images/vector/vector-proto-dimensions-medium.avif' 
       footerNote='Early prototype revisions did not have a detachable penrail, had a flex-slotted PCB, and were anodized in non-production colors - some of the photos shown differ from the final product.'
       specs={[
         ["Case", "Anodized Aluminum",],

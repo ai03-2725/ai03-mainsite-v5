@@ -2,8 +2,8 @@
 draft: false
 title: Lunar II
 slogan: 60% AEK Keyboard
-coverImage:
-  url: "/assets/projects/lunar-ii/img_0048_mediumsize.avif"
+cover:
+  image: "/images/lunar-ii/lunar-ii-proto-side-rear-left-medium.avif"
   alt: Lunar II cover image
 releaseDate: 2020-09-18
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,62 +38,19 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'lunar-ii'} 
       slides={[
-        {
-          url: "/assets/projects/lunar-ii/img_0048_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0054_fullsize.avif",
-          alt: "Bottom view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0047_fullsize.avif",
-          alt: "Top view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0052_fullsize.avif",
-          alt: "Bottom macro view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0051_fullsize.avif",
-          alt: "Top angled view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0009_fullsize.avif",
-          alt: "Rear view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0016_fullsize.avif",
-          alt: "Bottom corner view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0015_fullsize.avif",
-          alt: "Bottom flat view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0019_fullsize.avif",
-          alt: "Kit contents view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0029_fullsize.avif",
-          alt: "PCB view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0032_fullsize.avif",
-          alt: "Plate view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0038_fullsize.avif",
-          alt: "Grey top view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0040_fullsize.avif",
-          alt: "Grey bottom view",
-        },
-        {
-          url: "/assets/projects/lunar-ii/img_0045_fullsize.avif",
-          alt: "Triple color view",
-        },
+        { url: "/images/lunar-ii/lunar-ii-proto-side-rear-cold-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-proto-weight-front-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-proto-side-rear-left-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-diagonal-cropped-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-variety-05-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-silver-kit-01-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-built-front-01-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-built-side-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-silver-bottom-05-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-silver-bottom-03-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-silver-bottom-06-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-silver-bottom-07-large.avif" },
+        { url: "/images/lunar-ii/lunar-ii-silver-diagonal-large.avif" },
       ]} 
       links={[
         {
@@ -118,27 +75,27 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/lunar-ii/img_0016_fullsize.avif">
+        <ClassicImageTextBlock src="/images/lunar-ii/lunar-ii-silver-bottom-07-large.avif">
           ### A Worthy Successor
           Lunar II takes user feedback into mind as it improves upon the first generation design.  
           The curvature has been refreshed completely to reduce the front ledge height for easier typing, and the 1.2mm aluminum plate balances typing comfort, acoustics, and ease of assembly.  
           A weight has been added for additional heft and aesthetic accent while retaining the low typing angle.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/lunar-ii/img_0015_fullsize.avif">
+        <ClassicImageTextBlock src="/images/lunar-ii/lunar-ii-silver-front-large.avif">
           ### Zero-Seam Design
           Whereas the original Lunar hid the seam on the bottomside, Lunar II removes the seam completely with a single-piece case, with nothing to break the continuous smooth curvature.  
           A carefully engineered mounting method secures the plate to the case via O-ring-tipped standoffs, allowing for maximized flex on the typing surface without the stiffness of a typical tray mount.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/lunar-ii/img_0058_largesize.avif">
+        <ClassicImageTextBlock src="/images/lunar-ii/lunar-ii-proto-solenoid-large.avif">
           ### Making Noise
           Solenoid support allows for audible feedback at will.
           Use the electromagnetic hammer to add clickiness to tactile or linear switch without changing feel, or supplement and amplify the sound of clicky switches to a further level.
           When in need of quiet, simply toggle the solenoid off. 
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/lunar-ii/img_0051_fullsize.avif" >
+        <ClassicImageTextBlock src="/images/lunar-ii/lunar-ii-diagonal-cropped-large.avif" >
           ### Alps For All
           The Lunar II brings the mini-AEK form to a more affordable price point with easier assembly.  
           Lunar II only requires a single Apple Extended Keyboard's worth of keycaps and stabilizers to build, making the task of sourcing parts much easier than the original.  
@@ -149,7 +106,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/lunar-ii/img_0049_fullsize.avif' 
+      headerImageSrc='/images/lunar-ii/lunar-ii-proto-side-rear-cold-large.avif' 
       footerNote='Photo credits go to Switchplate Peripherals.'
       specs={[
         ["Case", "Aluminum, single part design",],
@@ -159,7 +116,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
         ["PCB", "ESD protection, in-switch caps lock LED support for SKCL-LED variants, solenoid switching support (Solenoid included in kit)",],
         ["Case Mass", "~1.2kg (Case, weight, plate)",],
         ["Layouts", `Note: Each layout requires its own plate; select the correct one as necessary.  
-![Layout diagram](/assets/projects/lunar-ii/img_0060_largesize.png)`,],
+![Layout diagram](/images/lunar-ii/lunar-ii-layout-diagram-medium.png)`,],
         ["Units", "100 total",],
         ["Price (at time of group buy)", "419USD at Switchplate Peripherals, 399USD at TypePlus",],
         ["Vendors", "Switchplate Peripherals, TypePlus",],

@@ -2,8 +2,8 @@
 draft: false
 title: Polaris
 slogan: Previous reference series 60% keyboard (2019) 
-coverImage:
-  url: "/assets/projects/polaris/img_0016_mediumsize.avif"
+cover:
+  image: "/images/polaris/polaris-render-front-medium.avif"
   alt: Polaris cover image
 releaseDate: 2019-04-24
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -39,54 +39,16 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'polaris'} 
       slides={[
-        {
-          url: "/assets/projects/polaris/img_0016_largesize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/polaris/img_0003_largesize.jpg",
-          alt: "Exploded view",
-        },
-        {
-          url: "/assets/projects/polaris/img_0010_largesize.jpg",
-          alt: "Rear view",
-        },
-        {
-          url: "/assets/projects/polaris/img_0012_largesize.jpg",
-          alt: "Side view",
-        },
-        {
-          url: "/assets/projects/polaris/img_0005_largesize.avif",
-          alt: "Top view with keyset, grey",
-        },
-        {
-          url: "/assets/projects/polaris/img_0006_largesize.avif",
-          alt: "Top view without keyset, grey",
-        },
-        {
-          url: "/assets/projects/polaris/img_0004_largesize.avif",
-          alt: "Top view with keyset, black",
-        },
-        {
-          url: "/assets/projects/polaris/img_0002_largesize.jpg",
-          alt: "Exploded view from side",
-        },
-        {
-          url: "/assets/projects/polaris/img_0009_largesize.avif",
-          alt: "PCB view",
-        },
-        {
-          url: "/assets/projects/polaris/img_0011_largesize.avif",
-          alt: "Two units rear view",
-        },
-        {
-          url: "/assets/projects/polaris/img_0015_largesize.avif",
-          alt: "Two units top view",
-        },
-        {
-          url: "/assets/projects/polaris/img_0001_largesize.avif",
-          alt: "Bottom view",
-        },
+        { url: "/images/polaris/polaris-render-front-large.jpg" },
+        { url: "/images/polaris/polaris-render-exploded-rear-large.avif" },
+        { url: "/images/polaris/polaris-render-grey-large.avif" },
+        { url: "/images/polaris/polaris-render-bottom-large.avif" },
+        { url: "/images/polaris/polaris-render-black-with-keyset-large.avif" },
+        { url: "/images/polaris/polaris-render-rear-purple-large.avif" },
+        { url: "/images/polaris/polaris-render-side-grey-large.avif" },
+        { url: "/images/polaris/polaris-render-rosegold-large.avif" },
+        { url: "/images/polaris/polaris-render-top-pair-large.avif" },
+        { url: "/images/polaris/polaris-render-pcbs-large.avif" },
       ]} 
       links={[
         {
@@ -114,31 +76,31 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/polaris/img_0011_largesize.avif">
+        <ClassicImageTextBlock src="/images/polaris/polaris-render-rear-pair-medium.avif">
           ### Gasket Comfort
           Cutting no corners, a total of 18 gaskets hold the plate in place for maximum typing comfort, improved acoustics, and easy assembly.
           Careful engineering from 8 full redesigns and multiple prototypes are tucked away within the slim bezels.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/polaris/img_0001_largesize.avif">
+        <ClassicImageTextBlock src="/images/polaris/polaris-render-bottom-medium.avif">
           ### Refined Aesthetic
           The seamless chassis borrows the clean look praised in the KBD8X MKII, while adding a rear-angled weight which adds a touch of visible elegance.  
           Thin bezels are combined with sharp chamfers for a striking modern look.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/polaris/img_0009_largesize.avif">
+        <ClassicImageTextBlock src="/images/polaris/polaris-render-pcbs-medium.avif">
           ### Taking Things Further
           The 1.2mm thick, slot-cut super flexible PCB offers typing comfort that extends the gasket mount benefits.  
           Rubber pads applied to the PCB make sure that the stabilizers fit into place without issues.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/polaris/img_0015_largesize.avif" >
+        <ClassicImageTextBlock src="/images/polaris/polaris-render-top-pair-medium.avif" >
           ### Made For You
           The plate is offered in brass and polycarbonate, WKL and universal layouts, and half- and full-plate options to meet the exact aesthetic and comfort you desire.  
           Choose between regular, WKL, and corner blocker style tops to suit your needs.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/polaris/img_0002_largesize.jpg" >
+        <ClassicImageTextBlock src="/images/polaris/polaris-render-exploded-side-medium.avif" >
           ### Cutting No Corners
           Two foam mid-layers, one below the plate and one below the PCB, fill the case to cancel vibrations and echoing.  
           The plate is completely isolated by gaskets, leaving no metal-to-metal contact between the plate and chassis once assembled.
@@ -148,7 +110,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/polaris/img_0013_largesize.jpg' 
+      headerImageSrc='/images/polaris/polaris-dimensions-medium.jpg' 
       specs={[
         ["Case weight", "~1.3kg",],
         ["Dimensions", "296 x 110 x 28mm",],
@@ -164,14 +126,14 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 - Purple
 - Polycarbonate`,],
         ["Case tops", `Regular, winkeyless, corner blocker  
-![Layout Diagrams](/assets/projects/polaris/img_0014_mediumsize.jpg)`,],
+![Layout Diagrams](/images/polaris/polaris-tops-diagram-medium.jpg)`,],
         ["Plate options", `- Layouts: WKL, Universal
 - Style: Full, Half
 - Material: Brass, Polycarbonate`,],
         ["Layouts", `- Universal Plate:
-![Universal Layout Diagram](/assets/projects/polaris/img_0007_largesize.avif)  
+![Universal Layout Diagram](/images/polaris/polaris-layout-diagram-universal-medium.avif)  
 - WKL Plate:
-![WKL Layout Diagram](/assets/projects/polaris/img_0008_largesize.jpg)  
+![WKL Layout Diagram](/images/polaris/polaris-layout-diagram-wkl-medium.jpg)  
 `,],
     ]} />
 

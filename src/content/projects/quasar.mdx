@@ -2,8 +2,8 @@
 draft: false
 title: Quasar
 slogan: SSK Replacement Controller
-coverImage:
-  url: "/assets/projects/quasar/img_0001_mediumsize.avif"
+cover:
+  image: "/images/quasar/quasar-unpopulated-medium.avif"
   alt: Quasar cover image
 releaseDate: 2019-06-08
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,18 +38,9 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'quasar'} 
       slides={[
-        {
-          url: "/assets/projects/quasar/img_0003_fullsize.avif",
-          alt: "Comparison image",
-        },
-        {
-          url: "/assets/projects/quasar/img_0001_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/quasar/img_0002_fullsize.avif",
-          alt: "Assembled PCB image",
-        },
+        { url: "/images/quasar/quasar-assembled-large.avif" },
+        { url: "/images/quasar/quasar-comparison-large.avif" },
+        { url: "/images/quasar/quasar-unpopulated-large.avif" },
       ]} 
       links={[
         {

@@ -25,7 +25,7 @@ const positionString = post.data.coverImage.anchor ? post.data.coverImage.anchor
 
       <div class="w-full flex flex-row justify-center pt-8 pb-20">
         <div class="overflow-hidden rounded-[3.75px] w-full lg:w-3/4 aspect-[1.618]">
-          <img src={post.data.coverImage.url} loading="lazy" class="object-cover" style={positionString ? `object-position: ${positionString};` : ""} />
+          <img src={post.data.cover.image} loading="lazy" class="object-cover" style={positionString ? `object-position: ${positionString};` : ""} />
         </div>
       </div>
 		</div>

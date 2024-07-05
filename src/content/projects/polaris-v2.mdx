@@ -2,8 +2,8 @@
 draft: false
 title: Polaris V2
 slogan: Reference series 60% keyboard
-coverImage:
-  url: "/assets/projects/polaris-v2/img_0001_mediumsize.avif"
+cover:
+  image: "/images/polaris-v2/polaris-v2-render-front-medium.avif"
   alt: Polaris V2 cover image
 releaseDate: 2021-12-22
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,30 +38,12 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'polaris-v2'} 
       slides={[
-        {
-          url: "/assets/projects/polaris-v2/img_0001_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/polaris-v2/img_0015_largesize.avif",
-          alt: "Rear grid view",
-        },
-        {
-          url: "/assets/projects/polaris-v2/img_0019_fullsize.avif",
-          alt: "Bottom view",
-        },
-        {
-          url: "/assets/projects/polaris-v2/img_0004_fullsize.avif",
-          alt: "Top/Bottom pair view",
-        },
-        {
-          url: "/assets/projects/polaris-v2/img_0017_largesize.avif",
-          alt: "Exploded view",
-        },
-        {
-          url: "/assets/projects/polaris-v2/img_0013_largesize.avif",
-          alt: "Top grid view",
-        },
+        { url: "/images/polaris-v2/polaris-v2-render-front-large.avif" },
+        { url: "/images/polaris-v2/polaris-v2-render-blue-large.avif" },
+        { url: "/images/polaris-v2/polaris-v2-render-side-large.avif" },
+        { url: "/images/polaris-v2/polaris-v2-render-bottom-large.avif" },
+        { url: "/images/polaris-v2/polaris-v2-render-exploded-large.avif" },
+        { url: "/images/polaris-v2/polaris-v2-render-tiled-large.avif" },
       ]} 
       links={[
         {
@@ -77,31 +59,31 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/polaris-v2/img_0019_largesize.avif">
+        <ClassicImageTextBlock src="/images/polaris-v2/polaris-v2-render-bottom-medium.avif">
           ### Top-Tier Typing For All
           Polaris V2 brings the battle-tested fully isolated gasket-mounted internals from Vega back to the original 60% form factor, with tweaks to further enhance acoustic performance while maintaining its absolute comfort for countless hours of usage.  
           With improvements to ease of assembly, Polaris V2 ensures that you can enjoy the input benefits regardless of keyboard experience.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/polaris-v2/img_0004_largesize.avif">
+        <ClassicImageTextBlock src="/images/polaris-v2/polaris-v2-render-blue-diagonal-medium.avif">
           ### Reference Aesthetic Outside and In
           The proven elegant, clean, and minimal exterior free of any visible screws has received much-needed modernization from Vega, while quietly improving internally for streamlined manufacturing and simplified assembly.  
           Along with its matte PVD-coated stainless steel weight, Polaris V2's visuals are designed to withstand the test of time, carrying its elegance forward many decades while blending seamlessly into any environment.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/polaris-v2/img_0013_largesize.avif">
+        <ClassicImageTextBlock src="/images/polaris-v2/polaris-v2-render-tiled-medium.avif">
           ### To Fulfill Your Desires
           Every custom keyboard is different, and Polaris V2 is designed to be different - with multiple plate options, optional hotswap standoffs, and three optional layers of internal foam, you can tune Polaris V2 exactly the way you desire, ranging from anywhere between switch choice tester to dialed-in finalized build.  
           Every small detail was designed with much care to make Polaris V2 your ideal keyboard, down to the custom-designed screws, custom-designed rubber feet, and accent logo on the rear.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/polaris-v2/img_0017_largesize.avif" >
+        <ClassicImageTextBlock src="/images/polaris-v2/polaris-v2-render-exploded-medium.avif" >
           ### Hassle-Free and Extensible
           The thin, flex-slotted hotswap PCB comes ready-to-go out of the box with VIA Configurator compatible firmware, requiring no soldering or driver headaches to assemble.  
           A solderable PCB kit is available for those who prefer to tailor the layout exactly to their preferences, and a much-requested replaceable USB daughterboard aids in extending the lifespan of the board.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/polaris-v2/img_0015_largesize.avif" >
+        <ClassicImageTextBlock src="/images/polaris-v2/polaris-v2-render-side-medium.avif" >
           ### Prepared For What's Next
           A lot has changed since 2019 when Polaris V1 was announced - the keyboard community has grown exponentially, the world has changed permanently, and keyboard variety has skyrocketed.  
           We've combined both everything we've learned as well as brand-new knowledge to create the successor of the board which started our journey. Albeit against high expectations, we're confident that Polaris V2 will fit in as a faithful member of your keyboard collection both for the present and for the future - whether as your single endgame build or among a family of other boards.
@@ -111,7 +93,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/polaris-v2/img_0006_largesize.avif' 
+      headerImageSrc='/images/polaris-v2/polaris-v2-dimensions-medium.avif' 
       specs={[
         ["Case weight", "~1.2kg"],
         ["Materials", `Case: Aluminum  
@@ -127,8 +109,8 @@ With or without rear logo`],
         ["Expected Vendors", "TypePlus"],
         ["Kit Configurations", `Case parts + choice of either hotswap PCB + hotswap plate kit or solderable PCB + universal plate kit  
 Extra parts availability TBD`],
-        ["Planned Hotswap PCB Layout", "![Hotswap PCB layout diagram](/assets/projects/polaris-v2/img_0008_largesize.png)"],
-        ["Planned Solderable PCB Layouts", "![Solderable PCB layout diagram](/assets/projects/polaris-v2/img_0010_largesize.png)"],
+        ["Planned Hotswap PCB Layout", "![Hotswap PCB layout diagram](/images/polaris-v2/polaris-v2-layout-diagram-old-hotswap-medium.png)"],
+        ["Planned Solderable PCB Layouts", "![Solderable PCB layout diagram](/images/polaris-v2/polaris-v2-layout-diagram-old-solderable-medium.png)"],
     ]} />
 
     <ClassicResourcesTable project='polaris-v2' />

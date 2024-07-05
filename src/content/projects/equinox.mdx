@@ -2,8 +2,8 @@
 draft: false
 title: Equinox
 slogan: Compact 40% Keyboard
-coverImage:
-  url: "/assets/projects/equinox/img_0009_mediumsize.jpg"
+cover:
+  image: "/images/equinox/equinox-grey-side-medium.jpg"
   alt: Equinox cover image
 releaseDate: 2019-06-22
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -37,42 +37,17 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'equinox'} 
       slides={[
-        {
-          url: "/assets/projects/equinox/img_0009_mediumsize.jpg",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/equinox/img_0005_fullsize.avif",
-          alt: "Top photo ANSI",
-        },
-        {
-          url: "/assets/projects/equinox/img_0008_fullsize.avif",
-          alt: "Weight photo",
-        },
-        {
-          url: "/assets/projects/equinox/img_0001_fullsize.avif",
-          alt: "Rear photo",
-        },
-        {
-          url: "/assets/projects/equinox/img_0003_fullsize.avif",
-          alt: "Top photo ANSI angled",
-        },
-        {
-          url: "/assets/projects/equinox/img_0007_largesize.avif",
-          alt: "Exploded view",
-        },
-        {
-          url: "/assets/projects/equinox/img_0010_mediumsize.avif",
-          alt: "Top photo angled ISO",
-        },
-        {
-          url: "/assets/projects/equinox/img_0004_mediumsize.avif",
-          alt: "Top photo ISO",
-        },
-        {
-          url: "/assets/projects/equinox/img_0002_mediumsize.avif",
-          alt: "Top render",
-        },
+        { url: "/images/equinox/equinox-grey-side-medium.jpg" },
+        { url: "/images/equinox/equinox-grey-top-diagonal-large.avif" },
+        { url: "/images/equinox/equinox-grey-weight-large.avif" },
+        { url: "/images/equinox/equinox-grey-rear-large.avif" },
+        { url: "/images/equinox/equinox-grey-top-large.avif" },
+        { url: "/images/equinox/equinox-breakout-screenshot-medium.avif" },
+        { url: "/images/equinox/equinox-render-jpblue-large.avif" },
+        { url: "/images/equinox/equinox-render-variants-large.avif" },
+        { url: "/images/equinox/equinox-iso-top-medium.avif" },
+        { url: "/images/equinox/equinox-proto-top-medium.avif" },
+        { url: "/images/equinox/equinox-render-top-medium.avif" },
       ]} 
       links={[
         {
@@ -92,13 +67,13 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/equinox/img_0005_fullsize.avif">
+        <ClassicImageTextBlock src="/images/equinox/equinox-breakout-screenshot-medium.avif">
           ### Beyond the Typical
           Equinox skips the plate to offer maximum flex.  
           The PCB is secured by its tabs from below by rubber gaskets directly to the case, earning the name of tabbed "gasket" PCB mount.  
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/equinox/img_0001_fullsize.avif">
+        <ClassicImageTextBlock src="/images/equinox/equinox-grey-top-medium.avif">
           ### Compact and Classy
           The winkeyless blockers have been implemented for a classic aesthetic, regardless of the board's small footprint.  
           An internal weight adds sufficient mass for use at a desk, while the all-aluminum exterior provides durability on the go.
@@ -118,7 +93,7 @@ Brass internal weight`,],
         ["Weight", "740g",],
         ["Vendors", "Cannonkeys, Yusha Kobo, Mykeyboard.eu",],
         ["Price (at time of sale)", "Roughly 270USD",],
-        ["Supported Layouts", "![Layout diagram](/assets/projects/equinox/img_0006_largesize.png)",],
+        ["Supported Layouts", "![Layout diagram](/images/equinox/equinox-layouts-medium.png)",],
     ]} />
 
     <ClassicResourcesTable project='equinox' />

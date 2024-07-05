@@ -2,8 +2,8 @@
 draft: false
 title: Equinox XL
 slogan: Compact 50% Keyboard
-coverImage:
-  url: "/assets/projects/equinox-xl/img_0045_mediumsize.avif"
+cover:
+  image: "/images/equinox-xl/equinox-xl-proto-top-built-medium.avif"
   alt: Equinox XL cover image
 releaseDate: 2021-06-19
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -37,38 +37,18 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'equinox-xl'} 
       slides={[
-        {
-          url: "/assets/projects/equinox-xl/img_0045_largesize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/equinox-xl/img_0038_fullsize.avif",
-          alt: "Side view",
-        },
-        {
-          url: "/assets/projects/equinox-xl/img_0039_fullsize.avif",
-          alt: "Weight view",
-        },
-        {
-          url: "/assets/projects/equinox-xl/img_0046_fullsize.avif",
-          alt: "Bottom side view",
-        },
-        {
-          url: "/assets/projects/equinox-xl/img_0042_fullsize.avif",
-          alt: "Bottom view",
-        },
-        {
-          url: "/assets/projects/equinox-xl/img_0037_fullsize.avif",
-          alt: "Side view",
-        },
-        {
-          url: "/assets/projects/equinox-xl/img_0040_fullsize.avif",
-          alt: "PCB view",
-        },
-        {
-          url: "/assets/projects/equinox-xl/img_0041_fullsize.avif",
-          alt: "Assembly view",
-        },
+        { url: "/images/equinox-xl/equinox-xl-proto-top-built-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-proto-side-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-grey-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-colors-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-proto-weight-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-renderer-exploded-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-proto-bottom-side-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-proto-bottom-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-proto-left-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-pcb-bottom-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-proto-pcb-macro-large.avif" },
+        { url: "/images/equinox-xl/equinox-xl-proto-desk-large.avif" },
       ]} 
       links={[
         {
@@ -85,19 +65,19 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/equinox-xl/img_0047_largesize.avif">
+        <ClassicImageTextBlock src="/images/equinox-xl/equinox-xl-renderer-exploded-medium.avif">
           ### Visible Evolution
           The proven tabbed-gasket PCB mount structure from the original Equinox remains, offering an unusual yet comfortable typing feel designed primarily for plateless use.
           Equinox XL has been updated from the original with a seamless design and internal screws, making the exterior clean and sleek from any angle.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/equinox-xl/img_0041_largesize.avif">
+        <ClassicImageTextBlock src="/images/equinox-xl/equinox-xl-proto-desk-medium.avif">
           ### From the Desk to the World
           The compact yet functional 50% key layout of the Equinox XL allows for easy migration from larger layouts while also ensuring compatibility with many keysets.
-          An internal brass weight balances the board’s mass - just light enough for portability, and just heavy enough for stability during use. 
+          An internal brass weight balances the board's mass - just light enough for portability, and just heavy enough for stability during use. 
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/equinox-xl/img_0038_largesize.avif">
+        <ClassicImageTextBlock src="/images/equinox-xl/equinox-xl-proto-side-medium.avif">
           ### Tailored to the Occasion
           Choose between winkey and winkeyless variants to choose between maximum functionality and a classic aesthetic.  
           The PCB allows for 3U-1U-3U split spacebar to extend productivity further without sacrificing the symmetrical aesthetic.
@@ -107,7 +87,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/equinox-xl/img_0044_fullsize.avif' 
+      headerImageSrc='/images/equinox-xl/equinox-xl-dimensions-medium.avif' 
       specs={[
         ["Materials", "Aluminum case, internal brass weight, manufactured by Salvun CNC",],
         ["Weight", "~670g for the case incl. internal weight",],

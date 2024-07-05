@@ -2,8 +2,8 @@
 draft: false
 title: Vega
 slogan: Reference series 65% keyboard
-coverImage:
-  url: "/assets/projects/vega/img_0044_mediumsize.avif"
+cover:
+  image: "/images/vega/vega-render-pair-medium.avif"
   alt: Vega cover image
 releaseDate: 2020-06-16
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,26 +38,12 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'vega'} 
       slides={[
-        {
-          url: "/assets/projects/vega/img_0044_largesize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/vega/img_0043_largesize.avif",
-          alt: "Bottom and top view",
-        },
-        {
-          url: "/assets/projects/vega/img_0040_largesize.avif",
-          alt: "Rear view",
-        },
-        {
-          url: "/assets/projects/vega/img_0047_largesize.jpg",
-          alt: "Exploded view",
-        },
-        {
-          url: "/assets/projects/vega/img_0042_largesize.avif",
-          alt: "Grid view",
-        },
+        { url: "/images/vega/vega-render-pair-large.jpg" },
+        { url: "/images/vega/vega-render-rose-gold-large.jpg" },
+        { url: "/images/vega/vega-render-exploded-large.jpg" },
+        { url: "/images/vega/vega-render-rear-large.jpg" },
+        { url: "/images/vega/vega-render-grid-large.avif" },
+        { url: "/images/vega/vega-colors-all-large.avif" },
       ]} 
       links={[
         {
@@ -81,25 +67,25 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/vega/img_0043_largesize.avif">
+        <ClassicImageTextBlock src="/images/vega/vega-render-rose-gold-medium.avif">
           ### Tailor-Made Typing Experience
           Vega brings the extreme typing comfort and acoustic tuning to the 65% form factor, using 28 custom gaskets to completely isolate the plate from the case.  
           A precision-cut foam midlayer and dual stack bottom foam layer allows for precise tuning to balance acoustics and typing feel to your exact preference.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/vega/img_0040_largesize.avif">
+        <ClassicImageTextBlock src="/images/vega/vega-render-rear-medium.avif">
           ### The Reference Aesthetic
           The clean, sleek, seamless exterior of Vega has no visible exterior screws, which are conveniently hidden under the keycaps for an uninterrupted minimal aesthetic regardless of the viewing angle.  
           The immense rear-angled weight is made entirely of stainless steel, providing the elegance and heft worthy of being the centerpiece of your desk.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/vega/img_0042_largesize.avif">
+        <ClassicImageTextBlock src="/images/vega/vega-render-grid-medium.avif">
           ### Stress-Free Circuitry
           The thin, flex-slotted hotswap PCB comes pre-installed with VIA Configurator compatible firmware, ready for lightning-fast assembly and easy keymap editing without the headaches of drivers and firmware flashing.  
           A solderable PCB kit is available for those who prefer soldering or non-stock layouts.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/vega/img_0047_largesize.jpg" >
+        <ClassicImageTextBlock src="/images/vega/vega-render-exploded-medium.jpg" >
           ### Thorough Engineering
           The centered USB cutout allows for a neutral cable position fit for any desk, and careful design allows for maximized comfort and acoustics even with a hotswap structure.  
           Temporary plate retention screws aid the build process while also protecting the plate inside the case during shipping.
@@ -109,7 +95,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/vega/img_0045_largesize.avif' 
+      headerImageSrc='/images/vega/vega-dimensions-medium.avif' 
       footerNote='Special thanks to TC for help with rendering, Gok for render keycap models'
       specs={[
         ["Case weight", "~1.4kg",],
@@ -121,9 +107,9 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
         ["Optional add-ons", "Soldering kit (Universal plate and soldering PCB)",],
         ["Colors", "Black, Grey, E-White, Blue, Green, Rose Gold",],
         ["Layouts", `- Default hotswap:
-![Hotswap Layout Diagram](/assets/projects/vega/img_0046_mediumsize.png)  
+![Hotswap Layout Diagram](/images/vega/vega-layout-diagram-hotswap-medium.png)  
 - Optional add-on soldering kit:
-![Solderable Layout Diagram](/assets/projects/vega/img_0038_mediumsize.png)  
+![Solderable Layout Diagram](/images/vega/vega-layout-diagram-solderable-medium.png)  
 `,],
     ]} />
 

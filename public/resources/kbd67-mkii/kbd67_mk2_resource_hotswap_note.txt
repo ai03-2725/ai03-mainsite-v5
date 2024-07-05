@@ -1,0 +1,9 @@
+I originally designed both a hotswap and solderable variant PCB/plate for the 
+KBD67 MKII.
+
+The hotswap PCB was scrapped, replaced by KBDfans' own RGB hotswap PCB, and 
+the plate modified to fit.
+
+At this point, I do not have any idea which plate dimensions are correct for 
+the retail version of the KBD67 MKII hotswap PCB, so I cannot provide a 
+reliable plate file for it.

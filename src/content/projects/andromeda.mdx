@@ -2,8 +2,8 @@
 draft: false
 title: Andromeda
 slogan: Premium Sculpted Tenkeyless Keyboard
-coverImage:
-  url: "/assets/projects/andromeda/img_0010_mediumsize.avif"
+cover:
+  image: "/images/andromeda/andromeda-side-light-medium.jpg"
   alt: Andromeda cover image
 releaseDate: 2020-01-01
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -37,38 +37,14 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'andromeda'} 
       slides={[
-        {
-          url: "/assets/projects/andromeda/img_0010_largesize.jpg",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/andromeda/img_0002_largesize.avif",
-          alt: "Top render",
-        },
-        {
-          url: "/assets/projects/andromeda/img_0001_largesize.avif",
-          alt: "Bottom-rear render",
-        },
-        {
-          url: "/assets/projects/andromeda/img_0015_largesize.avif",
-          alt: "Bottom-front render",
-        },
-        {
-          url: "/assets/projects/andromeda/img_0013_fullsize.avif",
-          alt: "Side macro view",
-        },
-        {
-          url: "/assets/projects/andromeda/img_0011_fullsize.avif",
-          alt: "Weight view through plate",
-        },
-        {
-          url: "/assets/projects/andromeda/img_0012_fullsize.avif",
-          alt: "Top TKL cluster area view",
-        },
-        {
-          url: "/assets/projects/andromeda/img_0014_largesize.jpg",
-          alt: "Alternative side view",
-        },
+        { url: "/images/andromeda/andromeda-side-light-large.jpg" },
+        { url: "/images/andromeda/andromeda-render-front-large.avif" },
+        { url: "/images/andromeda/andromeda-render-rear-large.avif" },
+        { url: "/images/andromeda/andromeda-render-bottom-large.avif" },
+        { url: "/images/andromeda/andromeda-side-bottom-large.avif" },
+        { url: "/images/andromeda/andromeda-weight-large.avif" },
+        { url: "/images/andromeda/andromeda-front-large.avif" },
+        { url: "/images/andromeda/andromeda-side-dark-large.jpg" },
       ]} 
       links={[
         {
@@ -92,18 +68,18 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/andromeda/img_0002_largesize.avif">
+        <ClassicImageTextBlock src="/images/andromeda/andromeda-render-front-medium.avif">
           ### The Beauty and the Beast
           Designed as a cost-no-object keyboard, Andromeda’s sculpted side profiles have been modelled to provide a satin fabric-like elegance, which combined with the soft curvatures used throughout the board give a delicate feel which lead the eyes throughout the design.  
           Strong straight horizontals strike a heavy contrast to the softer elements to offer the bold, rigid impression to accompany the elegance. The careful balance of both constructs an elegant yet minimal, graceful yet powerful aesthetic fit for any environment.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/andromeda/img_0013_fullsize.avif">
+        <ClassicImageTextBlock src="/images/andromeda/andromeda-side-bottom-medium.avif">
           ### The Journey to the Peak
           The design knowledge acquired through many of ai03’s designs in the past have been put forth to full effect with Andromeda, taking elements such as the rear-angled weight and gasket mounting of Polaris and refining them to their ultimate levels.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/andromeda/img_0011_fullsize.avif">
+        <ClassicImageTextBlock src="/images/andromeda/andromeda-weight-medium.avif">
           ### Commitment To Detail
           The small details make the biggest differences, and no detail has been left unchecked with Andromeda.
           Interior screws provides a beautiful screwless exterior that does not interfere with the overall form, and a USB daughterboard separate from the main PCB allows for replacing the USB connector in case it wears out.
@@ -113,7 +89,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/andromeda/img_0014_largesize.jpg' 
+      headerImageSrc='/images/andromeda/andromeda-side-dark-medium.jpg' 
       specs={[
         ["Case", "Aluminum, anodized silver or grey",],
         ["Weight", "Steel, matte PVD; paired grey weight to silver case and silver weight to grey case",],
@@ -121,7 +97,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
         ["PCB", "Soldered (non-hotswap), STM32 ARM microcontroller; USB-C via unified daughterboard",],
         ["Case Mass", "~3.2kg (Case, weight, plate)",],
         ["Typing Angle", "8 degrees",],
-        ["Layouts supported", "![Layout Diagram](/assets/projects/andromeda/img_0016_largesize.png)",],
+        ["Layouts supported", "![Layout Diagram](/images/andromeda/andromeda-layout-diagram-medium.png)",],
         ["Units Produced", "100 per vendor; 200 total",],
         ["Price (At time of original sale)", "750USD",],
         ["Vendors (At time of original sale)", "CannonKeys (North America), Deskeys (Asia)",],

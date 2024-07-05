@@ -2,8 +2,8 @@
 draft: false
 title: Keychain Switch Opener
 slogan: Portable switch modding tool
-coverImage:
-  url: "/assets/projects/keychain/img_0010_mediumsize.avif"
+cover:
+  image: "/images/keychain/keychain-blue-grey-medium.jpg"
   alt: Keychain cover image
 releaseDate: 2019-02-16
 ---
@@ -22,7 +22,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -40,46 +40,20 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'keychain'} 
       slides={[
-        {
-          url: "/assets/projects/keychain/img_0003_largesize.jpg",
-          alt: "Silver render",
-        },
-        {
-          url: "/assets/projects/keychain/img_0001_largesize.avif",
-          alt: "Photo",
-        },
-        {
-          url: "/assets/projects/keychain/img_0002_largesize.jpg",
-          alt: "Render alt",
-        },
-        {
-          url: "/assets/projects/keychain/img_0011_mediumsize.avif",
-          alt: "Red photo",
-        },
-        {
-          url: "/assets/projects/keychain/img_0006_mediumsize.avif",
-          alt: "Blue Grey photo",
-        },
-        {
-          url: "/assets/projects/keychain/img_0012_mediumsize.webp",
-          alt: "Grey photo",
-        },
-        {
-          url: "/assets/projects/keychain/img_0007_mediumsize.avif",
-          alt: "Silver photo",
-        },
-        {
-          url: "/assets/projects/keychain/img_0008_mediumsize.avif",
-          alt: "Black photo",
-        },
-        {
-          url: "/assets/projects/keychain/img_0010_largesize.avif",
-          alt: "Blue photo",
-        },
-        {
-          url: "/assets/projects/keychain/img_0009_largesize.avif",
-          alt: "Green photo",
-        },
+        { url: '/images/keychain/keychain-render-silver-open-large.avif' },
+        { url: '/images/keychain/keychain-render-silver-fitment-large.avif' },
+        { url: '/images/keychain/keychain-render-silver-closed-large.png' },
+        { url: '/images/keychain/keychain-black-medium.jpg' },
+        { url: '/images/keychain/keychain-blue-grey-medium.jpg' },
+        { url: '/images/keychain/keychain-blue-large.jpg' },
+        { url: '/images/keychain/keychain-green-large.jpg' },
+        { url: '/images/keychain/keychain-grey-medium.webp' },
+        { url: '/images/keychain/keychain-red-medium.jpg' },
+        { url: '/images/keychain/keychain-red-closed-medium.webp' },
+        { url: '/images/keychain/keychain-pink-closed-medium.jpg' },
+        { url: '/images/keychain/keychain-proto-medium.avif' },
+        { url: '/images/keychain/keychain-design-medium.avif' },
+        
       ]} 
       links={[
         {
@@ -89,7 +63,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
       ]}
     />
 
-    <HorizontalStackBlock src="/assets/projects/keychain/img_0005_largesize.avif" alt="Diagram image" rounded>
+    <HorizontalStackBlock src="/images/keychain/keychain-design-medium.avif" alt="Diagram image" rounded>
       ### A tool that defined an era
       In early 2019 when the Keychain was released, the keyboard community looked very different from how it does now.  
       Keyswitch modding tools were expensive and rare, and both the 4-clip MX-type and 2-clip Kailh-type housing switches 
@@ -102,17 +76,17 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
     <div class="columns-1 md:columns-3">
       <div>
-        <img src="/assets/projects/keychain/img_0010_largesize.avif" loading="lazy" class="w-full h-full object-cover" />
+        <img src="/images/keychain/keychain-silver-medium.jpg" loading="lazy" class="w-full h-full object-cover" />
       </div>
       <div>
-        <img src="/assets/projects/keychain/img_0012_mediumsize.webp" loading="lazy" class="w-full h-full object-cover" />
+        <img src="/images/keychain/keychain-blue-medium.avif" loading="lazy" class="w-full h-full object-cover" />
       </div>
       <div>
-        <img src="/assets/projects/keychain/img_0009_largesize.avif" loading="lazy" class="w-full h-full object-cover" />
+        <img src="/images/keychain/keychain-grey-medium.webp" loading="lazy" class="w-full h-full object-cover" />
       </div>
     </div>
 
-    <HorizontalStackBlock src="/assets/projects/keychain/img_0001_largesize.avif" alt="Desk photo" rounded reverse>
+    <HorizontalStackBlock src="/images/keychain/keychain-proto-medium.avif" alt="Desk photo" rounded reverse>
       ### The test of time
       The teeth's dimensions were dialed in over numerous prototypes to achieve the ideal angles for easy switch opening 
       across various switch types, and at long last the opener became available at KBDfans for $25 - less than the cost of 

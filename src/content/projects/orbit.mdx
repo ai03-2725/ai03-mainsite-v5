@@ -2,8 +2,8 @@
 draft: false
 title: Orbit
 slogan: Slogan
-coverImage:
-  url: "/assets/projects/orbit/img_0002_mediumsize.avif"
+cover:
+  image: "/images/orbit/orbit-top-02-medium.avif"
   alt: Orbit cover image
 releaseDate: 2018-11-05
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,22 +38,10 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'orbit'} 
       slides={[
-        {
-          url: "/assets/projects/orbit/img_0001_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/orbit/img_0003_fullsize.avif",
-          alt: "Pair view",
-        },
-        {
-          url: "/assets/projects/orbit/img_0004_fullsize.avif",
-          alt: "Bottom view",
-        },
-        {
-          url: "/assets/projects/orbit/img_0002_largesize.avif",
-          alt: "Center view",
-        },
+        {url: "/images/orbit/orbit-silver-front-large.avif" },
+        {url: "/images/orbit/orbit-top-01-large.avif" },
+        {url: "/images/orbit/orbit-top-02-large.jpg" },
+        {url: "/images/orbit/orbit-silver-bottom-large.avif" },
       ]} 
       links={[
         {
@@ -68,7 +56,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     />
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/orbit/img_0004_fullsize.avif' 
+      headerImageSrc='/images/orbit/orbit-silver-bottom-medium.avif' 
       specs={[
         ["Layout", "5x7 layout, 2U key compat layouts",],
         ["Case Structure", `Top mount, three-part construction per half  

@@ -2,8 +2,8 @@
 draft: false
 title: Prism Switch Opener
 slogan: Switch opener with an aesthetic twist
-coverImage:
-  url: "/assets/projects/prism/img_0002_mediumsize.avif"
+cover:
+  image: "/images/prism/prism-variety-medium.avif"
   alt: Prism Switch Opener cover image
 releaseDate: 2019-04-21	
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,22 +38,10 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'prism'} 
       slides={[
-        {
-          url: "/assets/projects/prism/img_0002_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/prism/img_0005_fullsize.avif",
-          alt: "Single render, grey",
-        },
-        {
-          url: "/assets/projects/prism/img_0001_fullsize.avif",
-          alt: "Multiple render, hex",
-        },
-        {
-          url: "/assets/projects/prism/img_0004_fullsize.avif",
-          alt: "Multiple render, grid",
-        },
+        { url: "/images/prism/prism-variety-large.avif" },
+        { url: "/images/prism/prism-tiled-hex-large.avif" },
+        { url: "/images/prism/prism-internals-large.avif" },
+        { url: "/images/prism/prism-tiled-grid-large.avif" },
       ]} 
       links={[
 
@@ -63,12 +51,12 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/prism/img_0005_fullsize.avif">
+        <ClassicImageTextBlock src="/images/prism/prism-tiled-hex-medium.avif">
           ### The Switch Modding Multitool
           Countless prototypes were made to ensure that the single switch opener can open a wide variety of switches, including Cherry MX-style 4-clip, larger Panda-style housings, and 2-clip Kailh-style variants.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/prism/img_0001_fullsize.avif">
+        <ClassicImageTextBlock src="/images/prism/prism-internals-medium.avif">
           ### An Elegant Solution
           The unique geometry of the Prism opener provides grip in the hand, while also serving as an artful object on the desk when not in use.  
           Magnetic closure protects the opener’s teeth from damaging nearby objects.
@@ -78,7 +66,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/prism/img_0006_largesize.jpg' 
+      headerImageSrc='/images/prism/prism-dimensions-medium.jpg' 
       specs={[
         ["Size", "Roughly 50 x 43 x 30mm (15mm height per half)",],
         ["Weight", "110g",],

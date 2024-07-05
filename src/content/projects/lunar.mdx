@@ -2,8 +2,8 @@
 draft: false
 title: Lunar
 slogan: 65% AEK Keyboard
-coverImage:
-  url: "/assets/projects/lunar/img_0010_mediumsize.avif"
+cover:
+  image: "/images/lunar/lunar-diagonal-medium.avif"
   alt: Lunar cover image
 releaseDate: 2018-06-11
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -37,46 +37,16 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'lunar'} 
       slides={[
-        {
-          url: "/assets/projects/lunar/img_0010_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/lunar/img_0009_fullsize.avif",
-          alt: "Top view",
-        },
-        {
-          url: "/assets/projects/lunar/img_0006_fullsize.avif",
-          alt: "Side front view",
-        },
-        {
-          url: "/assets/projects/lunar/img_0007_fullsize.avif",
-          alt: "Side rear view",
-        },
-        {
-          url: "/assets/projects/lunar/img_0008_fullsize.avif",
-          alt: "Bottom view",
-        },
-        {
-          url: "/assets/projects/lunar/img_0004_fullsize.avif",
-          alt: "Inner view",
-        },
-        {
-          url: "/assets/projects/lunar/img_0005_fullsize.avif",
-          alt: "Inner angled view",
-        },
-        {
-          url: "/assets/projects/lunar/img_0003_fullsize.avif",
-          alt: "Internals view A",
-        },
-        {
-          url: "/assets/projects/lunar/img_0002_fullsize.avif",
-          alt: "Internals view B",
-        },
-        {
-          url: "/assets/projects/lunar/img_0001_fullsize.avif",
-          alt: "Bottom view",
-        },
+        { url: "/images/lunar/lunar-diagonal-large.avif" },
+        { url: "/images/lunar/lunar-front-large.avif" },
+        { url: "/images/lunar/lunar-side-front-large.avif" },
+        { url: "/images/lunar/lunar-side-rear-large.avif" },
+        { url: "/images/lunar/lunar-bottom-rear-large.avif" },
+        { url: "/images/lunar/lunar-unbuilt-diagonal-large.avif" },
+        { url: "/images/lunar/lunar-unbuilt-parts-tile-01-large.avif" },
+        { url: "/images/lunar/lunar-unbuilt-side-large.avif" },
+        { url: "/images/lunar/lunar-unbuilt-parts-tile-02-large.avif" },
+        { url: "/images/lunar/lunar-bottom-large.avif" },
       ]} 
       links={[
         {
@@ -94,7 +64,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     />
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/lunar/img_0011_largesize.png' 
+      headerImageSrc='/images/lunar/lunar-layout-diagram-medium.png' 
       footerNote='Credits go to Switchplate Peripherals for photos'
       specs={[
         ["Pricing (at time of sale)", `Chassis - $350

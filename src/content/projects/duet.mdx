@@ -2,8 +2,8 @@
 draft: false
 title: Duet
 slogan: Purpose-built switch tester
-coverImage:
-  url: "/assets/projects/duet/img_0004_mediumsize.avif"
+cover:
+  image: "/images/duet/duet-assembled-diagonal-medium.avif"
   alt: Duet cover image
 releaseDate: 2023-10-30
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -37,26 +37,14 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'duet'} 
       slides={[
-        {
-          url: "/assets/projects/duet/img_0004_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/duet/img_0007_fullsize.avif",
-          alt: "Display view",
-        },
-        {
-          url: "/assets/projects/duet/img_0001_fullsize.avif",
-          alt: "Components view",
-        },
-        {
-          url: "/assets/projects/duet/img_0003_fullsize.avif",
-          alt: "Microcontroller view",
-        },
-        {
-          url: "/assets/projects/duet/img_0005_fullsize.avif",
-          alt: "Bottom logo view",
-        },
+        { url: "/images/duet/duet-assembled-diagonal-large.avif" },
+        { url: "/images/duet/duet-in-use-tokyo0524-large.avif" },
+        { url: "/images/duet/duet-assembled-front-large.avif" },
+        { url: "/images/duet/duet-tablet-paired-large.avif" },
+        { url: "/images/duet/duet-kitting-large.avif" },
+        { url: "/images/duet/duet-pcb-large.avif" },
+        { url: "/images/duet/duet-mcu-macro-large.avif" },
+        { url: "/images/duet/duet-bottom-large.avif" },
       ]} 
       links={[
         {
@@ -73,7 +61,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/duet/img_0007_fullsize.avif">
+        <ClassicImageTextBlock src="/images/duet/duet-in-use-tokyo0524-medium.avif">
           ### A Purpose-Built Tester
           Designed to overcome the challenges of displaying switches at meetup vendor booths and similar events.  
 

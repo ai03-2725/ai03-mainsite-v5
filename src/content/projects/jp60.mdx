@@ -2,8 +2,8 @@
 draft: false
 title: JP60
 slogan: Open-source GH60-compatible JIS PCB
-coverImage:
-  url: "/assets/projects/jp60/img_0004_mediumsize.avif"
+cover:
+  image: "/images/jp60/jp60-tiled-diagonal-medium.avif"
   alt: JP60 cover image
 releaseDate: 2021-08-07
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -37,26 +37,11 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'jp60'} 
       slides={[
-        {
-          url: "/assets/projects/jp60/img_0004_fullsize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/jp60/img_0005_fullsize.avif",
-          alt: "Bottom view",
-        },
-        {
-          url: "/assets/projects/jp60/img_0003_fullsize.avif",
-          alt: "Macro view",
-        },
-        {
-          url: "/assets/projects/jp60/img_0002_fullsize.avif",
-          alt: "Kit view",
-        },
-        {
-          url: "/assets/projects/jp60/img_0001_largesize.png",
-          alt: "Layout diagram",
-        },
+        { url: "/images/jp60/jp60-front-large.avif" },
+        { url: "/images/jp60/jp60-rear-large.avif" },
+        { url: "/images/jp60/jp60-tiled-large.avif" },
+        { url: "/images/jp60/jp60-tiled-diagonal-large.avif" },
+        { url: "/images/jp60/jp60-kit-medium.png" },
       ]} 
       links={[
         {
@@ -74,7 +59,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
       <DefaultMarkdownRenderer>
 
         <div class="w-full flex flex-row justify-center">
-          <img src="/assets/projects/jp60/img_0001_largesize.png" loading="lazy" class="w-full lg:w-3/4" />
+          <img src="/images/jp60/jp60-kit-medium.png" loading="lazy" class="w-full lg:w-3/4" />
         </div>
         
         ### An Accessible Solution for Japan's Hobbyist Community

@@ -2,8 +2,8 @@
 draft: false
 title: Horizon
 slogan: Premium keyboard display stand
-coverImage:
-  url: "/assets/projects/horizon/img_0002_mediumsize.avif"
+cover:
+  image: "/images/horizon/horizon-stand-andromeda-rear-cropped-medium.avif"
   alt: Horizon cover image
 releaseDate: 2020-03-13
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -38,38 +38,15 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'horizon'} 
       slides={[
-        {
-          url: "/assets/projects/horizon/img_0002_largesize.avif",
-          alt: "Cover image",
-        },
-        {
-          url: "/assets/projects/horizon/img_0003_largesize.avif",
-          alt: "Macro view",
-        },
-        {
-          url: "/assets/projects/horizon/img_0005_largesize.avif",
-          alt: "Regular front view, clear",
-        },
-        {
-          url: "/assets/projects/horizon/img_0006_largesize.avif",
-          alt: "Kit view, clear",
-        },
-        {
-          url: "/assets/projects/horizon/img_0017_largesize.jpg",
-          alt: "Display view, smoky",
-        },
-        {
-          url: "/assets/projects/horizon/img_0008_largesize.avif",
-          alt: "Regular front view, smoky",
-        },
-        {
-          url: "/assets/projects/horizon/img_0009_largesize.avif",
-          alt: "Kit view, smoky",
-        },
-        {
-          url: "/assets/projects/horizon/img_0013_fullsize.avif",
-          alt: "Stress test view",
-        },
+        { url: "/images/horizon/horizon-stand-andromeda-rear-large.avif" },
+        { url: "/images/horizon/horizon-front-hook-large.avif" },
+        { url: "/images/horizon/horizon-clear-large.avif" },
+        { url: "/images/horizon/horizon-clear-kit-large.avif" },
+        { url: "/images/horizon/horizon-smoky-with-balance-rear-medium.jpg" },
+        { url: "/images/horizon/horizon-smoky-large.avif" },
+        { url: "/images/horizon/horizon-smoky-kit-large.avif" },
+        { url: "/images/horizon/horizon-stress-test-large.avif" },
+        { url: "/images/horizon/horizon-clear-with-balance-rear-medium.jpg" },
       ]} 
       links={[
         {
@@ -86,25 +63,25 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/horizon/img_0001_fullsize.avif">
+        <ClassicImageTextBlock src="/images/horizon/horizon-stand-andromeda-rear-medium.avif">
           ### The Zero-Compromise Display Stand
           Your efforts in perfecting your keyboard shouldn't be let down by the stand it's placed on.  
           Horizon compromises nothing in visuals and durability to ensure that your keyboard is displayed at its finest.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/horizon/img_0006_largesize.avif">
+        <ClassicImageTextBlock src="/images/horizon/horizon-smoky-kit-medium.avif">
           ### The Intention You Desire
           Carefully drawn curves and defining straight edges form the side panels, carefully accented by metal hardware that balances an industrial and elegant look.  
           Horizon is designed with equal care to the keyboards it is to display.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/horizon/img_0013_fullsize.avif">
+        <ClassicImageTextBlock src="/images/horizon/horizon-front-hook-medium.avif">
           ### The Gentle Giant
           Constructed with custom-cast 10mm-thick acrylic panels and tailor-made heavy-duty aluminum rods, Horizon is ready for the heaviest of keyboards.  
           Real-world testing has confirmed load-bearing of at least 8000g with ease.
         </ClassicImageTextBlock> 
 
-        <ClassicImageTextBlock src="/assets/projects/horizon/img_0016_largesize.jpg" >
+        <ClassicImageTextBlock src="/images/horizon/horizon-smoky-with-balance-medium.jpg" >
           ### The Perfect Match
           Whether full-height or low-profile, compact 40% or massive full-size, or even irregularly-shaped Alice-likes, Horizon is designed for the entire collection.  
           The side panels are available in transparent clear and smoky black to match the displayed keyboard as desired.

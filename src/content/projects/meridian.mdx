@@ -2,8 +2,8 @@
 draft: false
 title: Meridian
 slogan: Ergonomic 60% Keyboard
-coverImage:
-  url: "/assets/projects/meridian/img_0002_mediumsize.avif"
+cover:
+  image: "/images/meridian/meridian-front-medium.avif"
   alt: Meridian cover image
 releaseDate: 2020-07-27
 ---
@@ -21,7 +21,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
 
 <DefaultLayout title={frontmatter.title}>
 
-  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
 
   <div class="container mx-auto">
 
@@ -37,30 +37,12 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <ClassicCarouselBlock 
       project={'meridian'} 
       slides={[
-        {
-          url: "/assets/projects/meridian/img_0002_fullsize.avif",
-          alt: "Top view",
-        },
-        {
-          url: "/assets/projects/meridian/img_0005_fullsize.avif",
-          alt: "Side view",
-        },
-        {
-          url: "/assets/projects/meridian/img_0004_fullsize.avif",
-          alt: "Indicators view",
-        },
-        {
-          url: "/assets/projects/meridian/img_0001_fullsize.avif",
-          alt: "Triple view",
-        },
-        {
-          url: "/assets/projects/meridian/img_0006_largesize.avif",
-          alt: "Cover render",
-        },
-        {
-          url: "/assets/projects/meridian/img_0003_fullsize.avif",
-          alt: "Bottom view",
-        },
+        { url: '/images/meridian/meridian-front-large.avif' },
+        { url: '/images/meridian/meridian-side-large.avif' },
+        { url: '/images/meridian/meridian-indicators-large.avif' },
+        { url: '/images/meridian/meridian-variety-large.avif' },
+        { url: '/images/meridian/meridian-render-front-large.avif' },
+        { url: '/images/meridian/meridian-bottom-large.avif' },
       ]} 
       links={[
         {
@@ -81,13 +63,13 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     <Center>
       <DefaultMarkdownRenderer>
 
-        <ClassicImageTextBlock src="/assets/projects/meridian/img_0005_largesize.avif">
+        <ClassicImageTextBlock src="/images/meridian/meridian-side-medium.avif">
           ### Trustworthy Typing Experience
           An aluminum top-mounted plate offers typing comfort and a middle-ground rigidity which pairs well with various switch types.  
           The internal brass weight adds enough heft to keep the board stable during heavy use.
         </ClassicImageTextBlock>
 
-        <ClassicImageTextBlock src="/assets/projects/meridian/img_0004_largesize.avif">
+        <ClassicImageTextBlock src="/images/meridian/meridian-indicators-medium.avif">
           ### The Ergonomic Factor
           Based on the Prime_E, the alphas bend in at a soft 8 degree angle rather than the aggressive 12 degree bend of most Alice-esque boards.  
           The layout is built around common keycap sizes for maximized compatibility with existing keysets.
@@ -97,7 +79,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
     </Center>
 
     <ClassicSpecsTable 
-      headerImageSrc='/assets/projects/meridian/img_0006_largesize.avif' 
+      headerImageSrc='/images/meridian/meridian-variety-medium.avif' 
       footerNote='Credits to Prime Keyboards for photos'
       specs={[
         ["PCB", "Soldered, USB-C, ESD protected",],
@@ -106,7 +88,7 @@ import SimpleImage from '@components/astro/SimpleImage.astro'
         ["Typing Angle", "7deg",],
         ["Alphanumerics Bend Angle", "8deg",],
         ["Weight", "Brass, internal, bead blasted",],
-        ["Layout", "![Layout Diagram](/assets/projects/meridian/img_0007_fullsize.avif)"]
+        ["Layout", "![Layout Diagram](/images/meridian/meridian-layout-diagram-medium.avif)"]
     ]} />
 
     <ClassicResourcesTable project='meridian' />

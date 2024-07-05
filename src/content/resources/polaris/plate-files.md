@@ -1,4 +1,4 @@
 ---
 label: "Plate files"
-fileUrl: "/assets/projects/polaris/polaris_resource_plate_files.zip"
+fileUrl: "/resources/polaris/polaris_resource_plate_files.zip"
 ---
