@@ -1,0 +1,125 @@
+---
+draft: false
+title: ePBT SimpleJA
+slogan: Vintage Legend Japanese Keyset for the Current Era
+coverImage:
+  url: "/assets/projects/epbt-simpleja/img_0044_largesize.avif"
+  alt: ePBT SimpleJA cover image
+releaseDate: 2019-06-01
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.coverImage.url} />
+
+  <div class="container mx-auto">
+
+    <ClassicHeaderBlock 
+      title="ePBT SimpleJA"
+      >
+      <DefaultMarkdownRenderer>
+        A faithful vintage Japanese legend keyset for the current era.
+      </DefaultMarkdownRenderer>
+    </ClassicHeaderBlock>
+
+
+    <ClassicCarouselBlock 
+      project={'epbt-simpleja'} 
+      slides={[
+        {
+          url: "/assets/projects/epbt-simpleja/img_0044_largesize.avif",
+          alt: "Cover image",
+        },
+        {
+          url: "/assets/projects/epbt-simpleja/img_0043_largesize.avif",
+          alt: "AAA view",
+        },
+        {
+          url: "/assets/projects/epbt-simpleja/img_0040_largesize.avif",
+          alt: "BBB view",
+        },
+        {
+          url: "/assets/projects/epbt-simpleja/img_0047_largesize.avif",
+          alt: "CCC view",
+        },
+        {
+          url: "/assets/projects/epbt-simpleja/img_0043_largesize.avif",
+          alt: "AAA view",
+        },
+        {
+          url: "/assets/projects/epbt-simpleja/img_0040_largesize.avif",
+          alt: "BBB view",
+        },
+        {
+          url: "/assets/projects/epbt-simpleja/img_0047_largesize.avif",
+          alt: "CCC view",
+        },
+      ]} 
+      links={[
+        {
+          label: "GeekHack IC Thread - Round 1",
+          url: "https://geekhack.org/index.php?topic=100982.0",
+        },
+        {
+          label: "GeekHack IC Thread - Round 2",
+          url: "https://geekhack.org/index.php?topic=114422.0",
+        },
+      ]}
+    />
+
+    <Center>
+      <DefaultMarkdownRenderer>
+
+        <ClassicImageTextBlock src="/assets/projects/epbt-simpleja/img_0043_largesize.avif">
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock>
+
+        <ClassicImageTextBlock src="/assets/projects/epbt-simpleja/img_0040_largesize.avif">
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/epbt-simpleja/img_0042_largesize.avif">
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock> 
+
+        <ClassicImageTextBlock src="/assets/projects/epbt-simpleja/img_0047_largesize.jpg" >
+          ### Header
+          Markdown body text  
+          Markdown body text  
+        </ClassicImageTextBlock>
+
+      </DefaultMarkdownRenderer>
+    </Center>
+
+    <ClassicSpecsTable 
+      headerImageSrc='/assets/projects/epbt-simpleja/img_0045_largesize.avif' 
+      footerNote='Footer note if exists'
+      specs={[
+        ["Key", "Value",],
+        ["Key", "Value",],
+        ["Key", "Value",],
+        ["ImageKey", "![Alt](/assets/projects/epbt-simpleja/img_0045_largesize.avif)"]
+    ]} />
+
+    <ClassicResourcesTable project='epbt-simpleja' />
+
+  </div>
+
+</DefaultLayout>
