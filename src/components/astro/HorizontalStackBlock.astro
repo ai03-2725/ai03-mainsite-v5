@@ -1,15 +1,22 @@
 ---
 import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
+import type { HTMLAttributes } from 'astro/types';
 
 
-interface Props {
+interface Props extends HTMLAttributes<'div'> {
   src: string,
-  alt: string,
+  alt?: string | undefined,
   bgColor?: string | undefined,
   container?: boolean | undefined,
   invert?: boolean | undefined,
   reverse?: boolean | undefined,
   rounded?: boolean | undefined,
+  ratio?: number | undefined,
+  imageClasses?: string | undefined,
+  noProse?: boolean | undefined,
+  noPadding?: boolean | undefined,
+  noGap?: boolean | undefined,
 }
 
 const {
@@ -20,23 +27,83 @@ const {
   invert,
   reverse, 
   rounded, 
+  ratio, 
+  imageClasses, 
+  noProse, 
+  noPadding,
+  noGap,
+  ...attrs
 } = Astro.props
 
 const containerClassString = container ? "container mx-auto " : ""
 
+// Can't programatically generate class strings due to tailwind limitations
+// Fall back to long switch statement
+const imageWeight = ratio || 6
+let ratioStringImage = "lg:col-span-6"
+let ratioStringText = "lg:col-span-6"
+switch(imageWeight) {
+  case 1:
+    ratioStringImage = "lg:col-span-1"
+    ratioStringText = "lg:col-span-11"
+    break
+  case 2:
+    ratioStringImage = "lg:col-span-2"
+    ratioStringText = "lg:col-span-10"
+    break
+  case 3:
+    ratioStringImage = "lg:col-span-3"
+    ratioStringText = "lg:col-span-9"
+    break
+  case 4:
+    ratioStringImage = "lg:col-span-4"
+    ratioStringText = "lg:col-span-8"
+    break
+  case 5:
+    ratioStringImage = "lg:col-span-5"
+    ratioStringText = "lg:col-span-7"
+    break
+  case 7:
+    ratioStringImage = "lg:col-span-7"
+    ratioStringText = "lg:col-span-5"
+    break
+  case 8:
+    ratioStringImage = "lg:col-span-8"
+    ratioStringText = "lg:col-span-4"
+    break
+  case 9:
+    ratioStringImage = "lg:col-span-9"
+    ratioStringText = "lg:col-span-3"
+    break
+  case 10:
+    ratioStringImage = "lg:col-span-10"
+    ratioStringText = "lg:col-span-2"
+    break
+  case 11:
+    ratioStringImage = "lg:col-span-11"
+    ratioStringText = "lg:col-span-1"
+    break
+  default:
+    break
+}
+
 ---
 
-<div style={`background-color: ${bgColor ? `#${bgColor}` : ""}`}>
-  <div class={`${containerClassString} grid grid-cols-1 lg:grid-cols-2 gap-8 place-items-center`}>
-    <div class={`${reverse && "lg:order-last"}`}>
+<div style={`background-color: ${bgColor ? `#${bgColor}` : ""}`} {...attrs} >
+  <div class={`${containerClassString} grid grid-cols-1 lg:grid-cols-12 ${!noGap && "gap-8"} place-items-center`}>
+    <div class={`${reverse && "lg:order-last"} ${ratioStringImage}`}>
       <div class={`${rounded && "rounded-[3.75px] overflow-hidden"}`}>
-        <img src={src} alt={alt} class="object-cover w-full" loading="lazy" />
+        <SimpleImageV2 src={src} alt={alt || undefined} class={imageClasses || "object-cover w-full"} loading="lazy" />
       </div>
     </div>
-    <div class={`w-full ${reverse ? "lg:ps-24" : "lg:pe-24"} pb-12 lg:pt-16 lg:pb-16 px-6 md:px-8 lg:px-0`}>
-      <DefaultMarkdownRenderer invert={invert || false}>
-        <slot />  
-      </DefaultMarkdownRenderer>
+    <div class={`w-full ${reverse ? "lg:ps-24" : "lg:pe-24"} ${!noPadding && "pb-12 lg:pt-16 lg:pb-16 px-6 md:px-8 lg:px-0"} ${ratioStringText}`}>
+      {noProse ? 
+        <slot />
+        :
+        <DefaultMarkdownRenderer invert={invert || false}>
+          <slot />  
+        </DefaultMarkdownRenderer>
+      }
     </div>
   </div>
 </div>

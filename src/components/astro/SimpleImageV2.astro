@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { imageAltFromFilename } from '@scripts/imageAltFromFilename'
+
+export interface Props extends HTMLAttributes<'img'> {
+  src: string,
+  eager?: boolean | undefined,
+}
+
+const { 
+  src,
+  eager,
+  ...attrs
+} = Astro.props
+
+const altString = imageAltFromFilename(src)
+
+---
+
+<img src={src} alt={altString} loading={eager ? "eager" : "lazy"} {...attrs} >
+  <slot />
+</img>

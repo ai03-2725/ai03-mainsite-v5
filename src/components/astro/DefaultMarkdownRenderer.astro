@@ -1,10 +1,17 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props {
+
+interface Props extends HTMLAttributes<'div'> {
   invert?: boolean | undefined;
+  extraClasses?: string | undefined;
 }
 
-const { invert } = Astro.props;
+const { 
+  invert, 
+  extraClasses, 
+  ...attrs
+} = Astro.props;
 
 ---
 
@@ -26,7 +33,10 @@ const { invert } = Astro.props;
   prose-img:overflow-hidden
   prose-img:rounded-[3.75px]
   prose-a:underline 
-  ${invert && "prose-invert"}
-`} >
+  ${invert && "prose-invert"} 
+  ${extraClasses}
+`} 
+  {...attrs}
+>
   <slot />
 </div>

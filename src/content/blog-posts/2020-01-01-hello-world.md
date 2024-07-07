@@ -3,8 +3,8 @@ draft: false
 title: Hello World
 date: 2020-01-01
 tags: []
-coverImage:
-  url: '/assets/projects/vega/img_0044_largesize.avif'
+cover:
+  image: '/images/vega/vega-render-pair-medium.avif'
   alt: Vega cover image
 relatedProjects: ['vega']
 relatedPosts: []

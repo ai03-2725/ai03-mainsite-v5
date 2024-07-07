@@ -8,9 +8,9 @@ export const DefaultMarkdownRenderer: React.FC<{
   return (
     <div class="prose w-full max-w-full
       prose-h1:text-4xl
-      prose-h1:font-[750]
+      prose-h1:font-[500]
       prose-h2:text-3xl
-      prose-h2:font-[675]
+      prose-h2:font-[550]
       prose-h3:text-2xl
       prose-h3:font-[600]
       prose-h4:text-xl

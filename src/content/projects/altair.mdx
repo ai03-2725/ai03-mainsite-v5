@@ -1,0 +1,287 @@
+---
+draft: false
+title: Altair and Altair-X
+slogan: Third-generation ergonomic keyboard
+cover:
+  image: "/images/altair/altair-render-5row-top-medium.avif"
+  alt: Altair and Altair-X cover image
+releaseDate: 2024-01-19
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
+import SimpleButton from '@components/astro/SimpleButton.astro'
+import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src={frontmatter.cover.image} />
+
+  <div class="container mx-auto pt-16 pb-20 text-center">
+
+    <div class="flex flex-row items-center justify-center pb-4">
+      <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[64px] m-0">ALTAIR</h1>
+      <p class="text-lg ps-4 pe-3">and</p>
+      <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[64px] m-0">ALTAIR-X</h1>
+      
+    </div>
+
+    <DefaultMarkdownRenderer>
+      After half a decade of development and over two years of use as a daily driver, Altair and Altair-X represent ai03's current benchmark in keyboard design for productivity and comfort.  
+      Going beyond just internals or mounting methods, the Altair family blends a fully-split ergonomic key layout with high-end keyboard visuals and internals to take typing comfort to the next level.
+    </DefaultMarkdownRenderer>    
+
+    <div class="flex flex-row flex-wrap gap-4 justify-center pt-10">
+      <SimpleButton url="https://geekhack.org/index.php?topic=122278.0" label="GeekHack IC Thread" />
+      <SimpleButton url="https://geekhack.org/index.php?topic=122889" label="GeekHack GB Thread" />
+      <SimpleButton disabled url="#resources-table" label="Files and Resources" />
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <SimpleImageV2 src="/images/altair/altair-render-5row-top-medium.avif" class="aspect-[4/3] object-cover" />
+    <SimpleImageV2 src="/images/altair/altair-render-4row-medium.avif" class="aspect-[4/3] object-cover" />
+  </div>
+
+  {/* Layout benefits header */}
+  <div class="text-center mt-20 mb-20">
+    <DefaultMarkdownRenderer>
+      ## Third Time's the Charm
+      Altair's key layout is the third ergonomic layout iteration by ai03, having been revised after heavy real-world testing and years of use.  
+      Altair's layout focuses on three important aspects:
+    </DefaultMarkdownRenderer>
+  </div>
+
+  {/* Layout benefits desc */}
+  <div class="flex flex-col gap-12 container mx-auto mb-24">
+
+    
+    <HorizontalStackBlock src="/images/altair/altair-ic-layout-compare-medium.avif" imageClasses="rounded-[3.75px] object-contain aspect-[1.875] bg-[#EEEEEE]" ratio={5}>
+      <h3 class="pb-1"> Ease of learning.</h3>
+      <p>While visually unique, Altair closely matches a typical keyboard in general key positions.</p>
+      <p>Care has been taken to make sure that anyone can learn the layout quickly, while also being able to jump between Altair and other keyboard layouts when necessary.</p>
+    </HorizontalStackBlock>
+
+    <HorizontalStackBlock src="/images/altair/altair-ic-hand-movement-medium.png" imageClasses="rounded-[3.75px] object-contain aspect-[1.875] bg-[#EEEEEE]" ratio={5}>
+      <h3 class="pb-1">Typing Excellence.</h3>
+      <p>Altair's key placement matches natural finger movement ranges closely, minimizing both finger and hand-movement during use.</p>
+      <p>This in return minimizes typing effort and strain, while also contributing to higher possible typing accuracy and speeds.</p>
+    </HorizontalStackBlock>
+
+    <HorizontalStackBlock src="/images/altair/altair-ic-layout-features-medium.png" imageClasses="rounded-[3.75px] object-contain aspect-[1.875] bg-[#EEEEEE]" ratio={5}>
+      <h3 class="pb-1">The Ergo Advantage.</h3>
+      <p>Altair's layer switching keys are conveniently placed right next to the spacebars, allowing for convenient layer switching with minimal finger movement.</p>
+      <p>Taking full advantage of Altair's split design, an extra column has been added to the inner side of the G/H split - map this to your favorite macros for convenient access, or use them as dedicated bracket keys for programming efficiency.</p>
+      <p>They can also be used as a duplicate set of inner alphanumerics to help adjust to the layout, or even as a dedicated pedestal to display your artisan collections in style.</p>
+    </HorizontalStackBlock>
+
+  </div>
+
+  {/* Board design */}
+  <div class="bg-zinc-900 flex flex-col gap-8 py-24">
+    <DefaultMarkdownRenderer invert extraClasses="text-center pb-2">
+      <h2>Form Matches Function</h2>
+    </DefaultMarkdownRenderer>
+    <div class="flex flex-col items-center text-center">
+      <SimpleImageV2 src="/images/altair/altair-pastel-bottom-top-pair-medium.avif" class="w-1/2 rounded-[3.75px]" />
+      <DefaultMarkdownRenderer invert extraClasses="pt-8">
+      Carefully drawn curves wrap around the keys, integrating the ergonomic key layout into part of the visuals.
+      </DefaultMarkdownRenderer>
+      <div class="grid grid-cols-1 md:grid-cols-2 pt-12">
+        <SimpleImageV2 src="/images/altair/altair-pastel-one-standing-medium.avif" />
+        <SimpleImageV2 src="/images/altair/altair-pastel-weight-composition-medium.avif" />
+      </div>
+      <DefaultMarkdownRenderer invert extraClasses="pt-8">
+      A unique mix of soft organic curves, geometric arcs, and bold straight edges create a dynamic aesthetic reaching far beyond the board's compact size.
+      </DefaultMarkdownRenderer>
+      <div class="grid grid-cols-1 md:grid-cols-2 pt-12">
+        <SimpleImageV2 src="/images/altair/altair-pastel-bottom-pair-medium.avif" />
+        <SimpleImageV2 src="/images/altair/altair-pastel-bottom-side-medium.avif" />
+      </div>
+      <DefaultMarkdownRenderer invert extraClasses="pt-8">
+      A bottom emblem weight adds the final visual touch, while also serving as an acoustic damper and a crucial mass to anchor the compact board to the desk.
+      </DefaultMarkdownRenderer>
+      <div class="grid grid-cols-1 md:grid-cols-2 pt-12">
+        <SimpleImageV2 src="/images/altair/altair-pastel-bottom-single-medium.avif" />
+        <SimpleImageV2 src="/images/altair/altair-pastel-both-standing-medium.avif" />
+      </div>
+      <SimpleImageV2 src="/images/altair/altair-deskmat-rear-medium.avif" class="w-1/2 rounded-[3.75px] mt-20" />
+    </div>
+  </div>
+
+  {/* Internals */}
+  <div class="flex flex-col gap-16 pt-20 pb-24">
+    <DefaultMarkdownRenderer extraClasses="text-center pb-6">
+      <h2 class="mt-0 mb-4">Tilt and Absorb</h2>
+      Altair features a unique PCB point-mount system which uses the circuit board as a key part of its internal structure.
+    </DefaultMarkdownRenderer>
+    <HorizontalStackBlock src="/images/altair/altair-pastel-gaskets-medium.avif">
+      <p>Small gasket columns hold the PCB from below around the rims, allowing for effective vibration and impact absorption with no "rigid spots" close to mounting points.</p>
+      <p>Chosen after testing various materials, the specific material and compression ratio ensures a fine balance between comfort and reliable feedback which never devolves into mushiness.</p>
+    </HorizontalStackBlock>
+    <HorizontalStackBlock src="/images/altair/altair-ic-gaskets-medium.avif" reverse>
+      <p>All gasket columns can independently compress, allowing for the entire internals to tilt in all directions to absorb and disperse impacts.</p>
+      <p>Combined with the ergonomic key layout, Altair ensures all-day typing comfort.</p>
+    </HorizontalStackBlock>
+    <HorizontalStackBlock src="/images/altair/altair-pastel-pcb-shoulder-screws-medium.avif">
+      <div>
+        <p>Unique shoulder screws act as columns that keep the internals secured and aligned within the single-part case, making this internals system possible without the need for multiple case parts.</p>
+      </div>
+    </HorizontalStackBlock>
+  </div>
+
+  {/* Engineering */}
+  <div class="bg-[#FFF4FB]">
+    <div class="flex flex-col gap-8 pt-20 pb-24 container mx-auto">
+      <DefaultMarkdownRenderer extraClasses="text-center">
+        <h2 class="mt-0">Sculpting and Engineering In Tandem</h2>
+      </DefaultMarkdownRenderer>
+      <div class="flex flex-row justify-center mt-8">
+        <SimpleImageV2 src="/images/altair/altair-pastel-pcb-db-medium.avif" class="w-1/2 rounded-[3.75px]" />
+      </div>
+      <DefaultMarkdownRenderer extraClasses="text-center">
+        <p class="mt-0 mb-2">Altair is truly tailor-made - a custom case, custom PCBs, and even custom daughterboards work in perfect coordination to make the unique layout possible without compromising function or visuals.</p>
+        <p class="m-0">The PCB edge bends and stairsteps to perfectly match the case, and the daughterboard precisely angles its USB connectors to match the rear curvature while minimizing interior cutouts.</p>
+      </DefaultMarkdownRenderer>
+      <div class="flex flex-row justify-center mt-8">
+        <SimpleImageV2 src="/images/altair/altair-render-5row-rosegold-alt-medium.avif" class="w-1/2 rounded-[3.75px]" />
+      </div>
+      <DefaultMarkdownRenderer extraClasses="text-center">
+        <p class="mt-0 mb-2">Altair cuts no corners with high-end tuning and optimizations - with its seven-degree incline and a front ledge that drops down as low as 16.7mm at its tip, the keyboard remains comfortable to use even without assistance of a wristrest.</p>
+      </DefaultMarkdownRenderer>
+    </div>
+  </div>
+
+
+  {/* Engineering */}
+  <div class="">
+    <div class="flex flex-col gap-12 pt-20 pb-24 container mx-auto">
+      <DefaultMarkdownRenderer extraClasses="text-center">
+        <h2 class="mt-0 mb-2">The Power of Two</h2>
+      </DefaultMarkdownRenderer>
+      <HorizontalStackBlock src="/images/altair/altair-deskmat-5row-pair-medium.avif" rounded ratio={5}>
+        <div>
+          <h4 class="pb-2">Freedom of placement.</h4>
+          <p>Altair is a fully split keyboard - the keyboard halves can be placed to match your natural hand and arm placement, rather than the other way around.</p>
+          <p>A regular USB-C cable connects the two halves - the choice is yours for how long of a cable to use for balancing keyboard placement and desk clutter.</p>
+        </div>
+      </HorizontalStackBlock>
+      <HorizontalStackBlock src="/images/altair/altair-deskmat-side-medium.avif" reverse rounded ratio={5}>
+        <div>
+          <h4 class="pb-2">Freedom to detach.</h4>
+          <p>Ever wanted a premium single-handed keyboard for gaming, artwork, or macropad use?</p>
+          <p>Altair can take on the task by leaving the split cable disconnected - since each half is a fully functional keyboard, plug in just one half to free up keyboard space on your desk.</p>
+        </div>
+      </HorizontalStackBlock>
+      <HorizontalStackBlock src="/images/altair/altair-blank-grid-medium.avif" rounded ratio={5}>
+        <h4 class="pb-2">Freedom of choice.</h4>
+        <DefaultMarkdownRenderer>
+          The Altair family comes with two variants:
+          - The Altair (five-row) features a numrow, making it as easy as possible to migrate from larger layouts.
+          - The Altair-X (four-row) lacks the numrow, condensing the keyboard down to the most easily reachable keys.
+        </DefaultMarkdownRenderer>
+      </HorizontalStackBlock>
+    </div>
+  </div>
+
+  {/* Beyond Just the Keyboard */}
+  <div class="flex flex-col bg-[#EFFBFF]">
+    <DefaultMarkdownRenderer extraClasses="text-center py-6">
+      <h2 class="mt-12 mb-10">Beyond Just the Keyboard</h2>
+    </DefaultMarkdownRenderer>
+    <HorizontalStackBlock src="/images/altair/altair-ic-stock-layouts-medium.png" imageClasses="object-contain aspect-[1.5] bg-[#EEEEEE]" noGap>
+      <div class="ps-0 lg:ps-8">
+        <p>Altair's default key mapping has been optimized over years of testing for easy usability, learn-ability, and minimized memorizing needs - along with the physical layout, Altair aims to be both accessible to the novice and practical to an expert.</p>
+      </div>
+    </HorizontalStackBlock>
+    <HorizontalStackBlock src="/images/altair/altair-render-4row-keyset-02-medium.avif" imageClasses="object-cover aspect-[1.5]" reverse noGap>
+      <div class="pe-0 lg:pe-8">
+        <p>A dedicated keyset has been created for both the Altair and Altair-X with custom legends matching the default keymap.</p>
+        <p> Combined with a planned Altair learning guide, the keyboard is designed to go beyond just dropping the board off in the mailbox, but rather to go the full way for allowing the user to learn and appreciate the ergonomic key layout.</p>
+      </div>
+    </HorizontalStackBlock>
+    <HorizontalStackBlock src="/images/altair/parts/altair-wristrests-medium.avif" imageClasses="object-cover aspect-[1.5] bg-[#EEEEEE]" noGap>
+      <div class="ps-0 lg:ps-8">
+        <p>For those who prefer the use of wristrests, custom wristrests that match both the Altair and Altair-X are in the works.</p>
+      </div>
+    </HorizontalStackBlock>
+  </div>
+
+
+  <div class="container mx-auto">
+
+    <ClassicSpecsTable 
+      headerImageSrc='/images/altair/altair-render-exploded-medium.avif' 
+      specs={[
+        ["Typing angle", "7deg",],
+        ["Materials", "Value",],
+        ["Key", `Case: Aluminum  
+        Plate: Polycarbonate  
+        Weight: Brass`,],
+        ["Manufacturer", "Hongtu",],
+        ["Weight (both halves combined)", `Altair (5-row): ~1.2kg  
+        Altair-X (4-row): ~900g`,],
+        ["Dimensions (per half)", `Altair (5-row): ~143.6 x 126.4 x 30.0mm  
+        Altair-X (4-row): ~143.6 x 107.4 x 27.9mm`,],
+        ["Accessories", `- Foam layers (midfoam, bottomfoam, PCB foam)  
+        - Tailored carrying cases  
+        - Tailored wristrests  
+        - Custom keysets`,],
+    ]} />
+  
+  </div>
+
+  <div>
+    <div class="text-center pt-16 pb-4 flex flex-col gap-6">
+      <DefaultMarkdownRenderer>
+        ### Case Colors
+      </DefaultMarkdownRenderer>
+      <p>E-White</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <SimpleImageV2 src="/images/altair/altair-render-5row-white-medium.avif" />
+      <SimpleImageV2 src="/images/altair/altair-render-4row-white-medium.avif" />
+    </div>
+    <div class="text-center pt-12 pb-4 flex flex-col gap-6">
+      <p>Dark Grey</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <SimpleImageV2 src="/images/altair/altair-render-5row-grey-medium.avif" />
+      <SimpleImageV2 src="/images/altair/altair-render-4row-grey-medium.avif" />
+    </div>
+    <div class="text-center pt-12 pb-4 flex flex-col gap-6">
+      <p>Rose Gold</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <SimpleImageV2 src="/images/altair/altair-render-5row-rosegold-medium.avif" />
+      <SimpleImageV2 src="/images/altair/altair-render-4row-rose-gold-medium.avif" />
+    </div>
+  </div>
+
+  <div class="bg-[#A7C6D0]">
+    <div class="text-center pt-16 pb-8 flex flex-col">
+      <h3 class="text-white text-2xl font-[500]">Custom Keyset</h3>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <SimpleImageV2 src="/images/altair/altair-render-5row-keyset-01-medium.avif" />
+      <SimpleImageV2 src="/images/altair/altair-render-5row-keyset-kitting-medium.avif" />
+      <SimpleImageV2 src="/images/altair/altair-render-4row-keyset-01-medium.avif" />
+      <SimpleImageV2 src="/images/altair/altair-render-4row-keyset-kitting-medium.avif" />
+    </div>
+  </div>
+
+
+  <div class="container mx-auto">
+    <ClassicResourcesTable project='altair' />
+  </div>
+
+</DefaultLayout>

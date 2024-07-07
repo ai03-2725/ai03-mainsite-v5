@@ -3,29 +3,34 @@ interface Props {
   label: string;
   url?: string | undefined;
   extern?: boolean | undefined;
+  disabled?: boolean | undefined;
 }
 
-const { label, url, extern } = Astro.props;
+const { label, url, extern, disabled } = Astro.props;
 
 let openInNewTab = (extern !== false);
 if (extern === undefined && url && url.charAt(0) === "#") {
   openInNewTab = false
 }
 
+let buttonDisabled = disabled ? true : ( url ? false : true )
+
+
 ---
 
 <div class=`
-  ${url ? "bg-zinc-700" : "bg-zinc-500"}
+  ${buttonDisabled ? "bg-zinc-500" : "bg-zinc-700"}
   text-white 
   text-center 
-  rounded-[2.375px] 
-  ${url && "hover:bg-zinc-600"}
-  ${url && "transition-all ease-[var(--spring-easing)] duration-[138ms]"}
+  rounded-[2.375px]
+  ${!buttonDisabled && "hover:bg-zinc-600"}
+  ${!buttonDisabled && "transition-all ease-[var(--spring-easing)] duration-[138ms]"}
+  
 `>
   <a
-    href={url ? url : null}
-    aria-disabled={url ? false : true}
-    class="h-full text-white no-underline"
+    href={buttonDisabled ? null : url}
+    aria-disabled={buttonDisabled}
+    class={`h-full text-white no-underline`}
     target={openInNewTab === false ? "_self" : "_blank"} rel={openInNewTab !== false && "noopener noreferrer"}
   >
     <div class="py-3 px-5">

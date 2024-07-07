@@ -3,8 +3,8 @@ draft: false
 title: New Website
 date: 2021-08-29
 tags: ['Archive']
-coverImage:
-  url: '/assets/blog/oldsite_sig_largesize.avif'
+cover:
+  image: '/images/blog/oldsite-sig-medium.avif'
   alt: Vega cover image
   anchor: ['top']
 relatedProjects: []

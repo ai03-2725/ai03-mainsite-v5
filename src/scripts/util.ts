@@ -2,8 +2,8 @@ import type { ProjectStatuses } from "src/content/enum"
 
 export const getThumbnailUrl: (originalUrl: string) => string = (originalUrl) => {
 
-  const fileName = originalUrl.split(new RegExp("large.|medium."))[0]
-  return `${fileName}thumbnail.avif`
+  const fileName = originalUrl.split(new RegExp("-large[.]|-medium[.]"))[0]
+  return `${fileName}-thumbnail.avif`
 
 }
 

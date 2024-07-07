@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
-const positionString = post.data.coverImage.anchor ? post.data.coverImage.anchor.join(" ") : null
+const positionString = post.data.cover.anchor ? post.data.cover.anchor.join(" ") : null
 
 ---
 <Layout title={`${post.data.title} | Blog`}`>

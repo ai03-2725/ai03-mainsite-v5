@@ -14,7 +14,7 @@ export const redirects: [string, string][] = [
   ["Contact", "https://docs.google.com/forms/d/e/1FAIpQLSeDXYrYGG9i69_cJkETaZZj6OcjNraM9qaULQIhStfAcz5hfQ/viewform?usp=sf_link"],
   ["polaris", "https://www.ai03.com/projects/polaris"],
   ["polarisv2", "https://ai03.com/projects/polaris-v2/"],
-  ["projects/e-pbt-simple-ja", "https://ai03.com/projects/epbt-simpleja/"],
-  ["projects/e-pbt-simple-ja-r2", "https://ai03.com/projects/epbt-simpleja/"],
-  ["projects/e-pbt-modern-ja", "https://ai03.com/projects/epbt-modernja/"],
+  // ["projects/e-pbt-simple-ja", "https://ai03.com/projects/epbt-simpleja/"],
+  // ["projects/e-pbt-simple-ja-r2", "https://ai03.com/projects/epbt-simpleja/"],
+  // ["projects/e-pbt-modern-ja", "https://ai03.com/projects/epbt-modernja/"],
 ]
