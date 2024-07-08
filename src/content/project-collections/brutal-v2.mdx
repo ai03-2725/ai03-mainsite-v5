@@ -1,0 +1,142 @@
+---
+draft: false
+title: Brutal V2 Series
+slogan: Big, bold, brutalist keyboards with an elegant touch
+cover:
+  image: "/images/brutal-v2-65/brutal-v2-65-render-side-medium.avif"
+  alt: Andromeda image
+# projects: ['brutal-v2-65', 'brutal-v2-1800', 'brutal-v2-60']
+# projects: ['brutal-v2-65', 'brutal-v2-1800']
+projects: []
+priority: 800
+tileSize: "2x1"
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
+import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
+
+{/* Todo: Add Brutal V2 60 */}
+
+<DefaultLayout title={frontmatter.title} >
+
+  {/* Header */}
+  <div poster="/images/brutal-v2-65/brutal-v2-65-render-side-medium.avif" class="relative h-[90vh] max-h-[100vw]">
+    <video class="w-full h-full absolute object-cover z-0" autoplay muted loop >
+      <source src="/resources/brutal-v2/brutal-v2-65-anim-banner-compressed-vp9-29.webm" type="video/webm" />
+    </video>
+    <div class="absolute text-center w-full text-zinc-100 bottom-0 flex-col justify-center pt-0 pb-24 h-auto hidden md:flex">
+      <h1 class="text-6xl font-[525]">BRUTAL V2</h1>
+      <p class="pt-6 text-xl mx-6">CannonKeys's legendary Brutalist series design overhauled for the new era.</p>
+      <div class="flex flex-row flex-wrap">
+        <a href="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-[#111213] md:hidden px-6 py-16 text-zinc-100 text-center">
+    <h1 class="text-4xl font-[550] p">BRUTAL V2</h1>
+    <p class="pt-4 text-md mx-6">CannonKeys's legendary Brutalist series design overhauled for the new era.</p>
+  </div>
+
+  <div class="text-center py-24 container mx-auto">
+    <h2 class="text-4xl"><strong>Brutal,</strong> Evolved.</h2>
+    <p class="pt-8">In 2019, the launch of the first-generation Brutalist series keyboards by CannonKeys changed the keyboard landscape forever.</p>
+    <p class="pt-2">In an era dominated by group buys, long wait times for delivery, and sky-high prices, the Brutal V1 was available in-stock and offered an accessible entrypoint to the world of custom keyboards.</p>
+    <p class="pt-8">Fully redesigned by ai03, the Brutal V2 series takes the family to new hights in performance and visuals - all while keeping things in-stock and available.</p>
+  </div>
+
+  <div class="bg-zinc-900 text-zinc-50 text-center pt-20 lg:pt-24">
+    <div class="px-6 lg:px-0">
+      <h2 class="text-3xl lg:text-4xl font-[550]">Brutalist to the core</h2>
+      <p class="pt-6 lg:pt-4">Expressing the sheer scale, grandiose, and rawness of brutalism is core to the Brutal V2 visual language.</p>
+      <p class="pt-2 mb-16 lg:mb-0">The Brutal V2 series uses careful design to express this style within the bounds of a compact, sophisticated custom keyboard.</p>
+    </div>
+    <HorizontalStackBlock src="/images/brutal-v2-65/brutal-v2-65-render-side-front-transparent-medium.avif" invert class="lg:text-start" >
+      <h3>A Show of Strength</h3>
+      <p>A bold uniform bezel wraps around the case top half, tapering as it reaches upwards at the sides for a distinct look.</p>
+      <p class="mb-16 lg:mb-0">The bottom case half rises against gravity at the rear in a striking angle, highlighted by the two-tone anodized finish to place a spotlight on each.</p>
+    </HorizontalStackBlock>
+    <HorizontalStackBlock src="/images/brutal-v2-65/brutal-v2-65-render-internals-reear-transparent-medium.avif" invert reverse class="lg:text-start" >
+      <h3>Power Meets Precision</h3>
+      <p>A visually massive rear block breaks over the case top half and creates depth on the surface, while fitting together perfectly by precision design.</p>
+      <p></p>
+      <p class="mb-10 lg:mb-0">Specially-formed cast weights adorn the interior and provide acoustic vibration control, custom-made for the Brutal V2 family out of molten zinc and cooled for an organic and raw texture.</p>
+    </HorizontalStackBlock>
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-render-side-medium.avif" class="aspect-square lg:aspect-[1.25] object-contain object-bottom bg-black" />
+      <SimpleImageV2 src="/images/brutal-v2-1800/brutal-v2-1800-render-vertical-pair-medium.avif" class="aspect-square lg:aspect-[1.25] object-cover" />
+      <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-render-logo-medium.avif" class="aspect-square lg:aspect-[1.25] object-cover" />
+      <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-render-stands-medium.avif" class="aspect-square lg:aspect-[1.25] object-cover" />
+    </div>
+    <HorizontalStackBlock src="/images/brutal-v2-65/brutal-v2-65-topdown-medium.avif" invert class="lg:text-start bg-[#13100B] lg:bg-[#070504]" >
+      <div class="pt-1 pb-3">
+        <h3>Pure Form</h3>
+        <p class="">For the most undisturbed expression of the Brutalist style and for the final touch of custom keyboard refinement, the exterior is kept completely screw-free by use of internal case screws hidden below the keycaps.</p>
+      </div>
+    </HorizontalStackBlock>
+  </div>
+
+  <div class="bg-black text-zinc-50 text-center py-24">
+    <h2 class="text-2xl lg:text-4xl font-[550]">Elegant Performance</h2>
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16">
+      <div poster="/images/brutal-v2-65/brutal-v2-65-render-exploded-medium.avif" class="relative aspect-[1.25] mx-8 lg:mx-0">
+        <video class="w-full h-full absolute object-contain z-0" autoplay muted loop >
+          <source src="/resources/brutal-v2/brutal-v2-65-anim-internals-loop-compressed-vp9-28.webm" type="video/webm" />
+        </video>
+      </div>
+      <DefaultMarkdownRenderer invert extraClasses="lg:text-start h-full flex flex-col justify-center px-6">
+        <h3 class="pb-1.5">Out of sight.</h3>
+        <p>Brutal V2's complex internals which deliver its exceptional performance are hidden from view once assembled, leaving nothing but the sleek, powerful exterior.</p>
+        <p class="m-0">From the internal case screws to the internal structures, everything tucks away with a front ledge only 17mm tall.</p>
+      </DefaultMarkdownRenderer>
+    </div>
+  </div>
+
+  <div class="w-full">
+    <SimpleImageV2 src="/images/brutal-v2-1800/brutal-v2-1800-partsgrid-top-large.avif" class="w-full object-cover h-[600px]" />
+  </div>
+
+  <div poster="/images/brutal-v2-65/brutal-v2-65-render-internals-reear-medium.avif" class="relative h-[800px] max-h-[100vw]">
+    <video class="w-full h-full absolute object-cover z-0" autoplay muted loop >
+      <source src="/resources/brutal-v2/brutal-v2-65-anim-gaskets-compressed-vp9-30.webm" type="video/webm" />
+    </video>
+    <div class="absolute w-full h-full text-zinc-100 bg-[#00000080]  p-6 lg:p-24">
+      <DefaultMarkdownRenderer invert extraClasses="text-center lg:text-start h-full flex flex-col justify-center lg:w-1/2">
+        <h3 class="pb-1.5">Performance at your fingertips.</h3>
+        <div class="hidden lg:block">
+          <p>At the heart of the Brutal V2 series is its unique single-sided gasket mount.</p>
+          <p class="m-0">Blending the best of gasket- and top-mount internal designs, Brutal V2 cushions typing impacts with its carefully selected gasket pads while transmitting acoustic vibrations to the case top half.</p>
+          <p>The vibrations are amplified through the case and controlled by the weights, resonating the case as an instrument and highlighting your tuning skill in its fullest potential.</p>
+        </div>
+      </DefaultMarkdownRenderer>
+    </div>
+  </div>
+
+  <div class="bg-zinc-900 block lg:hidden text-white px-6 py-10">
+    <DefaultMarkdownRenderer invert>
+      <p>At the heart of the Brutal V2 series is its unique single-sided gasket mount.</p>
+      <p class="m-0">Blending the best of gasket- and top-mount internal designs, Brutal V2 cushions typing impacts with its carefully selected gasket pads while transmitting acoustic vibrations to the case top half.</p>
+      <p>The vibrations are amplified through the case and controlled by the weights, resonating the case as an instrument and highlighting your tuning skill in its fullest potential.</p>
+    </DefaultMarkdownRenderer>
+  </div>
+
+  <div class="w-full bg-zinc-900">
+    <div class="container mx-auto">
+      <iframe class="w-full aspect-video m-[-1px]"
+      src="https://www.youtube.com/embed/SKdVZXbeJn0">
+      </iframe>
+    </div>
+  </div>
+
+
+  <div class="aspect-[1.875]">
+    <SimpleImageV2 src={"/images/brutal-v2-60/brutal-v2-60-composition-01-large.avif"} class="object-cover w-full h-full" />
+  </div>
+
+
+</DefaultLayout>
+

@@ -29,7 +29,7 @@ const titleString = title === "Home" ? siteName : title + " - " + siteName
 		<meta name="generator" content={Astro.generator} />
 		<title>{titleString}</title>
 	</head>
-	<body>
+	<body style="margin: 0;">
 		<div class="flex flex-col min-h-screen">
 			<div class="order-2 grow">
 				<slot />

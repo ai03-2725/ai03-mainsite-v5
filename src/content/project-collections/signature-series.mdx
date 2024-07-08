@@ -1,0 +1,34 @@
+---
+draft: false
+title: Signature Series
+slogan: The most unique and visually-tailored of ai03's works - filled with artistic intent, engineered performance, and the joy of typing.
+cover:
+  image: "/images/andromeda/andromeda-side-light-medium.jpg"
+  alt: Andromeda image
+projects: ['altair', 'andromeda', 'epbt-modernja', 'vector', 'lunar-ii', 'epbt-simpleja', 'lunar']
+priority: 1100
+tileSize: "2x2"
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+
+<DefaultLayout title={frontmatter.title} noFooterPadding>
+
+  <div class="bg-zinc-900 pb-20">
+
+    <ClassicBlurredHeader src="/images/andromeda/andromeda-side-light-medium.jpg" />
+
+    <div class="text-center text-zinc-100 pt-20 pb-16">
+      <h3 class="text-4xl">Signature Series</h3>
+      <p class="pt-5">The most unique and visually-tailored of ai03's works.</p>
+      <p class="pt-1">Filled with artistic intent, engineered performance, and the joy of typing, these projects blur the line between typing device and art pieces.</p>
+    </div>
+
+    <ProjectsGrid collection='signature-series' style="light" />
+
+  </div>
+
+</DefaultLayout>

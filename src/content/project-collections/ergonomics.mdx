@@ -1,0 +1,33 @@
+---
+draft: false
+title: The Ergonomics
+slogan: Thinking beyond the rectangle.
+cover:
+  image: "/images/altair/altair-render-5row-top-medium.avif"
+  alt: Andromeda image
+projects: ['altair', 'meridian', 'orbit-x', 'orbit']
+priority: 1000
+tileSize: "2x2"
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+
+<DefaultLayout title={frontmatter.title} >
+
+  <div class="">
+
+    <ClassicBlurredHeader src="/images/altair/altair-render-5row-top-medium.avif" />
+
+    <ClassicCollectionHeaderBlock title="The Ergonomics" >
+      Keyboards that think beyond the rectangle.  
+      These designs opt to fit themselves to the hand rather than the other way around for increased typing comfort and accuracy.  
+    </ClassicCollectionHeaderBlock>
+
+    <ProjectsGrid collection='ergonomics' style="light" />
+
+  </div>
+
+</DefaultLayout>
