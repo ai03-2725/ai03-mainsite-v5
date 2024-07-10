@@ -1,37 +1,87 @@
 ---
 import Layout from '@layouts/DefaultLayout.astro';
-import CollectionGridItem from '@components/astro/CollectionGridItem.astro'
-import { getCollection } from 'astro:content';
 import GenericGridItem from '@components/astro/GenericGridItem.astro';
+import AiLogoRing from '@assets/site/ai-logo-ring.astro';
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
+import SimpleButton from '@components/astro/SimpleButton.astro'
+import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
 import '@fontsource/m-plus-rounded-1c/latin-300.css';
+import '@fontsource/m-plus-rounded-1c/latin-400.css';
 
-const allCollections = (await getCollection('project-collections')).sort((a, b) => a.data.priority < b.data.priority ? 1 : -1)
 ---
 
 <Layout title="Home" noFooterPadding>
 
-	<!-- Grid -->
-	<div class="
-		grid grid-flow-row-dense bg-zinc-900
-		grid-cols-1 gap-1.5 
-		md:grid-cols-2 md:px-1.5 
-		lg:gap-2 lg:px-2
-		2xl:grid-cols-3 2xl:gap-6 2xl:px-6 2xl:py-6
-	">
+		<!-- Grid header -->
+		<div class="
+			grid grid-flow-row-dense bg-zinc-900
+			grid-cols-1 gap-1.5 
+			md:grid-cols-2 md:px-1.5 
+			lg:gap-2 lg:px-2
+			2xl:grid-cols-3 2xl:gap-6 2xl:px-6 2xl:py-6
+		">
 
-		<!-- Portfolio title header -->
-		<div class="col-span-1 row-span-1 h-[180px] flex flex-col justify-center items-center xl:min-h-full xl:h-auto xl:aspect-[1.618]">
-			<div class="text-white text-center">
-				<h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[36px]">ai03 Design Studio</h1>
-				<p>The pursuit of the best input.</p>
+			<!-- Portfolio title header -->
+			<div class="col-span-1 row-span-1 flex flex-col justify-center items-center md:min-h-full md:h-auto aspect-[1.618]">
+				<div class="text-white text-center flex flex-col justify-center items-center">
+					<AiLogoRing classList={['w-[33%]', 'fill-white', 'pt-2']} />
+					<h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[36px] pt-3 pb-1">ai03 Design Studio</h1>
+					<p>The pursuit of the best input.</p>
+				</div>
 			</div>
+			
+			<!-- Featured items -->
+			<GenericGridItem src="/images/lunar/lunar-diagonal-medium.avif" href="/collections/" title="Portfolio" />
+			<GenericGridItem src="/images/andromeda/andromeda-side-light-medium.jpg" href="/collections/signature-series/" title="Signature Series" />
+			<GenericGridItem src="/images/brutal-v2-65/brutal-v2-65-dark-rear-medium.avif" href="/collections/brutal-v2/" title="Brutal V2 Series" />
+			<!-- <GenericGridItem src="/images/altair/altair-render-5row-top-medium.avif" href="/projects/altair/" title="Altair" /> -->
+			<GenericGridItem src="/images/vector/vector-proto-parts-tiled-medium.avif" href="/collections/available-now/" title="Currently Available" />
+			<GenericGridItem src="/images/polaris-v2/polaris-v2-render-front-medium.avif" href="/collections/reference-series/" title="Reference Series" />
+			
 		</div>
 
-		{allCollections.map((collection, index) => 
-			<CollectionGridItem collection={collection} />
+		<!-- Featured blocks -->
+		<HorizontalStackBlock src="/images/altair/altair-render-exploded-medium.avif" noGap reverse noProse >
+			<div class="lg:pe-24 flex flex-col items-end text-end">
+				<div class="flex flex-row items-center pb-4">
+					<h2 class="!font-['M_PLUS_Rounded_1c'] !font-[400] !text-[42px]">ALTAIR</h2>
+					<p class="ps-3 pe-2 text-lg pt-0.5">and</p>
+					<h2 class="!font-['M_PLUS_Rounded_1c'] !font-[400] !text-[42px]">ALTAIR-X</h2>
+				</div>
+				<p class="mb-4">ai03's third generation ergonomic design.</p>
+				<p>A combination of optimized layout, performant internals, and sculpted visuals deliver a truly comfortable typing experience.</p>
+				<SimpleButton label="Explore Altair" url="/projects/altair/" fitWidth extraClasses='mt-9' extern={false} />
+			</div>
+		</HorizontalStackBlock>
+		
+		<HorizontalStackBlock src="/images/lunar-ii/lunar-ii-built-front-01-medium.avif" noGap noProse >
+			<div class="lg:ps-24 flex flex-col items-start">
+				<h2 class="!font-['M_PLUS_Rounded_1c'] !font-[400] !text-[42px] pb-4">LUNAR II</h2>
+				<p class="mb-4">Reviving the vintage Apple Extended Keyboard curve from the 90s in a modern shell.</p>
+				<p>Complete with modern touches such as impact-absorbing gaskets and solenoids that electrically hammer at the case for toggleable clickiness.</p>
+				<SimpleButton label="Explore Lunar II" url="/projects/lunar-ii/" fitWidth extraClasses='mt-9' extern={false} />
+			</div>
+		</HorizontalStackBlock>
 
-			// <div class={index % 2 == 0 ? "col-span-2 row-span-2" : "col-span-2 row-span-1"} />
-		)}
-	</div>
+		<!-- Quick links -->
+		<div class="bg-zinc-100 w-full py-36">
+
+			<div class="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
+
+				<div class="aspect-square bg-zinc-200 rounded-[3.75px]">
+				</div>
+				<div class="aspect-square bg-zinc-200 rounded-[3.75px]">
+				</div>
+				<div class="aspect-square bg-zinc-200 rounded-[3.75px]">
+				</div>
+				<div class="aspect-square bg-zinc-200 rounded-[3.75px]">
+				</div>
+
+			</div>
+
+		</div>
+			
+
+
 </Layout>
 

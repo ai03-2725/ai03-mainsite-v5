@@ -1,0 +1,28 @@
+---
+draft: false
+title: Available Now
+slogan: Projects currently available for purchase.
+cover:
+  image: "/images/pillar/pillar-with-parts-medium.jpg"
+  alt: Pillar cover image
+projects: ['vector', 'brutal-v2-1800', 'pillar', 'equinox-xl', 'brutal-v2-65', 'meridian', 'horizon', ]
+priority: 1
+tileSize: "1x1"
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src="/images/pillar/pillar-with-parts-medium.jpg" />
+
+    <ClassicCollectionHeaderBlock title="Available Now" >
+      Projects currently available for purchase.
+    </ClassicCollectionHeaderBlock>
+
+    <ProjectsGrid collection='available-now' style="light" />
+
+</DefaultLayout>

@@ -1,0 +1,118 @@
+---
+draft: false
+title: Pillar
+slogan: Second-generation switch opener
+cover:
+  image: "/images/pillar/pillar-with-parts-medium.jpg"
+  alt: Pillar cover image
+releaseDate: 2023-01-28
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
+import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
+import SimpleButton from '@components/astro/SimpleButton.astro'
+import '@fontsource/m-plus-rounded-1c/latin-300.css';
+
+<DefaultLayout title={frontmatter.title}>
+
+  <div class="w-full aspect-[1.618] max-h-[720px] min-h-[480px] overflow-hidden relative bg-black">
+    <div class="w-full h-full container mx-auto relative">
+      <SimpleImageV2 src="/images/pillar/pillar-macro-large.avif" class="w-full h-full object-cover absolute" />
+    </div>
+    <div class="absolute bg-gradient-to-t from-[#FFFFFF] w-full h-1/5 bottom-0">
+    </div>
+  </div>
+
+  <div class="container mx-auto text-center pt-20 pb-24">
+    <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] text-7xl pb-5">PILLAR</h1>
+    <p class="text-lg">Premium Switch Opener</p>
+    <div class="flex flex-row gap-4 flex-wrap justify-center">
+      <SimpleButton label="Shop Now" url="https://cannonkeys.com/products/pillar-switch-opener" fitWidth extraClasses='mt-10' />
+    </div>
+  </div>
+
+  <HorizontalStackBlock src="/images/pillar/pillar-with-parts-medium.jpg" imageClasses="aspect-[1.618] w-full h-full object-cover"  noGap noProse reverse >
+    <div class="lg:pe-24 flex flex-col items-end text-end">
+      <h2 class="text-3xl font-[560] pb-7">Sharper for the Future</h2>
+      <p class="mb-4">Based on the previous <a class="underline" href="/projects/keychain/">Keychain</a> and <a class="underline" href="/projects/prism/">Prism</a> designs, Pillar carries a fully revised teeth design for wide compatibility with the newest switches.</p>
+    </div>
+  </HorizontalStackBlock>
+
+  <HorizontalStackBlock src="/images/pillar/pillar-silver-large.jpg" imageClasses="aspect-[1.618] w-full h-full object-cover"  noGap noProse >
+    <div class="lg:ps-24 flex flex-col items-start text-start">
+      <h2 class="text-3xl font-[560] pb-7">When Form and Function Meet</h2>
+      <p class="mb-4">Pillar's namesake shape gives a firm grip in the hand for comfortable, reliable switch modding.</p>
+      <p>When placed at rest, Pillar doubles as a decorative piece with its faceted sides reflecting in the light.</p>
+    </div>
+  </HorizontalStackBlock>
+
+  <HorizontalStackBlock src="/images/pillar/pillar-variety-mx-medium.jpg" imageClasses="aspect-[1.618] w-full h-full object-cover"  noGap noProse reverse >
+    <div class="lg:pe-24 flex flex-col items-end text-end">
+      <h2 class="text-3xl font-[560] pb-7">Sharper for the Future</h2>
+      <p class="mb-4">A quality switch opener lasts for exceptionally long - you shouldn't have to compromise on such a life-long tool.</p>
+      <p>Available in five carefully anodized colorways and both MX- and Kailh-style housing variants, Pillar makes it possible to choose the tool you truly want at your side.</p>
+    </div>
+  </HorizontalStackBlock>
+
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-[560] pt-28 pb-12">Available colorways</h2>
+    <div class="grid grid-cols-2 grid-flow-row gap-8">
+
+      <div class="relative w-full h-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/pillar/pillar-blue-grey-medium.avif" class="absolute w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 p-5">
+          <p class="text-lg text-zinc-500 font-[500]">Blue Grey</p>
+        </div>
+      </div>
+
+      <div class="relative w-full h-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/pillar/pillar-lilac-medium.avif" class="absolute w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 p-5">
+          <p class="text-lg text-zinc-500 font-[500]">Lilac</p>
+        </div>
+      </div>
+
+      <div class="relative w-full h-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/pillar/pillar-rose-gold-medium.avif" class="absolute w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 p-5">
+          <p class="text-lg text-zinc-500 font-[500]">Rose Gold</p>
+        </div>
+      </div>
+
+      <div class="relative w-full h-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/pillar/pillar-silver-medium.avif" class="absolute w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 p-5">
+          <p class="text-lg text-zinc-500 font-[500]">Silver</p>
+        </div>
+      </div>
+
+      <div class="relative w-full h-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/pillar/pillar-black-medium.avif" class="absolute w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 p-5">
+          <p class="text-lg text-zinc-500 font-[500]">Black</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container mx-auto text-center flex flex-col justify-center items-center">
+    <h2 class="text-3xl font-[560] pt-28 pb-5">Availability</h2>
+    <p>The Pillar switch opener is available in-stock at CannonKeys.</p>
+    <SimpleButton label="Shop Now" url="https://cannonkeys.com/products/pillar-switch-opener" fitWidth extraClasses='mt-10 mb-4' />
+  </div>
+  
+
+  
+
+</DefaultLayout>

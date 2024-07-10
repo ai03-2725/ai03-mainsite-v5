@@ -7,7 +7,7 @@ interface Props {
   desc?: string,
   href: string,
   src: string,
-  tileSize?: "1x1" | "2x2",
+  tileSize?: "1x1" | "2x2" | "3x1" | "3x2",
 }
 
 const {
@@ -23,8 +23,13 @@ let ratioClass = "aspect-[1.618]"
 switch (tileSize) {
   
   case "2x2":
-    gridSizeClasses += " 2xl:col-span-2 2xl:row-span-2 min-h-full"
+    gridSizeClasses += " md:col-span-2 md:row-span-2 min-h-full"
     break
+
+  case "3x1":
+    gridSizeClasses += " md:col-span-2 xl:col-span-3 min-h-full"
+    ratioClass = "aspect-[4.854]"
+
 
   default:
     break
@@ -48,8 +53,8 @@ switch (tileSize) {
   >
     <div class="grow" />
     <h2 class={`
-      ${tileSize === "1x1" ? "text-2xl font-[500]" : "text-2xl md:text-3xl font-[525]"} 
-      pb-0 ${tileSize !== "1x1" && "md:pb-2"}`
+      text-2xl font-[500] 
+      pb-0 ${desc && "md:pb-2"}`
     }>
       {title}
     </h2>

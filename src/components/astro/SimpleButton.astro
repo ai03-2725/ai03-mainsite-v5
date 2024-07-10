@@ -1,12 +1,16 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
+
 interface Props {
   label: string;
   url?: string | undefined;
   extern?: boolean | undefined;
   disabled?: boolean | undefined;
+  fitWidth?: boolean,
+  extraClasses?: string,
 }
 
-const { label, url, extern, disabled } = Astro.props;
+const { label, url, extern, disabled, fitWidth, extraClasses, } = Astro.props;
 
 let openInNewTab = (extern !== false);
 if (extern === undefined && url && url.charAt(0) === "#") {
@@ -23,9 +27,10 @@ let buttonDisabled = disabled ? true : ( url ? false : true )
   text-white 
   text-center 
   rounded-[2.375px]
+  ${fitWidth && "w-fit"}
   ${!buttonDisabled && "hover:bg-zinc-600"}
-  ${!buttonDisabled && "transition-all ease-[var(--spring-easing)] duration-[138ms]"}
-  
+  ${!buttonDisabled && "transition-all ease-[var(--spring-easing)] duration-[138ms]"} 
+  ${extraClasses}
 `>
   <a
     href={buttonDisabled ? null : url}

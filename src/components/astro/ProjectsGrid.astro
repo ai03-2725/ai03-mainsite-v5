@@ -4,16 +4,25 @@ import type { ProjectGridStylesType } from "../../types";
 import { Image } from 'astro:assets';
 import { Icon } from "astro-icon/components";
 import { getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 
 interface Props {
-  collection: string;
+  collection?: string;
   style: ProjectGridStylesType;
 }
 
 const { collection, style } = Astro.props;
-const collectionData = await getEntry("project-collections", collection)
-const projectsList = await getEntries(collectionData.data.projects)
+
+let projectsList: CollectionEntry<'projects'>[] = []
+
+if (collection) {
+  const collectionData = await getEntry("project-collections", collection)
+  projectsList = await getEntries<'projects'>(collectionData.data.projects)
+} else {
+  projectsList = (await getCollection('projects')).sort((a, b) => a.data.title.toLowerCase() > b.data.title.toLowerCase() ? 1 : -1);
+}
+
 
 let outermostContainerClasses: string[] = [
   "w-full"

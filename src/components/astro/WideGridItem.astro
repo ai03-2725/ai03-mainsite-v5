@@ -1,0 +1,45 @@
+---
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
+
+
+interface Props {
+  title?: string,
+  desc?: string,
+  href: string,
+  src: string,
+  tileSize?: "1x1" | "2x2" | "3x1" | "3x2",
+}
+
+const {
+  title,
+  desc,
+  href,
+  src,
+  tileSize
+} = Astro.props;
+
+let gridSizeClasses = "col-span-1 row-span-1"
+let ratioClass = "aspect-[1.618]"
+switch (tileSize) {
+  
+  case "2x2":
+    gridSizeClasses += " md:col-span-2 md:row-span-2 min-h-full"
+    break
+
+  case "3x1":
+    gridSizeClasses += " md:col-span-2 xl:col-span-3 min-h-full"
+    ratioClass = "aspect-[4.854]"
+
+
+  default:
+    break
+
+  }
+
+---
+
+<div class={`col-span-1 row-span-1 md:col-span-2 lg:aspect-[3.236] 2xl:col-span-3 2xl:aspect-[4.854] min-h-full relative w-full overflow-hidden rounded-[3.75px]`}>
+
+  <div class="flex flex-col md:flex-row"></div>
+
+</div>
