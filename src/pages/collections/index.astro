@@ -1,20 +1,23 @@
 ---
 import Layout from '@layouts/DefaultLayout.astro';
-import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
 import CollectionGridItem from '@components/astro/CollectionGridItem.astro'
-import { getCollection, getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 const allCollections = (await getCollection('project-collections')).sort((a, b) => a.data.priority < b.data.priority ? 1 : -1)
 ---
 
 <Layout title="Portfolio" noFooterPadding>
+
+	<!-- Grid -->
 	<div class="
 		grid grid-flow-row-dense bg-zinc-900
 		grid-cols-1 gap-1.5 
 		md:grid-cols-2 md:px-1.5 
 		lg:gap-2 lg:px-2
-		2xl:grid-cols-4 2xl:gap-4 2xl:px-4 2xl:py-4
+		2xl:grid-cols-4 2xl:gap-6 2xl:px-6 2xl:py-6
 	">
+
+		<!-- Portfolio title header -->
 		<div class="col-span-1 row-span-1 h-[180px] xl:h-auto md:col-span-2 md:row-span-2 xl:col-span-1 xl:row-span-1 xl:aspect-[1.618] flex flex-col justify-center items-center">
 			<div class="text-white">
 				<h1 class="text-5xl font-[175]">Portfolio</h1>

@@ -1,0 +1,72 @@
+---
+draft: false
+title: Brutal V2 65%
+slogan: 65% variant of the Brutal V2 series
+cover:
+  image: "/images/brutal-v2-65/brutal-v2-65-top-down-banner-medium.avif"
+  alt: Brutal V2 65% cover image
+releaseDate: 2022-04-25
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Carousel } from '@components/react/Carousel'
+import Center from '@components/astro/Center.astro'
+import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
+import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
+import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
+import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import SimpleImage from '@components/astro/SimpleImage.astro'
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
+import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
+import SimpleButton from '@components/astro/SimpleButton.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <div class="relative w-full">
+    <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-top-down-banner-large.avif" class="w-full h-full object-cover" />
+    <div class="absolute text-center w-full text-zinc-100 bottom-0 flex-col justify-center items-center pt-0 pb-20 h-auto hidden md:flex">
+      <h1 class="text-5xl font-[550]">BRUTAL V2 65%</h1>
+      <p class="pt-5 text-lg mx-6">The 65% variant of the Brutal V2 series.</p>
+      <div class="w-fit pt-6">
+        <SimpleButton label="Product Page" url="https://cannonkeys.com/products/brutal-v2-65-keyboard" />
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-[#111213] md:hidden px-6 py-16 text-zinc-100 text-center flex flex-col items-center">
+    <h1 class="text-3xl font-[550]">BRUTAL V2 65%</h1>
+    <p class="pt-4 text-md">The 65% variant of the Brutal V2 series.</p>
+    <div class="w-fit pt-6">
+      <SimpleButton label="Product Page" url="https://cannonkeys.com/products/brutal-v2-65-keyboard" />
+    </div>
+  </div>
+
+  <div class="py-16">
+    <HorizontalStackBlock src="/images/brutal-v2-65/brutal-v2-65-render-stands-medium.avif" container rounded aspect={5} noProse imageClasses="aspect-[1.375] w-full h-full object-cover">
+      <div class="flex flex-col text-center lg:text-start">
+        <h2 class="font-[550] text-2xl pb-2">Part of the Brutal V2 series.</h2>
+        <p>For details on the board common to all form factors, please see the series page.</p>
+        <div class="w-fit pt-6">
+          <SimpleButton label="Visit" url="/collections/brutal-v2" extern={false} />
+        </div>
+      </div>
+    </HorizontalStackBlock>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 grid-flow-row-dense">
+    <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-white-03-large.avif" class="aspect-[1.618] w-full h-full object-cover" />
+    <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-white-02-medium.avif" class="aspect-[1.618] w-full h-full object-cover" />
+    <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-kit-contents-medium.avif" class="aspect-[1.618] w-full h-full object-cover" />
+    <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-internals-screw-medium.avif" class="aspect-[1.618] w-full h-full object-cover" />
+    <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-desk-01-medium.avif" class="w-full h-full object-cover lg:col-span-2" />
+    <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-dark-wall-medium.avif" class="aspect-[1.618] w-full h-full object-cover" />
+    <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-lilac-plate-medium.avif" class="aspect-[1.618] w-full h-full object-cover" />
+  </div>
+  
+  <div class="container mx-auto">
+    <ClassicResourcesTable project='brutal-v2-65' />
+  </div>
+
+</DefaultLayout>

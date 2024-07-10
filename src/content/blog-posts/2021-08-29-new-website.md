@@ -10,9 +10,9 @@ cover:
 relatedProjects: []
 relatedPosts: []
 ---
-*Note: This is an old article written before the most recent site reconstruction.*
-*Information may be out of date.*
-
+*Note: This is an old article written before the most recent site reconstruction.*  
+*Information may be out of date.*  
+  
 ai03.com has been rewritten entirely for convenience and speed.
 
 - Each keyboard project has its own proper page, with convenient access to images, updates, and downloads for each.

@@ -1,24 +1,28 @@
 ---
-import type { CollectionEntry } from 'astro:content'
 import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
 
 
 interface Props {
-  collection: CollectionEntry<'project-collections'>;
+  title?: string,
+  desc?: string,
+  href: string,
+  src: string,
+  tileSize?: "1x1" | "2x2",
 }
 
 const {
-  collection,
+  title,
+  desc,
+  href,
+  src,
+  tileSize
 } = Astro.props;
-
-const tileSize = collection.data.tileSize
 
 let gridSizeClasses = "col-span-1 row-span-1"
 let ratioClass = "aspect-[1.618]"
 switch (tileSize) {
   
   case "2x2":
-  case "2x1":
     gridSizeClasses += " 2xl:col-span-2 2xl:row-span-2 min-h-full"
     break
 
@@ -34,7 +38,7 @@ switch (tileSize) {
   <div class="absolute w-full h-full bg-zinc-800" />
 
   <div class="absolute w-full h-full">
-    <SimpleImageV2 src={collection.data.cover.image} class="w-full h-full object-cover aspect-square" />
+    <SimpleImageV2 src={src} class="w-full h-full object-cover aspect-square" />
   </div>
 
   <div class={`
@@ -47,11 +51,11 @@ switch (tileSize) {
       ${tileSize === "1x1" ? "text-2xl font-[500]" : "text-2xl md:text-3xl font-[525]"} 
       pb-0 ${tileSize !== "1x1" && "md:pb-2"}`
     }>
-      {collection.data.tileTitle || collection.data.title}
+      {title}
     </h2>
-    {tileSize !== "1x1" && <p class="hidden md:block">{collection.data.slogan}</p>}
+    {tileSize !== "1x1" && <p class="hidden md:block">{desc}</p>}
   </div>
 
-  <a href={`/collections/${collection.slug}`} class="absolute w-full h-full" />
+  <a href={href} class="absolute w-full h-full" />
 
 </div>

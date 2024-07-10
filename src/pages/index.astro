@@ -1,9 +1,37 @@
 ---
 import Layout from '@layouts/DefaultLayout.astro';
+import CollectionGridItem from '@components/astro/CollectionGridItem.astro'
+import { getCollection } from 'astro:content';
+import GenericGridItem from '@components/astro/GenericGridItem.astro';
+import '@fontsource/m-plus-rounded-1c/latin-300.css';
+
+const allCollections = (await getCollection('project-collections')).sort((a, b) => a.data.priority < b.data.priority ? 1 : -1)
 ---
 
-<Layout title="Home">
-	<main>
-		Test body content
-	</main>
+<Layout title="Home" noFooterPadding>
+
+	<!-- Grid -->
+	<div class="
+		grid grid-flow-row-dense bg-zinc-900
+		grid-cols-1 gap-1.5 
+		md:grid-cols-2 md:px-1.5 
+		lg:gap-2 lg:px-2
+		2xl:grid-cols-3 2xl:gap-6 2xl:px-6 2xl:py-6
+	">
+
+		<!-- Portfolio title header -->
+		<div class="col-span-1 row-span-1 h-[180px] flex flex-col justify-center items-center xl:min-h-full xl:h-auto xl:aspect-[1.618]">
+			<div class="text-white text-center">
+				<h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[36px]">ai03 Design Studio</h1>
+				<p>The pursuit of the best input.</p>
+			</div>
+		</div>
+
+		{allCollections.map((collection, index) => 
+			<CollectionGridItem collection={collection} />
+
+			// <div class={index % 2 == 0 ? "col-span-2 row-span-2" : "col-span-2 row-span-1"} />
+		)}
+	</div>
 </Layout>
+

@@ -18,6 +18,7 @@ import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHea
 import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
 import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
 import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
+import SimpleButton from '@components/astro/SimpleButton.astro'
 
 {/* Todo: Add Brutal V2 60 */}
 
@@ -29,8 +30,8 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
       <source src="/resources/brutal-v2/brutal-v2-65-anim-banner-compressed-vp9-29.webm" type="video/webm" />
     </video>
     <div class="absolute text-center w-full text-zinc-100 bottom-0 flex-col justify-center pt-0 pb-24 h-auto hidden md:flex">
-      <h1 class="text-6xl font-[525]">BRUTAL V2</h1>
-      <p class="pt-6 text-xl mx-6">CannonKeys's legendary Brutalist series design, overhauled for the new era.</p>
+      <h1 class="text-6xl font-[550]">BRUTAL V2</h1>
+      <p class="pt-6 text-xl mx-6">CannonKeys' legendary Brutalist series design, overhauled for the new era.</p>
       <div class="flex flex-row flex-wrap">
         <a href="" />
       </div>
@@ -179,10 +180,17 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
       <SimpleImageV2 src="/images/brutal-v2-1800/brutal-v2-1800-desk-dark-medium.avif" class="w-full object-cover h-full" />
     </div>
     <div class="absolute h-full w-full">
-      <div class="w-full container mx-auto">
+      <div class="w-full container mx-auto py-20 h-full flex flex-col justify-center">
         <DefaultMarkdownRenderer invert>
-          Todo
+          ## A Premium Keyboard For All  
+          Getting the best performance out of your keyboard shouldn't involve guesswork or difficult assembly.  
+            
+          Backed by a thorough build guide and assembly helpers such as automatic plate alignment built into the internals, Brutal V2 is engineered to deliver its full potential with every build - regardless of prior keyboard experience or skill level.  
+
         </DefaultMarkdownRenderer>
+        <div class="w-fit mt-7">
+          <SimpleButton label="Build Guide" url="https://docs.cannonkeys.com/brutal-v2-build-guide/" />
+        </div>
       </div>
     </div>
   </div>
@@ -190,6 +198,36 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
   {/* Todo - Product links */}
 
   <div class="bg-[#F9F9F9] pt-20 pb-24">
+    <div class="container mx-auto px-6 text-center pb-12">
+      <h2 class="text-4xl font-[550]">Choose your form factor</h2>
+    </div>
+    <div class="container mx-auto px-6 pb-24 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1280px]">
+
+      <div class="relative aspect-square w-full rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-square-top-down-medium.avif" class="rounded-sm aspect-square overflow-hidden absolute" />
+        <div class="absolute w-full h-full text-white flex flex-col items-center justify-center">
+          <h3 class="text-3xl font-[550] pb-1">65%</h3>
+          <p>Compact, functional layout for all desks.</p>
+          <div class="flex flex-row flex-wrap pt-4 gap-4">
+            <SimpleButton label="Product Page" url="https://cannonkeys.com/products/brutal-v2-65-keyboard" />
+            <SimpleButton label="Portfolio Page" url="/projects/brutal-v2-65" />
+          </div>
+        </div>
+      </div>
+
+      <div class="relative aspect-square w-full rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/brutal-v2-1800/brutal-v2-1800-square-top-down-medium.avif" class="rounded-sm aspect-square overflow-hidden absolute" />
+        <div class="absolute w-full h-full text-white flex flex-col items-center justify-center">
+          <h3 class="text-3xl font-[550] pb-1">1800</h3>
+          <p>Large form-factor with a numpad for workstation use.</p>
+          <div class="flex flex-row flex-wrap pt-4 gap-4">
+            <SimpleButton label="Product Page" url="https://cannonkeys.com/products/brutal-v2-1800-keyboard" />
+            <SimpleButton label="Portfolio Page" url="/projects/brutal-v2-1800" />
+          </div>
+        </div>
+      </div>
+
+    </div>
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-4xl font-[550]">Specifications</h2>
     </div>
