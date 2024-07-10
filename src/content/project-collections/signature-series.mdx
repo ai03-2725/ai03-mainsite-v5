@@ -1,7 +1,7 @@
 ---
 draft: false
 title: Signature Series
-slogan: The most unique and visually-tailored of ai03's works - filled with artistic intent, engineered performance, and the joy of typing.
+slogan: Unique works filled with artistic intent, engineered performance, and the joy of typing.
 cover:
   image: "/images/andromeda/andromeda-side-light-medium.jpg"
   alt: Andromeda image
@@ -14,17 +14,23 @@ import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.a
 import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
 import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
 import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
 
 <DefaultLayout title={frontmatter.title} noFooterPadding>
 
   <div class="bg-zinc-900 pb-20">
 
-    <ClassicBlurredHeader src="/images/andromeda/andromeda-side-light-medium.jpg" />
+        <div class="relative w-full h-[80vh]">
+      <SimpleImageV2 src="/images/andromeda/andromeda-side-dark-large.jpg" class="absolute w-full h-full object-cover" />
 
-    <div class="text-center text-zinc-100 pt-20 pb-16">
-      <h3 class="text-4xl">Signature Series</h3>
-      <p class="pt-5">The most unique and visually-tailored of ai03's works.</p>
-      <p class="pt-1">Filled with artistic intent, engineered performance, and the joy of typing, these projects blur the line between typing device and art pieces.</p>
+      <div class="absolute w-full bottom-0 bg-gradient-to-t from-[#18181b] h-1/3 p-24">
+        <div class="text-white text-center lg:text-start flex flex-col h-full lg:w-3/5">
+          <div class="grow" />
+          <h3 class="text-4xl font-[550]">Signature Series</h3>
+          <p class="pt-5">The most unique and visually-tailored of ai03's works.</p>
+          <p class="pt-1">Filled with artistic intent, engineered performance, and the joy of typing, these projects blur the line between typing device and art pieces.</p>
+        </div>
+      </div>
     </div>
 
     <ProjectsGrid collection='signature-series' style="light" />

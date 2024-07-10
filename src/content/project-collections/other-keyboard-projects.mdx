@@ -1,0 +1,29 @@
+---
+draft: false
+title: Other Keyboard Projects
+slogan: Unique keyboards that don't fall under a specific collection.
+cover:
+  image: "/images/contra/contra-assembled-medium.avif"
+  alt: Arc cover image
+projects: ['ut47-2', 'contra', 'parallax', 'arc']
+priority: 100
+tileSize: "1x1"
+tileTitle: Other
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src="/images/arc/arc-oceanside-01-cropped-medium.avif" />
+
+    <ClassicCollectionHeaderBlock title="Other Keyboard Projects" >
+      Unique keyboards that don't fall under a specific collection.
+    </ClassicCollectionHeaderBlock>
+
+    <ProjectsGrid collection='other-keyboard-projects' style="light" />
+
+</DefaultLayout>

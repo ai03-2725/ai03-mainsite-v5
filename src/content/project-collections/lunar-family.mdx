@@ -1,0 +1,45 @@
+---
+draft: false
+title: Lunar Family
+slogan: Reviving vintage AEK and Alps parts in a modern elegant shell.
+cover:
+  image: "/images/lunar/lunar-diagonal-medium.avif"
+  alt: Lunar image
+projects: ['lunar-ii', 'lunar']
+priority: 500
+tileSize: "1x1"
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
+
+{/* from-[#00000080] */}
+
+<DefaultLayout title={frontmatter.title} noFooterPadding>
+
+  <div class="bg-zinc-900 pb-20">
+
+    <div class="relative w-full h-[80vh]">
+      <SimpleImageV2 src="/images/lunar/lunar-diagonal-large.avif" class="absolute w-full h-full object-cover" />
+
+      <div class="absolute w-full bottom-0 bg-gradient-to-t from-[#18181b] h-1/3 p-24">
+        <div class="text-white text-center lg:text-start flex flex-col h-full lg:w-3/5">
+          <div class="grow" />
+          <h3 class="text-4xl font-[550]">The Lunar Family</h3>
+          <p class="pt-5">Born out of the goal of reviving vintage Apple Extended Keyboard styling and parts within a modern shell, the Lunar family keyboards bring back the beautiful curvature from the 90s to the current era.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-24" />
+
+    <ProjectsGrid collection='lunar-family' style="light" />
+
+    <div class="pt-8" />
+
+  </div>
+
+</DefaultLayout>

@@ -1,0 +1,29 @@
+---
+draft: false
+title: Equinox Family
+slogan: Compact custom keyboards designed in collaboration with Ion Keyboards.
+cover:
+  image: "/images/equinox-xl/equinox-xl-proto-side-medium.avif"
+  alt: Equinox cover image
+projects: ['equinox-xl', 'equinox']
+priority: 400
+tileSize: "1x1"
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src="/images/equinox/equinox-grey-side-medium.jpg" />
+
+    <ClassicCollectionHeaderBlock title="Equinox Family" >
+      Compact custom keyboards born out of collaboration with [Ion Keyboards](https://ionkeyboards.com/).  
+      A showcase of classic custom-keyboard-style visuals, plateless typing feel, and wide keyset compatibility within portable dimensions.
+    </ClassicCollectionHeaderBlock>
+
+    <ProjectsGrid collection='equinox-family' style="light" />
+
+</DefaultLayout>

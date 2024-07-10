@@ -1,0 +1,28 @@
+---
+draft: false
+title: Keysets
+slogan: Creating the ideal typing canvas.
+cover:
+  image: "/images/epbt-modernja/epbt-modernja-aligned-front-medium.avif"
+  alt: Horizon cover image
+projects: ['epbt-modernja', 'epbt-simpleja']
+priority: 600
+tileSize: "1x1"
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src="/images/epbt-modernja/epbt-modernja-aligned-front-medium.avif" />
+
+    <ClassicCollectionHeaderBlock title="Keysets" >
+      The journey of creating the ideal typing canvas.
+    </ClassicCollectionHeaderBlock>
+
+    <ProjectsGrid collection='keysets' style="light" />
+
+</DefaultLayout>

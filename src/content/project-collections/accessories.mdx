@@ -1,0 +1,28 @@
+---
+draft: false
+title: Accessories
+slogan: Tools and peripherals to get the most out of your keyboards.
+cover:
+  image: "/images/horizon/horizon-stand-andromeda-rear-cropped-medium.avif"
+  alt: Horizon cover image
+projects: ['horizon', 'keychain', 'prism']
+priority: 700
+tileSize: "1x1"
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src="/images/horizon/horizon-stand-andromeda-rear-cropped-medium.avif" />
+
+    <ClassicCollectionHeaderBlock title="Accessories" >
+      Tools and peripherals to get the most out of your keyboards.
+    </ClassicCollectionHeaderBlock>
+
+    <ProjectsGrid collection='accessories' style="light" />
+
+</DefaultLayout>

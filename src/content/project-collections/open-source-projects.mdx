@@ -1,0 +1,29 @@
+---
+draft: false
+title: Open-Source Projects
+slogan: Works to benefit the community - on both the hobbyist and designer sides.
+cover:
+  image: "/images/duet/duet-mcu-macro-medium.avif"
+  alt: Duet cover image
+projects: ['jp60', 'duet', 'quasar', 'soyuz', 'ut47-2', 'contra']
+priority: 200
+tileSize: "1x1"
+tileTitle: Open-Source
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
+
+<DefaultLayout title={frontmatter.title}>
+
+  <ClassicBlurredHeader src="/images/duet/duet-assembled-diagonal-medium.avif" />
+
+    <ClassicCollectionHeaderBlock title="Open-Source Projects" >
+      Works to benefit the community - on both the hobbyist and designer sides.
+    </ClassicCollectionHeaderBlock>
+
+    <ProjectsGrid collection='open-source-projects' style="light" />
+
+</DefaultLayout>

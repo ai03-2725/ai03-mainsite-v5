@@ -31,7 +31,8 @@ const projectCollections = defineCollection({
     }),
     projects: z.array(reference('projects')),
     priority: z.number(),
-    tileSize: z.enum(["2x2", "2x1", "1x1"])
+    tileSize: z.enum(["2x2", "2x1", "1x1"]),
+    tileTitle: z.optional(z.string()),
   })
 })
 
