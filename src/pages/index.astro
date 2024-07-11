@@ -94,7 +94,7 @@ const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date
 						<p class="text-sm text-zinc-300">{dateToDisplayString(post.data.date)}</p>
 						<h3 class="text-xl font-[500]">{post.data.title}</h3>
 					</div>
-					<a href={`/blog/${post.slug}`} class="w-full h-full absolute" />
+					<a href={`/blog/article/${post.slug}`} class="w-full h-full absolute" />
 				</div>
 			)}
 			<div class="

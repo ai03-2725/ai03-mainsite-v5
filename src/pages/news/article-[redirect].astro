@@ -1,0 +1,27 @@
+---
+// Redirects for old site news article links
+
+export async function getStaticPaths() {
+
+  const redirects = [
+    ['hello-world', '2020-01-01-hello-world'],
+    ['new-website', '2021-08-29-new-website'],
+    ['introducing-e-pbt-simple-ja-r2', '2021-08-30-introducing-epbt-simpleja-r2'],
+    ['e-pbt-simple-ja-r2-group-buy-live', '2021-12-19-epbt-simpleja-r2-live'],
+    ['introducing-polaris-v2', '2021-12-21-introducing-polaris-v2'],
+    ['ai03-joining-cannon-keys', '2022-01-05-ai03-joining-cannonkeys'],
+    ['ai03-plate-generator-v2-has-been-released', '2022-01-17-plate-generator-v2-released'],
+    ['introducing-the-cannon-keys-self-service-portal', '2022-04-07-cannonkeys-self-service-portal-released'],
+  ]
+
+  return redirects.map(redir => { return {
+    params: { redirect: redir[0] },
+    props: { target: redir[1] }
+  }})
+}
+
+const { target } = Astro.props
+
+---
+
+<meta http-equiv="refresh" content={`0; URL='/blog/article/${target}'`} />
