@@ -6,12 +6,12 @@ export const redirects: [string, string][] = [
   ["vegamanual", "https://info.ai03.com/books/vega-build-guide"],
 
   // Generic
-  ["contactform", "https://docs.google.com/forms/d/e/1FAIpQLSeDXYrYGG9i69_cJkETaZZj6OcjNraM9qaULQIhStfAcz5hfQ/viewform?usp=sf_link"],
+  ["contactform", "https://ai03.com/contact"],
   ["Discord", "https://discord.gg/qA5JD9y"],
   ["discord", "https://discord.gg/qA5JD9y"],
 
   // Legacy 
-  ["Contact", "https://docs.google.com/forms/d/e/1FAIpQLSeDXYrYGG9i69_cJkETaZZj6OcjNraM9qaULQIhStfAcz5hfQ/viewform?usp=sf_link"],
-  ["polaris", "https://www.ai03.com/projects/polaris"],
+  ["Contact", "https://ai03.com/contact"],
+  ["polaris", "https://ai03.com/projects/polaris"],
   ["polarisv2", "https://ai03.com/projects/polaris-v2/"],
 ]
