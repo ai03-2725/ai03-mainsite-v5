@@ -3,6 +3,8 @@ import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.a
 import Layout from '../../../layouts/DefaultLayout.astro';
 import { getCollection } from 'astro:content';
 import { dateToDisplayString } from '@scripts/util';
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import { getEntries } from 'astro:content';
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog-posts');
@@ -15,22 +17,65 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 
 const positionString = post.data.cover.anchor ? post.data.cover.anchor.join(" ") : null
+const relatedProjects = await getEntries<'projects'>(post.data.relatedProjects)
+const relatedPosts = await getEntries<'blog-posts'>(post.data.relatedPosts)
 
 ---
 <Layout title={`${post.data.title} | Blog`}`>
-	<div class="container mx-auto pt-12">
-		<div class="w-full text-center">
-			<h1 class="text-[38px] font-[575] mb-2">{post.data.title}</h1>
-      <p class="mb-2">{dateToDisplayString(post.data.date)}</p>
+	<div class="container mx-auto">
 
-      <div class="w-full flex flex-row justify-center pt-8 pb-20">
-        <div class="overflow-hidden rounded-[3.75px] w-full lg:w-3/4 aspect-[1.618]">
+		<div class="w-full text-center pt-12 lg:pt-16 pb-6 lg:pb-12">
+			<h1 class="text-[24px] lg:text-[38px] font-[575] mb-2">{post.data.title}</h1>
+      <p class="mb-2">{dateToDisplayString(post.data.date)}</p>
+      <div class="w-full flex flex-row justify-center pt-7 lg:pt-10">
+        <div class="overflow-hidden md:rounded-[3.75px] w-full lg:w-3/4 aspect-[1.618]">
           <img src={post.data.cover.image} loading="lazy" class="object-cover" style={positionString ? `object-position: ${positionString};` : ""} />
         </div>
       </div>
 		</div>
-    <DefaultMarkdownRenderer>
-      <Content />
-    </DefaultMarkdownRenderer>
+
+    <div class="px-6 lg:px-0">
+      <DefaultMarkdownRenderer>
+        <Content />
+      </DefaultMarkdownRenderer>
+    </div>
+
+    
+    {relatedProjects.length > 0 && 
+      <div class="mt-16 text-center bg-zinc-100 md:rounded-[3.75px] p-8">
+        <h2 class="text-2xl font-[500]">Related Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 grid-flow-row-dense mt-8">
+          {relatedProjects.map(project => 
+            <div class="aspect-[1.618] relative rounded-[3.75px] overflow-hidden">
+              <SimpleImageV2 src={project.data.cover.image} class="absolute w-full h-full object-cover" />
+              <div class="absolute w-full h-1/3 min-h-1/3 text-white bottom-0 bg-gradient-to-t from-[#000000a0] flex flex-col justify-end items-start p-4">
+                <h3 class="md:text-lg lg:text-xl font-[450]">{project.data.title}</h3>
+              </div>
+              <a href={`/projects/${project.slug}`} class="absolute w-full h-full" />
+            </div>
+          )}
+        </div>
+      </div>
+    }
+
+    {relatedPosts.length > 0 && 
+      <div class="mt-16 text-center bg-zinc-100 rounded-[3.75px] p-8">
+        <h2 class="text-2xl font-[500]">Related Posts</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 grid-flow-row-dense mt-8">
+          {relatedPosts.map(post => 
+            <div class="aspect-[1.618] relative rounded-[3.75px] overflow-hidden">
+              <SimpleImageV2 src={post.data.cover.image} class="absolute w-full h-full object-cover brightness-[0.6]" />
+              <div class="absolute w-full h-1/3 min-h-1/3 text-white bottom-0 bg-gradient-to-t from-[#000000a0] flex flex-col gap-1 justify-end items-start p-4">
+                <p class="font[450]">{dateToDisplayString(post.data.date)}</p>
+                <h3 class="md:text-lg lg:text-xl font-[450]">{post.data.title}</h3>
+              </div>
+              <a href={`/projects/${post.slug}`} class="absolute w-full h-full" />
+            </div>
+          )}
+        </div>
+      </div>
+    }
+
+    
 	</div>
 </Layout>

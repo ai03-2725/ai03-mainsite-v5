@@ -7,7 +7,7 @@ cover:
   image: '/images/epbt-simpleja/epbt-simpleja-render-aligned-medium.avif'
   alt: ePBT SimpleJA cover image
 relatedProjects: ['epbt-simpleja']
-relatedPosts: []
+relatedPosts: ['2021-08-30-introducing-epbt-simpleja-r2']
 ---
 *Note: This is an old article written before the most recent site reconstruction.*  
 *Information may be out of date.*  

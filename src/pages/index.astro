@@ -55,8 +55,8 @@ const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date
 		
 
 		<!-- Featured blocks -->
-		<HorizontalStackBlock src="/images/altair/altair-render-exploded-medium.avif"' noGap reverse noProse >
-			<div class="lg:pe-24 flex flex-col items-center lg:items-end text-center lg:text-end">
+		<HorizontalStackBlock src="/images/altair/altair-render-exploded-medium.avif" noGap reverse noProse >
+			<div class="lg:pe-20 xl:pe-22 2xl:pe-24 flex flex-col items-center lg:items-end text-center lg:text-end">
 				<div class="flex flex-row items-center pb-4 pt-7 lg:pt-0">
 					<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[42px]">ALTAIR</h2>
 					<p class="ps-3 pe-2 text-lg pt-0.5">and</p>
@@ -69,7 +69,7 @@ const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date
 		</HorizontalStackBlock>
 		
 		<HorizontalStackBlock src="/images/lunar-ii/lunar-ii-built-front-01-medium.avif" noGap noProse >
-			<div class="lg:ps-24 flex flex-col items-center lg:items-start text-center lg:text-start">
+			<div class="lg:ps-20 xl:ps-22 2xl:ps-24 flex flex-col items-center lg:items-start text-center lg:text-start">
 				<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[42px] pb-4 pt-7 lg:pt-0">LUNAR II</h2>
 				<p class="mb-4">Reviving the vintage Apple Extended Keyboard curve from the 90s in a modern shell.</p>
 				<p>Complete with modern touches such as impact-absorbing gaskets and solenoids that electrically hammer at the case for toggleable clickiness.</p>
@@ -113,7 +113,7 @@ const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date
 		</div>
 
 		<!-- Quick links -->
-		<div class="bg-zinc-100 w-full py-36">
+		<!-- <div class="bg-zinc-100 w-full py-36">
 
 			<div class="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
 
@@ -128,11 +128,24 @@ const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date
 
 			</div>
 
-		</div>
+		</div> -->
 
 		<!-- About section -->
-		<div class="w-full relative h-auto">
-			
+		<div class="w-full h-auto min-h-[600px] relative overflow-hidden">
+			<SimpleImageV2 src="/images/vega/vega-render-exploded-large.jpg" class="absolute brightness-[0.6] w-full h-full object-cover blur-sm scale-[1.1]" />
+			<div class="absolute w-full h-full flex flex-col justify-center items-center text-white">
+				<div class="w-full container mx-auto">
+					<div class="max-w-[1000px] px-6 lg:px-0">
+						<h2 class="text-4xl font-[525] pb-8">For the words you deliver.</h2>
+						<p class="pb-4">Your words change the world. The prose which rally action, the code which harnesses unimaginable computing power, the research which saves countless lives - what you type defines the footsteps of humanity.</p>
+						<p class="pb-4">Don't let your keyboard let you down.</p>
+						<p>ai03 Design Studio was born to tackle this very challenge - crafting the keyboards which support you at your side with each keystroke, rather than reluctantly obeying. Since after all, you deserve no less.</p>
+						<div class="flex flex-row gap-4">
+							<!-- In the future, add buttons here to revised about pages -->
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 

@@ -1,7 +1,7 @@
 Todos 
 
 Todo
-- Make the home page with the knowledge gained from making grid layouts
+- Mobile optimizations
 - OpenGraph
 
 Long term

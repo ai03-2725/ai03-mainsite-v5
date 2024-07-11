@@ -94,7 +94,7 @@ switch(imageWeight) {
     <div class={`${reverse && "lg:order-last"} ${ratioStringImage} h-full min-h-full`}>
       <SimpleImageV2 src={src} alt={alt || undefined} class={`${imageClasses || "object-cover w-full h-full min-h-full"} ${rounded && "rounded-[3.75px]"}`} loading="lazy" />
     </div>
-    <div class={`w-full ${reverse ? "lg:ps-24 xl:ps-36 2xl:ps-48" : "lg:pe-24 xl:pe-36 2xl:pe-48"} ${!noPadding && "pb-12 lg:pt-16 lg:pb-16 px-6 md:px-8 lg:px-0"} ${ratioStringText}`}>
+    <div class={`w-full ${reverse ? "lg:ps-16 xl:ps-24 2xl:ps-48" : "lg:pe-16 xl:pe-36 2xl:pe-48"} ${!noPadding && "pb-12 lg:pt-16 lg:pb-16 px-6 md:px-8 lg:px-0"} ${ratioStringText}`}>
       {noProse ? 
         <slot />
         :

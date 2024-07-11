@@ -7,7 +7,7 @@ cover:
   image: '/images/epbt-simpleja/epbt-simpleja-render-andromeda-right-medium.avif'
   alt: ePBT SimpleJA cover image
 relatedProjects: ['epbt-simpleja']
-relatedPosts: []
+relatedPosts: ['2021-12-19-epbt-simpleja-r2-live']
 ---
 *Note: This is an old article written before the most recent site reconstruction.*  
 *Information may be out of date.*  
