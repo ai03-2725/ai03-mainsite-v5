@@ -7,6 +7,7 @@ interface Props {
   desc?: string,
   href: string,
   src: string,
+  hideOnSm?: boolean,
   tileSize?: "1x1" | "2x2" | "3x1" | "3x2",
 }
 
@@ -15,6 +16,7 @@ const {
   desc,
   href,
   src,
+  hideOnSm,
   tileSize
 } = Astro.props;
 
@@ -38,7 +40,7 @@ switch (tileSize) {
 
 ---
 
-<div class={`${gridSizeClasses} relative w-full overflow-hidden ${ratioClass} rounded-[3.75px] overflow-hidden`}>
+<div class={`${gridSizeClasses} ${hideOnSm && "hidden md:inline-block"} relative w-full overflow-hidden ${ratioClass} rounded-[3.75px] overflow-hidden`}>
 
   <div class="absolute w-full h-full bg-zinc-800" />
 
@@ -48,12 +50,12 @@ switch (tileSize) {
 
   <div class={`
     absolute bottom-0 w-full bg-gradient-to-t from-[#000000a0] !min-h-[33%] 
-    p-5 ${tileSize !== "1x1" && "md:p-7"}
+    p-5 
   text-white flex flex-col justify-start`}
   >
     <div class="grow" />
     <h2 class={`
-      text-2xl font-[500] 
+      text-xl font-[500] 
       pb-0 ${desc && "md:pb-2"}`
     }>
       {title}

@@ -1,12 +1,16 @@
 ---
-interface Props {
-  classList: string[];
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+
 }
 
-const {classList} = Astro.props;
+const {
+  ...attrs
+} = Astro.props;
 ---
 
-<div class:list={classList}>
+<div {...attrs}>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 750">
     <path d="M375 0A375 375 0 0 0 0 375a375 375 0 0 0 750 0A375 375 0 0 0 375 0Zm-25.434 68.053A308 308 0 0 1 683 375a308 308 0 0 1-616 0A308 308 0 0 1 349.566 68.053z"/>
     <path d="M350 250h50v-50h-50zm0 100v-50h-50v50zM250 450h50v-50h-50zm-50 100h50v-50h-50zm150-100h50v-50h-50zm50-100h50v-50h-50zm50 100h50v-50h-50zm50 100h50v-50h-50z"/>

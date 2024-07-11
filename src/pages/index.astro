@@ -7,6 +7,12 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
 import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
 import '@fontsource/m-plus-rounded-1c/latin-300.css';
 import '@fontsource/m-plus-rounded-1c/latin-400.css';
+import { getCollection } from 'astro:content';
+import HorizontallyScrollableDiv from '@components/astro/HorizontallyScrollableDiv.astro';
+import { dateToDisplayString } from '@scripts/util';
+import { Icon } from 'astro-icon/components';
+
+const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date < b.data.date ? 1 : -1).slice(0, 3)
 
 ---
 
@@ -15,53 +21,96 @@ import '@fontsource/m-plus-rounded-1c/latin-400.css';
 		<!-- Grid header -->
 		<div class="
 			grid grid-flow-row-dense bg-zinc-900
-			grid-cols-1 gap-1.5 
-			md:grid-cols-2 md:px-1.5 
-			lg:gap-2 lg:px-2
-			2xl:grid-cols-3 2xl:gap-6 2xl:px-6 2xl:py-6
+			grid-cols-1 gap-4 px-3 pt-3 pb-14
+			md:px-4 md:py-4
+			md:grid-cols-2 md:gap-4
+			2xl:grid-cols-3 2xl:gap-5 2xl:px-5 2xl:pt-12 2xl:pb-12
 		">
 
 			<!-- Portfolio title header -->
-			<div class="col-span-1 row-span-1 flex flex-col justify-center items-center md:min-h-full md:h-auto aspect-[1.618]">
-				<div class="text-white text-center flex flex-col justify-center items-center">
-					<AiLogoRing classList={['w-[33%]', 'fill-white', 'pt-2']} />
-					<h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[36px] pt-3 pb-1">ai03 Design Studio</h1>
-					<p>The pursuit of the best input.</p>
+			<div class="
+				col-span-1 row-span-1 h-[275px] md:min-h-full md:h-auto md:aspect-[1.618] 
+				flex flex-col justify-center items-center 
+			">
+				<div class="text-white text-center flex flex-col justify-center items-center w-full">
+					<AiLogoRing class="w-[84px] lg:w-[108px] fill-white pt-2" />
+					<h1 class="
+						font-['M_PLUS_Rounded_1c'] 
+						font-[300] 
+						text-[28px] lg:text-[36px] 
+						pt-2 md:pt-3 pb-1"
+					>ai03 Design Studio</h1>
+					<p class="text-sm lg:text-base">The pursuit of the best input.</p>
 				</div>
 			</div>
 			
 			<!-- Featured items -->
 			<GenericGridItem src="/images/lunar/lunar-diagonal-medium.avif" href="/collections/" title="Portfolio" />
-			<GenericGridItem src="/images/andromeda/andromeda-side-light-medium.jpg" href="/collections/signature-series/" title="Signature Series" />
+			<GenericGridItem src="/images/andromeda/andromeda-side-light-medium.jpg" href="/collections/signature-series/" title="Signature Series" hideOnSm />
 			<GenericGridItem src="/images/brutal-v2-65/brutal-v2-65-dark-rear-medium.avif" href="/collections/brutal-v2/" title="Brutal V2 Series" />
-			<!-- <GenericGridItem src="/images/altair/altair-render-5row-top-medium.avif" href="/projects/altair/" title="Altair" /> -->
 			<GenericGridItem src="/images/vector/vector-proto-parts-tiled-medium.avif" href="/collections/available-now/" title="Currently Available" />
-			<GenericGridItem src="/images/polaris-v2/polaris-v2-render-front-medium.avif" href="/collections/reference-series/" title="Reference Series" />
+			<GenericGridItem src="/images/polaris-v2/polaris-v2-render-front-medium.avif" href="/collections/reference-series/" title="Reference Series" hideOnSm />
 			
 		</div>
+		
 
 		<!-- Featured blocks -->
-		<HorizontalStackBlock src="/images/altair/altair-render-exploded-medium.avif" noGap reverse noProse >
-			<div class="lg:pe-24 flex flex-col items-end text-end">
-				<div class="flex flex-row items-center pb-4">
-					<h2 class="!font-['M_PLUS_Rounded_1c'] !font-[400] !text-[42px]">ALTAIR</h2>
+		<HorizontalStackBlock src="/images/altair/altair-render-exploded-medium.avif"' noGap reverse noProse >
+			<div class="lg:pe-24 flex flex-col items-center lg:items-end text-center lg:text-end">
+				<div class="flex flex-row items-center pb-4 pt-7 lg:pt-0">
+					<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[42px]">ALTAIR</h2>
 					<p class="ps-3 pe-2 text-lg pt-0.5">and</p>
-					<h2 class="!font-['M_PLUS_Rounded_1c'] !font-[400] !text-[42px]">ALTAIR-X</h2>
+					<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[42px]">ALTAIR-X</h2>
 				</div>
 				<p class="mb-4">ai03's third generation ergonomic design.</p>
 				<p>A combination of optimized layout, performant internals, and sculpted visuals deliver a truly comfortable typing experience.</p>
-				<SimpleButton label="Explore Altair" url="/projects/altair/" fitWidth extraClasses='mt-9' extern={false} />
+				<SimpleButton label="Explore Altair" url="/projects/altair/" fitWidth extraClasses='mt-9 mb-4 lg:mb-0' extern={false} />
 			</div>
 		</HorizontalStackBlock>
 		
 		<HorizontalStackBlock src="/images/lunar-ii/lunar-ii-built-front-01-medium.avif" noGap noProse >
-			<div class="lg:ps-24 flex flex-col items-start">
-				<h2 class="!font-['M_PLUS_Rounded_1c'] !font-[400] !text-[42px] pb-4">LUNAR II</h2>
+			<div class="lg:ps-24 flex flex-col items-center lg:items-start text-center lg:text-start">
+				<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[42px] pb-4 pt-7 lg:pt-0">LUNAR II</h2>
 				<p class="mb-4">Reviving the vintage Apple Extended Keyboard curve from the 90s in a modern shell.</p>
 				<p>Complete with modern touches such as impact-absorbing gaskets and solenoids that electrically hammer at the case for toggleable clickiness.</p>
 				<SimpleButton label="Explore Lunar II" url="/projects/lunar-ii/" fitWidth extraClasses='mt-9' extern={false} />
 			</div>
 		</HorizontalStackBlock>
+
+		<!-- Blog section -->
+		<div class="
+			container mx-auto 
+			grid grid-flow-row-dense 
+			grid-cols-1 gap-6 px-5 py-12
+			md:grid-cols-6 md:gap-6 md:py-24
+			lg:gap-8
+			xl:gap-10
+			2xl:gap-12
+		">
+			{blogPosts.map((post, index) => 
+				<div class={`aspect-[1.618] relative col-span-1 ${index == 0 ? "md:col-span-4 md:aspect-[2.157]" : "md:col-span-3"} rounded-[3.75px] overflow-hidden`}>
+					<SimpleImageV2 src={post.data.cover.image} class="absolute w-full h-full object-cover brightness-[0.6]" />
+					<div class="absolute w-full h-1/3 min-h-1/3 flex flex-col justify-end items-start p-5 text-white bottom-0 bg-gradient-to-t from-[#000000a0]">
+						<p class="text-sm text-zinc-300">{dateToDisplayString(post.data.date)}</p>
+						<h3 class="text-xl font-[500]">{post.data.title}</h3>
+					</div>
+					<a href={`/blog/${post.slug}`} class="w-full h-full absolute" />
+				</div>
+			)}
+			<div class="
+				h-[64px] md:h-full 
+				col-span-1 md:col-span-2 
+				rounded-[3.75px] overflow-hidden bg-zinc-700 text-white
+				relative flex flex-col justify-center items-center
+			">
+				<div class="flex flex-row justify-center items-center gap-1 absolute">
+					<p class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-[450] pe-[0.12em] md:hidden">All</p>
+					<h2 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-[450]">Blog Posts</h2>
+					<Icon name="ph:arrow-right" class="ms-1 md:ms-0 text-[24px] md:text-[32px] lg:text-[36px]" />
+				</div>
+				<a href="/blog/" class="w-full h-full absolute" />
+			</div>
+		</div>
 
 		<!-- Quick links -->
 		<div class="bg-zinc-100 w-full py-36">
@@ -80,7 +129,12 @@ import '@fontsource/m-plus-rounded-1c/latin-400.css';
 			</div>
 
 		</div>
+
+		<!-- About section -->
+		<div class="w-full relative h-auto">
 			
+		</div>
+
 
 
 </Layout>

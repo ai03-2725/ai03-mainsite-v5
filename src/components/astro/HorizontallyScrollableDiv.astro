@@ -1,0 +1,31 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+
+interface Props extends HTMLAttributes<'div'> {
+
+}
+
+const {
+  ...attrs
+} = Astro.props;
+
+---
+
+<div class={`overflow-x-scroll no-scrollbar ${attrs.class}`} {...attrs}>
+  <slot />
+</div>
+
+
+<style>
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+}
+
+</style>
