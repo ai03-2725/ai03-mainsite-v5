@@ -2,7 +2,6 @@ Todos
 
 
 Short term
-- Generate JPGs for open graph
 - Migrate build guides and general info
 - Add blog posts about the behind the scenes of the site
 - Spinners on gallery images
@@ -30,4 +29,5 @@ Long term
   - Add sortability to blog
   - Add searchability to portfolio
   - Add searchability to site as a whole
+  - Add tap-to-zoom for most images
 
