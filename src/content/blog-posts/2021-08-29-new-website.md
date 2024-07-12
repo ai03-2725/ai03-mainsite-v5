@@ -1,6 +1,7 @@
 ---
 draft: false
 title: New Website
+description: ai03.com has been rewritten entirely for convenience and speed.
 date: 2021-08-29
 tags: ['Archive']
 cover:

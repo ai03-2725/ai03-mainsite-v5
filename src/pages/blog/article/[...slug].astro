@@ -21,7 +21,12 @@ const relatedProjects = await getEntries<'projects'>(post.data.relatedProjects)
 const relatedPosts = await getEntries<'blog-posts'>(post.data.relatedPosts)
 
 ---
-<Layout title={`${post.data.title} | Blog`}`>
+<Layout 
+  title={`${post.data.title}`} 
+  description={post.data.description} 
+  isArticle
+  ogImage={`https://ai03.com${post.data.cover.image}`}
+>
 	<div class="container mx-auto">
 
 		<div class="w-full text-center pt-12 lg:pt-16 pb-6 lg:pb-12">

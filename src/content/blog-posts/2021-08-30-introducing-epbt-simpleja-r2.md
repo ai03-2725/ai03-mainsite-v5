@@ -1,6 +1,7 @@
 ---
 draft: false
 title: Introducing ePBT SimpleJA R2
+description: The much-requested keyset is back - ePBT SimpleJA is preparing for a second round.
 date: 2021-08-30
 tags: ['Archive']
 cover:

@@ -1,6 +1,7 @@
 ---
 draft: false
 title: ePBT SimpleJA R2 Group Buy Live
+description: The keyset is now available for purchase.
 date: 2021-12-19
 tags: ['Archive']
 cover:

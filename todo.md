@@ -1,7 +1,6 @@
 Todos 
 
-Todo
-- OpenGraph
+
 
 Long term
 
@@ -18,6 +17,8 @@ Long term
   - Repair downloads page for more elegant loading
 - Functionality
   - Add sortability to blog
+  - Add searchability to portfolio
+  - Add searchability to site as a whole
 - Missing project pages
   - Brutal V2 60%
   - Alps SKCM pusher

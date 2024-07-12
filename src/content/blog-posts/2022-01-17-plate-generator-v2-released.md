@@ -1,6 +1,7 @@
 ---
 draft: false
 title: ai03 Plate Generator V2 Released
+description: The plate generator at kbplate.ai03.com has been rewritten from the ground up.
 date: 2022-01-17
 tags: []
 cover:

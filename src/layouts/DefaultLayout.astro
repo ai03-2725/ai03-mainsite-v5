@@ -6,22 +6,33 @@ import '@fontsource-variable/inter';
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import mplus300Woff2 from '@fontsource/m-plus-rounded-1c/files/m-plus-rounded-1c-latin-300-normal.woff2';
 import mplus400Woff2 from '@fontsource/m-plus-rounded-1c/files/m-plus-rounded-1c-latin-300-normal.woff2';
+import { imageAltFromFilename } from '@scripts/imageAltFromFilename';
 
 interface Props {
 	title: string;
+	description: string;
 	noFooterPadding?: boolean;
 	preloadMPlus300?: boolean;
 	preloadMPlus400?: boolean;
+	isArticle?: boolean;
+	ogImage?: string;
 }
 
 const { 
 	title, 
+	description, 
 	noFooterPadding, 
 	preloadMPlus300, 
-	preloadMPlus400
+	preloadMPlus400,
+	isArticle,
+	ogImage,
 } = Astro.props;
 
 const siteName = "ai03 Design Studio"
+
+if (!description) {
+	console.error(`Path ${Astro.url.pathname} doesn't have a description!`)
+}
 
 const titleString = title === "Home" ? siteName : title + " - " + siteName
 ---
@@ -29,6 +40,8 @@ const titleString = title === "Home" ? siteName : title + " - " + siteName
 <!doctype html>
 <html lang="en" style="scroll-behavior: smooth;">
 	<head>
+
+		<!-- Preload fonts to prevent FOUC -->
 		<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={interWoff2} crossorigin/>
 		{preloadMPlus300 && 
 			<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={mplus300Woff2} crossorigin/>
@@ -36,13 +49,38 @@ const titleString = title === "Home" ? siteName : title + " - " + siteName
 		{preloadMPlus400 && 
 			<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={mplus400Woff2} crossorigin/>
 		}
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+
+		<!-- Misc page metadata -->
 		<Favicon />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+
+		<!-- SEO and page details -->
 		<title>{titleString}</title>
+		<meta name="description" content={description} />
+
+		<meta property="og:title" content={titleString} />
+		{title !== "Home" && <meta property="og:site_name" content="ai03 Design Studio" />}
+		<meta property="og:type" content={isArticle ? "article" : "website"} />
+		<meta property="og:image" content={ogImage || "https://ai03.com/images/misc/og-default.jpg"} />
+		<meta property="og:image:alt" content={ogImage ? imageAltFromFilename(ogImage) : "ai03.com cover image"} />
+		<meta property="og:url" content={`https://ai03.com${Astro.url.pathname}`} />
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content={titleString}>
+		<meta name="twitter:image" content={ogImage || "https://ai03.com/images/misc/og-default.jpg"}>
+		<meta name="twitter:image:alt" content={ogImage ? imageAltFromFilename(ogImage) : "ai03.com cover image"} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:site" content="@ai03_2725" />
+
+		<meta property="image" content={ogImage || "https://ai03.com/images/misc/og-default.jpg"} />
+
+		{isArticle && <meta property="article:author" content="ai03" />}
+		{isArticle && <meta name="twitter:creator" content="@ai03_2725" />}
+
+		<meta name="generator" content={Astro.generator} />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
 	</head>
 	<body style="margin: 0;">
 		<div class="flex flex-col min-h-screen">

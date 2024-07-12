@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && node process-html.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "collect-licenses": "node collect-licenses.js > public/package-licenses"
@@ -28,6 +28,8 @@
     "@tanstack/react-query": "^5.49.2",
     "astro": "^4.4.1",
     "astro-icon": "^1.1.0",
+    "globby": "^14.0.2",
+    "html-minifier": "^4.0.0",
     "preact": "^10.22.0",
     "react": "npm:@preact/compat",
     "react-circle": "^1.1.1",

@@ -1,6 +1,7 @@
 ---
 draft: false
 title: Introducing Polaris V2
+description: After much anticipation, the successor to the board that started it all is finally here.
 date: 2021-12-21
 tags: ['Archive']
 cover:

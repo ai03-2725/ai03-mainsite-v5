@@ -1,6 +1,7 @@
 ---
 draft: false
 title: ai03 Joining CannonKeys
+description: I am now working full-time at CannonKeys as a dedicated designer and web developer.
 date: 2022-01-05
 tags: ['Archive']
 cover:

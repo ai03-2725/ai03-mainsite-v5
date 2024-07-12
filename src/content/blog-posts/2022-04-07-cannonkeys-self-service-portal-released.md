@@ -1,6 +1,7 @@
 ---
 draft: false
 title: Introducing the CannonKeys Self-Service Portal
+description: The first public-facing CannonKeys software project contributed to by ai03 is live.
 date: 2022-04-07
 tags: []
 cover:

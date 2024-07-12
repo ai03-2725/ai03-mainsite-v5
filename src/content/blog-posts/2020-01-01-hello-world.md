@@ -1,6 +1,7 @@
 ---
 draft: false
 title: Hello World
+description: A first blog post.
 date: 2020-01-01
 tags: []
 cover:
