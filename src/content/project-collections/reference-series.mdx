@@ -10,12 +10,11 @@ priority: 900
 tileSize: "2x1"
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
 import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
 import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
 import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
 
-<DefaultLayout title={frontmatter.title}>
+<DefaultLayout title={frontmatter.title} description={frontmatter.slogan}>
 
   <ClassicBlurredHeader src="/images/vega/vega-render-pair-medium.avif" />
 

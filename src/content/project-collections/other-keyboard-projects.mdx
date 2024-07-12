@@ -11,12 +11,11 @@ tileSize: "1x1"
 tileTitle: Other
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
 import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
 import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
 import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
 
-<DefaultLayout title={frontmatter.title}>
+<DefaultLayout title={frontmatter.title} description={frontmatter.slogan}>
 
   <ClassicBlurredHeader src="/images/arc/arc-oceanside-01-cropped-medium.avif" />
 

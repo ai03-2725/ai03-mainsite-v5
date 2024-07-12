@@ -6,7 +6,11 @@ import { getCollection } from 'astro:content';
 const allCollections = (await getCollection('project-collections')).sort((a, b) => a.data.priority < b.data.priority ? 1 : -1)
 ---
 
-<Layout title="Portfolio" noFooterPadding>
+<Layout 
+	title="Portfolio" 
+	description="An overview of ai03's works."
+	noFooterPadding
+>
 
 	<!-- Grid -->
 	<div class="

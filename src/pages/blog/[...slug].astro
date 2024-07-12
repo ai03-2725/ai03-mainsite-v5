@@ -35,74 +35,78 @@ const postsToShow = blogPosts.slice(postStartIndex, postStartIndex + PAGE_SIZE)
 
 ---
 
-<Layout title={`Blog${page !== 1 ? ` Page ${page}` : ""}`}` noFooterPadding>
+<Layout 
+	title={`Blog${page !== 1 ? ` Page ${page}` : ""}`}
+	description="Announcements and random ramblings."
+	noFooterPadding
+>
 
+	<div class="
+		container mx-auto 
+		grid grid-flow-row-dense 
+		grid-cols-1 gap-6 px-5 pt-12 pb-18
+		md:grid-cols-6 md:gap-6 md:pt-24 pb-32
+		lg:gap-8
+		xl:gap-10
+		2xl:gap-12
+	">
+
+		<!-- Header -->
 		<div class="
-			container mx-auto 
-			grid grid-flow-row-dense 
-			grid-cols-1 gap-6 px-5 pt-12 pb-18
-			md:grid-cols-6 md:gap-6 md:pt-24 pb-32
-			lg:gap-8
-			xl:gap-10
-			2xl:gap-12
+			h-[64px] md:h-full 
+			col-span-1 md:col-span-2 
+			rounded-[3.75px] overflow-hidden bg-zinc-700 text-white
+			relative flex flex-col justify-center items-center
 		">
-
-			<!-- Header -->
-			<div class="
-				h-[64px] md:h-full 
-				col-span-1 md:col-span-2 
-				rounded-[3.75px] overflow-hidden bg-zinc-700 text-white
-				relative flex flex-col justify-center items-center
-			">
-				<div class="flex flex-col justify-center items-center gap-7 absolute">
-					<h2 class="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-[450]">Blog</h2>
-					{page > 1 &&
-						<div class="flex flex-row gap-2 items-center">
-							<a href={`/blog/${page - 1}`}>
-								<Icon name="ph:arrow-left" class="ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
+			<div class="flex flex-col justify-center items-center gap-7 absolute">
+				<h2 class="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-[450]">Blog</h2>
+				{page > 1 &&
+					<div class="flex flex-row gap-2 items-center">
+						<a href={`/blog/${page - 1}`}>
+							<Icon name="ph:arrow-left" class="ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
+						</a>
+						<p class="text-xl">{page !== 1 && ` Page ${page}`}</p>
+						{maxPages > page &&
+							<a href={`/blog/${page + 1}`}>
+								<Icon name="ph:arrow-right" class="ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
 							</a>
-							<p class="text-xl">{page !== 1 && ` Page ${page}`}</p>
-							{maxPages > page &&
-								<a href={`/blog/${page + 1}`}>
-									<Icon name="ph:arrow-right" class="ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
-								</a>
-							}
-							{maxPages === page &&
-								<Icon name="ph:arrow-right" class="text-zinc-500 ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
-							}
-						</div>
-					}
-				</div>
-			</div>
-
-			<!-- Posts -->
-			{postsToShow.map((post, index) => 
-				<div class={`aspect-[1.618] relative col-span-1 ${(index === 0 || index === 5) ? "md:col-span-4 md:aspect-[2.157]" : "md:col-span-3"} rounded-[3.75px] overflow-hidden`}>
-					<SimpleImageV2 src={post.data.cover.image} class="absolute w-full h-full object-cover brightness-[0.6]" />
-					<div class="absolute w-full h-1/3 min-h-1/3 flex flex-col gap-0.5 lg:gap-1 justify-end items-start p-5 text-white bottom-0 bg-gradient-to-t from-[#000000a0]">
-						<p class="text-sm lg:text-base text-zinc-200 font-[450]">{dateToDisplayString(post.data.date)}</p>
-						<h3 class="text-xl lg:text-2xl font-[500]">{post.data.title}</h3>
+						}
+						{maxPages === page &&
+							<Icon name="ph:arrow-right" class="text-zinc-500 ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
+						}
 					</div>
-					<a href={`/blog/article/${post.slug}`} class="w-full h-full absolute" />
-				</div>
-			)}
-
-			<!-- Next Page Button -->
-			{maxPages > page &&
-			<div class="
-				h-[64px] md:h-full 
-				col-span-1 md:col-span-2 
-				rounded-[3.75px] overflow-hidden bg-zinc-700 text-white
-				relative flex flex-col justify-center items-center
-			">
-				<div class="flex flex-row justify-center items-center gap-1 absolute">
-					<h2 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-[450]">Next Page</h2>
-					<Icon name="ph:arrow-right" class="ms-1 md:ms-0 text-[24px] md:text-[32px] lg:text-[36px]" />
-				</div>
-				<a href={`/blog/${page + 1}`} class="absolute w-full h-full" />
+				}
 			</div>
-			}
-
 		</div>
+
+		<!-- Posts -->
+		{postsToShow.map((post, index) => 
+			<div class={`aspect-[1.618] relative col-span-1 ${(index === 0 || index === 5) ? "md:col-span-4 md:aspect-[2.157]" : "md:col-span-3"} rounded-[3.75px] overflow-hidden`}>
+				<SimpleImageV2 src={post.data.cover.image} class="absolute w-full h-full object-cover brightness-[0.6]" />
+				<div class="absolute w-full h-1/3 min-h-1/3 flex flex-col gap-0.5 lg:gap-1 justify-end items-start p-5 text-white bottom-0 bg-gradient-to-t from-[#000000a0]">
+					<p class="text-sm lg:text-base text-zinc-200 font-[450]">{dateToDisplayString(post.data.date)}</p>
+					<h3 class="text-xl lg:text-2xl font-[500]">{post.data.title}</h3>
+				</div>
+				<a href={`/blog/article/${post.slug}`} class="w-full h-full absolute" />
+			</div>
+		)}
+
+		<!-- Next Page Button -->
+		{maxPages > page &&
+		<div class="
+			h-[64px] md:h-full 
+			col-span-1 md:col-span-2 
+			rounded-[3.75px] overflow-hidden bg-zinc-700 text-white
+			relative flex flex-col justify-center items-center
+		">
+			<div class="flex flex-row justify-center items-center gap-1 absolute">
+				<h2 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-[450]">Next Page</h2>
+				<Icon name="ph:arrow-right" class="ms-1 md:ms-0 text-[24px] md:text-[32px] lg:text-[36px]" />
+			</div>
+			<a href={`/blog/${page + 1}`} class="absolute w-full h-full" />
+		</div>
+		}
+
+	</div>
 
 </Layout>

@@ -11,22 +11,4 @@ projects: [
 priority: 0
 tileSize: "1x1"
 ---
-import DefaultLayout from '@layouts/DefaultLayout.astro'
-import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
-import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
-import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
-import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
-
-<DefaultLayout title={frontmatter.title}>
-
-  <ClassicBlurredHeader src="/images/lunar/lunar-front-medium.avif" />
-
-    {/* Todo - Make this searchable */}
-
-    <ClassicCollectionHeaderBlock title="All Projects" >
-      Every single project in alphabetical order.
-    </ClassicCollectionHeaderBlock>
-
-    <ProjectsGrid style="light" />
-
-</DefaultLayout>
+<meta http-equiv="refresh" content={`0; URL='/projects/'`} />

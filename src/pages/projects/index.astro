@@ -1,16 +1,23 @@
 ---
-import Layout from '../../layouts/DefaultLayout.astro';
-import { getCollection, getEntry } from 'astro:content';
-
-const allProjects = await getCollection('projects')
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
+import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
+import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
 ---
 
-<Layout title="All Projects">
-	<main>
-		Test projects index
+<DefaultLayout 
+  title="All Projects"
+	description="A list of every project."
+>
 
-		<ul>
-			<li>{allProjects.map(project => project.data.title)}</li>
-		</ul>
-	</main>
-</Layout>
+  <ClassicBlurredHeader src="/images/lunar/lunar-front-medium.avif" />
+
+    {/* Todo - Make this searchable */}
+
+    <ClassicCollectionHeaderBlock title="All Projects" >
+      Every single project in alphabetical order.
+    </ClassicCollectionHeaderBlock>
+
+    <ProjectsGrid style="light" />
+
+</DefaultLayout>

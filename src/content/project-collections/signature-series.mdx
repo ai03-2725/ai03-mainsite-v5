@@ -10,13 +10,10 @@ priority: 1100
 tileSize: "2x2"
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
-import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
-import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
 import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
 import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
 
-<DefaultLayout title={frontmatter.title} noFooterPadding>
+<DefaultLayout title={frontmatter.title} description={frontmatter.slogan} noFooterPadding>
 
   <div class="bg-zinc-900 pb-20">
 

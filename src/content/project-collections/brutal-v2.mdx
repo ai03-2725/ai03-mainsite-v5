@@ -13,16 +13,13 @@ tileSize: "2x1"
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
-import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
-import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
-import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
 import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
 import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
 import SimpleButton from '@components/astro/SimpleButton.astro'
 
 {/* Todo: Add Brutal V2 60 */}
 
-<DefaultLayout title={frontmatter.title} noFooterPadding>
+<DefaultLayout title={frontmatter.title} description={frontmatter.slogan} noFooterPadding>
 
   {/* Header */}
   <div poster="/images/brutal-v2-65/brutal-v2-65-render-side-medium.avif" class="relative h-[90vh] max-h-[100vw]">
