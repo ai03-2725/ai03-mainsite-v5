@@ -43,7 +43,7 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
     <p class="pt-4 text-md mx-6">CannonKeys's legendary Brutalist series design, overhauled for the new era.</p>
   </div>
 
-  <div class="text-center py-32 container mx-auto">
+  <div class="text-center py-20 md:py-26 lg:py-32 container mx-auto px-6">
     <h2 class="text-4xl"><strong>Brutal,</strong> Evolved.</h2>
     <p class="pt-8">In 2019, the launch of the first-generation Brutalist series keyboards by CannonKeys changed the keyboard landscape forever.</p>
     <p class="pt-2">In an era dominated by group buys, long wait times for delivery, and sky-high prices, the Brutal V1 was available in-stock and offered an accessible entrypoint to the world of custom keyboards.</p>
@@ -51,12 +51,12 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
   </div>
 
   <div class="">
-    <SimpleImageV2 src={"/images/brutal-v2-60/brutal-v2-60-composition-01-large.avif"} class="object-cover w-full aspect-[1.875] max-h-[600px]" />
+    <SimpleImageV2 src={"/images/brutal-v2-60/brutal-v2-60-composition-01-large.avif"} class="object-cover w-full aspect-[1.875] max-h-[600px] min-h-[60vh]" />
   </div>
 
-  <div class="bg-zinc-900 text-zinc-50 text-center pt-20 lg:pt-32">
-    <div class="px-6 lg:px-0">
-      <h2 class="text-3xl lg:text-4xl font-[550]">Brutalist to the core</h2>
+  <div class="bg-zinc-900 text-zinc-50 text-start lg:text-center pt-20 lg:pt-32">
+    <div class="px-6 lg:px-0 text-center">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-[600] md:font-[550]">Brutalist to the core</h2>
       <p class="pt-6 lg:pt-4">Expressing the sheer scale, grandiose, and rawness of brutalism is core to the Brutal V2 visual language.</p>
       <p class="pt-2 mb-16 lg:mb-0">The Brutal V2 series uses careful design to express this style within the bounds of a compact, sophisticated custom keyboard.</p>
     </div>
@@ -65,7 +65,7 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
       <p>A bold uniform bezel wraps around the case top half, tapering as it reaches upwards at the sides for a distinct look.</p>
       <p class="mb-16 lg:mb-0">The bottom case half rises against gravity at the rear in a striking angle, highlighted by the two-tone anodized finish to place a spotlight on each.</p>
     </HorizontalStackBlock>
-    <HorizontalStackBlock src="/images/brutal-v2-65/brutal-v2-65-render-internals-reear-transparent-medium.avif" invert reverse class="lg:text-start" >
+    <HorizontalStackBlock src="/images/brutal-v2-65/brutal-v2-65-render-internals-reear-transparent-medium.avif" invert reverse class="text-start lg:text-end" >
       <h3>Power Meets Precision</h3>
       <p>A visually massive rear block breaks over the case top half and creates depth on the surface, while fitting together perfectly by precision design.</p>
       <p></p>
@@ -121,7 +121,7 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
     </div>
   </div>
 
-  <div class="bg-zinc-900 block lg:hidden text-white px-6 py-10">
+  <div class="bg-zinc-900 block lg:hidden text-white px-6 pt-12 pb-16">
     <DefaultMarkdownRenderer invert>
       <p>At the heart of the Brutal V2 series is its unique single-sided gasket mount.</p>
       <p class="m-0">Blending the best of gasket- and top-mount internal designs, Brutal V2 cushions typing impacts with its carefully selected gasket pads while transmitting acoustic vibrations to the case top half.</p>
@@ -130,42 +130,42 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
   </div>
 
   <div class="w-full bg-zinc-900">
-    <div class="container mx-auto">
-      <iframe class="w-full aspect-video m-[-1px]"
+    <div class="container mx-auto px-6 pb-8 lg:pb-0">
+      <iframe class="w-full aspect-video rounded-[3.75px] lg:rounded-none overflow-hidden"
       src="https://www.youtube.com/embed/SKdVZXbeJn0">
       </iframe>
     </div>
   </div>
 
-  <div class="bg-[#faf3e3] w-full pt-24 lg:pt-28 text-center">
-    <h2 class="text-2xl lg:text-4xl font-[550] pb-20">The Personal Touch</h2>
+  <div class="bg-[#faf3e3] w-full pt-16 md:pt-20 lg:pt-28 text-center">
+    <h2 class="text-2xl md:text-3xl lg:text-4xl font-[550] pb-16 md:pb-20 lg:pb-20">The Personal Touch</h2>
     <HorizontalStackBlock src="/images/brutal-v2-65/brutal-v2-65-render-switches-medium.avif" reverse class="lg:text-start" imageClasses="w-full min-h-full object-cover overflow-hidden aspect-[1.75]" noGap>
-      <div class="pe-0 lg:pe-8">
+      <div class="pe-0 lg:pe-8 mb-4 lg:mb-0">
         <h3>Yours, and Yours Only</h3>
         <p>With a variety of plate materials, PCBs, and foams to choose from, Brutal V2 can be customized to your exact preferences in sound and feel.</p>
         <p></p>
-        <p class="mb-10 lg:mb-0">If your preferences change, Brutal V2 adapts alongside - the internal module can be replaced and rebuilt to re-tailor the board to any new styles and switches.</p>
+        <p>If your preferences change, Brutal V2 adapts alongside - the internal module can be replaced and rebuilt to re-tailor the board to any new styles and switches.</p>
       </div>
     </HorizontalStackBlock>
     <HorizontalStackBlock src="/images/brutal-v2-1800/brutal-v2-1800-partsgrid-medium.avif" class="lg:text-start bg-[#F1FAFA]" imageClasses="w-full min-h-full object-cover overflow-hidden aspect-[1.75]" noGap>
-      <div class="ps-0 lg:ps-8">
+      <div class="ps-0 lg:ps-8 mb-4 lg:mb-0">
         <h3>A One-Stop Solution</h3>
         <p>Backed by CannonKeys, Brutal V2 is available in-stock without lengthy waiting times, ready whenever you are.</p>
         <p></p>
-        <p class="mb-10 lg:mb-0">No more scrambling across multiple stores to source the required parts - CannonKeys stocks every part from the switches to keycaps necessary to assemble the board.</p>
+        <p>No more scrambling across multiple stores to source the required parts - CannonKeys stocks every part from the switches to keycaps necessary to assemble the board.</p>
       </div>
     </HorizontalStackBlock>
   </div>
-  <div class="bg-[#F1FAE1] w-full pb-24 text-center">
+  <div class="bg-[#F1FAE1] w-full pb-0 lg:pb-24 text-center">
     <HorizontalStackBlock src="/images/brutal-v2-65/brutal-v2-65-pcbs-grid-medium.avif" reverse class="lg:text-start" imageClasses="w-full min-h-full object-cover overflow-hidden aspect-[1.75]" noGap>
-      <div class="pe-0 lg:pe-8">
+      <div class="pe-0 lg:pe-8 mb-4 lg:mb-0">
         <h3>For Today and Tomorrow</h3>
         <p>Brutal V2 keyboards are fully repairable and customizable, with replacement and extra parts available for purchase.</p>
         <p></p>
-        <p class="mb-10 lg:mb-0">With its modular USB unified daughterboard, the Brutal V2s are designed to be robust and maintainable for years to come.</p>
+        <p>With its modular USB unified daughterboard, the Brutal V2s are designed to be robust and maintainable for years to come.</p>
       </div>
     </HorizontalStackBlock>
-    <HorizontalStackBlock src="/images/brutal-v2-1800/brutal-v2-1800-pcb-bottom-green-medium.avif" reverse class="lg:text-start pt-20" ratio={5}>
+    <HorizontalStackBlock src="/images/brutal-v2-1800/brutal-v2-1800-pcb-bottom-green-medium.avif" reverse class="lg:text-start pt-4 lg:pt-20" ratio={5}>
       <div class="pe-0 lg:pe-8">
         <h3 class="pb-1">Press Any Key</h3>
         <p>Inside each Brutal V2 is a custom-designed PCB, running QMK Firmware and fully remappable with VIA Configurator.</p>
@@ -180,9 +180,9 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
       <SimpleImageV2 src="/images/brutal-v2-1800/brutal-v2-1800-desk-dark-medium.avif" class="w-full object-cover h-full" />
     </div>
     <div class="absolute h-full w-full">
-      <div class="w-full container mx-auto py-20 h-full flex flex-col justify-center">
+      <div class="w-full container mx-auto py-20 h-full flex flex-col justify-center px-6">
         <DefaultMarkdownRenderer invert>
-          ## A Premium Keyboard For All  
+          <h3 class="text-2xl md:text-3xl">A Premium Keyboard For All</h3>
           Getting the best performance out of your keyboard shouldn't involve guesswork or difficult assembly.  
             
           Backed by a thorough build guide and assembly helpers such as automatic plate alignment built into the internals, Brutal V2 is engineered to deliver its full potential with every build - regardless of prior keyboard experience or skill level.  
@@ -197,18 +197,18 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
 
   {/* Todo - Product links */}
 
-  <div class="bg-[#F9F9F9] pt-20 pb-24">
+  <div class="bg-[#F9F9F9] pt-16 md:pt-20 pb-16 md:pb-24">
     <div class="container mx-auto px-6 text-center pb-12">
-      <h2 class="text-4xl font-[550]">Choose your form factor</h2>
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-[550]">Choose your form factor</h2>
     </div>
     <div class="container mx-auto px-6 pb-24 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1280px]">
 
       <div class="relative aspect-square w-full rounded-[3.75px] overflow-hidden">
-        <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-square-top-down-medium.avif" class="rounded-sm aspect-square overflow-hidden absolute" />
-        <div class="absolute w-full h-full text-white flex flex-col items-center justify-center">
+        <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-square-top-down-medium.avif" class="rounded-sm aspect-square overflow-hidden absolute brightness-90" />
+        <div class="absolute w-full h-full text-white text-center flex flex-col items-center justify-center p-4">
           <h3 class="text-3xl font-[550] pb-1">65%</h3>
           <p>Compact, functional layout for all desks.</p>
-          <div class="flex flex-row flex-wrap pt-4 gap-4">
+          <div class="flex flex-col md:flex-row flex-wrap pt-6 md:pt-4 gap-4">
             <SimpleButton label="Product Page" url="https://cannonkeys.com/products/brutal-v2-65-keyboard" />
             <SimpleButton label="Portfolio Page" url="/projects/brutal-v2-65" />
           </div>
@@ -216,11 +216,11 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
       </div>
 
       <div class="relative aspect-square w-full rounded-[3.75px] overflow-hidden">
-        <SimpleImageV2 src="/images/brutal-v2-1800/brutal-v2-1800-square-top-down-medium.avif" class="rounded-sm aspect-square overflow-hidden absolute" />
-        <div class="absolute w-full h-full text-white flex flex-col items-center justify-center">
+        <SimpleImageV2 src="/images/brutal-v2-1800/brutal-v2-1800-square-top-down-medium.avif" class="rounded-sm aspect-square overflow-hidden absolute brightness-90" />
+        <div class="absolute w-full h-full text-white text-center flex flex-col items-center justify-center p-4">
           <h3 class="text-3xl font-[550] pb-1">1800</h3>
           <p>Large form-factor with a numpad for workstation use.</p>
-          <div class="flex flex-row flex-wrap pt-4 gap-4">
+          <div class="flex flex-col md:flex-row flex-wrap pt-6 md:pt-4 gap-4">
             <SimpleButton label="Product Page" url="https://cannonkeys.com/products/brutal-v2-1800-keyboard" />
             <SimpleButton label="Portfolio Page" url="/projects/brutal-v2-1800" />
           </div>
