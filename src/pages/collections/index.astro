@@ -28,7 +28,7 @@ const allCollections = (await getCollection('project-collections')).sort((a, b) 
 			</div>
 		</div>
 
-		{allCollections.map((collection, index) => 
+		{allCollections.map((collection) => 
 			<CollectionGridItem collection={collection} />
 		)}
 	</div>

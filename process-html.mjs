@@ -6,7 +6,10 @@ import { minify } from 'html-minifier'
 // Implementation from https://straffesites.com/en/blog/optimize-astro-html-post-build
 
 // Get all HTML files from the output directory
-const path = './.vercel/output/static'
+
+console.log("Starting HTML optimize")
+
+const path = './dist'
 const files = await globby(`${path}/**/*.html`)
 
 await Promise.all(
@@ -23,3 +26,5 @@ await Promise.all(
     await fs.writeFile(file, html)
   })
 )
+
+console.log("Optimizations complete")

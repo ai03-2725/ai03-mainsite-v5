@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const allResources = await getCollection('resources');
 
-export const GET: APIRoute = async ({ params, request }) => {
+export const GET: APIRoute = async ({ params }) => {
   const projectId = params.projectId
 
   return new Response(

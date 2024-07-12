@@ -1,7 +1,6 @@
 // Returns updates for a given project
 
 import { getUpdateDateString, sortUpdates } from '@scripts/sortUpdates';
-import { dateToDisplayString } from '@scripts/util';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import type { ProjectStatuses } from 'src/content/enum';
@@ -15,7 +14,7 @@ export async function getStaticPaths() {
 
 const allUpdates = await getCollection('updates');
 
-export const GET: APIRoute = async ({ params, request }) => {
+export const GET: APIRoute = async ({ params }) => {
   const projectId = params.projectId
 
   return new Response(

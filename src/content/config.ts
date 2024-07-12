@@ -7,7 +7,7 @@ import { PROJECT_STATUSES } from './enum';
 
 const projects = defineCollection({ 
   type: 'content',
-  schema: ({ image }) => z.object({
+  schema: z.object({
     draft: z.boolean(),
     title: z.string(),
     slogan: z.string(),
@@ -21,7 +21,7 @@ const projects = defineCollection({
 
 const projectCollections = defineCollection({
   type: 'content',
-  schema: ({ image }) => z.object({
+  schema: z.object({
     draft: z.boolean(),
     title: z.string(),
     slogan: z.string(),
@@ -55,7 +55,7 @@ const resources = defineCollection({
 
 const blogPosts = defineCollection({ 
   type: 'content',
-  schema: ({ image }) => z.object({
+  schema: z.object({
     draft: z.optional(z.boolean()),
     title: z.string(),
     description: z.string(),

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && node process-html.mjs",
+    "build": "astro check --minimumSeverity warning && astro build && node process-html.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "collect-licenses": "node collect-licenses.js > public/package-licenses"

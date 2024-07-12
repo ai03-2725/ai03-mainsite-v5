@@ -15,15 +15,21 @@ const {  } = Astro.props
 
     <div class="px-4 flex flex-col md:flex-row text-zinc-400 gap-6 md:gap-0">
 
-      <div class="w-full md:w-1/2 text-center md:text-start">
-        <h5 class="text-xl">ai03 Design Studio</h5>
-        <p class="pt-2">The pursuit of the best input.</p>
+      <div class="w-full md:w-1/2 text-center md:text-start flex flex-col gap-2">
+        <h5 class="text-xl lg:text-2xl">ai03 Design Studio</h5>
+        <p class="text-sm">The pursuit of the best input.</p>
+        <div class="grow" />
+        <p class="text-sm">© {new Date().getFullYear()}</p>
       </div>
 
-      <div class="w-full md:w-1/2 text-center md:text-end">
-        <div class="flex flex-row justify-center md:justify-end gap-3 flex-wrap">
+      <div class="w-full md:w-1/2 text-center md:text-end flex flex-col items-end gap-3">
+        <div class="flex flex-row justify-center md:justify-end gap-3 flex-wrap pb-6">
           <SocialLinksList size={26} />
         </div>
+        <p><a href="/collections/">Portfolio</a></p>
+        <p><a href="/blog/">Blog</a></p>
+        <p><a href="/about/">About</a></p>
+        <p><a href="/contact/">Contact</a></p>
       </div>
 
     </div>

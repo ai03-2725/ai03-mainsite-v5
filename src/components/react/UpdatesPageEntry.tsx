@@ -35,7 +35,7 @@ const UpdatesRenderer: React.FC<{
   loading: boolean,
   error: boolean
 }> = ({
-  project,
+  // project,
   updates,
   loading,
   error

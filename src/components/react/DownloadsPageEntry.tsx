@@ -31,7 +31,7 @@ const DownloadsRenderer: React.FC<{
   loading: boolean,
   error: boolean
 }> = ({
-  project,
+  // project,
   resources,
   loading,
   error

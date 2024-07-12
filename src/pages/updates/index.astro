@@ -1,7 +1,7 @@
 ---
 import { UpdatesPage } from '@components/react/UpdatesPage';
 import Layout from '../../layouts/DefaultLayout.astro';
-import { getCollection, getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import type { MinimumProjectsIndex } from '@components/react/SearchableProjectInfiniteScrollWrapper';
 
 const allProjects = await getCollection('projects')

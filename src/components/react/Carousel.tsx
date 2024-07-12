@@ -29,7 +29,7 @@ export const Carousel: FunctionComponent<{
   showThumbnails: boolean | undefined,
 }> = ({
   slides,
-  ratio,
+  // ratio,
   showThumbnails
 }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
