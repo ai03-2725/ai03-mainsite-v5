@@ -59,16 +59,16 @@ const postsToShow = blogPosts.slice(postStartIndex, postStartIndex + PAGE_SIZE)
 					{page > 1 &&
 						<div class="flex flex-row gap-2 items-center">
 							<a href={`/blog/${page - 1}`}>
-								<Icon name="ph:arrow-left-light" class="ms-1 md:ms-0 text-[24px] md:text-[32px] lg:text-[36px]" />
+								<Icon name="ph:arrow-left" class="ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
 							</a>
 							<p class="text-xl">{page !== 1 && ` Page ${page}`}</p>
 							{maxPages > page &&
 								<a href={`/blog/${page + 1}`}>
-									<Icon name="ph:arrow-right-light" class="ms-1 md:ms-0 text-[24px] md:text-[32px] lg:text-[36px]" />
+									<Icon name="ph:arrow-right" class="ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
 								</a>
 							}
 							{maxPages === page &&
-								<Icon name="ph:arrow-right-light" class="text-zinc-500 ms-1 md:ms-0 text-[24px] md:text-[32px] lg:text-[36px]" />
+								<Icon name="ph:arrow-right" class="text-zinc-500 ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
 							}
 						</div>
 					}

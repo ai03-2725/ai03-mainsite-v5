@@ -6,12 +6,11 @@ import { CollapseDiv } from '@components/react/CollapseDiv.tsx'
 import { Spinner } from './Spinner';
 import type { MinimumProjectsIndex } from './SearchableProjectInfiniteScrollWrapper';
 import { UpdateLogEntryRenderer } from './UpdateLogEntryRenderer';
-import { CircularProgressbarWithChildren } from "react-circular-progressbar";
-import { statusToDisplayText, statusToIcon, statusToProgress } from "@scripts/util";
-import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
+import { statusToDisplayText } from "@scripts/util";
 import Markdown from 'react-markdown'
 import { DefaultMarkdownRenderer } from './DefaultMarkdownRenderer';
 import rehypeRewrite from 'rehype-rewrite'
+import { StatusProgressIndicator } from "./StatusProgressIndicator";
 
 // The fetch function
 async function fetchUpdates(project: string): Promise<APIUpdateEntry[]> {
@@ -63,8 +62,33 @@ const UpdatesRenderer: React.FC<{
     return (
       <div class="flex flex-col gap-8">
         {updates.map(updateEntry => (
-          <div key={updateEntry}>
-            <UpdateLogEntryRenderer update={updateEntry} />
+          <div key={updateEntry} class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 grid-flow-row gap-3">
+
+            {/* Left col - progress icon + status + date */}
+            <div class="col-span-1 flex flex-row justify-start items-center gap-5">
+              <StatusProgressIndicator status={updateEntry.status} divClasses="w-[48px] lg:w-[56px]" iconClasses="text-[20px] lg:text-[24px]" />
+              <div class="flex flex-col justify-center items-start">
+                <h4 class="m-0 text-xl font-[550]">{statusToDisplayText(updateEntry.status)}</h4>
+                <p>{updateEntry.date}</p>
+              </div>
+            </div>
+
+            {/* Right col - update contents */}
+            <div class="col-span-1 md:col-span-2 lg:col-span-3 flex flex-col justify-center">
+            <DefaultMarkdownRenderer>
+              <Markdown rehypePlugins={[[rehypeRewrite, {
+                selector: 'img',
+                rewrite: (node) => {
+                  if (node.type === 'element') {
+                    node.properties.loading = 'lazy';
+                  }
+                }
+              }]]}>
+                {updateEntry.body}
+              </Markdown>
+            </DefaultMarkdownRenderer>
+            </div>
+
           </div>
         ))}
       </div>
@@ -104,15 +128,15 @@ export const UpdatesPageEntry: React.FC<{
         <div class="
           aspect-[1.618] 
           w-full 
-          md:w-1/2
+          md:w-2/5
           xl:w-1/3
           overflow-hidden relative
         ">
           <div class="absolute w-full h-full bg-zinc-500">
             <img src={project.src} alt={`Cover image for ${project.title}`} loading="lazy" class="object-cover w-full h-full" />
           </div>
-          <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-6 flex flex-col-reverse">
-            <h2 class="text-3xl font-[335] text-white">{project.title}</h2>
+          <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-5 md:p-4 lg:p-5 flex flex-col-reverse">
+            <h2 class="text-2xl md:text-xl lg:text-2xl font-[500] text-white">{project.title}</h2>
           </div>
           <a href={`/projects/${project.slug}`} class="w-full h-full absolute" />
           
@@ -120,7 +144,7 @@ export const UpdatesPageEntry: React.FC<{
 
         {/* Right col */}
         <div class="
-          p-8
+          p-6 md:p-7 lg:p-8
           w-full
           md:w-1/2
           xl:w-2/3
@@ -139,38 +163,46 @@ export const UpdatesPageEntry: React.FC<{
           {!isLoading && data && 
             <div class="h-full">
               {data.length > 0 ?
-                <div class="flex flex-col h-full">
-                  <div class="grow flex flex-row">
-                    {/* Todo - Repair this */}
-                    <div class="aspect-square" style="width: 32px; height: 32px;">
-                      <CircularProgressbarWithChildren value={statusToProgress(data[0].status)}>
-                        <Icon icon={statusToIcon(data[0].status)} size={48}/>
-                      </CircularProgressbarWithChildren>
-                    </div>
+                // Outer col
+                <div class="flex flex-col h-full gap-3">
+
+                  {/* Row for icon and status header */}
+                  <div class="flex flex-row items-center gap-3">
+
+                    {/* Status icon */}
+                    <StatusProgressIndicator status={data[0].status} divClasses="w-[48px] lg:w-[56px]" iconClasses="text-[20px] lg:text-[24px]" />
+
+                    {/* Status header */}
                     <div class="flex flex-col justify-start">
                       <h3 class="text-xl font-[550]">Status: {statusToDisplayText(data[0].status)}</h3>
-                      <DefaultMarkdownRenderer>
-                        <Markdown rehypePlugins={[[rehypeRewrite, {
-                          selector: 'img',
-                          rewrite: (node) => {
-                            if (node.type === 'element') {
-                              node.properties.loading = 'lazy';
-                            }
-                          }
-                        }]]}>
-                          {data[0].body}
-                        </Markdown>
-                      </DefaultMarkdownRenderer>
                     </div>
                   </div>
-                  <div class="flex flex-col items-start gap-2">
-                    <p>Last Updated {data[0].date}</p>
+
+                  {/* Latest update contents */}
+                  <DefaultMarkdownRenderer>
+                    <Markdown rehypePlugins={[[rehypeRewrite, {
+                      selector: 'img',
+                      rewrite: (node) => {
+                        if (node.type === 'element') {
+                          node.properties.loading = 'lazy';
+                        }
+                      }
+                    }]]}>
+                      {data[0].body}
+                    </Markdown>
+                  </DefaultMarkdownRenderer>
+
+                  <div class="grow" />
+
+                  {/* Last update date + Show history button */}
+                  <div class="flex flex-col items-center md:items-start gap-2">
+                    <p class="text-zinc-500 text-sm">Last Updated {data[0].date}</p>
                     {data.length > 1 ?
                       <button 
                         class={`py-2 px-4 bg-zinc-600 text-white rounded-[2.375px]`}
                         onClick={() => setUpdatesPaneOpen(!updatesPaneOpen)}
                       >
-                        Show Update History
+                        {updatesPaneOpen ? "Hide" : "Show"} Update History
                       </button>
                     :
                       <button

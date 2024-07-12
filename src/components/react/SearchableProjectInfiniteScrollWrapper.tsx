@@ -49,7 +49,7 @@ export const SearchableInfiniteScroll: React.FC<{
       break
 
     case "FULL_WIDTH":
-      childrenContainerClasses = "flex flex-col gap-8"
+      childrenContainerClasses = "flex flex-col gap-6 md:gap-7 lg:gap-8"
       initialDisplayedItems = 3
       itemsFetchedPerPage = 6
       break
@@ -106,7 +106,7 @@ export const SearchableInfiniteScroll: React.FC<{
 
     <QueryClientProvider client={queryClient}>
 
-      <div class="">
+      <div class="px-5">
         
         <div class="w-full flex flex-col items-center pb-12">
           <input 

@@ -69,6 +69,9 @@ dependencies:
   react:
     specifier: npm:@preact/compat
     version: /@preact/compat@17.1.2(preact@10.22.0)
+  react-circle:
+    specifier: ^1.1.1
+    version: 1.1.1(@preact/compat@17.1.2)
   react-circular-progressbar:
     specifier: ^2.1.0
     version: 2.1.0(@preact/compat@17.1.2)
@@ -5094,6 +5097,15 @@ packages:
       strip-json-comments: 2.0.1
     dev: false
     optional: true
+
+  /react-circle@1.1.1(@preact/compat@17.1.2):
+    resolution: {integrity: sha512-iphQfy+MRuNuBqJyZlGKbxyBJhDszaiT5eTiilFFPuwo5nsW5k/uH0KCq/sXXBMiJpLJ/Ly3arkUDvrK62Zung==}
+    engines: {node: '>=8.4.0'}
+    peerDependencies:
+      react: ^16.2.0
+    dependencies:
+      react: /@preact/compat@17.1.2(preact@10.22.0)
+    dev: false
 
   /react-circular-progressbar@2.1.0(@preact/compat@17.1.2):
     resolution: {integrity: sha512-xp4THTrod4aLpGy68FX/k1Q3nzrfHUjUe5v6FsdwXBl3YVMwgeXYQKDrku7n/D6qsJA9CuunarAboC2xCiKs1g==}

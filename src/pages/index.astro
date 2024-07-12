@@ -16,14 +16,13 @@ const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date
 
 ---
 
-<Layout title="Home" noFooterPadding>
+<Layout title="Home" noFooterPadding preloadMPlus300 preloadMPlus400>
 
 		<!-- Grid header -->
 		<div class="
 			grid grid-flow-row-dense bg-zinc-900
 			grid-cols-1 gap-4 px-3 pt-3 pb-14
-			md:px-4 md:py-4
-			md:grid-cols-2 md:gap-4
+			md:grid-cols-2 md:gap-4 md:px-4 md:py-4
 			2xl:grid-cols-3 2xl:gap-5 2xl:px-5 2xl:pt-12 2xl:pb-12
 		">
 
@@ -33,11 +32,11 @@ const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date
 				flex flex-col justify-center items-center 
 			">
 				<div class="text-white text-center flex flex-col justify-center items-center w-full">
-					<AiLogoRing class="w-[84px] lg:w-[108px] fill-white pt-2" />
+					<AiLogoRing class="w-[84px] lg:w-[98px] xl:w-[108px] fill-white pt-2" />
 					<h1 class="
 						font-['M_PLUS_Rounded_1c'] 
 						font-[300] 
-						text-[28px] lg:text-[36px] 
+						text-[28px] lg:text-[32px] xl:text-[36px] 
 						pt-2 md:pt-3 pb-1"
 					>ai03 Design Studio</h1>
 					<p class="text-sm lg:text-base">The pursuit of the best input.</p>

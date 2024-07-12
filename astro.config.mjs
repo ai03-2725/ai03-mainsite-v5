@@ -42,6 +42,8 @@ export default defineConfig({
         '@iconify-icon/react', 
         'react-infinite-scroll-hook',
         '@tanstack/react-query',
+        'react-circular-progressbar',
+        '@delowar/react-circle-progressbar',
       ]
     },
   },

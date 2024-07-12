@@ -4,13 +4,22 @@ import Footer from '@components/site-framework/Footer.astro';
 import Nav from '@components/site-framework/Nav.astro'
 import '@fontsource-variable/inter';
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import mplus300Woff2 from '@fontsource/m-plus-rounded-1c/files/m-plus-rounded-1c-latin-300-normal.woff2';
+import mplus400Woff2 from '@fontsource/m-plus-rounded-1c/files/m-plus-rounded-1c-latin-300-normal.woff2';
 
 interface Props {
 	title: string;
-	noFooterPadding?: boolean | undefined;
+	noFooterPadding?: boolean;
+	preloadMPlus300?: boolean;
+	preloadMPlus400?: boolean;
 }
 
-const { title, noFooterPadding } = Astro.props;
+const { 
+	title, 
+	noFooterPadding, 
+	preloadMPlus300, 
+	preloadMPlus400
+} = Astro.props;
 
 const siteName = "ai03 Design Studio"
 
@@ -21,6 +30,12 @@ const titleString = title === "Home" ? siteName : title + " - " + siteName
 <html lang="en" style="scroll-behavior: smooth;">
 	<head>
 		<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={interWoff2} crossorigin/>
+		{preloadMPlus300 && 
+			<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={mplus300Woff2} crossorigin/>
+		}
+		{preloadMPlus400 && 
+			<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={mplus400Woff2} crossorigin/>
+		}
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
