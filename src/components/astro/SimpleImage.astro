@@ -32,6 +32,6 @@ const OuterElement = presetStringOuterDiv === "" ? 'Fragment' : 'div'
 
 <OuterElement class={presetStringOuterDiv}>
   <div class=`${ratioString} ${roundedString} ${presetStringInnerDiv} bg-zinc-600`>
-    <img src={null} class="!w-full h-full object-cover m-0" loading={loading === "eager" ? "eager" : "lazy"} />
+    <img src={src} class="!w-full h-full object-cover m-0" loading={loading === "eager" ? "eager" : "lazy"} />
   </div>  
 </OuterElement>

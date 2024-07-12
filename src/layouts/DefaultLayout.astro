@@ -35,6 +35,8 @@ if (!description) {
 }
 
 const titleString = title === "Home" ? siteName : title + " - " + siteName
+
+const ogAltString = ogImage ? (ogImage === "/images/open-graph/og-blog.jpg" ? "Blog post cover image" : imageAltFromFilename(ogImage)) : "ai03.com cover image"
 ---
 
 <!doctype html>
@@ -62,18 +64,18 @@ const titleString = title === "Home" ? siteName : title + " - " + siteName
 		<meta property="og:title" content={titleString} />
 		{title !== "Home" && <meta property="og:site_name" content="ai03 Design Studio" />}
 		<meta property="og:type" content={isArticle ? "article" : "website"} />
-		<meta property="og:image" content={ogImage ? `https://ai03.com${ogImage}` : "https://ai03.com/images/misc/og-default.jpg"} />
-		<meta property="og:image:alt" content={ogImage ? imageAltFromFilename(ogImage) : "ai03.com cover image"} />
+		<meta property="og:image" content={ogImage ? `https://ai03.com${ogImage}` : "https://ai03.com/images/open-graph/og-default.jpg"} />
+		<meta property="og:image:alt" content={ogAltString} />
 		<meta property="og:url" content={`https://ai03.com${Astro.url.pathname}`} />
 
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={titleString} />
-		<meta name="twitter:image" content={ogImage ? `https://ai03.com${ogImage}` : "https://ai03.com/images/misc/og-default.jpg"} />
-		<meta name="twitter:image:alt" content={ogImage ? imageAltFromFilename(ogImage) : "ai03.com cover image"} />
+		<meta name="twitter:image" content={ogImage ? `https://ai03.com${ogImage}` : "https://ai03.com/images/open-graph/og-default.jpg"} />
+		<meta name="twitter:image:alt" content={ogAltString} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:site" content="@ai03_2725" />
 
-		<meta property="image" content={ogImage ? `https://ai03.com${ogImage}` : "https://ai03.com/images/misc/og-default.jpg"} />
+		<meta property="image" content={ogImage ? `https://ai03.com${ogImage}` : "https://ai03.com/images/open-graph/og-default.jpg"} />
 
 		{isArticle && <meta property="article:author" content="ai03" />}
 		{isArticle && <meta name="twitter:creator" content="@ai03_2725" />}

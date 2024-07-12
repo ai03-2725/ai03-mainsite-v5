@@ -1,11 +1,22 @@
 Todos 
 
 
+Short term
+- Generate JPGs for open graph
+- Migrate build guides and general info
+- Add blog posts about the behind the scenes of the site
+- Spinners on gallery images
+- Missing project pages
+  - Brutal V2 60%
+  - Alps SKCM pusher
+  - Website itself
+  - Software projects
+
+
 
 Long term
 
-- Content
-  - Migrate build guides and general info
+- Content  
   - Rewrite feature parity product pages to retrospective style
   - Revise about pages
   - Revise home page
@@ -19,8 +30,4 @@ Long term
   - Add sortability to blog
   - Add searchability to portfolio
   - Add searchability to site as a whole
-- Missing project pages
-  - Brutal V2 60%
-  - Alps SKCM pusher
-  - Website itself
-  - Software projects
+
