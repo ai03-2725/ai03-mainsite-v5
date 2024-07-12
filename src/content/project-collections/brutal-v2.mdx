@@ -22,8 +22,8 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
 <DefaultLayout title={frontmatter.title} description={frontmatter.slogan} noFooterPadding>
 
   {/* Header */}
-  <div poster="/images/brutal-v2-65/brutal-v2-65-render-side-medium.avif" class="relative h-[90vh] max-h-[100vw]">
-    <video class="w-full h-full absolute object-cover z-0" autoplay muted loop >
+  <div class="relative h-[90vh] max-h-[100vw]">
+    <video poster="/images/brutal-v2-65/brutal-v2-65-render-side-medium.avif" class="w-full h-full absolute object-cover z-0 bg-zinc-800" autoplay muted loop >
       <source src="/resources/brutal-v2/brutal-v2-65-anim-banner-compressed-vp9-29.webm" type="video/webm" />
     </video>
     <div class="absolute text-center w-full text-zinc-100 bottom-0 flex-col justify-center pt-0 pb-24 h-auto hidden md:flex">
