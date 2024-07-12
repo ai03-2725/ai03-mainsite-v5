@@ -9,6 +9,6 @@ Primarily uses [Astro](https://astro.build/) and [Tailwind](https://tailwindcss.
 Exports license data of all used packages to `src/assets/data/PackageLicenses.astro`.  
 Used to populate the `/licenses` page.  
 
-`public/assets/projects/*`
+`public/images/*`  
 Project assets - compressed and optimized images, as well as videos and downloads.  
 Generated from a set of source files using [this compression tool](https://github.com/ai03-2725/batch-avif-resizer-local/tree/main).  
