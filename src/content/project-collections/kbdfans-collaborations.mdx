@@ -14,7 +14,12 @@ import DefaultLayout from '@layouts/DefaultLayout.astro'
 import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
 import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
 
-<DefaultLayout title={frontmatter.title} description={frontmatter.slogan} noFooterPadding>
+<DefaultLayout 
+  title={frontmatter.title} 
+  description={frontmatter.slogan} 
+  ogImage={frontmatter.cover.image}
+  noFooterPadding
+>
 
   <div class="bg-[#A8DCD6] pb-20">
 

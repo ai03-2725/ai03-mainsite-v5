@@ -5,7 +5,6 @@ Todos
 Long term
 
 - Content
-  - Additional SEO
   - Migrate build guides and general info
   - Rewrite feature parity product pages to retrospective style
   - Revise about pages
@@ -15,6 +14,7 @@ Long term
   - Revise non-parity product pages
   - Repair updates page styling
   - Repair downloads page for more elegant loading
+  - Better skeletons and placeholders
 - Functionality
   - Add sortability to blog
   - Add searchability to portfolio

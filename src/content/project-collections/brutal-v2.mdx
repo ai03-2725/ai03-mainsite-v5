@@ -19,7 +19,12 @@ import SimpleButton from '@components/astro/SimpleButton.astro'
 
 {/* Todo: Add Brutal V2 60 */}
 
-<DefaultLayout title={frontmatter.title} description={frontmatter.slogan} noFooterPadding>
+<DefaultLayout 
+  title={frontmatter.title} 
+  description={frontmatter.slogan} 
+  ogImage={frontmatter.cover.image}
+  noFooterPadding
+>
 
   {/* Header */}
   <div class="relative h-[90vh] max-h-[100vw]">

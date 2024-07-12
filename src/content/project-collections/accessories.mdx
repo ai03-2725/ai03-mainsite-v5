@@ -14,7 +14,11 @@ import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
 import ClassicCollectionHeaderBlock from '@components/astro/ClassicCollectionHeaderBlock.astro'
 import ProjectsGrid from '@components/astro/ProjectsGrid.astro'
 
-<DefaultLayout title={frontmatter.title} description={frontmatter.slogan}>
+<DefaultLayout 
+  title={frontmatter.title} 
+  description={frontmatter.slogan}
+  ogImage={frontmatter.cover.image}
+>
 
   <ClassicBlurredHeader src="/images/horizon/horizon-stand-andromeda-rear-cropped-medium.avif" />
 

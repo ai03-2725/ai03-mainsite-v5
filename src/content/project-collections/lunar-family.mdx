@@ -15,7 +15,12 @@ import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
 
 {/* from-[#00000080] */}
 
-<DefaultLayout title={frontmatter.title} description={frontmatter.slogan} noFooterPadding>
+<DefaultLayout 
+  title={frontmatter.title} 
+  description={frontmatter.slogan} 
+  ogImage={frontmatter.cover.image}
+  noFooterPadding
+>
 
   <div class="bg-zinc-900 pb-20">
 

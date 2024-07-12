@@ -25,7 +25,7 @@ const relatedPosts = await getEntries<'blog-posts'>(post.data.relatedPosts)
   title={`${post.data.title}`} 
   description={post.data.description} 
   isArticle
-  ogImage={`https://ai03.com${post.data.cover.image}`}
+  ogImage={post.data.cover.image}
 >
 	<div class="container mx-auto">
 
