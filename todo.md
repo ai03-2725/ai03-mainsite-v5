@@ -1,9 +1,7 @@
 Todos 
 
 Todo
-- Mobile optimizations
 - OpenGraph
-- 301s
 
 Long term
 

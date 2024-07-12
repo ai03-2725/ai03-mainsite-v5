@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "collect-licenses": "node collect-licenses.js > src/assets/data/PackageLicenses.astro"
+    "collect-licenses": "node collect-licenses.js > public/package-licenses"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.5",
@@ -28,11 +28,9 @@
     "@tanstack/react-query": "^5.49.2",
     "astro": "^4.4.1",
     "astro-icon": "^1.1.0",
-    "axios": "^1.7.2",
     "preact": "^10.22.0",
     "react": "npm:@preact/compat",
     "react-circle": "^1.1.1",
-    "react-circular-progressbar": "^2.1.0",
     "react-dom": "npm:@preact/compat",
     "react-infinite-scroll-hook": "^4.1.1",
     "react-markdown": "^9.0.1",

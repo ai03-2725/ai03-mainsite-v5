@@ -22,15 +22,27 @@ const LICENSE_FILE_NAMES = [
 const CUSTOM_LICENSE_URLS = [
   {
     name: "@iconify-json/iconoir",
-    url: "https://github.com/iconoir-icons/iconoir/raw/main/LICENSE",
+    url: "https://raw.githubusercontent.com/iconoir-icons/iconoir/main/LICENSE",
   },
   {
     name: "@iconify-json/ph",
-    url: "https://github.com/phosphor-icons/core/raw/main/LICENSE",
+    url: "https://raw.githubusercontent.com/phosphor-icons/core/main/LICENSE",
+  },
+  {
+    name: "@iconify-icons/ph",
+    url: "https://raw.githubusercontent.com/phosphor-icons/core/main/LICENSE",
   },
   {
     name: "@iconify-json/ri",
     url: "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/License",
+  },
+  {
+    name: "@iconify-icons/ri",
+    url: "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/License",
+  },
+  {
+    name: "rehype-stringify",
+    url: "https://raw.githubusercontent.com/rehypejs/rehype/main/license"
   },
   // {
   //   name: "alpinejs",

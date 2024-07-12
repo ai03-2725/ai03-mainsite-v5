@@ -1,6 +1,15 @@
 ---
+import type { HTMLAttributes } from 'astro/types'
+
+
+interface Props extends HTMLAttributes<'div'> {
+  
+}
+
+const {...attrs} = Astro.props
+
 ---
 
-<div class="text-center">
+<div class={`text-center ${attrs.class || ""}`}>
   <slot />
 </div>

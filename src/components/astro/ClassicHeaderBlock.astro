@@ -11,8 +11,8 @@ interface Props {
 const { title, slogan } = Astro.props;
 ---
 
-<div class="text-center mx-auto container mt-10 mb-16">
-  <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[72px] m-0">{title}</h1>
+<div class="text-center mx-auto container mt-10 mb-16 px-6">
+  <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[48px] !md:text-[64px] lg:!text-[72px] m-0">{title}</h1>
   {slogan && <p class="!font-[450] !text-[18px] mt-3 mb-8">{slogan}</p>}
   <slot />
 </div>

@@ -25,12 +25,12 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
 
   <ClassicBlurredHeader src={frontmatter.cover.image} />
 
-  <div class="container mx-auto pt-16 pb-20 text-center">
+  <div class="container mx-auto pt-16 pb-20 text-center px-6">
 
-    <div class="flex flex-row items-center justify-center pb-4">
-      <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[64px] m-0">ALTAIR</h1>
+    <div class="flex flex-row flex-wrap items-center justify-center pb-4">
+      <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] text-[52px] lg:text-[64px] m-0">ALTAIR</h1>
       <p class="text-lg ps-4 pe-3">and</p>
-      <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] !text-[64px] m-0">ALTAIR-X</h1>
+      <h1 class="!font-['M_PLUS_Rounded_1c'] !font-[300] text-[52px] lg:text-[64px] m-0">ALTAIR-X</h1>
       
     </div>
 
@@ -53,7 +53,7 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
   </div>
 
   {/* Layout benefits header */}
-  <div class="text-center mt-20 mb-20">
+  <div class="text-center mt-20 mb-20 px-6">
     <DefaultMarkdownRenderer>
       ## Third Time's the Charm
       Altair's key layout is the third ergonomic layout iteration by ai03, having been revised after heavy real-world testing and years of use.  
@@ -65,19 +65,19 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
   <div class="flex flex-col gap-12 container mx-auto mb-24">
 
     
-    <HorizontalStackBlock src="/images/altair/altair-ic-layout-compare-medium.avif" imageClasses="rounded-[3.75px] object-contain aspect-[1.875] bg-[#EEEEEE]" ratio={5}>
+    <HorizontalStackBlock src="/images/altair/altair-ic-layout-compare-medium.avif" imageClasses="min-h-full rounded-[3.75px] object-contain aspect-[1.875] bg-[#EEEEEE]" ratio={5}>
       <h3 class="pb-1"> Ease of learning.</h3>
       <p>While visually unique, Altair closely matches a typical keyboard in general key positions.</p>
       <p>Care has been taken to make sure that anyone can learn the layout quickly, while also being able to jump between Altair and other keyboard layouts when necessary.</p>
     </HorizontalStackBlock>
 
-    <HorizontalStackBlock src="/images/altair/altair-ic-hand-movement-medium.png" imageClasses="rounded-[3.75px] object-contain aspect-[1.875] bg-[#EEEEEE]" ratio={5}>
+    <HorizontalStackBlock src="/images/altair/altair-ic-hand-movement-medium.png" imageClasses="min-h-full rounded-[3.75px] object-contain aspect-[1.875] bg-[#EEEEEE]" ratio={5}>
       <h3 class="pb-1">Typing Excellence.</h3>
       <p>Altair's key placement matches natural finger movement ranges closely, minimizing both finger and hand-movement during use.</p>
       <p>This in return minimizes typing effort and strain, while also contributing to higher possible typing accuracy and speeds.</p>
     </HorizontalStackBlock>
 
-    <HorizontalStackBlock src="/images/altair/altair-ic-layout-features-medium.png" imageClasses="rounded-[3.75px] object-contain aspect-[1.875] bg-[#EEEEEE]" ratio={5}>
+    <HorizontalStackBlock src="/images/altair/altair-ic-layout-features-medium.png" imageClasses="min-h-full rounded-[3.75px] object-contain aspect-[1.875] bg-[#EEEEEE]" ratio={5}>
       <h3 class="pb-1">The Ergo Advantage.</h3>
       <p>Altair's layer switching keys are conveniently placed right next to the spacebars, allowing for convenient layer switching with minimal finger movement.</p>
       <p>Taking full advantage of Altair's split design, an extra column has been added to the inner side of the G/H split - map this to your favorite macros for convenient access, or use them as dedicated bracket keys for programming efficiency.</p>
@@ -88,26 +88,26 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
 
   {/* Board design */}
   <div class="bg-zinc-900 flex flex-col gap-8 py-24">
-    <DefaultMarkdownRenderer invert extraClasses="text-center pb-2">
+    <DefaultMarkdownRenderer invert extraClasses="text-center pb-2 px-6">
       <h2>Form Matches Function</h2>
     </DefaultMarkdownRenderer>
     <div class="flex flex-col items-center text-center">
       <SimpleImageV2 src="/images/altair/altair-pastel-bottom-top-pair-medium.avif" class="w-1/2 rounded-[3.75px]" />
-      <DefaultMarkdownRenderer invert extraClasses="pt-8">
+      <DefaultMarkdownRenderer invert extraClasses="pt-8 px-6">
       Carefully drawn curves wrap around the keys, integrating the ergonomic key layout into part of the visuals.
       </DefaultMarkdownRenderer>
       <div class="grid grid-cols-1 md:grid-cols-2 pt-12">
         <SimpleImageV2 src="/images/altair/altair-pastel-one-standing-medium.avif" />
         <SimpleImageV2 src="/images/altair/altair-pastel-weight-composition-medium.avif" />
       </div>
-      <DefaultMarkdownRenderer invert extraClasses="pt-8">
+      <DefaultMarkdownRenderer invert extraClasses="pt-8 px-6">
       A unique mix of soft organic curves, geometric arcs, and bold straight edges create a dynamic aesthetic reaching far beyond the board's compact size.
       </DefaultMarkdownRenderer>
       <div class="grid grid-cols-1 md:grid-cols-2 pt-12">
         <SimpleImageV2 src="/images/altair/altair-pastel-bottom-pair-medium.avif" />
         <SimpleImageV2 src="/images/altair/altair-pastel-bottom-side-medium.avif" />
       </div>
-      <DefaultMarkdownRenderer invert extraClasses="pt-8">
+      <DefaultMarkdownRenderer invert extraClasses="pt-8 px-6">
       A bottom emblem weight adds the final visual touch, while also serving as an acoustic damper and a crucial mass to anchor the compact board to the desk.
       </DefaultMarkdownRenderer>
       <div class="grid grid-cols-1 md:grid-cols-2 pt-12">
@@ -119,8 +119,8 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
   </div>
 
   {/* Internals */}
-  <div class="flex flex-col gap-16 pt-20 pb-24">
-    <DefaultMarkdownRenderer extraClasses="text-center pb-6">
+  <div class="flex flex-col gap-16 pt-16 lg:pt-20 pb-16 lg:pb-24">
+    <DefaultMarkdownRenderer extraClasses="text-center pb-2 lg:pb-6 px-6">
       <h2 class="mt-0 mb-4">Tilt and Absorb</h2>
       Altair features a unique PCB point-mount system which uses the circuit board as a key part of its internal structure.
     </DefaultMarkdownRenderer>
@@ -128,7 +128,7 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
       <p>Small gasket columns hold the PCB from below around the rims, allowing for effective vibration and impact absorption with no "rigid spots" close to mounting points.</p>
       <p>Chosen after testing various materials, the specific material and compression ratio ensures a fine balance between comfort and reliable feedback which never devolves into mushiness.</p>
     </HorizontalStackBlock>
-    <HorizontalStackBlock src="/images/altair/altair-ic-gaskets-medium.avif" reverse>
+    <HorizontalStackBlock src="/images/altair/altair-ic-gaskets-medium.avif" class="lg:text-end" reverse>
       <p>All gasket columns can independently compress, allowing for the entire internals to tilt in all directions to absorb and disperse impacts.</p>
       <p>Combined with the ergonomic key layout, Altair ensures all-day typing comfort.</p>
     </HorizontalStackBlock>
@@ -141,21 +141,21 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
 
   {/* Engineering */}
   <div class="bg-[#FFF4FB]">
-    <div class="flex flex-col gap-8 pt-20 pb-24 container mx-auto">
-      <DefaultMarkdownRenderer extraClasses="text-center">
+    <div class="flex flex-col gap-8 pt-16 lg:pt-20 pb-16 lg:pb-24 container mx-auto">
+      <DefaultMarkdownRenderer extraClasses="text-center px-6">
         <h2 class="mt-0">Sculpting and Engineering In Tandem</h2>
       </DefaultMarkdownRenderer>
-      <div class="flex flex-row justify-center mt-8">
-        <SimpleImageV2 src="/images/altair/altair-pastel-pcb-db-medium.avif" class="w-1/2 rounded-[3.75px]" />
+      <div class="flex flex-row justify-center mt-4 lg:mt-8">
+        <SimpleImageV2 src="/images/altair/altair-pastel-pcb-db-medium.avif" class="lg:w-1/2 md:rounded-[3.75px]" />
       </div>
-      <DefaultMarkdownRenderer extraClasses="text-center">
+      <DefaultMarkdownRenderer extraClasses="md:text-center px-6">
         <p class="mt-0 mb-2">Altair is truly tailor-made - a custom case, custom PCBs, and even custom daughterboards work in perfect coordination to make the unique layout possible without compromising function or visuals.</p>
         <p class="m-0">The PCB edge bends and stairsteps to perfectly match the case, and the daughterboard precisely angles its USB connectors to match the rear curvature while minimizing interior cutouts.</p>
       </DefaultMarkdownRenderer>
       <div class="flex flex-row justify-center mt-8">
-        <SimpleImageV2 src="/images/altair/altair-render-5row-rosegold-alt-medium.avif" class="w-1/2 rounded-[3.75px]" />
+        <SimpleImageV2 src="/images/altair/altair-render-5row-rosegold-alt-medium.avif" class="lg:w-1/2 md:rounded-[3.75px]" />
       </div>
-      <DefaultMarkdownRenderer extraClasses="text-center">
+      <DefaultMarkdownRenderer extraClasses="md:text-center px-6">
         <p class="mt-0 mb-2">Altair cuts no corners with high-end tuning and optimizations - with its seven-degree incline and a front ledge that drops down as low as 16.7mm at its tip, the keyboard remains comfortable to use even without assistance of a wristrest.</p>
       </DefaultMarkdownRenderer>
     </div>
@@ -164,9 +164,9 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
 
   {/* Engineering */}
   <div class="">
-    <div class="flex flex-col gap-12 pt-20 pb-24 container mx-auto">
+    <div class="flex flex-col gap-2 lg:gap-12 pt-16 lg:pt-20 pb-16 lg:pb-24 container mx-auto">
       <DefaultMarkdownRenderer extraClasses="text-center">
-        <h2 class="mt-0 mb-2">The Power of Two</h2>
+        <h2 class="mt-0 mb-8 lg:mb-2">The Power of Two</h2>
       </DefaultMarkdownRenderer>
       <HorizontalStackBlock src="/images/altair/altair-deskmat-5row-pair-medium.avif" rounded ratio={5}>
         <div>
@@ -176,7 +176,7 @@ import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
         </div>
       </HorizontalStackBlock>
       <HorizontalStackBlock src="/images/altair/altair-deskmat-side-medium.avif" reverse rounded ratio={5}>
-        <div>
+        <div class="lg:text-end">
           <h4 class="pb-2">Freedom to detach.</h4>
           <p>Ever wanted a premium single-handed keyboard for gaming, artwork, or macropad use?</p>
           <p>Altair can take on the task by leaving the split cable disconnected - since each half is a fully functional keyboard, plug in just one half to free up keyboard space on your desk.</p>
