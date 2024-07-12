@@ -8,21 +8,16 @@ cover:
 releaseDate: 2022-04-25
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import { Carousel } from '@components/react/Carousel'
-import Center from '@components/astro/Center.astro'
-import ClassicHeaderBlock from '@components/astro/ClassicHeaderBlock.astro'
-import ClassicBlurredHeader from '@components/astro/ClassicBlurredHeader.astro'
-import ClassicCarouselBlock from '@components/astro/ClassicCarouselBlock.astro'
-import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro'
-import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
 import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
-import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
-import SimpleImage from '@components/astro/SimpleImage.astro'
 import SimpleImageV2 from '@components/astro/SimpleImageV2.astro'
 import HorizontalStackBlock from '@components/astro/HorizontalStackBlock.astro'
 import SimpleButton from '@components/astro/SimpleButton.astro'
 
-<DefaultLayout title={frontmatter.title}>
+<DefaultLayout 
+  title={frontmatter.title} 
+  description={frontmatter.slogan}
+  preloadMPlus300
+>
 
   <div class="relative w-full">
     <SimpleImageV2 src="/images/brutal-v2-65/brutal-v2-65-top-down-banner-large.avif" class="w-full h-full object-cover" />

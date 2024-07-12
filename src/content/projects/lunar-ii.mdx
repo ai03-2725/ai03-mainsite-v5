@@ -17,9 +17,12 @@ import ClassicImageTextBlock from '@components/astro/ClassicImageTextBlock.astro
 import ClassicSpecsTable from '@components/astro/ClassicSpecsTable.astro'
 import ClassicResourcesTable from '@components/astro/ClassicResourcesTable.astro'
 import DefaultMarkdownRenderer from '@components/astro/DefaultMarkdownRenderer.astro'
-import SimpleImage from '@components/astro/SimpleImage.astro'
 
-<DefaultLayout title={frontmatter.title}>
+<DefaultLayout 
+  title={frontmatter.title} 
+  description={frontmatter.slogan}
+  preloadMPlus300
+>
 
   <ClassicBlurredHeader src={frontmatter.cover.image} />
 
