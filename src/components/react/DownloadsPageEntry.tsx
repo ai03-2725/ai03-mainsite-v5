@@ -130,8 +130,8 @@ export const DownloadsPageEntry: React.FC<{
         <div class="absolute w-full h-full bg-zinc-500">
           <img src={project.src} alt={`Cover image for ${project.title}`} loading="lazy" class="object-cover w-full h-full" />
         </div>
-        <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-6 flex flex-col-reverse">
-          <h2 class="text-3xl font-[335] text-white">{project.title}</h2>
+        <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-4 md:p-5 lg:p-6 flex flex-col-reverse">
+          <h2 class="text-2xl font-[500] text-white">{project.title}</h2>
         </div>
         <a href={`/projects/${project.slug}`} class="w-full h-full absolute" />
         
@@ -144,7 +144,6 @@ export const DownloadsPageEntry: React.FC<{
           <p>Error.</p> 
         }
         {isLoading || !data && 
-          // TODO
           <div class="w-full h-full flex flex-row justify-center items-center">
             <div>
               <Spinner size={36} width={3} />

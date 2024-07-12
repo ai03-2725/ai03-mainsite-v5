@@ -112,7 +112,7 @@ export const SearchableInfiniteScroll: React.FC<{
           <input 
             autoFocus
             onChange={(e) => setSearchTerm((e.target as HTMLInputElement).value)} 
-            class="outline outline-[1px] rounded-[2.375px] outline-gray-300 text-lg p-2 w-1/2 text-center" 
+            class="outline outline-[1px] rounded-[2.375px] outline-gray-300 text-lg p-2 w-9/12 md:w-1/2 text-center" 
             placeholder="Search for a project" 
           />
 
