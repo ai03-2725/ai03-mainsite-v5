@@ -1,0 +1,21 @@
+---
+import SimpleButton from '@components/astro/SimpleButton.astro';
+import Layout from '@layouts/DefaultLayout.astro';
+---
+
+<Layout 
+	title="404 Not Found" 
+	description="A link to a nonexistent page." 
+	noFooterPadding 
+>
+
+  <div class="pt-16 md:pt-20 lg:pt-24 flex flex-col justify-center items-center text-center gap-2">
+
+      <h1 class="text-2xl md:text-3xl lg:text-4xl">404</h1>
+      <p>Page not found.</p>
+
+      <SimpleButton label="Home" url="/" extraClasses='mt-7' extern={false} />
+
+  </div>
+
+</Layout>

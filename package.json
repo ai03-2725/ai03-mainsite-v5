@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check --minimumSeverity warning && astro build && node process-html.mjs",
+    "build": "astro check --minimumSeverity warning && astro build && node process-html.mjs && node repair-sitemap.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "collect-licenses": "node collect-licenses.js > public/package-licenses"
@@ -31,9 +31,9 @@
     "globby": "^14.0.2",
     "html-minifier": "^4.0.0",
     "preact": "^10.22.0",
-    "react": "npm:@preact/compat",
+    "react": "npm:@preact/compat@^17.1.2",
     "react-circle": "^1.1.1",
-    "react-dom": "npm:@preact/compat",
+    "react-dom": "npm:@preact/compat@^17.1.2",
     "react-infinite-scroll-hook": "^4.1.1",
     "react-markdown": "^9.0.1",
     "rehype-rewrite": "^4.0.2",
