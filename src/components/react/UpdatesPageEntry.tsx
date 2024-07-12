@@ -5,7 +5,6 @@ import type { APIUpdateEntry } from '@pages/api/updates/[projectId]';
 import { CollapseDiv } from '@components/react/CollapseDiv.tsx'
 import { Spinner } from './Spinner';
 import type { MinimumProjectsIndex } from './SearchableProjectInfiniteScrollWrapper';
-import { UpdateLogEntryRenderer } from './UpdateLogEntryRenderer';
 import { statusToDisplayText } from "@scripts/util";
 import Markdown from 'react-markdown'
 import { DefaultMarkdownRenderer } from './DefaultMarkdownRenderer';

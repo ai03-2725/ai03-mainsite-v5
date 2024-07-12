@@ -33,8 +33,6 @@ export const Spinner: React.FC<{
   fgColor
 }) => {
 
-  const sizeString = `${size}px`
-
   return (
 
     <>

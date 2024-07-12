@@ -1,13 +1,8 @@
-import type { CollectionEntry } from 'astro:content';
 import type React from 'preact/compat';
-import { cloneElement, useEffect, useMemo, useRef, useState } from 'preact/compat';
-import { UpdatesPageEntry } from './UpdatesPageEntry';
+import { useEffect, useMemo, useRef, useState } from 'preact/compat';
 import useInfiniteScroll from 'react-infinite-scroll-hook';
 import { Spinner } from './Spinner';
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'

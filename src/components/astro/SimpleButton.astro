@@ -1,5 +1,4 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
 
 interface Props {
   label: string;
@@ -18,7 +17,6 @@ if (extern === undefined && url && url.charAt(0) === "#") {
 }
 
 let buttonDisabled = disabled ? true : ( url ? false : true )
-
 
 ---
 

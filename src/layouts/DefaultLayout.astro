@@ -31,7 +31,7 @@ const {
 const siteName = "ai03 Design Studio"
 
 if (!description) {
-	console.error(`Path ${Astro.url.pathname} doesn't have a description!`)
+	throw new Error(`Path ${Astro.url.pathname} doesn't have a description!`)
 }
 
 const titleString = title === "Home" ? siteName : title + " - " + siteName
