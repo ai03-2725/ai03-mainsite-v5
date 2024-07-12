@@ -70,13 +70,13 @@ dependencies:
     specifier: ^10.22.0
     version: 10.22.0
   react:
-    specifier: npm:@preact/compat@^17.1.2
+    specifier: npm:@preact/compat
     version: /@preact/compat@17.1.2(preact@10.22.0)
   react-circle:
     specifier: ^1.1.1
     version: 1.1.1(@preact/compat@17.1.2)
   react-dom:
-    specifier: npm:@preact/compat@^17.1.2
+    specifier: npm:@preact/compat
     version: /@preact/compat@17.1.2(preact@10.22.0)
   react-infinite-scroll-hook:
     specifier: ^4.1.1
@@ -5654,7 +5654,7 @@ packages:
       queue-tick: 1.0.1
       text-decoder: 1.1.1
     optionalDependencies:
-      bare-events: 2.2.0
+      bare-events: 2.4.2
     dev: false
     optional: true
 
