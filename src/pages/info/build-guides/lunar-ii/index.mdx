@@ -1,0 +1,77 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Lunar II"
+  page={1}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/lunar-ii/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/lunar-ii/2"},
+    {label: "Assembling the board", url: "/info/build-guides/lunar-ii/3"},
+    {label: "Keymap editing and closing words", url: "/info/build-guides/lunar-ii/4"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+    <SimpleImageV2 src="/images/lunar-ii/lunar-ii-proto-side-rear-left-medium.avif" class="w-full mx-auto" />
+    <SimpleImageV2 src="/images/build-guides/lunar-ii/lunar-ii-build-guide-header.png" class="max-w-[400px] mx-auto" />
+
+    ## Thank you for your purchase!  
+    We've done our best to make a board fit for both novice and experienced Alps users alike.  
+    To get the best out of it, it is important to assemble it correctly.  
+    This build guide outlines the exact steps to take to get it built.  
+      
+    **Warning:** Damage, imperfections, etc. due to disregarding the build guide instructions cannot be accounted for. We won't be able to refund or replace parts if you decide to build it by gut instinct and mess up somewhere.  
+      
+    ## What's in the box 
+    - The Lunar II case, plate, and PCB,
+    - A set of rubber feet,
+    - A set of O-shaped gaskets,
+    - Torx keys for the case screws (T6 size),
+    - Torx keys for the weight screws, (T10 size),
+    - The solenoids and its accessories,
+    - Packaging material.  
+      
+    If anything is missing, please let us know immediately and we'll supply it as soon as possible.
+
+
+    ## Parts and tools necessary for building
+    - Enough switches to cover your preferred layout, tested to function,
+    - Stabilizers for the larger keys,
+    - A set of AEK or AEKII keycaps,
+    - A USB-C cable,
+    - Soldering equipment.
+
+    ## Tools that aren't required but are (extremely) useful
+    - A pair of tweezers,
+    - Soldering helping hands,
+    - Some sort of desoldering equipment in case mistakes are made.
+
+    ## Before we begin
+    Just a few quick heads up regarding some things you should know.
+
+    - Refrain from wiping down the board with strong chemicals such as isopropyl alcohol, especially for the weight. This will ruin the matte coat and leave you with a semi-glossy, tarnishing, tacky mess.
+    - Both the case and USB port have extensive ESD protection circuitry; however, they are not fail-safes (e.g. it isn't ideal to set a house on fire even if it has a powerful sprinkler system). Take care to discharge any excess static buildup before use, especially during building or disassembling when the PCB circuitry is exposed.
+    - Do not overtighten the screws. Overtightening risks destroying the board as well as causing acoustic problems such as excessive pinging.
+    - Read through the build guide once before actually carrying through with it, so you have a good idea of what’s upcoming at the next step. You can navigate the book using the panel on the left (large screens) or in the info tab (mobile), or use the link at the end of each part.
+
+    <br />
+
+    Ready?  
+    Let's begin.
+
+    <SimpleButtonV2 href="/info/build-guides/lunar-ii/2">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

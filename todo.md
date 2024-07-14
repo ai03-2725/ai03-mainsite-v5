@@ -2,6 +2,7 @@ Todos
 
 
 Short term
+
 - Migrate build guides and general info
 - Add blog posts about the behind the scenes of the site
 - Spinners on gallery images
@@ -11,6 +12,17 @@ Short term
   - Website itself
   - Software projects
 
+
+Infobase migration plans
+- Landing page
+  - FAQ
+    - Searchable preact page based on some sort of dataset
+  - General info
+    - One-off MDX files
+  - Build guides
+    - Content collection or static files?
+    - While it's shaped like queryable and programmatically displayable data, there's only a small amount, and it's weirdly nested (project/pages)
+    - May as well just make individual MDX for the time being, and migrate to content collection only if necessary
 
 
 Long term

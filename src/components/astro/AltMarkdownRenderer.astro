@@ -1,0 +1,44 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  invert?: boolean | undefined;
+  extraClasses?: string | undefined;
+}
+
+const { 
+  invert, 
+  extraClasses, 
+  ...attrs
+} = Astro.props;
+
+---
+
+<div class={`prose w-full max-w-full
+  prose-h1:text-4xl
+  prose-h1:font-[750]
+  prose-h2:text-3xl
+  prose-h2:font-[675]
+  prose-h3:text-2xl
+  prose-h3:font-[600]
+  prose-h4:text-xl
+  prose-h4:font-[500]
+  prose-h5:text-lg
+  prose-h5:font-[500]
+  prose-h6:text-md
+  prose-h6:font-[500]
+  prose-img:w-full
+  prose-img:md:w-5/6
+  prose-img:lg:w-3/4
+  prose-img:xl:w-2/3
+  prose-img:2xl:w-1/2
+  prose-img:overflow-hidden
+  prose-img:rounded-[3.75px]
+  prose-a:underline 
+  ${invert && "prose-invert"} 
+  ${extraClasses}
+`} 
+  {...attrs}
+>
+  <slot />
+</div>

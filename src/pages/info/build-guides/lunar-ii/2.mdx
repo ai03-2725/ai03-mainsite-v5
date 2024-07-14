@@ -1,0 +1,47 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Lunar II"
+  page={2}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/lunar-ii/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/lunar-ii/2"},
+    {label: "Assembling the board", url: "/info/build-guides/lunar-ii/3"},
+    {label: "Keymap editing and closing words", url: "/info/build-guides/lunar-ii/4"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+    ## Pre-build preparations
+
+    Before assembling the board, there are a few things to check.
+
+    1. If not already done, double-check that all the contents of the package listed in part 1 are actually included in the box. It's a nightmare if you get partway through the build and realize a part is missing.
+
+    1. Plug in the PCB, and verify that it detects as a device.
+    Make sure there are no broken-off components rattling around in the bag.
+
+    1. Check for any major external flaws that would disqualify the board as an A-stock unit (if you have purchased a regular unit rather than B-stock).  
+      The above are important because replacement warranty of the board covers only units in unbuilt condition; if you spot any issues, please contact us for a replacement before building the board. 
+
+    1. In addition, test every single switch you are using for this build, and verify that they conduct if and only if pressed using a multimeter or similar.  
+      It is an absolute nightmare to have to desolder the entire board just to replace one faulty switch, and excess heat is known to damage these vintage switches.
+
+    <br />
+    Once all are checked and ready, it's time to build.
+
+    <SimpleButtonV2 href="/info/build-guides/lunar-ii/3">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
