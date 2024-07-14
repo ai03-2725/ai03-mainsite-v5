@@ -1,9 +1,9 @@
 export const redirects: [string, string][] = [
   // Project-Specific
-  ["andromanual", "https://info.ai03.com/books/andromeda-build-guide"],
-  ["lunar2guide", "https://info.ai03.com/books/lunar-ii-build-guide"],
-  ["polarismanual", "https://info.ai03.com/books/polaris-build-guide"],
-  ["vegamanual", "https://info.ai03.com/books/vega-build-guide"],
+  ["andromanual", "https://ai03.com/info/build-guides/andromeda/"],
+  ["lunar2guide", "https://ai03.com/info/build-guides/lunar-ii/"],
+  ["polarismanual", "https://ai03.com/info/build-guides/polaris/"],
+  ["vegamanual", "https://ai03.com/info/build-guides/vega/"],
 
   // Generic
   ["contactform", "https://ai03.com/contact"],
