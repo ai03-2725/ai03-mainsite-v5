@@ -1,0 +1,118 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import GenericGuideLayout from '@layouts/GenericGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<GenericGuideLayout 
+	title="How to Keyboard"
+  description="The keyboard newcomer guide."
+  page={4}
+  pages={[
+    {label: "This mysterious custom keyboard thing", url: "/info/keyboard-newcomer-guides/"},
+    {label: "A case study", url: "/info/keyboard-newcomer-guides/2"},
+    {label: "Making the switch", url: "/info/keyboard-newcomer-guides/3"},
+    {label: "The capstone", url: "/info/keyboard-newcomer-guides/4"},
+    {label: "The hunt for endgame", url: "/info/keyboard-newcomer-guides/5"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+    
+    ## The capstone
+    So you've decided on a pretty case and some nice switches, and now need the final piece of the puzzle - the **keycaps**.  
+
+    These are the actual key bits that your fingers touch during typing, and are a major factor in how the keyboard feels, looks, and sounds. 
+    In general they come in groups called **keysets**.
+
+    ### Expensive plastics
+
+    Some keysets might give you sticker shock when first looking around - some keysets can exceed 100 dollars just for small parts of plastic.  
+    This comes down to their manufacturing method and design - let's take a look into each bit.
+
+    ![keyset](/images/epbt-modernja/epbt-modernja-aligned-diagonal-leftmacroview-medium.avif)
+
+    
+
+    ### Making a legend
+    **Legends** refer to the printed letters and characters on the keycaps. These are printed onto the surface of the keycaps in a variety of methods described below:
+
+    The not-so-enthusiast-grade:
+    - **Laser-engraved** - A laser is used to blast into the keycap, etching the legends into place. Usually has a burnt-out look that is far from photogenic, and is usually tangible upon touch.
+    - **Pad-printed** - The legends are printed onto the surface of the keycap. These are also tangible upon touch, and also tend to scrape and fade off from extended use.
+    
+    The enthusiast grade:
+    - Dye-sublimation (**dye-sub**) - Ink is heat-transferred deep into the plastic, well beyond the depth that can wear off from regular use. These sharp prints are very permanent, and can last decades easily without much issue.  
+      Since lighter ink can't be printed onto darker base plastic, this has its limitations in what designs can be made.  
+    - **Double-shot** - One layer of plastic is cast to form the base of the keycap, and another layer of plastic is injected into it to “form” the legends.  
+      This is also a very durable method of manufacture, and has no color restrictions save for the colors that can be made with the plastics themselves.
+    
+    In this guide, we'll focus on dyesub and doubleshot as the two major options - after all, you don't want to ruin a dialed-in keyboard build with a cheap surface to type on.  
+
+    ### A material world
+    Two main plastics are commonly used in the world of keycaps: 
+
+    - **ABS** - Easy to form, and tends to be brighter in tones
+      It tends to become shiny/polished with heavy use, and is weak against UV light and turns yellow over time when heavily exposed.  
+      Commonly used for double-shot.
+    - **PBT** - Difficult to form, and tends to be duller in colors.
+      It resists becoming shiny with heavy use, and is yellowing-resistant.
+      Commonly used for dye-sub.
+
+    ![side profile](/images/guides/newcomer-guide/vega-side.jpg)
+
+    ### The sculpt
+    In the custom keyboard realm, **keycap profiles** usually refers to the physical shape and sculpt of the keycaps.  
+    Keycaps come in various shapes and sizes, but are generally categorized by these criteria:
+
+    - **Sculpted or Uniform.**  
+      Sculpted keysets have a different key shape per-row like in the image above, fitting closely to the movement of the fingers.  
+      Uniform keysets have an identical shape for each row of keys.  
+
+    - **Cylindrical or Spherical.**  
+      Cylindrical keys are the classic typical kind, with a horizontal "scoop" that looks like one carved a cylinder out of the top of the key.
+      Spherical keys are round, with a "dish" that looks like one carved a sphere out of the top of the key.
+
+    - **Tall or Short** (or somewhere in between).  
+      Some key profiles tend to be very tall, whereas others sit more low-profile.
+      
+
+    Common key profiles include the following:
+    - OEM - The most generic of them all, the sculpted cylindricals found on the mass produced keyboards of the world.
+    - Cherry - The classic Cherry profile, which is similar to OEM but sits a bit thinner with more fine-tuned angles.
+      There's a reason why Cherry profile is so vastly popular in the world of custom keyboards - I recommend buying one and giving it a shot.  
+    - DSA and SA - Classic spherical profiles of varying sculpts and heights.  
+
+    When I originally wrote this guide in 2020, there were only a handful of profiles and it wasn't much issue listing them all; nowadays there are so many profiles with new ones coming out so frequently that I recommend looking around for what's available.  
+
+
+    ### The other sculpt
+    It's possible to go beyond these profiles to an extreme degree.  
+    Such is the world of hand-sculpted, hand-painted **artisan keycaps**, in which each cap is an art piece upon your keyboard.  
+    
+    These can be very exclusive and expensive, requiring first getting through a raffle then costing hundreds or thousands of dollars each.  
+    For your very end-game keyboard build, you may wish to crown it with a sculpted keycap of your choice.
+
+    
+    ### Making it fit
+    One note is that different keysets come with different key contents - for example, one set might not have every single exact spacebar length in the world.  
+    When buying a keyset, compare the kit contents to your keyboard layout, and make sure that the set contains all the keys needed to cover it.  
+    
+    This was very problematic when I wrote the guide back in 2020; nowadays in 2024, keyset kitting has improved to the point where most keysets can cover most keyboards.  
+
+    
+
+    Now you are ready for the final section.
+
+    <SimpleButtonV2 href="/info/keyboard-newcomer-guides/5">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</GenericGuideLayout>
+
+

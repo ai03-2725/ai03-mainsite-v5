@@ -1,0 +1,64 @@
+---
+
+import DefaultLayout from "./DefaultLayout.astro"
+
+interface Props {
+	title: string;
+	description: string;
+	page: number;
+	pages: {label: string, url: string}[];
+}
+
+const { 
+	title,
+	description,
+	page,
+	pages
+} = Astro.props;
+
+---
+
+<DefaultLayout
+	title={`${title} - Page ${page}`}
+	description={description}
+	isArticle
+>
+
+
+	<div class="flex flex-col lg:flex-row">
+
+		<!-- Table of contents -->
+		<div class="w-full lg:w-1/3 xl:w-1/4 p-8">
+
+			<div class="bg-zinc-100 flex flex-col p-6 lg:sticky top-8 rounded-[3.75px]">
+				<p class="text-sm text-zinc-600">{title}</p>
+				<h4 class="font-[525] text-xl pt-0.5 pb-9">Pages</h4>
+				<div class="flex flex-col gap-4">
+					{pages.map(pagesEntry => {
+						if (pagesEntry.url === Astro.url.pathname) {
+							return <p class="font-[600]">⭢ {pagesEntry.label}</p>
+						} else {
+							return <a href={pagesEntry.url} class="hover:underline">{pagesEntry.label}</a>
+						}
+					})}
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Markdown content -->
+		<div class="w-full lg:w-2/3 xl:w-3/4 ps-6 pe-6 lg:ps-16 lg:pe-24">
+
+			<!-- Header title -->
+			<div class="w-full text-center pt-16 pb-14">
+				<h1 class="text-[32px] lg:text-[38px] font-[575]">{title} - Page {page}</h1>
+			</div>
+
+			<!-- Content -->
+			<slot />
+
+		</div>
+
+	</div>
+
+</DefaultLayout>
