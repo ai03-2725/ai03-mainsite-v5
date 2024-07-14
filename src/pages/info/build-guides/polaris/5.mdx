@@ -1,0 +1,60 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Polaris"
+  page={5}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/polaris/"},
+    {label: "Preparing the PCB", url: "/info/build-guides/polaris/2"},
+    {label: "Preparing the case", url: "/info/build-guides/polaris/3"},
+    {label: "Installing switches and stabilizers", url: "/info/build-guides/polaris/4"},
+    {label: "Putting it all together", url: "/info/build-guides/polaris/5"},
+    {label: "Configuring the keymap", url: "/info/build-guides/polaris/6"},
+    {label: "Further tuning, support, and feedback", url: "/info/build-guides/polaris/7"},
+    
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Putting it all together
+
+    1. Insert the switch-plate-PCB assembly into the upper case half, so that the vertical gaskets installed onto the upper case half hold the plate in place from the sides.
+      Be careful not to force the assembly in, for this can tear the vertical gaskets off the top case half.
+      ![Internals install](/images/build-guides/polaris/polaris-build-guide-5-1.png)
+
+    2. Carefully insert the bottom case half. Screw the case halves together with the eight small case screws using the smaller hex key.
+      ![Bottom install](/images/build-guides/polaris/polaris-build-guide-5-2.png)
+
+    3. Carefully insert the weight. Screw the weight into place with the four weight screws of your preferred color using the larger hex key.
+      ![Weight install](/images/build-guides/polaris/polaris-build-guide-5-3.png)
+
+    4. Set the keyboard upright, and verify that everything is in place. Install keycaps.
+      ![Keycaps install](/images/build-guides/polaris/polaris-build-guide-5-4.png)
+
+    5. Give it a quick typing. Take the weight and lid off again, and this time insert the sub-PCB foam layer and reassemble. Go with whichever configuration you prefer for feel and sound.
+      ![Assembly](/images/build-guides/polaris/polaris-build-guide-5-5.png)
+
+    6. Connect the board to a PC via USB-C cable, and verify that keystrokes are sent.
+      You've now assembled a Polaris. Congratulations!
+
+    <br />
+    
+    The board is now ready for keymap editing.
+
+    <SimpleButtonV2 href="/info/build-guides/polaris/6">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+
