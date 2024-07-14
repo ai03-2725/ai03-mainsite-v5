@@ -14,6 +14,7 @@ export const DOMAIN = 'https://ai03.com';
 // https://astro.build/config
 export default defineConfig({
   site: DOMAIN,
+  trailingSlash: "always",
   integrations: [
     tailwind(), 
     icon(), 
