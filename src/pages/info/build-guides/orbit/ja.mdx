@@ -1,0 +1,48 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Orbit"
+  page={2}
+  pages={[
+    {label: "English", url: "/info/build-guides/orbit/"},
+    {label: "Japanese", url: "/info/build-guides/orbit/ja/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ご購入ありがとうございます。
+
+    Orbitの組み立て方
+
+    1. ケースとプレートを分解します。
+    2. 使用する場合、PCBにスタビライザーを設置します。（縦型2Uキーを使用する場合のみ）
+    3. プレートへ角のスイッチを挿入します。
+    4. ③のスイッチにPCBを合わせ、合体させます。
+    5. 残りのスイッチをプレートへ挿入します。
+    6. スイッチがPCBへ完全に挿入されていることを確認します。（間に大きな隙間がある場合、打鍵音に影響します。）
+    7. スイッチをはんだ付けします。
+    8. インジケーター用LEDをPCBへ送入します。
+    9. プレートをケースの上半分に固定し、逆さに置きます。
+    10. インジケーター用LEDをケース側の穴に入れ、はんだ付けで固定します。
+    11. ケースをねじ止めし、ゴム足を付けます。
+    12. ①～⑪をもう片手分行います。
+    
+    ファームウエアは一般的なQMKの書き込み方法を使用します。ソースはqmk_firmware/keyboards/ai03/orbitに存在します。両手分を別々に書き込む必要があります。
+
+    USBケーブルを接続する前にTRRSケーブルを挿入してください。TRRSケーブルの構造上、動作中にTRRS接続を行うとショートを起こす可能性があります。
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

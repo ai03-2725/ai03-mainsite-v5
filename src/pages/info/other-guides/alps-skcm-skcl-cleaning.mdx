@@ -1,0 +1,79 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import AltMarkdownRenderer from '@components/astro/AltMarkdownRenderer.astro'
+import Layout from '@layouts/DefaultLayout.astro';
+
+
+<Layout 
+	title="Alps SKCM/SKCL Cleaning Guide" 
+	description="How to clean these vintage switches."
+>
+	<div class="container mx-auto">
+		<div class="w-full text-center pt-16 pb-14">
+			<h1 class="text-[32px] lg:text-[38px] font-[575]">Other Guides</h1>
+		</div>
+
+		<div class="px-5">
+
+      <SimpleImageV2 src="/images/guides/alps-cleaning/alps-hand-drawn.png" class="w-full md:w-1/2 lg:w-1/3 pb-16 mx-auto" />
+
+      <AltMarkdownRenderer>
+
+        
+
+        # Alps SKCM/SKCL Switch Cleaning
+        Alps SKCM/SKCL switches feel questionable when not maintained.  
+        Here's how to get them back into perfect shape.  
+
+        ## Disassembly
+        1. Pull the tabs that secure the top housing to the bottom housing outwards, and pull the top housing up out of the bottom housing.
+        2. Remove the stem, spring, and click leaf from the housing.
+        3. The contact plate can be removed if needed, mainly by pushing the legs side to pop them out.
+          They can be left in if not in terrible condition.
+        
+        ## Cleaning the housing
+        1. Take the top housing, and optionally the bottom housing if you decided to remove the contact plates from them, and remove any massive chunks of dust.
+        2. Place them into an ultrasonic cleaner.  
+          **Warning:** Do not ultrasonic-clean the bottoms with the contact plates still included - water will ingress into them and corrode over time.
+        3. Run the ultrasonic cleaner for 3-5 minutes.
+        4. Take them out, dry completely.
+        
+        ## Cleaning the stems
+        1. Place them into an ultrasonic cleaner.
+        2. Run the cleaning for 3-5 minutes.
+        3. Take them out, dry completely.
+        
+        ## Cleaning the click leaves
+        1. Make sure ultrasonic cleaner is completely clean, without residue.
+        2. Fill the cleaner with distilled water, rather than any water.
+        3. Clean leaves in ultrasonic cleaner for 3-5 minutes.
+        4. Dry quickly, getting rid of moisture using a thin towel without bending the leaves out of shape.
+        5. Air-dry completely.
+        
+        ## Other parts
+        - Contact plate can be wiped down with isopropyl alcohol. 
+          Take care to make sure moisture does not enter the complex structure and cause rusting.
+        
+        - Springs can be cleaned with ultrasonic cleaners as well. 
+          Follow the same instructions as the click leaves.
+        
+        ## Reassembly, the easy way
+        
+        1. If you removed the contact plates from bottom housing, reinsert them into the bottom housing by pressing on the top edge of the plate.  
+          Take care so that the bent metal part of the backside of the contact plate does not get bent out of shape by the clips on the bottom housing.
+        2. Verify that there is no dust on the top housing, and place it upside down.  
+          Insert stem into top housing so cut side faces contact plate side. (Contact plate side of top housing has a cut notch/groove)
+        3. Insert click leaf between stem and top housing.
+        4. Insert spring into stem.
+        5. Insert bottom housing-contact plate structure so that the contact plate fits between the stem and the top housing. 
+        6. Clip housing shut.
+        7. Click the switch a few times to verify that the switch is working.
+        8. Test switch with multimeter.
+        
+      </AltMarkdownRenderer>
+
+		</div>
+	</div>
+</Layout>

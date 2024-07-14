@@ -1,0 +1,98 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Vega"
+  page={2}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/vega/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/vega/2/"},
+    {label: "Preparing the case", url: "/info/build-guides/vega/3/"},
+    {label: "Assembling the internals", url: "/info/build-guides/vega/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/vega/5/"},
+    {label: "Keymap editing and closing words", url: "/info/build-guides/vega/6/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Preparing the case
+
+    Let's begin with the case.
+
+    1. Remove the components from the box if not already done.
+
+    2. Of the two supplied hex keys, use the smaller one to unscrew the case screws.
+    ![Screw locations](/images/build-guides/vega/vega-build-guide-3-2.png)
+
+    3. Remove the top case half, and flip it upside down.
+    ![Top removal](/images/build-guides/vega/vega-build-guide-3-3.png)
+
+    4. Unscrew and remove the temporary plate screws.
+    ![Plate screw locations](/images/build-guides/vega/vega-build-guide-3-4.png)
+
+    5. Remove the plate from the case top half.
+    ![Plate removal](/images/build-guides/vega/vega-build-guide-3-5.png)
+
+    6. At this point, the case should be disassembled enough for switch installation.  
+      Prepare the plate and adhesive gaskets.
+      ![Plate](/images/build-guides/vega/vega-build-guide-3-6.png)
+
+    7. Carefully place 5 of the long gaskets onto the plate, one per tab.  
+      ***Note:** For the minority who are planning on using aftermarket custom plates, install these gaskets on the case area where the plate tabs overlap; this applies to all gasket steps. For specific warnings and instructions, see [here](#).*  
+      ![Gasket locations](/images/build-guides/vega/vega-build-guide-3-7-1.png)
+      ![Gasket install](/images/build-guides/vega/vega-build-guide-3-7-2.png)
+
+    8. Repeat on the underside; there should be 10 gaskets installed at the end of this step.
+    ![Underside gaskets](/images/build-guides/vega/vega-build-guide-3-8.png)
+
+    9. Now prepare the sheet of shorter gaskets.  
+      Carefully place 6 of these on the marked tabs.
+      ![Short gasket locations](/images/build-guides/vega/vega-build-guide-3-9.png)
+
+    10. Repeat the process on the underside; there should be 22 total gaskets installed at the end of this step.
+    ![Short gasket underside](/images/build-guides/vega/vega-build-guide-3-10.png)
+
+    11. Set the completed plate aside.  
+      Prepare the case top half and the small rectangular gaskets.
+      ![Case top](/images/build-guides/vega/vega-build-guide-3-11.png)
+
+    12. Place a rectangular gasket horizontally between the marked indents on the side as shown.  
+      Repeat on both sides.  
+      ![Side vertical gasket locations](/images/build-guides/vega/vega-build-guide-3-12-1.png)  
+      ![Side vertical gasket locations top-down](/images/build-guides/vega/vega-build-guide-3-12-2.png)  
+      
+    13. Install four more of these rectangular gaskets in the corner wells as shown, one per corner.
+      ![Top/Bottom vertical gasket locations](/images/build-guides/vega/vega-build-guide-3-13-1.png)  
+      ![Top/Bottom vertical gasket locations top-down](/images/build-guides/vega/vega-build-guide-3-13-2.png)  
+      By the end of this step, the top case half is complete and ready for assembly.  
+      Set the top half aside.
+
+    14. Prepare the bottom case half.  
+      Install the provided rubber feet into the inserts.
+      ![Rubber feet](/images/build-guides/vega/vega-build-guide-3-14.png)
+
+    15. If no screw was inserted into the PCB-conducting screw position out of the box, install this screw.  
+      Use one of the regular silver screws from the hotswap hardware kit for this task.
+      ![Conductive screw](/images/build-guides/vega/vega-build-guide-3-15.png)
+
+    <br />
+    
+    The case is now fully prepared for assembly.  
+    Now it is time to assemble the internals.
+
+    <SimpleButtonV2 href="/info/build-guides/vega/4">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

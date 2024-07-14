@@ -1,0 +1,132 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Lunar II"
+  page={3}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/lunar-ii/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/lunar-ii/2/"},
+    {label: "Assembling the board", url: "/info/build-guides/lunar-ii/3/"},
+    {label: "Keymap editing and closing words", url: "/info/build-guides/lunar-ii/4/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+    ## Assembling the board
+
+    Let's begin with the case.
+
+    1. Remove the components from the box if not already done.
+
+    2. Use the supplied hex key to remove the plate screws.
+
+    3. Remove the plate from the case.
+
+    4. If no screw was inserted into the PCB-conducting screw position out of the box, install this screw.
+    ![PCB Conductive Screw](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-4.png)
+
+    5. Flip the case over.  
+      Install the provided rubber feet into the insets.
+    ![Rubber Feet](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-5.png)
+
+    6. Install the stabilizers and spacebar pipe onto the plate.   
+
+      Make sure the spacebar pipe matches the spacebar orientation you are using.  
+      Make sure the stabilizer inserts are oriented the correct way; the wire clip side should be facing away from the switch cutout.  
+        
+      ![Stabilizers](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-6.png)  
+      Note: The stabilizers and spacebar pipe will not be rendered in the images below due to not having a 3D model on hand.
+
+    7. Tune and test the switches if not already done.  
+      Snap the switches into the plate.
+      ![Switch Installation](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-7-1.png)  
+      ![Switches Installed](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-7-2.png)  
+
+    8. Insert the PCB against the switches.  
+      ![Switch Installation](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-8.png)  
+
+    9. Solder the switches into place, making sure that the PCB is seated firmly against the switches.  
+      Excessive gaps between the plate and PCB may negatively affect acoustics.
+
+    10. At this stage, it is highly recommended to connect the PCB to a computer to test the functionality of all keys.  
+      Repair any faulty joints and replace any non-functional switches.
+
+    11. **If installing the solenoids:**
+
+        <div class="p-4 bg-zinc-100 rounded-[3.75px]">
+
+        1. Align the two solenoids to the solenoid bracket.  
+          Pay attention to the following:  
+          - Place the solenoids so the cables exit on the top-side.
+          - The solenoids should fire inwards towards each other, with the springs on the outer side keeping the plunger away from each other unless manually pushed inwards by hand.
+          - The solenoid bracket should be positioned so the U-shaped cutout is at the top, and so that the screw holes line up with the solenoids.
+          ![Solenoid Bracket](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-11-1.png)  
+
+        2. Install the M2x3mm screws to secure the solenoids to the bracket.  
+          It is recommended to tighten the screws with the assembly on a flat surface to prevent the solenoids from being secured down at an angle.
+          ![Solenoid Securement](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-11-2.png)  
+
+        3. Remove the weight screws, then remove the weight from the case.  
+          Be careful during this process to avoid scratching or denting the parts - the weight installs perpendicularly to the inner case bottom surface rather than the exterior one.
+          ![Weight Removal](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-11-3.png)  
+
+        4. Install the solenoid assembly to the rear of the weight, and secure it using the M2x4mm screws.
+          ![Weight Bracket Install](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-11-4-1.png)  
+          ![Weight Brakcet Install Top](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-11-4-2.png)  
+
+        5. Reinstall the weight into the case with the two weight screws.  
+          Take care to avoid damage to the weight and case, and make sure the solenoid cables do not get caught between the case parts in the process.
+          ![Weight Reinstall](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-11-5.png)  
+          The initial solenoid installation is now complete.  
+
+        </div>
+
+    12. Place the provided ring gaskets atop the four plate mount points.
+      ![Gasket Locations](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-12-1.png)  
+      ![Gasket Install](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-12-2.png)  
+
+    13. **If installing the solenoids:**  
+      Connect the solenoids to the PCB.  
+      There is no specific ordering as to which solenoid goes to which connector, but make sure that you insert the connector in the correct orientation - forcing it in upside-down may damage the PCB.  
+      Once assembled, the cables should follow this general path along the case-side cutouts.  
+      ![Solenoid Connection](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-13.png)  
+
+    14. Install the provided silver square conductive foam pads onto the exposed copper area on the PCB marked "CHASSIS".  
+      ![Conductive Foam Location](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-14.png)  
+
+    15. Insert the switch-plate-PCB-stabilizer assembly into the case.  
+      The plate mount points should pass through the cutouts on the PCB.  
+      If you are using the solenoids, take care to route the cables - make sure they do not get caught between the case and the internals.  
+      ![Internals Install](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-15.png)  
+
+    16. Install the four plate screws, compressing the plate gaskets lightly and equally.  
+      Do not overtighten - the internals might sit too low and bottom-out against the case.  
+      ![Plate Screws](/images/build-guides/lunar-ii/lunar-ii-build-guide-3-16.png)  
+
+    17. Install the keycaps.  
+      Test some keystrokes and verify that they are sent.
+
+    <br />
+
+    Congratulations! You have fully assembled the Lunar II.
+    ![Built](/images/lunar-ii/lunar-ii-proto-side-rear-left-medium.avif)  
+
+    <br />
+    Now you are ready for the keymap editing and final remarks.
+
+    <SimpleButtonV2 href="/info/build-guides/lunar-ii/4">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+
+</BuildGuideLayout>
+
+

@@ -1,0 +1,61 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import GenericGuideLayout from '@layouts/GenericGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<GenericGuideLayout 
+	title="How to Keyboard"
+  description="The keyboard newcomer guide."
+  page={1}
+  pages={[
+    {label: "This mysterious custom keyboard thing", url: "/info/keyboard-newcomer-guides/"},
+    {label: "A case study", url: "/info/keyboard-newcomer-guides/2"},
+    {label: "Making the switch", url: "/info/keyboard-newcomer-guides/3"},
+    {label: "The capstone", url: "/info/keyboard-newcomer-guides/4"},
+    {label: "The hunt for endgame", url: "/info/keyboard-newcomer-guides/5"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+    *Written by ai03, originally on Oct 13 2020*  
+    *Rewritten Jul 14 2024*
+
+    A quick guide covering the basics for getting into the hobby of custom keyboards.  
+  </AltMarkdownRenderer>
+
+  <SimpleImageV2 src="/images/guides/newcomer-guide/pile.jpg" class="w-full mx-auto py-12" />
+
+  <AltMarkdownRenderer>
+    
+
+    ### So what's a custom keyboard anyways?
+    
+    Historically, "custom keyboards" has referred to higher-end keyboards designed to maximize quality, aesthetics, comfort, and acoustics.  
+      
+    In the past, they were quite a bit more exclusive than your typical keyboard - ranging all the way into the thousands of dollars and limited to private friends-only purchasing - but nowadays can be had far more affordably and accessibly.  
+    
+    One unique characteristic about custom keyboards is that they tend to come un-assembled - the user is expected to tune and dial in the build to their preferences, which makes these boards far more involved than simply buying and using.  
+
+    ### Demystifying the keyboard
+
+    It's always been a daunting task to get into the world of fully custom keyboards due to the sheer amount of knowledge involved - this guide aims to remove that barrier to entry.  
+    After all, there's a whole world out there to explore, as well as your true endgame keyboard waiting for you somewhere out there.
+
+    <br />
+
+    Ready?  
+    Let's begin.
+
+    <SimpleButtonV2 href="/info/keyboard-newcomer-guides/2">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</GenericGuideLayout>
+
+

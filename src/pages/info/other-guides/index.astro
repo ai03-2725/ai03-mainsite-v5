@@ -1,0 +1,32 @@
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import Layout from '@layouts/DefaultLayout.astro';
+
+---
+
+<Layout 
+	title="Other Guides" 
+	description="Miscellaneous how-tos for keyboards."
+>
+	<div class="container mx-auto">
+		<div class="w-full text-center pt-16 pb-14">
+			<h1 class="text-[32px] lg:text-[38px] font-[575]">Other Guides</h1>
+		</div>
+
+		<div class="grid grid-cols-1 gap-6 px-5 md:grid-cols-2 md:gap-6 lg:gap-8 xl:grid-cols-3 xl:gap-10 2xl:gap-12">
+
+      <!-- Alps SKCM/SKCL  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/lunar-ii/lunar-ii-proto-render-side-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Alps SKCM/SKCL Cleaning Guide</h2>
+        </div>
+        <a href="/info/other-guides/alps-skcm-skcl-cleaning/" class="absolute w-full h-full" />
+      </div>
+
+      <!-- To migrate: Stabilizer lubing guide -->
+			
+		</div>
+	</div>
+</Layout>

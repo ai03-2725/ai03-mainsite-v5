@@ -1,0 +1,70 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Polaris"
+  page={4}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/polaris/"},
+    {label: "Preparing the PCB", url: "/info/build-guides/polaris/2/"},
+    {label: "Preparing the case", url: "/info/build-guides/polaris/3/"},
+    {label: "Installing switches and stabilizers", url: "/info/build-guides/polaris/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/polaris/5/"},
+    {label: "Configuring the keymap", url: "/info/build-guides/polaris/6/"},
+    {label: "Further tuning, support, and feedback", url: "/info/build-guides/polaris/7/"},
+    
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Installing switches and stabilizers
+ 
+    1. Prepare and tune the stabilizers you need for your planned layout.
+      Prepare and lube the switches as well.
+
+    2. For stabilizers that sit loosely such as Cherry clip-in or GMK screw-in, insert the provided stabilizer shims onto the stabilizers, with the side having the shiny rectangle facing up. For firmer sitting stabilizers such as Durock and Everglide, this is not necessary.
+
+    3. Install the stabilizers onto the PCB. An example showing the shim use is shown.
+      ![Shims](/images/build-guides/polaris/polaris-build-guide-4-3.png)
+      **Note:** Due to a mistake on our end, when using 2.75U shift and 2.25U enter, the inserts may collide. In this case, clip the overlapping bits with a wire cutter or similar. This should have no negative effect on the shims actually doing their job.  
+      **Note 2:** Some extras batch 2 units supposedly shipped with KBDfans' stabilizer gasket shims. Although one is flexible and the other is rigid, there should be no difference in functionality or feel. Apply them in the same location (under the stabilizer) as the rigid shims.
+
+    4. Snap in the switches to the plate.
+      ![Switches install](/images/build-guides/polaris/polaris-build-guide-4-4.png)
+
+    5. Try a “test-fit” by inserting the PCBs against the switches and pushing so all switches make firm contact against the PCB surface. Throw on some keycaps and type a bit, then repeat with the PCB-plate foam layer inserted. Depending on which sound you like better, either leave in or leave out the mid-foam.
+      ![Midfoam install](/images/build-guides/polaris/polaris-build-guide-4-5.png)
+
+    6. Make sure all switches are making firm contact against the PCB, and solder the the switches in. Insert and solder LEDs if you prefer, with the longer of the two leads going through the circular pad on the PCB.  
+      ![PCB install](/images/build-guides/polaris/polaris-build-guide-4-6.png)
+
+    7. At the end of this step, you should have a completed assembly of switches, stabilizers, plate, and PCB joined together.
+      The image below shows an example completed assembly.
+      ![Internals](/images/build-guides/polaris/polaris-build-guide-4-7.png)
+
+    8. Open a keyboard tester ([this](https://config.qmk.fm/#/test) works well) to check that the switches send keystrokes when pushed down.
+      Repair any missed or faulty joints as needed.
+      **Note:** By default, the key at the caps lock position is set as a function key, so it will not send a keystroke on its own. Holding caps and pressing 1 should send F1.
+
+
+
+    <br />
+    
+    The structure is now ready for installation into the case.
+
+    <SimpleButtonV2 href="/info/build-guides/polaris/5">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

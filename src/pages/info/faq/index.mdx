@@ -1,0 +1,84 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import AltMarkdownRenderer from '@components/astro/AltMarkdownRenderer.astro'
+import Layout from '@layouts/DefaultLayout.astro';
+
+
+<Layout 
+	title="FAQ" 
+	description="Frequently asked questions."
+>
+	<div class="container mx-auto">
+		<div class="w-full text-center pt-16 pb-14">
+			<h1 class="text-[32px] lg:text-[38px] font-[575]">FAQ</h1>
+		</div>
+
+		<div class="px-5">
+
+      <AltMarkdownRenderer>
+
+        ## Sales
+
+        **NOTE:** ai03 is a *designer*, not a vendor.
+        Since ai03 usually has 0 say or power in any sale or handling of the designs as a product, the answer to any sale-related question will almost always be "contact the vendor you purchased it from".
+
+        **Q:** When will this keyboard go on sale?  
+        **A:** For an active project or one in preparation, this is written in the product page, IC/GB thread, or similar specific to the product. Please check such sources.  
+          If the group buy has occurred in the past and is already completed, the board will not go on sale again unless there is another round of sales.  
+          If the ETA is not written or marked TBA, there is no known time when the board will go on sale.   
+
+        **Q:** Can I buy your prototypes?  
+        **A:** No; the prototypes are usually kept for future research purposes.  
+
+        **Q:** Will there be another round or batch of a certain product?  
+        **A:** Not unless otherwise stated.
+
+        **Q:** Will there be extras for a certain group buy?  
+        **A:** If the project is a group buy, usually there is a margin ordered for replacement parts and B-stock units. If any are left following GB conclusion and replacements, they will be placed on sale as extras.  
+          However, this is not a guarantee, and there are many cases where there are no extra units left following fulfillment.  
+
+          If the project is an in-stock sale, usually there are no extras.  
+
+        **Q:** When is the ETA of shipment for a certain product?  
+        **A:** Please consult the vendor you purchased the product from, as well as possibly my site and Discord where I try my best to mirror the updates I receive from them.  
+          I am only a designer and have no sale or inventory capabilities, so I am not the most knowledged on these matters even for my own designs.  
+
+        **Q:** The project does not seem like it will ship by the ETA, or has passed the ETA. Can you take responsibility?  
+        **A:** As for me personally, no; I am only a designer and do not set ETAs.  
+          As for the vendors, that will depend entirely on their sale policy.  
+          Since an ETA is only an estimated date of arrival predicting into the future, usually there is no liability for its imperfection.
+
+        **Q:** Is shipment before/around the ETA guaranteed?  
+        **A:** No; the ETA is only an estimate which is heavily influenced by global and human factors.  
+
+        **Q:** Can I change my order details such as case type, color, etc. after placing the order?  
+        **A:** This depends entirely on the policy of the vendor you purchased from.  
+          Please consult with them instead.  
+
+        **Q:** Where can I buy your keyboards?  
+        **A:** They are either sold or stocked by various vendors around the globe.  
+          You may be interested in the [currently available projects](https://ai03.com/collections/available-now/) list - each page should have a link to their product pages.  
+
+        ## Design
+
+        **Q:** Can I swap parts of this keyboard with another part from another round/variant/design/etc?  
+        **A:** Not unless otherwise stated - even between versions or rounds of the same project, there may be changes in tolerance or design files.  
+
+        **Q:** Can I install a third party PCB into this keyboard?  
+        **A:** Usually no - I only design my keyboards to fit their tailor-made PCBs, and do not design for compatibility with third-party PCBs.  
+          If you are trying it, it is entirely at your own risk.  
+
+        **Q:** Can I install Mill-Max/Holtite sockets into your PCBs?  
+        **A:** No - even when designed for their exact recommended dimensions, I've received nothing but complaints about the sockets falling out, damaging the PCBs, shorting against the case, and various unpredictable issues.  
+          I do not support their use whatsoever - if you do, it is entirely at your own risk, and I will not give any support beyond recommending you to remove them.  
+
+        **Q:** Will this color be exactly as pictured/exactly as the color code/exactly matching this keyset/etc?  
+        **A:** No - the color of keyboard surface finishes can vary significantly depending on the light, unit, and even the location of the keyboard unit in the anodizing bath.  
+        
+      </AltMarkdownRenderer>
+
+		</div>
+	</div>
+</Layout>

@@ -1,0 +1,125 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Vega"
+  page={4}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/vega/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/vega/2/"},
+    {label: "Preparing the case", url: "/info/build-guides/vega/3/"},
+    {label: "Assembling the internals", url: "/info/build-guides/vega/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/vega/5/"},
+    {label: "Keymap editing and closing words", url: "/info/build-guides/vega/6/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Assembling the internals
+
+    1. Prepare and tune the stabilizers needed for your preferred layout, if not done already.  
+      Prepare and lube the switches as well.
+
+    2. Mount the stabilizers onto the PCB using the provided shims to fill the gap on the thin PCB.  
+      The side with the copper artwork (logo) should face away from the PCB.  
+        
+      An example of shim use is shown below; the shim goes on the bottomside of the PCB, with the hook of the stabilizer hooking both the shim and the PCB.  
+      *Note: The pictured shim is an earlier revision; however, its usage remains the same.*  
+      ![Shim usage](/images/build-guides/vega/vega-build-guide-4-2-1.png)
+      ![Stabilizer install](/images/build-guides/vega/vega-build-guide-4-2-2.png)
+
+    3. Open the pack of hotswap standoffs and screws.  
+      **For hotswap users who plan to swap switches in the future without case disassembly:** Install a standoff at each of the 9 standoff screw holes on the PCB, and secure using the short hotswap screws from the bottom. 
+      ![Standoff locations](/images/build-guides/vega/vega-build-guide-4-3-1.png)
+
+      **For users with an aluminum plate:** Install one standoff at the standoff screw hole on the PCB marked "PLATE", and secure using a short hotswap screw from the bottom. This is necessary to properly handle static discharges that occur against the plate.
+      ![Standoff location](/images/build-guides/vega/vega-build-guide-4-3-2.png)
+
+      **For all other users:** You may leave the standoffs unused for softest typing feel if wanted. However, please note the following:
+      - The PCB may begin to slide off after very extended use, at which point you may need to re-seat the PCB against the switches by pushing it back into place.
+      - Swapping switches will require case disassembly to firmly seat the switches against the PCB.
+
+      For securing these standoffs, install cylindrical head screws from the other side provided in the same hotswap hardware kit package.
+      ![Standoff installation](/images/build-guides/vega/vega-build-guide-4-3-3.png)
+
+    4. If you plan to use the foam midlayer, install it above the PCB at this stage.  
+      Our personal recommendation is to install it if you prefer a calmer/more muted sound; if you dislike it, it is always possible to rebuild it without on the hotswap variant.
+      ![Foam installation](/images/build-guides/vega/vega-build-guide-4-4.png)
+
+    5. Install the plate so that the screw holes on the plate align with the standoffs and stabilizers installed onto the PCB.  
+      ![Plate installation](/images/build-guides/vega/vega-build-guide-4-5.png)
+
+    6. Secure the plate to the standoffs using the countersunk hotswap screws for any standoffs used.
+      ![Plate screws](/images/build-guides/vega/vega-build-guide-4-6.png)
+
+    7. Place the assembled plate-PCB structure into the top case half, making sure that the plate goes within the vertical rectangular gaskets placed onto the top case half.  
+
+      Secure this structure to the top using the temporary plate screws.
+      ![Temporary install](/images/build-guides/vega/vega-build-guide-4-7.png)
+
+    8. Prepare to install switches.  
+
+      First, take the switch and flip it upside down.  
+      Check for any sort of bent legs, and repair them by bending them back to be straight.  
+
+      The following are examples of switches with bent legs.  
+      Notice how the one on the right has a bent tip despite the rest of the leg being straight.  
+      Either has the ability to destroy a hotswap socket; make sure to catch them before they enter the socket.  
+      <div class="flex flex-row">
+       <img src="/images/build-guides/vega/vega-build-guide-4-8-1.png" />
+       <img src="/images/build-guides/vega/vega-build-guide-4-8-2.png" />
+      </div>
+      
+    9. Some switches are known to have very thick PCB-mount legs which exceed MX spec heavily, such as Gaterons.  
+      For these switches, it is highly recommended to thin the legs by compressing them with flat head pliers prior to installation.  
+      This can be done by closing the pliers against a leg and twisting it around to crunch the leg down.  
+      **Note:** Do not apply forces so extreme that the switch shatters.  
+      <div class="flex flex-row">
+       <img src="/images/build-guides/vega/vega-build-guide-4-9-1.png" />
+       <img src="/images/build-guides/vega/vega-build-guide-4-9-2.png" />
+      </div>
+
+    10. After un-bending the legs with fingers, tweezers, flat pliers, or your tool of choice, carefully insert them to the plate-PCB structure.  
+      Hold the PCB surrounding the switch and push the switch firmly down, making sure that the switch snaps into the plate and is firmly seated against the PCB.
+      ![Switch install](/images/build-guides/vega/vega-build-guide-4-10-1.png)
+
+      Make sure the orientation is correct: On the hotswap PCB, the keys 7 and 8 next to the USB connector are flipped to avoid obstructing the USB port.
+      ![Switch reversed locations](/images/build-guides/vega/vega-build-guide-4-10-2.png)
+
+    11. Repeat steps 7~9 for all switches.
+      If assembling a soldering kit, solder the switches. Make sure that the switch is seated firmly against the PCB once soldered.
+      ![All switches installed](/images/build-guides/vega/vega-build-guide-4-11.png)
+
+    12. At this stage, it is highly recommended to connect the build to a computer and to verify that all keys send a keystroke.
+      **Note:** The caps lock position is bound to Fn by default, and will not send a keystroke on its own. Instead, hold the caps lock position and press the numrow, and see if it sends F1~F12 rather than numerics.
+
+    13. Flip the structure over, and remove the temporary plate retention screws.  
+      Leave the assembly upside-down at this stage.
+      ![Temporary screw removal](/images/build-guides/vega/vega-build-guide-4-13.png)
+
+    14. Install one of the provided grey conductive foam pads atop the exposed copper pad marked "CASE" on the PCB.
+      ![Conductive foam position](/images/build-guides/vega/vega-build-guide-4-14.png)
+
+
+
+    <br />
+    
+    That was a lengthy section, but most of the hassle is out of the way at this point.
+    Now to complete the assembly.
+
+    <SimpleButtonV2 href="/info/build-guides/vega/5">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

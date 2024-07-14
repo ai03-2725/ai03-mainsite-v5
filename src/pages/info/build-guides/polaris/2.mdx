@@ -1,0 +1,67 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Polaris"
+  page={2}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/polaris/"},
+    {label: "Preparing the PCB", url: "/info/build-guides/polaris/2/"},
+    {label: "Preparing the case", url: "/info/build-guides/polaris/3/"},
+    {label: "Installing switches and stabilizers", url: "/info/build-guides/polaris/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/polaris/5/"},
+    {label: "Configuring the keymap", url: "/info/build-guides/polaris/6/"},
+    {label: "Further tuning, support, and feedback", url: "/info/build-guides/polaris/7/"},
+    
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## The PCB comes with a basic keymap that types, but likely isn't ideal for your use case.
+    To get it functioning well, it's necessary to install a more recent copy of the firmware that's compatible with Via Configurator.
+
+    1. Unbox the PCB if not already done.
+
+    2. Download the via-compatible firmware hex file ai03_polaris_via.hex from here.
+
+    3. If you haven't installed QMK Toolbox, Atmel FLIP, or a similar firmware flashing program before, do the following:
+
+        1. Grab the latest QMK Toolbox here.
+
+        2. Run QMK Toolbox (or install and run if you grabbed the installer variant). It will ask you if you wish to install drivers; select yes.
+        ![Driver install](/images/build-guides/polaris/polaris-build-guide-2-3-2.png)
+
+        3. The drivers will install slowly, then exit. After this, you may need to restart your PC to get the drivers loaded.
+        ![Driver installing](/images/build-guides/polaris/polaris-build-guide-2-3-4.png)
+
+    4. Flash the firmware. For QMK Toolbox users, do the following:
+
+        1. Launch QMK Toolbox. For the Local File field, press the Open button, and select the hex file that you downloaded at step 1.
+
+        2. Plug in your PCB, and press the reset button located near the left Win/Alt key location on the bottom. If the drivers are installed, you should see an ATMega32u4 Bootloader device show up.
+
+        3. Make sure that the option selected for Microcontroller is the atmega32u4, then press flash. The log should show the firmware being written successfully.
+        ![Firmware flashing](/images/build-guides/polaris/polaris-build-guide-2-4-3.png)
+
+    5. Replug the PCB once it's done. It should now register as a functional keyboard and show up as Polaris in device manager or similar.
+
+    <br />
+    
+    Next, we will prepare the case for assembly.
+
+    <SimpleButtonV2 href="/info/build-guides/polaris/3">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

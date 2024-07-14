@@ -1,0 +1,66 @@
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import Layout from '@layouts/DefaultLayout.astro';
+
+---
+
+<Layout 
+	title="Build Guides" 
+	description="How to assemble your brand new keyboard."
+>
+	<div class="container mx-auto">
+		<div class="w-full text-center pt-16 pb-14">
+			<h1 class="text-[32px] lg:text-[38px] font-[575]">Build Guides</h1>
+		</div>
+
+		<div class="grid grid-cols-1 gap-6 px-5 md:grid-cols-2 md:gap-6 lg:gap-8 xl:grid-cols-3 xl:gap-10 2xl:gap-12">
+
+      <!-- Lunar II  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/lunar-ii/lunar-ii-built-front-01-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Lunar II</h2>
+        </div>
+        <a href="/info/build-guides/lunar-ii/" class="absolute w-full h-full" />
+      </div>
+
+      <!-- Vega  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/vega/vega-pair-04-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Vega</h2>
+        </div>
+        <a href="/info/build-guides/vega/" class="absolute w-full h-full" />
+      </div>
+
+      <!-- Andromeda  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/andromeda/andromeda-side-dark-medium.jpg" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Andromeda</h2>
+        </div>
+        <a href="/info/build-guides/andromeda/" class="absolute w-full h-full" />
+      </div>
+
+      <!-- Polaris  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/polaris/polaris-render-front-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Polaris</h2>
+        </div>
+        <a href="/info/build-guides/polaris/" class="absolute w-full h-full" />
+      </div>
+
+      <!-- Orbit  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/orbit/orbit-top-02-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Orbit</h2>
+        </div>
+        <a href="/info/build-guides/orbit/" class="absolute w-full h-full" />
+      </div>
+			
+		</div>
+	</div>
+</Layout>

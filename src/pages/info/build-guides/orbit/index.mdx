@@ -1,0 +1,48 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Orbit"
+  page={1}
+  pages={[
+    {label: "English", url: "/info/build-guides/orbit/"},
+    {label: "Japanese", url: "/info/build-guides/orbit/ja/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    Thank you for your purchase.
+
+    Orbit Assembly Instructions
+
+    1. Disassemble the case and plate.
+    2. If using vertical 2U keys, install stabilizers onto their respective PCB positions.
+    3. Install the corner switches on the plate.
+    4. Align the PCB to the corner switches and insert.
+    5. Install the remaining switches.
+    6. Verify that the switches are inserted fully (unneeded gaps between the switches and plate may cause acoustic issues).
+    7. Solder the switches.
+    8. Insert but do not solder the indicator LEDs into the PCB holes.
+    9. Install the plate-switch-PCB structure into the upper case half, and flip upside down.
+    10. Insert the indicator LEDs into the case-side holes, and solder into place.
+    11. Screw the case halves together, and install adhesive feet.
+    12. Repeat steps 1-11 for the other case half.
+    
+    Firmware is customized and written in the typical QMK method. The source is available at qmk_firmware/keyboards/ai03/orbit. Note that both halves must be flashed independently; it is recommended to leave the TRRS cable disconnected during this process.  
+
+    Do not insert or remove the TRRS cable during operation. Due to the structure of the TRRS connector, doing so may cause a short-circuit.
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

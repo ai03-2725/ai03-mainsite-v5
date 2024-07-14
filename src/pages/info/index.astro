@@ -1,7 +1,59 @@
 ---
 
-// In the future, migrate old info.ai03.com contents to here
+// Attempt 1 for migrating the old wiki-style data to part of the main site
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import Layout from '@layouts/DefaultLayout.astro';
 
 ---
 
-<meta http-equiv="refresh" content={`0; URL='https://info.ai03.com/'`} />
+<Layout 
+	title="Guides and FAQ" 
+	description="Build guides, general info, and misc tidbits."
+>
+	<div class="container mx-auto">
+		<div class="w-full text-center pt-16 pb-14">
+			<h1 class="text-[32px] lg:text-[38px] font-[575]">Guides, Info, and FAQ</h1>
+		</div>
+
+		<div class="grid grid-cols-1 gap-6 px-5 md:grid-cols-2 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
+
+      <!-- Build Guides  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/vector/vector-proto-parts-tiled-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Build Guides</h2>
+        </div>
+        <a href="/info/build-guides/" class="absolute w-full h-full" />
+      </div>
+
+      <!-- Keyboard Newcomer Guide  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/brutal-v2-60/brutal-v2-60-raw-desk-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Keyboard Newcomer Guide</h2>
+        </div>
+        <a href="/info/keyboard-newcomer-guides/" class="absolute w-full h-full" />
+      </div>
+
+      <!-- Other Guides  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/brutal-v2-1800/brutal-v2-1800-half-built-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Other Guides</h2>
+        </div>
+        <a href="/info/other-guides/" class="absolute w-full h-full" />
+      </div>
+
+      <!-- FAQ  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/vega/vega-pcb-pair-02-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Frequently Asked Questions</h2>
+        </div>
+        <a href="/info/faq/" class="absolute w-full h-full" />
+      </div>
+			
+		</div>
+	</div>
+</Layout>

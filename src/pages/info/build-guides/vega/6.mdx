@@ -1,0 +1,75 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Vega"
+  page={6}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/vega/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/vega/2/"},
+    {label: "Preparing the case", url: "/info/build-guides/vega/3/"},
+    {label: "Assembling the internals", url: "/info/build-guides/vega/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/vega/5/"},
+    {label: "Keymap editing and closing words", url: "/info/build-guides/vega/6/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Keymap editing and closing words
+
+    The key to getting the most out of your Vega is to tune the keymap to your liking.
+    Thankfully, this can be done in a few clicks.
+
+    1. Download and install [Via Configurator](https://github.com/the-via/releases/releases/) if not already done.
+      If the installation is from a while ago, install the latest copy.
+
+    2. Launch Via Configurator, and plug in the Vega if not done already.
+      The board should detect automatically.
+
+    3. Switch the layout options under the layout tab so it matches the layout you are using.
+      ![Layout menu](/images/build-guides/vega/vega-build-guide-6-1.png)
+
+    4. Switch back to the keymap tab.
+      Click the key location to change, and click a key from the list below to write the new keycode in.
+      This can be done for all layers as needed; switch between them as necessary using the layer toggles above the keymap view.
+      ![Key remapping](/images/build-guides/vega/vega-build-guide-6-2.png)
+
+    Some useful keycodes for layer switching:
+
+    - MO(x) momentarily switches to a layer, similar to how holding shift allows for entering capital letters while it is held.
+    - TO(x) switches to a specific layer permanently. This may be useful for completely varying layers.
+
+    A full list of keycodes can be found in the [QMK documentation](https://docs.qmk.fm/#/keycodes).
+
+    ## Closing words
+
+    Once again, thank you for your purchase, and we hope that Vega serves as a reliable keyboard for years to come.  
+
+    If you ever need support, please contact us at the following:  
+
+    - For **logistical** issues such as damage/loss during transit, incorrect order contents, etc., contact [TypePlus](https://typeplus.net/).
+
+    - For **assembly** help regarding building and similar, first check the [FAQ](/info/faq/) and to drop by [ai03's Discord server](https://discord.gg/qA5JD9y) for live community support. I won't always be there to respond, but usually someone will know the answer to the question.
+
+    - If it gets to the point where nobody knows the solution, either ping @ai03#2725 in the Discord server, or send me DM after joining the server. Emailing admin@ai03.com will also work, but I may miss the email or be very slow to respond in comparison to Discord.
+
+    ## How did we do?
+    
+    We will appreciate any feedback you have about the board, and we'll take it into account for future projects. To submit your thoughts, please use [this form](https://forms.gle/m23VFMRn1iudZBsg7).  
+
+    Note: This is a feedback form, not a support form. For support requests, please see the above section.
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

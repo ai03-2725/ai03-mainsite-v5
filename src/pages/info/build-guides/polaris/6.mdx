@@ -1,0 +1,82 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Polaris"
+  page={6}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/polaris/"},
+    {label: "Preparing the PCB", url: "/info/build-guides/polaris/2/"},
+    {label: "Preparing the case", url: "/info/build-guides/polaris/3/"},
+    {label: "Installing switches and stabilizers", url: "/info/build-guides/polaris/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/polaris/5/"},
+    {label: "Configuring the keymap", url: "/info/build-guides/polaris/6/"},
+    {label: "Further tuning, support, and feedback", url: "/info/build-guides/polaris/7/"},
+    
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Configuring the keymap
+    The key to getting the most out of your Polaris is to tune the keymap to your liking.  
+
+    Thankfully, this can be done in a few clicks.  
+
+    **Plan A: Using VIA Configurator**  
+    This is the fail-safe option, but requires installing software to your PC.
+
+    1. Download and install [Via Configurator](https://github.com/the-via/releases/releases/tag/v1.2.4) if not already done. 
+      If the installation is from a while ago, install the latest copy.
+
+    2. Launch Via Configurator, and plug in the Polaris if not done already.
+
+    3. The board should detect automatically provided the keymap was flashed correctly during assembly. 
+
+    4. Switch the layout options so it matches the layout you are using.
+
+    5. Click the key location to change, and click a key from the list below to write the new keycode in. This can be done for all layers as needed.
+
+
+    **Plan B: Using Remap Configurator**  
+    If you have a browser that supports WebHID (Latest versions of Chrome and MS Edge), you can configure your keymap straight from the browser without any additional software.
+
+    1. Visit the Remap site at https://remap-keys.app/.
+
+    2. Click "Start Remap for your keyboard", and follow the prompts as necessary to connect your keyboard and to allow access.
+
+    3. Switch the layout options so it matches the layout you are using.
+      The button to change layouts should be to the right of the visual keyboard diagram.
+
+    4. Click the key location to change, and select a new key to map to its location. This can be done for all layers as needed.
+
+    5. Once done, click "Flash" at the top right to write the changes to the board.
+
+    For a reference of basic keycodes, see [here](https://docs.qmk.fm/#/keycodes_basic).  
+    For layer switching, see [here](https://docs.qmk.fm/#/feature_advanced_keycodes).  
+
+    The new keycodes are changed and saved instantaneously. No further firmware flashing is required.  
+
+    If you didn't flash the new firmware during the build process, you can go through the same steps as needed. Plug in the board while holding the top left key (Esc by default) to boot the board into bootloader, removing the need to disassemble to press the reset button.  
+
+    For those who wish to compile QMK from source for more advanced tuning, please see [the official QMK documentation](https://beta.docs.qmk.fm/) for in-depth info. The keyboard folder is located at `ai03/polaris`.  
+
+    <br />
+    
+    Once satisfied with the keymap, continue on to the final part.
+
+    <SimpleButtonV2 href="/info/build-guides/polaris/7">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

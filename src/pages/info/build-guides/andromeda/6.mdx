@@ -1,0 +1,62 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Andromeda"
+  page={6}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/andromeda/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/andromeda/2/"},
+    {label: "Preparing the case", url: "/info/build-guides/andromeda/3/"},
+    {label: "Assembling the internals", url: "/info/build-guides/andromeda/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/andromeda/5/"},
+    {label: "Keymap editing and closing words", url: "/info/build-guides/andromeda/6/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Keymap editing and closing words
+
+    Keymap editing on the Andromeda is possible in just a few clicks.
+    - If you have a recent version of Google Chrome, Microsoft Edge, or any browser that supports WebUSB/WebHID, [Remap](https://remap-keys.app/) can be used to edit the keymap directly from your browser.
+    - If you prefer to use a local tool, the standalone [Via Configurator](https://github.com/the-via/releases/releases/) can be installed.
+
+    ## Carrying case conversion
+
+    To convert the carrying case from packaging mode to functional mode, do the following:
+
+    1. Remove the PCB tray from the case.
+      ![Foam tray removal](/images/build-guides/andromeda/andromeda-build-guide-6-1.png)
+
+    2. Move the accessories bin lid from the PCB tray to the main compartment.
+      ![Compartment lid install](/images/build-guides/andromeda/andromeda-build-guide-6-2.png)
+
+    When using the carrying case, make sure that the keyboard is securely installed via the velcro straps and that any loose items that can potentially damage the keyboard are secured.  
+    If storing for extended amounts of time, it may be best to wrap the keyboard in a colorless plastic bag or similar to avoid color transfer from the foam or similar onto the case.
+
+    ## Closing words
+
+    Once again, thank you for your purchase, and we hope that Vega serves as a reliable keyboard for years to come.  
+
+    If you ever need support, please contact us at the following:  
+
+    - For **logistical** issues such as damage/loss during transit, incorrect order contents, etc., contact the vendor you purchased from.
+
+    - For **assembly** help regarding building and similar, first check the [FAQ](/info/faq/) and to drop by [ai03's Discord server](https://discord.gg/qA5JD9y) for live community support. I won't always be there to respond, but usually someone will know the answer to the question.
+
+    - If it gets to the point where nobody knows the solution, either ping @ai03#2725 in the Discord server, or contact me via my [contact form](https://docs.google.com/forms/d/e/1FAIpQLSeDXYrYGG9i69_cJkETaZZj6OcjNraM9qaULQIhStfAcz5hfQ/viewform). 
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+
