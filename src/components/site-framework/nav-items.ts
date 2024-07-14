@@ -58,7 +58,7 @@ export const NAV_ENTRIES_ROOT: NavEntry = {
         },
         {
           type: "LEAF",
-          title: "Guides and FAQ",
+          title: "Guides, Info, and FAQ",
           url: "/info/",
         },
         {

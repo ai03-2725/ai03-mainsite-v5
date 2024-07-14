@@ -13,7 +13,7 @@ import Layout from '@layouts/DefaultLayout.astro';
 >
 	<div class="container mx-auto">
 		<div class="w-full text-center pt-16 pb-14">
-			<h1 class="text-[32px] lg:text-[38px] font-[575]">Guides and FAQ</h1>
+			<h1 class="text-[32px] lg:text-[38px] font-[575]">Guides, Info, and FAQ</h1>
 		</div>
 
 		<div class="grid grid-cols-1 gap-6 px-5 md:grid-cols-2 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
@@ -36,6 +36,15 @@ import Layout from '@layouts/DefaultLayout.astro';
         <a href="/info/keyboard-newcomer-guides/" class="absolute w-full h-full" />
       </div>
 
+      <!-- Other Guides  -->
+      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
+        <SimpleImageV2 src="/images/brutal-v2-1800/brutal-v2-1800-half-built-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
+        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
+          <h2 class="text-xl md:text-2xl font-[550]">Other Guides</h2>
+        </div>
+        <a href="/info/other-guides/" class="absolute w-full h-full" />
+      </div>
+
       <!-- FAQ  -->
       <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
         <SimpleImageV2 src="/images/vega/vega-pcb-pair-02-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
@@ -43,15 +52,6 @@ import Layout from '@layouts/DefaultLayout.astro';
           <h2 class="text-xl md:text-2xl font-[550]">Frequently Asked Questions</h2>
         </div>
         <a href="/info/faq/" class="absolute w-full h-full" />
-      </div>
-
-      <!-- Archive  -->
-      <div class="relative w-full aspect-[1.618] rounded-[3.75px] overflow-hidden">
-        <SimpleImageV2 src="/images/epbt-modernja/epbt-modernja-loose-medium.avif" class="absolute w-full h-full object-cover brightness-50" />
-        <div class="absolute w-full h-full p-5 flex flex-col justify-end items-start text-white">
-          <h2 class="text-xl md:text-2xl font-[550]">Historical Archive</h2>
-        </div>
-        <a href="/info/archive/" class="absolute w-full h-full" />
       </div>
 			
 		</div>
