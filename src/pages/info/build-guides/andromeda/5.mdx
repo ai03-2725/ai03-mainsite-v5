@@ -1,0 +1,67 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Andromeda"
+  page={5}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/andromeda/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/andromeda/2"},
+    {label: "Preparing the case", url: "/info/build-guides/andromeda/3"},
+    {label: "Assembling the internals", url: "/info/build-guides/andromeda/4"},
+    {label: "Putting it all together", url: "/info/build-guides/andromeda/5"},
+    {label: "Keymap editing and closing words", url: "/info/build-guides/andromeda/6"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Assembling the internals
+
+    1. Connect the daughterboard cable into the USB daughterboard if not already connected together.  
+      Insert the daughterboard-cable assembly into the area shown, and screw it into place using the four short daughterboard screws.  
+      Note: Due to limitations of the 3D model, the cable will not be displayed in the step diagrams.
+      ![Daughterboard location](/images/build-guides/andromeda/andromeda-build-guide-5-1-1.png)
+      ![Daughterboard screws](/images/build-guides/andromeda/andromeda-build-guide-5-1-2.png)
+
+    2. Prepare the prepared top-plate-PCB-switch assembly from the end of the previous page.  
+      Double-check that the temporary plate retention screws have been removed.  
+      Place the two case halves rear-to-rear.
+      ![Case halves](/images/build-guides/andromeda/andromeda-build-guide-5-2.png)
+
+    3. If you are planning on using the below-PCB foam layer, install it at this stage into the bottom case half.  
+      We recommend using it if you prefer a maximally muted/damped sound at the tradeoff of firmer typing feel; for a more expansive sound and/or softer typing feel, we recommend leaving it out.
+
+    4. Connect the daughterboard cable into the main PCB.  
+      You may have to reposition the halves for the cable to reach safely; be careful not to dent the two case halves together to avoid damage.
+      ![Daughterboard connection](/images/build-guides/andromeda/andromeda-build-guide-5-4.png)
+
+    5. Flip the upper half right-side-up and close it onto the bottom case half.
+      Take care to avoid straining the daughterboard cable as well as to avoid denting the two case halves together.
+      ![Top install](/images/build-guides/andromeda/andromeda-build-guide-5-5.png)
+
+    6. Install the case screws.
+      ![Case screws](/images/build-guides/andromeda/andromeda-build-guide-5-6.png)
+
+    7. Install the keycaps of your choice, connect to a computer, and verify that it works.
+
+    <br />
+    
+    Congratulations! You have fully assembled the Andromeda.  
+    Now you are ready for the keymap editing and final steps.
+
+    <SimpleButtonV2 href="/info/build-guides/andromeda/6">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

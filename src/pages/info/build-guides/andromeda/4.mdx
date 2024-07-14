@@ -1,0 +1,72 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Andromeda"
+  page={4}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/andromeda/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/andromeda/2"},
+    {label: "Preparing the case", url: "/info/build-guides/andromeda/3"},
+    {label: "Assembling the internals", url: "/info/build-guides/andromeda/4"},
+    {label: "Putting it all together", url: "/info/build-guides/andromeda/5"},
+    {label: "Keymap editing and closing words", url: "/info/build-guides/andromeda/6"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Assembling the internals
+
+    1. Prepare and tune the stabilizers needed for your preferred layout, if not done already.  
+      Prepare and lube the switches as well.
+
+    2. Mount the stabilizers onto the PCB using the provided shims to fill the gap on the thin PCB.  
+      The side with the copper artwork (logo) should face away from the PCB.  
+        
+      An example of shim use is shown below; the shim goes on the bottomside of the PCB, with the hook of the stabilizer hooking both the shim and the PCB.  
+      *Note: The pictured shim is an earlier revision; however, its usage remains the same.*  
+      ![Shim usage](/images/build-guides/andromeda/andromeda-build-guide-4-2-1.png)
+      ![Stabilizer install](/images/build-guides/andromeda/andromeda-build-guide-4-2-2.png)
+
+    3. If you plan to use the foam midlayer, install it above the PCB at this stage.  
+      Our personal recommendation is to install it if you prefer a calmer/more muted sound. For the opposite, it is recommended to leave it out.  
+      If using the midlayer, there is also an optional adhesive below-spacebar foam used to fill the gap below the spacebar. When installing this, align the foam to the case screw cutout and switch cutouts.
+      ![Standoff locations](/images/build-guides/andromeda/andromeda-build-guide-4-3.png)
+
+    4. Install the corner switches onto the plate for alignment, then install the plate onto the PCB.
+      ![Switch locations](/images/build-guides/andromeda/andromeda-build-guide-4-4.png)
+
+    5. Flip this assembly upside-down, and lower it into the case top half. 
+      Secure the plate against the top using the temporary plate retention screws.
+      ![Temporary screws](/images/build-guides/andromeda/andromeda-build-guide-4-5.png)
+
+    6. Flip the assembly right-side up.
+      Install the rest of the switches carefully in the following process:
+          1. Double-check that the solder leads of the switches are straight; if they are not, bend them back into position.
+          2. Fit the switch into the plate, and verify that the switch legs have successfully gone through the solder pads on the PCB.
+          3. Double-check that the switch has fully clipped into the plate, and is making maximum contact with the PCB rather than floating.
+      ![Switch install](/images/build-guides/andromeda/andromeda-build-guide-4-6.png)
+
+    7. Once all the switches are fitted and confirmed both clipped in and making firm contact against the PCB, solder each switch leg into place.  
+      Note: Having the PCB not fully secured against the switches can have detrimental effects for acoustics and typing feel.
+
+    <br />
+    
+    Now to complete the assembly.
+
+    <SimpleButtonV2 href="/info/build-guides/andromeda/5">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

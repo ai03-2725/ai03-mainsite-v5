@@ -1,0 +1,87 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Andromeda"
+  page={1}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/andromeda/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/andromeda/2"},
+    {label: "Preparing the case", url: "/info/build-guides/andromeda/3"},
+    {label: "Assembling the internals", url: "/info/build-guides/andromeda/4"},
+    {label: "Putting it all together", url: "/info/build-guides/andromeda/5"},
+    {label: "Keymap editing and closing words", url: "/info/build-guides/andromeda/6"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+    <SimpleImageV2 src="/images/andromeda/andromeda-side-light-medium.jpg" class="w-full mx-auto" />
+
+    ## Thank you for your purchase!
+    We've done our best to put in everything we know into this board.  
+    To get the best out of it, it is important to assemble it correctly.  
+    This build guide outlines the exact steps to take to get it built.  
+      
+    **Warning:** Damage, imperfections, etc. due to disregarding the build guide instructions cannot be accounted for. We won't be able to refund or replace parts if you decide to build it by gut instinct and mess up somewhere.
+
+    ## What's in the box 
+    - The Andromeda case, plate, and PCB,
+    - Sets of long gaskets, short gaskets, and small rectangular gaskets,
+    - The foam layers, one for above the PCB and two for below the PCB,
+    - An extra foam piece for the spacebar area,
+    - A wafer of stabilizer shims,
+    - A large Torx key and a small Torx key (T10 and T6 respectively),
+    - Some rubber feet,
+    - The USB daughterboard and cable,
+    - The carrying case (if that's considered within the box), 
+    - The piece of paper warning everyone to read the build guide.  
+
+    If anything is missing, please let us know immediately and we'll supply it as soon as possible.
+
+    ## Parts and tools necessary for building
+    - Enough switches to cover your preferred layout, likely lubed and tuned,
+    - Stabilizers for all the larger keys of your preferred layout,
+    - Keycaps of your choice,
+    - A USB-C cable which follows USB spec,
+    - Soldering equipment.
+    
+    ## Tools that aren't required but are useful
+    - A pair of tweezers,
+    - Some sort of desoldering equipment in case mistakes happen.
+    
+    ## Before we begin
+    Just a few quick notices regarding some important tidbits.  
+
+    - Refrain from wiping down the board with strong chemicals such as 90+% isopropyl alcohol, especially for the weight. This will ruin the matte coat and leave you with a semi-glossy tacky mess.  
+      The weight can handle a lighter alcohol mix for cleaning off the surface out of the box; however, please don't do this at too high of a frequency or with too strong of a chemical for the risk of coating damage.
+
+    - The daughterboard has extensive ESD protection circuitry onboard; however, they are not fail-safes (e.g. it isn't ideal to set a house on fire even if it has a powerful sprinkler system). Take care to discharge any excess static buildup before use, especially during building or disassembling when the PCB circuitry is exposed and unprotected. An ESD discharging keychain is highly recommended for removing static buildup before use.
+
+    - Do not overtighten the screws. Simply stop when the screws want to stop; overtightening risks destroying the board as well as ruining acoustics with issues such as excessive pinging and resonance.
+
+    - In addition, we recommend avoiding the use of third party screwdrivers, for they risk being oversized for the task and scratching up the case parts. If using your own drivers, triple-check that the bit-size is correct and that it can be used safely near the walls of the case.
+
+    - Read through the build guide once before actually carrying through with it, so you have a good idea of what's upcoming at the next step. You can navigate the book using the panel on the left (large screens), in the info tab (mobile), or with the links at the very bottom of the page.
+
+    - Even the outer box and foam that protects the carrying case is very useful for storing the board. If disposing of it, please recycle them according to your local regulations for the sake of the planet.
+
+    <br />
+
+    Ready?  
+    Let's begin.
+
+    <SimpleButtonV2 href="/info/build-guides/andromeda/2">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+
