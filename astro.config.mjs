@@ -26,6 +26,10 @@ export default defineConfig({
             return false
           }
         }
+        // Exclude redirected all projects page
+        if (page === `${DOMAIN}/collections/all-projects/`) {
+          return false
+        }
         // Include everything else
         return true
       }
