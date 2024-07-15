@@ -8,7 +8,6 @@ Short term
   - Alps SKCM pusher
 - Migrate stabilizer lube guide from tokyo meetup
 - Better image before-load backdrop and preload/CLS handling on info pages
-- Migrate small tidbits of FAQ left over
 
 Long term
 

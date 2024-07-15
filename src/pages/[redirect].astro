@@ -13,4 +13,13 @@ const { target } = Astro.props
 
 ---
 
-<meta http-equiv="refresh" content={`0; URL='${target}'`} />
+<html>
+  <head>
+    <link rel="canonical" href={target} />
+    <meta http-equiv="refresh" content={`0; URL='${target}'`} />
+  </head>
+  <body>
+    <p>This is a redirect page to {target}.</p>
+    <p>If you are not automatically redirected, please click <a href={target}>here</a>.</p>
+  </body>
+</html>
