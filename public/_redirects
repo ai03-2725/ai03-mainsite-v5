@@ -12,6 +12,7 @@
 /status/ /updates/ 308
 /news /blog/ 308
 /news/ /blog/ 308
+/news/* /blog/ 308
 /categories /collections/ 308
 /categories/ /collections/ 308
 /categories/foundation-series /collections/ 308
