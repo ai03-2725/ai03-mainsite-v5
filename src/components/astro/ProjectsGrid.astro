@@ -5,6 +5,7 @@ import type { ProjectGridStylesType } from "../../types";
 // import { Icon } from "astro-icon/components";
 import { getEntry } from "astro:content";
 import { getCollection } from "astro:content";
+import Spinner from "@components/astro/Spinner.astro";
 
 
 interface Props {
@@ -55,6 +56,11 @@ switch (style) {
 
         {/* The inner visual div (the actual card bit) */}
         <div class="w-full h-full relative rounded-[3.75px] overflow-hidden">
+
+          {/* Placeholder */}
+          <div class="absolute w-full h-full bg-zinc-600 flex flex-row justify-center items-center">
+            <Spinner size={36} fgColor="#a1a1aa" />
+          </div>
 
           {/* Background image */}
           <img class="object-cover object-center w-full h-full absolute" src={project.data.cover.image} alt={project.data.cover.alt} loading={index < 6 ? "eager" : "lazy"} />
