@@ -1,0 +1,88 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Equinox XL"
+  page={1}
+  pages={[
+    {label: "Assembly Instructions", url: "/info/build-guides/equinox-xl/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Thank you for your purchase!
+
+    ####  Assembly Instructions
+
+    1. Disassemble the case; remove parts from packaging.
+    2. Assemble the internals.   
+      
+    A: If you are using the plate (for 3-pin switches and depending on preferences):
+        <div class="p-4 bg-zinc-100 rounded-[3.75px]">
+        1. Install stabilizers onto the PCB.
+        2. Snap switches into the corner positions of the plate.
+        3. Insert the plate-switch assembly onto the PCB.
+        4. Install the rest of the switches onto the plate, making sure that each one is snapped in properly.
+        5. Solder all switches, making sure that each one is making firm contact against the PCB surface.
+          *Double-check to be sure that stabilizers are installed before this step.*
+        6. Plug the PCB into a computer and test functionality.
+          Make any soldering repairs as necessary.  
+        </div>
+    B: If you are building plateless (recommended configuration):
+        <div class="p-4 bg-zinc-100 rounded-[3.75px]">
+        1. Solder switches onto the PCB, making sure that each one is making firm contact against the PCB surface.
+        2. Install stabilizers.
+        3. Mount keycaps onto each switch and check for any excessively rotated switches.  
+          If any exist, resolder as necessary, or simply twist the switch while heating/melting the solder joints and letting them re-form.  
+          Remove keycaps near the case screw points once done.  
+        4. Plug the PCB into a computer and test functionality.  
+          Make any soldering repairs as necessary.  
+        </div>
+
+    3. Install the gasket pads onto the case bottom half in the locations shown.
+      ![Gaskets install](/images/build-guides/equinox-xl/equinox-xl-gasket-pads.png)
+      ![Gasket locations](/images/build-guides/equinox-xl/equinox-xl-gasket-pads-post-install.png)
+      
+    4. Lower the internals assembly (PCB, switches, optionally plate) onto the bottom, making sure the PCB tabs land onto the gasket pads in the process.  
+      ![PCB install](/images/build-guides/equinox-xl/equinox-xl-pcb-position.png)
+
+    5. Lower the case top onto the assembly.  
+      ![Top install](/images/build-guides/equinox-xl/equinox-xl-top-install.png)
+
+    6. Install the 6 case screws from the gaps between the switches.  
+      Take care to avoid scratching the inner walls of the case while securing the screws.  
+      ![Screw locations](/images/build-guides/equinox-xl/equinox-xl-case-screws-1.png)  
+      ![Screw install install](/images/build-guides/equinox-xl/equinox-xl-case-screws-2.png)  
+    
+    Congratulations!  
+    You have assembled an Equinox XL.  
+
+    ### Configuring the Keymap
+
+    Use [VIA](https://usevia.app/) to configure the keymap.  
+    Until [this pull request](https://github.com/the-via/keyboards/pull/2326/) is merged, manual loading of the VIA definition JSON is necessary for the board to detect.  
+
+    1. Download the necessary files:   
+        <a href="/resources/equinox-xl/equinox_xl_via_v2.json" download="equinox_xl_via_v2.json">VIA JSON V2</a> - if you're using the PCB as-is without having flashed newer firmware on it  
+        <a href="/resources/equinox-xl/equinox_xl_via_v3.json" download="equinox_xl_via_v3.json">VIA JSON V3</a> - if you've installed a recently compiled version of QMK on the PCB  
+    2. Open VIA configurator, navigate to the settings menu on the top bar, and enable the "Show design tab" option.  
+    3. Switch to the new design tab that appears on the top bar.  
+    4. If you are using V2 definitions, enable the "Use V2 definitions" option.  
+    5. Click the load button beside "Load Draft Definition", and select the JSON file downloaded earlier.  
+    6. At this point, the board should detect in VIA when plugged in.
+
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+
