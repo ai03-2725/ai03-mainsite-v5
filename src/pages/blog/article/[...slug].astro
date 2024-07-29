@@ -33,8 +33,9 @@ const relatedPosts = await getEntries<'blog-posts'>(post.data.relatedPosts)
 			<h1 class="text-[24px] lg:text-[38px] font-[575] mb-2">{post.data.title}</h1>
       <p class="mb-2">{dateToDisplayString(post.data.date)}</p>
       <div class="w-full flex flex-row justify-center pt-7 lg:pt-10">
-        <div class="overflow-hidden md:rounded-[3.75px] w-full lg:w-3/4 aspect-[1.618]">
-          <img src={post.data.cover.image} loading="lazy" class="object-cover" style={positionString ? `object-position: ${positionString};` : ""} />
+        <div class="overflow-hidden md:rounded-[3.75px] w-full lg:w-3/4 aspect-[1.618] relative">
+          <div class="absolute w-full h-full bg-zinc-600" />
+          <img src={post.data.cover.image} loading="lazy" class="absolute w-full h-full object-cover" style={positionString ? `object-position: ${positionString};` : ""} />
         </div>
       </div>
 		</div>

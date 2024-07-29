@@ -131,7 +131,7 @@ export const UpdatesPageEntry: React.FC<{
           xl:w-1/3
           overflow-hidden relative
         ">
-          <div class="absolute w-full h-full bg-zinc-500">
+          <div class="absolute w-full h-full bg-zinc-600">
             <img src={project.src} alt={`Cover image for ${project.title}`} loading="lazy" class="object-cover w-full h-full" />
           </div>
           <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-5 md:p-4 lg:p-5 flex flex-col-reverse">
