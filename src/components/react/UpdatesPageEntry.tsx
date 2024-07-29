@@ -13,7 +13,7 @@ import { StatusProgressIndicator } from "./StatusProgressIndicator";
 
 // The fetch function
 async function fetchUpdates(project: string): Promise<APIUpdateEntry[]> {
-  return fetch(`/api/updates/${project}`)
+  return fetch(`/api/updates/${project}/`)
   .then((response) => {
     if (response.status === 429) {
       throw new Error("429")
@@ -137,7 +137,7 @@ export const UpdatesPageEntry: React.FC<{
           <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-5 md:p-4 lg:p-5 flex flex-col-reverse">
             <h2 class="text-2xl md:text-xl lg:text-2xl font-[500] text-white">{project.title}</h2>
           </div>
-          <a href={`/projects/${project.slug}`} class="w-full h-full absolute" />
+          <a href={`/projects/${project.slug}/`} class="w-full h-full absolute" />
           
         </div>
 

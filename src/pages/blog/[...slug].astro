@@ -62,12 +62,12 @@ const postsToShow = blogPosts.slice(postStartIndex, postStartIndex + PAGE_SIZE)
 				<h2 class="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-[450]">Blog</h2>
 				{page > 1 &&
 					<div class="flex flex-row gap-2 items-center">
-						<a href={`/blog/${page - 1}`}>
+						<a href={`/blog/${page - 1}/`}>
 							<Icon name="ph:arrow-left" class="ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
 						</a>
 						<p class="text-xl">{page !== 1 && ` Page ${page}`}</p>
 						{maxPages > page &&
-							<a href={`/blog/${page + 1}`}>
+							<a href={`/blog/${page + 1}/`}>
 								<Icon name="ph:arrow-right" class="ms-1 md:ms-0 text-[24px] md:text-[24px] lg:text-[24px]" />
 							</a>
 						}
@@ -87,7 +87,7 @@ const postsToShow = blogPosts.slice(postStartIndex, postStartIndex + PAGE_SIZE)
 					<p class="text-sm lg:text-base text-zinc-200 font-[450]">{dateToDisplayString(post.data.date)}</p>
 					<h3 class="text-xl lg:text-2xl font-[500]">{post.data.title}</h3>
 				</div>
-				<a href={`/blog/article/${post.slug}`} class="w-full h-full absolute" />
+				<a href={`/blog/article/${post.slug}/`} class="w-full h-full absolute" />
 			</div>
 		)}
 
@@ -103,7 +103,7 @@ const postsToShow = blogPosts.slice(postStartIndex, postStartIndex + PAGE_SIZE)
 				<h2 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-[450]">Next Page</h2>
 				<Icon name="ph:arrow-right" class="ms-1 md:ms-0 text-[24px] md:text-[32px] lg:text-[36px]" />
 			</div>
-			<a href={`/blog/${page + 1}`} class="absolute w-full h-full" />
+			<a href={`/blog/${page + 1}/`} class="absolute w-full h-full" />
 		</div>
 		}
 

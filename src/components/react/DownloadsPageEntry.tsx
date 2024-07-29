@@ -9,7 +9,7 @@ import rehypeRewrite from 'rehype-rewrite'
 
 // The fetch function
 async function fetchResources(project: string): Promise<APIResourceEntry[]> {
-  return fetch(`/api/resources/${project}`)
+  return fetch(`/api/resources/${project}/`)
   .then((response) => {
     if (response.status === 429) {
       throw new Error("429")
@@ -133,7 +133,7 @@ export const DownloadsPageEntry: React.FC<{
         <div class="absolute bottom-0 left-0 w-full text-white bg-gradient-to-t from-[#00000090] h-1/3 p-4 md:p-5 lg:p-6 flex flex-col-reverse">
           <h2 class="text-2xl font-[500] text-white">{project.title}</h2>
         </div>
-        <a href={`/projects/${project.slug}`} class="w-full h-full absolute" />
+        <a href={`/projects/${project.slug}/`} class="w-full h-full absolute" />
         
       </div>
 
