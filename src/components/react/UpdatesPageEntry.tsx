@@ -13,7 +13,7 @@ import { StatusProgressIndicator } from "./StatusProgressIndicator";
 
 // The fetch function
 async function fetchUpdates(project: string): Promise<APIUpdateEntry[]> {
-  return fetch(`/api/updates/${project}/`)
+  return fetch(`/api/updates/${project}`)
   .then((response) => {
     if (response.status === 429) {
       throw new Error("429")

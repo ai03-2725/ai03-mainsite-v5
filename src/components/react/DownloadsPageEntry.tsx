@@ -9,7 +9,7 @@ import rehypeRewrite from 'rehype-rewrite'
 
 // The fetch function
 async function fetchResources(project: string): Promise<APIResourceEntry[]> {
-  return fetch(`/api/resources/${project}/`)
+  return fetch(`/api/resources/${project}`)
   .then((response) => {
     if (response.status === 429) {
       throw new Error("429")
