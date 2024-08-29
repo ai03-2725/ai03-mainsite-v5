@@ -58,30 +58,32 @@ const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date
 		
 
 		<!-- Featured blocks -->
-		<HorizontalStackBlock src="/images/altair/altair-render-exploded-medium.avif" noGap reverse noProse >
-			<div class="lg:pe-20 xl:pe-22 2xl:pe-24 flex flex-col items-center lg:items-end text-center lg:text-end">
-				<div class="flex flex-row items-center pb-4 pt-7 lg:pt-0">
-					<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[38px] xl:text-[42px]">ALTAIR</h2>
-					<p class="ps-3 pe-2 text-lg pt-0.5">and</p>
-					<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[38px] xl:text-[42px]">ALTAIR-X</h2>
+		<div data-nosnippet>
+			<HorizontalStackBlock src="/images/altair/altair-render-exploded-medium.avif" noGap reverse noProse >
+				<div class="lg:pe-20 xl:pe-22 2xl:pe-24 flex flex-col items-center lg:items-end text-center lg:text-end">
+					<div class="flex flex-row items-center pb-4 pt-7 lg:pt-0">
+						<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[38px] xl:text-[42px]">ALTAIR</h2>
+						<p class="ps-3 pe-2 text-lg pt-0.5">and</p>
+						<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[38px] xl:text-[42px]">ALTAIR-X</h2>
+					</div>
+					<p class="mb-4">ai03's third generation ergonomic design.</p>
+					<p>A combination of optimized layout, performant internals, and sculpted visuals deliver a truly comfortable typing experience.</p>
+					<SimpleButton label="Explore Altair" url="/projects/altair/" fitWidth extraClasses='mt-9 mb-4 lg:mb-0' extern={false} />
 				</div>
-				<p class="mb-4">ai03's third generation ergonomic design.</p>
-				<p>A combination of optimized layout, performant internals, and sculpted visuals deliver a truly comfortable typing experience.</p>
-				<SimpleButton label="Explore Altair" url="/projects/altair/" fitWidth extraClasses='mt-9 mb-4 lg:mb-0' extern={false} />
-			</div>
-		</HorizontalStackBlock>
-		
-		<HorizontalStackBlock src="/images/lunar-ii/lunar-ii-built-front-01-medium.avif" noGap noProse >
-			<div class="lg:ps-20 xl:ps-22 2xl:ps-24 flex flex-col items-center lg:items-start text-center lg:text-start">
-				<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[38px] xl:text-[42px] pb-4 pt-7 lg:pt-0">LUNAR II</h2>
-				<p class="mb-4">Reviving the vintage Apple Extended Keyboard curve from the 90s in a modern shell.</p>
-				<p>Complete with modern touches such as impact-absorbing gaskets and solenoids that electrically hammer at the case for toggleable clickiness.</p>
-				<SimpleButton label="Explore Lunar II" url="/projects/lunar-ii/" fitWidth extraClasses='mt-9' extern={false} />
-			</div>
-		</HorizontalStackBlock>
+			</HorizontalStackBlock>
+			
+			<HorizontalStackBlock src="/images/lunar-ii/lunar-ii-built-front-01-medium.avif" noGap noProse >
+				<div class="lg:ps-20 xl:ps-22 2xl:ps-24 flex flex-col items-center lg:items-start text-center lg:text-start">
+					<h2 class="font-['M_PLUS_Rounded_1c'] font-[400] text-[36px] lg:text-[38px] xl:text-[42px] pb-4 pt-7 lg:pt-0">LUNAR II</h2>
+					<p class="mb-4">Reviving the vintage Apple Extended Keyboard curve from the 90s in a modern shell.</p>
+					<p>Complete with modern touches such as impact-absorbing gaskets and solenoids that electrically hammer at the case for toggleable clickiness.</p>
+					<SimpleButton label="Explore Lunar II" url="/projects/lunar-ii/" fitWidth extraClasses='mt-9' extern={false} />
+				</div>
+			</HorizontalStackBlock>
+		</div>
 
 		<!-- Blog section -->
-		 <div class="bg-zinc-100">
+		<div class="bg-zinc-100" data-nosnippet>
 			<div class="
 				container mx-auto 
 				grid grid-flow-row-dense 
@@ -107,18 +109,18 @@ const blogPosts = (await getCollection('blog-posts')).sort((a, b) => a.data.date
 					rounded-[3.75px] overflow-hidden bg-zinc-700 text-white
 					relative flex flex-col justify-center items-center
 				">
-					<div class="flex flex-row justify-center items-center gap-1 absolute">
-						<p class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-[450] pe-[0.12em] md:hidden">All</p>
-						<h2 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-[450]">Blog Posts</h2>
-						<Icon name="ph:arrow-right" class="ms-1 md:ms-0 text-[24px] md:text-[32px] lg:text-[36px]" />
-					</div>
-					<a href="/blog/" class="w-full h-full absolute" />
+				<div class="flex flex-row justify-center items-center gap-1 absolute">
+					<p class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-[450] pe-[0.12em] md:hidden">All</p>
+					<h2 class="text-lg md:text-xl lg:text-2xl xl:text-3xl font-[450]">Blog Posts</h2>
+					<Icon name="ph:arrow-right" class="ms-1 md:ms-0 text-[24px] md:text-[32px] lg:text-[36px]" />
+				</div>
+				<a href="/blog/" class="w-full h-full absolute" />
 				</div>
 			</div>
 		</div>
 
 		<!-- Quick links -->
-		<!-- <div class="bg-zinc-100 w-full py-36">
+		<!-- <div class="bg-zinc-100 w-full py-36" data-nosnippet>
 
 			<div class="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
 

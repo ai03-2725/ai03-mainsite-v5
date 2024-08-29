@@ -41,19 +41,14 @@ const ogAltString = ogImage ? (ogImage === "/images/open-graph/og-blog.jpg" ? "B
 
 <!doctype html>
 <html lang="en" style="scroll-behavior: smooth;">
-	<head>
+	<head prefix="og: http://ogp.me/ns#">
 
-		<!-- Preload fonts to prevent FOUC -->
-		<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={interWoff2} crossorigin/>
-		{preloadMPlus300 && 
-			<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={mplus300Woff2} crossorigin/>
-		}
-		{preloadMPlus400 && 
-			<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={mplus400Woff2} crossorigin/>
-		}
+		<!-- Page settings -->
+		<meta name="robots" content="max-image-preview:large">
+		<meta name="googlebot" content="index,follow">
+		<meta name="format-detection" content="telephone=no">
 
 		<!-- Misc page metadata -->
-		<Favicon />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 
@@ -61,6 +56,10 @@ const ogAltString = ogImage ? (ogImage === "/images/open-graph/og-blog.jpg" ? "B
 		<title>{titleString}</title>
 		<meta name="description" content={description} />
 
+		<!-- Favicon tags -->
+		<Favicon />
+
+		<!-- Open graph -->
 		<meta property="og:title" content={titleString} />
 		{title !== "Home" && <meta property="og:site_name" content="ai03 Design Studio" />}
 		<meta property="og:type" content={isArticle ? "article" : "website"} />
@@ -82,6 +81,15 @@ const ogAltString = ogImage ? (ogImage === "/images/open-graph/og-blog.jpg" ? "B
 
 		<meta name="generator" content={Astro.generator} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<!-- Preload fonts to prevent FOUC -->
+		<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={interWoff2} crossorigin/>
+		{preloadMPlus300 && 
+			<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={mplus300Woff2} crossorigin/>
+		}
+		{preloadMPlus400 && 
+			<link rel="preload" as="font" type="font/woff2" fetchpriority="low" href={mplus400Woff2} crossorigin/>
+		}
 
 	</head>
 	<body style="margin: 0;">
