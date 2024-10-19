@@ -51,3 +51,10 @@ Thus for at least a short while longer, I'll be tackling this goal before going 
 
 <br/>
 Expect to hear more about it in the coming months.  
+
+<br/>
+<br/>
+<br/>
+<br/>
+  
+If you want a heads-up as to when these next projects go live, make sure to obtain the `Notifications` role in the ai03 [Discord community](/social/) to receive a ping when there's progress.  
