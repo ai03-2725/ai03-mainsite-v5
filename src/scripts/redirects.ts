@@ -4,6 +4,7 @@ export const redirects: [string, string][] = [
   ["lunar2guide", "https://ai03.com/info/build-guides/lunar-ii/"],
   ["polarismanual", "https://ai03.com/info/build-guides/polaris/"],
   ["vegamanual", "https://ai03.com/info/build-guides/vega/"],
+  ["altair-guide", "https://ai03.com/info/build-guides/altair/"],
 
   // Generic
   ["contactform", "https://ai03.com/contact"],
