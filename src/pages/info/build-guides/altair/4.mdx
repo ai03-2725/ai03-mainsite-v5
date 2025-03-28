@@ -1,0 +1,104 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Altair(-X)"
+  page={4}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/altair/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/altair/2/"},
+    {label: "Preparing the USB board/daughterboard", url: "/info/build-guides/altair/3/"},
+    {label: "Assembling the internals", url: "/info/build-guides/altair/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/altair/5/"},
+    {label: "Keymap assembly and combined testing", url: "/info/build-guides/altair/6/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Assembling the internals
+
+    1. Prepare the following parts:
+
+        - One of the plates (they are reversible, so the left/right half plates are identical),  
+        - The PCB for the left hand side,  
+        - A foam midlayer if you purchased one and plan to use it,  
+        - The screws and gaskets,  
+        - The switches you'll be using for the build.  
+        
+        ![Label locations](/images/build-guides/altair/altair-build-guide-20241022-154040374.avif)
+
+        The PCB can be identified by the "LHS" (left-hand side) marker located here.
+        ![PCB marker](/images/build-guides/altair/altair-build-guide-20241022-154045294-annotated.avif)
+
+    2. Place down three switches, then place the PCB atop to float it in the air.
+      ![Switches](/images/build-guides/altair/altair-build-guide-20241022-154836623.avif)
+      ![PCB atop](/images/build-guides/altair/altair-build-guide-20241022-154842441.avif)
+
+    3. Fit 5 of the provided "Shoulder Screws" (the screws with a small column between its head and threaded bit) into the 5 circled holes.  
+      ![Shoulder screw](/images/build-guides/altair/altair-build-guide-20241022-154903503.avif)
+      ![Screw locations](/images/build-guides/altair/altair-build-guide-20241022-154916231-annotated.avif)
+
+    4. If you are using the foam midlayer, stack it atop the PCB and align it into place.
+      ![Midfoam](/images/build-guides/altair/altair-build-guide-20241022-154937095.avif)
+
+    5. Separately, prepare the plate by installing 6 switches around the corners.  
+      The photo below shows the recommended switch locations.
+      ![Switches into the plate](/images/build-guides/altair/altair-build-guide-20241022-154420684.avif)
+        
+        Verify that all 6 switches have straight pins - if you spot any bends like the ones below, bend them back into shape.
+        <div class="flex flex-row max-w-[800px]">
+          <img src="/images/build-guides/vega/vega-build-guide-4-8-1.png" />
+          <img src="/images/build-guides/vega/vega-build-guide-4-8-2.png" />
+        </div>
+
+    6. Place this plate-switch assembly onto the PCB-screws assembly, then push them together.
+        ![Combining the plate and PCB](/images/build-guides/altair/altair-build-guide-20241022-154953949.avif)
+        
+        Once assembled, check the following:
+          - The plate and PCB should be pushed all the way together, with the switches both clipped into the plate and making firm contact against the PCB.  
+        ![Fully pushed together](/images/build-guides/altair/altair-build-guide-20241022-155014924.avif)
+
+          - The two pins of each switch have successfully made it through each socket, rather than being bent out of shape and crumping against them.
+        ![Visible switch pins](/images/build-guides/altair/altair-build-guide-20241022-155028241-annotated.avif)
+
+          - All five shoulder screws are now captive between the plate and PCB.  
+        ![Screws visible from the bottom](/images/build-guides/altair/altair-build-guide-20241022-155033596-annotated.avif)
+        ![Screws visible from the top](/images/build-guides/altair/altair-build-guide-20241022-155047939-annotated.avif)
+      
+    7. Install the remaining switches.  
+      For each switch, verify that the switch pins are not bent, and insert them all the way until they clip into the plate and make firm contact against the PCB.  
+      ![Switches being installed](/images/build-guides/altair/altair-build-guide-20241022-155203809.avif)
+      ![Switches installed](/images/build-guides/altair/altair-build-guide-20241022-155350986.avif)
+
+    8. Flip the assembly upside-down.
+      Install the large gaskets into the locations shown below (marked with rectangles labelled "Gasket A" on the PCB).
+      ![Gasket locations](/images/build-guides/altair/altair-build-guide-20241022-160228543-annotated-large.avif)
+      ![Gasket installation](/images/build-guides/altair/altair-build-guide-20241022-160244042.avif)
+      ![Gasket installed](/images/build-guides/altair/altair-build-guide-20241022-160311285.avif)
+
+    9. Install the small/thin gasket into the location shown below (marked with a rectangle labelled "Gasket B" on the PCB).
+      ![Gasket location](/images/build-guides/altair/altair-build-guide-20241022-160353522-labelled.avif)
+      ![Gasket installed](/images/build-guides/altair/altair-build-guide-20241022-160414377.avif)
+  
+
+    <br />
+    
+    The internals assembly is now complete.  
+    It is now time to put it all together.
+
+    <SimpleButtonV2 href="/info/build-guides/altair/5/">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

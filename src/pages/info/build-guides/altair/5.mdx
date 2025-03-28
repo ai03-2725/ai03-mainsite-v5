@@ -1,0 +1,99 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Altair(-X)"
+  page={5}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/altair/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/altair/2/"},
+    {label: "Preparing the USB board/daughterboard", url: "/info/build-guides/altair/3/"},
+    {label: "Assembling the internals", url: "/info/build-guides/altair/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/altair/5/"},
+    {label: "Keymap assembly and combined testing", url: "/info/build-guides/altair/6/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Putting it all together
+
+    The only thing left is to connect the ribbon cable and to fit it all together.  
+    However, this can be a bit tricky - please proceed with caution.  
+      
+    Proceed through the ribbon cable steps carefully:  
+    - Always move parts around gently and carefully.
+    - **If you ever feel a "tug", stop immediately** - the last thing you want to do is shear the cable apart or rip the connectors off the PCBs.
+
+    <br/>
+
+    1. Prepare the internals by opening the FFC connector on the main PCB - lift the latch to its "upright" position if not already in that position.  
+      The position of the connector on the PCB is shown below.  
+      ![FFC connector location](/images/build-guides/altair/altair-build-guide-20241022-160228543-annotated-ffc.avif)
+
+    2. Prepare the case assembly, and lift the FFC cable end out of the case as shown below.  
+      The cable should be simply bent outwards without any twists, with the blue tape on the end facing upwards.  
+      ![Pre-lift](/images/build-guides/altair/altair-build-guide-20250328-000649271.avif)
+      ![Post-lift](/images/build-guides/altair/altair-build-guide-20250328-000711281.avif)
+
+    3. Place the PCB-plate-switches assembly upside-down as shown below, with the edge of the internals roughly aligned to where the FFC exits the daughterboard.  
+      ![Placing the internals](/images/build-guides/altair/altair-build-guide-20250328-000748005.avif)
+      
+    4. Bend the FFC in a loop as shown below, and insert it into the FFC connector on the main PCB.  
+      Make sure that the cable does not have any twists once complete.  
+      ![Bending the FFC, part 1](/images/build-guides/altair/altair-build-guide-20250328-000748005.avif)
+      ![Bending the FFC, part 1](/images/build-guides/altair/altair-build-guide-20250328-000810620.avif)
+      ![Bending the FFC, part 1](/images/build-guides/altair/altair-build-guide-20250328-000814172.avif)
+      ![Bending the FFC, part 1](/images/build-guides/altair/altair-build-guide-20250328-000833109.avif)
+      ![Bending the FFC, part 1](/images/build-guides/altair/altair-build-guide-20250328-000906649.avif)
+      
+    5. Insert the cable all the way, and verify that it is inserted straight as was done with the daughterboard.  
+      Latch the FFC connector into its "down" position to secure the cable into place.
+      ![Latching the FFC connector](/images/build-guides/altair/altair-build-guide-20250328-000919707-annotated.avif)
+      ![FFC connector latched](/images/build-guides/altair/altair-build-guide-20250328-000926443.avif)
+
+    6. Pick up the internals and flip it over horizontally as shown below.  
+      Keep an eye on the ribbon cable during the process - the cable should sit flat without any twists as the internals lower into the case.  
+      If the cable does not sit roughly flat due to being fully twisted or whatnot, un-latch the cable and retry the assembly process.  
+      ![Internals folding part 1](/images/build-guides/altair/altair-build-guide-20250328-000934967.avif)
+      ![Internals folding part 2](/images/build-guides/altair/altair-build-guide-20250328-000940682.avif)
+      ![Internals folding part 3](/images/build-guides/altair/altair-build-guide-20250328-000943972.avif)
+      ![Internals folding part 4](/images/build-guides/altair/altair-build-guide-20250328-000947233.avif)
+      ![Internals folding part 5](/images/build-guides/altair/altair-build-guide-20250328-000953338.avif)
+      ![Internals folding part 6](/images/build-guides/altair/altair-build-guide-20241022-155903680.avif)
+
+    7. Screw the internals into place by turning the captive shoulder screws between the plate and PCB.  
+      Before screwing them in, rotate the screw counter-clockwise until you hear a "click" - this is the sound of the threads engaging.  
+        
+        Do not screw a single one in all the way at once, as this will pull the PCB and plate apart.  
+        Instead, rotate each screw around 180 to 360 degrees at a time in clockwise order.  
+      ![Screws order](/images/build-guides/altair/altair-build-guide20250328-003300962-annotated.avif)
+      ![Screwing in](/images/build-guides/altair/altair-build-guide-20241022-155928926.avif)
+
+    8. Once all the screws are in as far as they will go, connect the now-assembled half to the PC for testing.  
+      Yes, the Altair will function even with just one half.  
+        
+        Connect the **outer USB port** (the one near Esc/Backspace, not the one near spacebar) to the computer, and verify that it shows up as a keyboard.  
+        All keys should function (aside from the layer key next to the spacebar which will seemingly do nothing - you will learn how to use this later in the learning guide).  
+
+    ## Assembling the other half
+    
+    The right half assembles in an identical way - simply repeat the build guide with the left/right mirrored, and you should have both halves assembled.
+      
+    Once you test that the right half is also functioning as a keyboard, proceed to the next page for hooking them together.  
+    <br/>
+    <SimpleButtonV2 href="/info/build-guides/altair/6/">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+

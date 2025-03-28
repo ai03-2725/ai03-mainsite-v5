@@ -1,0 +1,52 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Altair(-X)"
+  page={6}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/altair/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/altair/2/"},
+    {label: "Preparing the USB board/daughterboard", url: "/info/build-guides/altair/3/"},
+    {label: "Assembling the internals", url: "/info/build-guides/altair/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/altair/5/"},
+    {label: "Keymap assembly and combined testing", url: "/info/build-guides/altair/6/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Final assembly and combined testing
+
+    1. Install the provided rubber feet into the indents of the case on the bottom.  
+
+    2. With both halves disconnected from any computer or device, connect the **inner USB ports** (the ones near spacebar, not the ones near Esc/Backspace) of the two halves together using the provided USB cable.  
+      Then, connect the outer USB port of the half you prefer to a computer, and test that the keys on both halves function for sending keystrokes.  
+        
+      **Warning:** Only one of the outer USB ports should be used at once - do not connect both ports to the computer, each port to a different computer, etc., as this will likely cause irrepairable damage to both the keyboard and the computers involved.  
+
+    3. Install keycaps of your choice.
+
+
+    Your Altair(-X) build is now complete.
+    ![Build](/images/build-guides/altair/altair-build-guide-20241022-163403599.avif)
+
+    ## The Learning Guide
+    
+    I apologize for how long the build guide took to publish - I'm currently wrapping up the learning guide portion, and I hope to have it done hopefully by the end of the day, worst case by the end of the week.  
+    <br/>
+    <SimpleButtonV2 disabled>Future link to the Learning Guide</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+
