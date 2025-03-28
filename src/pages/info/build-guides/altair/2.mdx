@@ -1,0 +1,48 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import BuildGuideLayout from '@layouts/BuildGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<BuildGuideLayout 
+	projectTitle="Altair(-X)"
+  page={2}
+  pages={[
+    {label: "Start here", url: "/info/build-guides/altair/"},
+    {label: "Pre-build preparations", url: "/info/build-guides/altair/2/"},
+    {label: "Preparing the USB board/daughterboard", url: "/info/build-guides/altair/3/"},
+    {label: "Assembling the internals", url: "/info/build-guides/altair/4/"},
+    {label: "Putting it all together", url: "/info/build-guides/altair/5/"},
+    {label: "Keymap assembly and combined testing", url: "/info/build-guides/altair/6/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## Pre-build preparations
+    Before assembling the board, there are a few things to check.
+
+    1. Briefly check the exterior of the case to make sure that there's no damage or whatnot (unless you purchased a B-stock unit or similar unit with known defects).
+
+        1. If you have any major flaws on the case that require a replacement, **do not continue further** and contact the vendor you purchased from immediately.  
+          RMA requests can't be handled if the board has been built, so keep everything unused.
+
+    2. If you skipped through it, double-check that all package contents listed in part 1 are actually included in the box.  
+      It's a nightmare if you get partway through the build and realize a part is missing.
+
+    <br />
+    
+    Once you've confirmed that the board is ready for assembly, it's time to assemble.
+
+    <SimpleButtonV2 href="/info/build-guides/altair/3/">Next Page</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</BuildGuideLayout>
+
+
