@@ -1,0 +1,181 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import GenericPaginatedGuideLayout from '@layouts/GenericPaginatedGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<GenericPaginatedGuideLayout 
+	pageTitle="Altair-X (4-row) Learning Guide"
+  description="Learn how to type on the Altair-X."
+  page={3}
+  pages={[
+    {label: "Start here", url: "/info/other-guides/altair-x-learning-guide/"},
+    {label: "The basics", url: "/info/other-guides/altair-x-learning-guide/2/"},
+    {label: "The daily-use bar", url: "/info/other-guides/altair-x-learning-guide/3/"},
+    {label: "Layout techniques", url: "/info/other-guides/altair-x-learning-guide/4/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## The daily-use bar
+
+    You'll definitely need a bit more than just the alphabet for daily use, so let's tackle that bit next.
+      
+    ### The modifiers 
+
+    The Altair-X obviously has fewer keys than a typical keyboard, but a lot is surprisingly similar and unchanged.
+    For now, let's focus on the keys marked in grey.
+
+    ![Halves placement](/images/guides/altair-learning/diagrams/Modifiers-4row.png)
+
+    Let's start with the simple ones:
+    - Escape - At the top left as expected.
+    - Shift - To the left of Z as expected.
+    - Backspace - At the top right as expected.
+    - Alt, Super - On the bottom row to the left as expected - although possibly a bit shifted in position compared to the usual.
+
+
+    Now, let's take a look at the big differences.
+
+    - Control - This sits at the "caps lock" position.  
+        
+      If you're used to the Happy Hacking Keyboard, Control-Caps layouts, or any layout that generally swaps caps lock and control, you're likely already used to this.  
+        
+      If not, this might take a bit of time to get used to, but from my experience the transition goes quickly once you experience the benefits - vastly less strain on the pinky, much easier reach to all of your shortcuts.  
+      Try your usual shortcuts such as "control-s" comparing the effort of curling your pinky down to where control usually sits versus where it is on Altair, and you'll quickly notice the effortlessness.  
+    
+    - Enter - This sits one row down, roughly at the "right shift" position.  
+        
+      If you've used ergo or ortho layouts before, you'll likely be used to this one as well.  
+      If not, this one might take a bit of getting used to, but from personal experience, after a bit of strangeness at first, this also becomes second nature.
+
+      Note: Some people prefer to swap the single quotes and enter.  
+      I recommend starting with the stock layout first since I personally felt that it was smoother to transition to, but if you feel otherwise after maybe a few days of use, try swapping them around in VIA configurator.
+
+    #### For Mac OS users
+
+    The modifier keymapping will mostly be the same, but you'll need to swap out the keycodes due to how Mac OS handles modifier keys.  
+    Open up VIA configurator, then assign the following keys:  
+
+    - "KC_LGUI" (the Super/Win key) behaves as Command.
+    - "KC_LALT" (the Alt key) behaves as Option.
+    - "KC_LCTL" (the Control key) simply behaves as Control.
+
+    How you assign these keys is up to you, but the two big options are as follows:
+
+    - The "keeping this as close to the stock keyboard as possible" approach.  
+      From the keymap shown above, keep Ctrl as-is, place Command to the left of the Layer key, and place Option to the left of that.  
+    - The "arguably more comfortable to use than stock" approach.  
+      From the keymap above, place Command where Ctrl is, place Option to the left of the Layer key, and place Control to the left of that.  
+    
+    As someone who recently migrated from Windows to Mac, I spent some time going back and forth; I personally found the latter to be more comfortable for daily use.  
+
+    ### The bottom-right modifiers
+
+    This is where things start to get truly interesting - due to the fewer number of keys overall, some modifiers and convenient keys get shifted around.  
+    By default, Altair-X binds the bottom-right keys to the following:
+
+    - Tab - You can now indent code and paragraphs with a swift movement of the thumb.  
+      This may lead to massive efficiencies writing software and documents.  
+    - Delete - With a larger swing of the thumb/hand or reaching down with other fingers, you can now conveniently delete text, CAD elements, code, media, or whatever you feel like.  
+
+    From my experience, these thumb keys seems to be well-suited for keys which need either one-off presses or rapid mashing, hence these two choices.
+
+
+    ### The inner column
+
+    This is a unique feature of Altair/Altair-X's layout - having an extra set of keys between the G and H columns.  
+    While the stock keymap has them bound to some generic defaults, these keys you'll likely want to experiment around with a bit - what you end up binding them to will likely depend purely on your day-to-day workflow.
+      
+    Some examples are as follows:
+    - Brackets for writing software* (More advice on this later)
+    - Media controls
+    - Virtual desktop switching, Tab switching, and App switching shortcut macros
+    - Macros for common shortcuts used in your daily-use programs
+
+    One note is that they're a bit more strainful to reach than the other key positions - you'll likely want to delegate these keys to keys you need swift access to, but not keys that you want to press extremely often on a regular basis.
+
+    Personally, I have them bound to the virtual desktop/tab/app switching shortcuts, allowing me to effectively multiply the monitor space I have with one tap.
+
+    ### Introducing the layers
+    This is where Altair-X truly gets interesting - the layer keys.  
+      
+    Altair-X has very conveniently holdable layer keys to both sides of the spacebar, allowing you to immediately change every key on the board while held.  
+    Even by just changing the alpha keys and leaving the modifiers alone, you effectively have a whopping 90 keys within a 1-key distance of home position - more keys than an entire tenkeyless keyboard combined, but all accessible with zero wrist movement.  
+
+    So let's tap into its power.
+
+    ### Navigating around
+
+    ![Halves placement](/images/guides/altair-learning/diagrams/Modifiers-4row.png)
+
+    First, try holding the layer key labelled "Nav" in the diagram above.  
+    Now the active keys are the legends in the same blue color.  
+      
+    Try pressing I/J/K/L with Nav held - you'll find that the arrow keys have been brought right to home position without moving your hand all.  
+    Similarly, try pressing E/S/D/F with the same Nav key - these correspond to Home/End and Page Up/Page Down for faster navigation.  
+
+    ### Numbers
+
+    Now, try pressing the other layer key labelled "Num", then press the uppermost row keys while holding it.  
+    Just like that, you can now type numbers - except all within a one-key reach from home position without having to move your hands further.  
+
+    ### The other symbols
+    With the same Num layer held, press the keys S/D/F and J/K/L on the home row - you'll find that they have transformed conveniently into bracket keys.    
+    Specifically, the brackets are placed in mirror layout - the corresponding closing bracket for the key on the left half is on the corresponding position on the right half.  
+      
+    This highlights a major part of the stock keymap - I've designed as much of it to be symmetrical as possible, so you only need to memorize one half - the other half is either related to or a mirror of the position on the other half.  
+    It also tries to preserve some of the natural keyboard layout flows - arrow keys on the right, reaching upwards for number keys, and similar things engraved into muscle memory.  
+    
+    <br/>
+
+    The other symbols that can't easily be obtained via shift + numerals are placed by default as follows:  
+    - The tilde/grave key (`) is under A.
+    - The minus key (-) is under G.
+    - The equals key (=) is under H.
+    - The backslash key (\) is under the semicolon key.
+    - The shifted versions (for example underscore rather than minus) is located to the key below each of the above.
+
+    The placement of these symbols will end up mostly preference and entirely up to your workflow - I recommend starting with the stock, but experimenting around to suit your needs.  
+
+    ### Function keys
+    Since the symbols layer is mostly full when accounting for symmetry, the function keys are placed on the Nav layer - specifically the bottom row below the navigation inverse-T keys.  
+    This reaches into the inner column since there's 12 Fn keys total - the only keys in the stock layout to do so.  
+
+    ### Left or Right?
+
+    Now comes a difficult decision - once you get used to the position of the Num and Nav layer keys, it becomes difficult to swap them around.  
+    I recommend making a decision early on.  
+
+    The stock keymap is specifically designed for less strain at the cost of some efficiency.  
+    The number layer key is on the right to avoid the need for three-finger acrobatics if needing to hold the Num layer, shift, and a number from 1 through 5 simultaneously.  
+    Similarly, the navigation layer key is on the left to avoid the need to hold a righthand layer key while spamming the arrow key positions simultaneously.  
+      
+    However, some may prefer access to one-handed input at the cost of some strain - this is entirely up to each individual, so I recommend giving it some thought.  
+
+    ### Wrapping up
+
+    As for the stock keymap, that's honestly all there is to it - at first glance possibly complex, but in reality designed to involve as little memorization as possible.  
+      
+    The stock keymap is similar to my personal layout that I've arrived at after three whole years of using the first Altair-X prototype, and more or less the layout I used to write this entire guide... as well as the 5-row guide and the entire Altair build guide.  
+      
+    You'll find some customizations necessary here and there to suit your needs (for example I have layer + inner column keys for things like print screen/screenshot), but I hope this serves as a solid starting point as well as a straightforawrd way to get used to the Altair-X itself.  
+
+    <br/>
+
+    In the next page, I'll cover some other layout techniques and paradigms for those interested in optimizing their layout further.  
+
+    <br />
+    <SimpleButtonV2 href="/info/other-guides/altair-x-learning-guide/4/">Advanced Customizations</SimpleButtonV2>
+    
+    
+  </AltMarkdownRenderer>
+			
+</GenericPaginatedGuideLayout>
+
+

@@ -1,0 +1,68 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import GenericPaginatedGuideLayout from '@layouts/GenericPaginatedGuideLayout.astro';
+import AltMarkdownRenderer from "@components/astro/AltMarkdownRenderer.astro"
+import ClassicBlurredHeader from "@components/astro/ClassicBlurredHeader.astro"
+import SimpleButton from "@components/astro/SimpleButton.astro"
+import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
+
+<GenericPaginatedGuideLayout 
+	pageTitle="Altair (5-row) Learning Guide"
+  description="Learn how to type on the Altair."
+  page={4}
+  pages={[
+    {label: "Start here", url: "/info/other-guides/altair-learning-guide/"},
+    {label: "The basics", url: "/info/other-guides/altair-learning-guide/2/"},
+    {label: "The daily-use bar", url: "/info/other-guides/altair-learning-guide/3/"},
+    {label: "The power-user jump", url: "/info/other-guides/altair-learning-guide/4/"},
+  ]}
+>
+
+  <AltMarkdownRenderer>
+
+    ## The power-user jump
+
+    So you're desiring a bit more from layers, and have decided to explore this topic.  
+
+    <br/>
+
+    ### The simplest path
+
+    First, back up your current layout in VIA configurator by exporting it and saving it somewhere safe.  
+    Then, download <a href="/resources/altair/altair-to-altair-x-conversion.layout.json" download="altair-next-step.layout.json">this layout</a>, and apply it by loading it in VIA configurator.  
+    
+    ### What happened?
+
+    Your Altair just became an Altair-X.  
+    From here, you can simply jump to the [Altair-X learning guide from the layouts and layers page](/info/other-guides/altair-x-learning-guide/3/), and gain all of the info you need for taking your Altair to the next level.  
+
+
+    ### Further optimizations 
+
+    Once you follow the guide and pick up the 4-row-heavy layer techniques, you might be wondering what to do with the now-unused numrow.  
+    Here are some recommendations:  
+    - Make it a dedicated Fn key row instead for quick access.  
+    - Bind it to the shifted versions of the numrow keys for quick symbol input.  
+    - Bind them to macros for your commonly used programs.  
+    - Assign media control keys to them.  
+    - Use them for layer switching to rarely-used layers.  
+
+    ### Reverting the changes
+
+    If you want to restore the factory Altair layout, you can do so by applying <a href="/resources/altair/altair-stock.layout.json" download="altair-stock.layout.json">this layout</a> via VIA configurator.  
+
+    <br />
+    
+    And with this, the learning guide for the 5-row Altair ends here.  
+
+    Once again, thank you for choosing the Altair/Altair-X - it is the current culmination of my journey to the endgame keyboard, and I hope that my efforts reflect in its function and performance.  
+    Your trust in the project allowed it to come to life, and I offer the deepest gratitude for making this project possible.  
+    
+    
+  </AltMarkdownRenderer>
+			
+</GenericPaginatedGuideLayout>
+
+
