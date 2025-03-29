@@ -58,6 +58,24 @@ import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
       Note: Some people prefer to swap the single quotes and enter.  
       I recommend starting with the stock layout first since I personally felt that it was smoother to transition to, but if you feel otherwise after maybe a few days of use, try swapping them around in VIA configurator.
 
+    #### For Mac OS users
+
+    The modifier keymapping will mostly be the same, but you'll need to swap out the keycodes due to how Mac OS handles modifier keys.  
+    Open up VIA configurator, then assign the following keys:  
+
+    - "KC_LGUI" (the Super/Win key) behaves as Command.
+    - "KC_LALT" (the Alt key) behaves as Option.
+    - "KC_LCTL" (the Control key) simply behaves as Control.
+
+    How you assign these keys is up to you, but the two big options are as follows:
+
+    - The "keeping this as close to the stock keyboard as possible" approach.  
+      From the keymap shown above, keep Ctrl as-is, place Command to the left of the Layer key, and place Option to the left of that.  
+    - The "arguably more comfortable to use than stock" approach.  
+      From the keymap above, place Command where Ctrl is, place Option to the left of the Layer key, and place Control to the left of that.  
+    
+    As someone who recently migrated from Windows to Mac, I spent some time going back and forth; I personally found the latter to be more comfortable for daily use.  
+
     ### The bottom-right modifiers
 
     On the stock keymap, the bottom row right modifiers are bound to print-screen and delete by default.  
@@ -125,6 +143,15 @@ import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
     No more reaching far for the arrow keys - enjoy the convenience of having the keys brought to you instead for a zero-wrist-effort typing experience.  
 
     Finally, test holding the layer keys while pressing the numrow, and you'll find that it's transformed into F1 through F12.  
+
+    ## One extra keymap feature
+
+    As you start adjusting the keymap based on your preferences, one thing to take note of is that the upstream half (the side connected to the computer) determines the keymap on split keyboards running QMK firmware.  
+    This means that the keymap you saved onto one half will not be there if you plug the other half into the computer instead.  
+      
+    This can be used to store two completely different keymaps that can be activated on the fly by simply plugging in one half or the other - for example one mode for work and one for gaming, one for Windows and one for Mac OS, or whatever your heart desires.  
+    If you want the same keymap on both halves, simply export the keymap, plug the other half in, then load the exported keymap file.  
+
 
     ## So what's next?
 
