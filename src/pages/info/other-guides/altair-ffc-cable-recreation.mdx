@@ -1,0 +1,48 @@
+---
+---
+
+import SimpleImageV2 from '@components/astro/SimpleImageV2.astro';
+import AltMarkdownRenderer from '@components/astro/AltMarkdownRenderer.astro'
+import Layout from '@layouts/DefaultLayout.astro';
+
+
+<Layout 
+	title="Altair(-X) FFC Cable Folding Guide" 
+	description="Create your own FFC replacement for the Altair(-X)."
+>
+	<div class="container mx-auto">
+		<div class="w-full text-center pt-16 pb-14">
+			<h1 class="text-[32px] lg:text-[38px] font-[575]">Other Guides</h1>
+		</div>
+
+		<div class="px-5">
+
+
+      <AltMarkdownRenderer>        
+
+        # Altair(-X) FFC Cable Folding Guide
+        If you ever need a replacement FFC for the Altair(-X), you can easily fold an off-the-shelf unit into the needed shape.  
+
+        ## Sourcing the FFC
+        Find a FFC/FPC/ribbon cable with the following specifications:
+
+        - 0.3mm thickness at the ends (usually just denoted as a 0.3mm thick FFC)
+        - 0.5mm pitch
+        - 8-pin
+        - 120mm length
+        - Reverse-ends (Type B) with the blue tape on different sides at the ends rather than both on the same side
+          ![FFC ends](/images/guides/altair-ffc/reverse-ends.png)
+
+        An example listing for such a FFC can be found [here](https://www.aliexpress.com/item/4000022066634.html) - make sure to select the correct length (120mm), type (B), and pitch (0.5mm).  
+
+        ## Folding the FFC
+
+        Simply fold the cable so that the short end is roughly 25mm from the end to the outer side of the bend, recreating the shape of the stock cable.  
+
+          ![FFC ends](/images/guides/altair-ffc/shape.png)
+        
+      </AltMarkdownRenderer>
+
+		</div>
+	</div>
+</Layout>

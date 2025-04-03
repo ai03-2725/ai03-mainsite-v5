@@ -28,6 +28,14 @@ import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
     For the sake of simplicity, we will assemble one half at a time.  
     Place the left case half on a working surface clean of debris.  
 
+    ### Weight tuning
+
+    First, verify that the weight is properly secured to the case.
+    1. Using the provided hex key, loosen one of the three weight screws, then tighten just enough to be secure.  
+      Too loose may cause the screw to loosen over extended use, while overly tightened may cause undesirable resonances.  
+    2.  Repeat on all 3 screws.  
+      
+
     ### Preparing the USB board/daughterboard
 
     1. Locate the USB daughterboard for the left half.  
@@ -42,10 +50,28 @@ import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
     2. Locate the connector for the FFC (flat flexible cable) - this is the tan rectangular component located here.
         ![Screw locations](/images/build-guides/altair/altair-build-guide-20241022-153203334-annotated.avif)
 
+<div class="bg-zinc-100 rounded-sm px-4 lg:px-6 py-4">
+
+  ### A note on FFC connectors
+
+  The Altair uses FFCs (flat flexible cables) due to space constraints and the need to transmit many signals between the mainboard and daughterboard.  
+  These FFCs are thin strips of copper foil clad in plastic on both sides to create a ribbon-thin cable that can bend and flex.  
+
+  These FFC cables require special connectors - Altair(-X) specifically uses "back-flip" connectors for the sake of reliability and ease of assembly.  
+
+  ![Screw locations](/images/build-guides/altair/ffc-conn-explanation-1.png)
+  ![Screw locations](/images/build-guides/altair/ffc-conn-explanation-2.png)
+  ![Screw locations](/images/build-guides/altair/ffc-conn-explanation-3.png)
+  
+  
+</div>
+
+    3. With this knowledge on the FFC connector, prepare the connector for assembly..  
+
         If the latch at the backside of the connector is sitting in the "down" position parallel to the PCB, use your nails (or spudger/flat-head screwdriver/etc) to carefully lift the latch at the back into its "upright" position.
         ![Top removal](/images/build-guides/altair/altair-build-guide-20241022-153232568-annotated.avif)
 
-    3. Locate the FFC (flat flexible cable/ribbon cable) for the left half.  
+    4. Locate the FFC (flat flexible cable/ribbon cable) for the left half.  
         The package should have arrived with two of different bend directions - identify the one for the left half.
         - Place the daughterboard with the USB ports facing up.  
         - Flip the FFC so that the side with the blue tape on the ends is visible (rather than the side with the silver metallic contacts).  
@@ -54,17 +80,17 @@ import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
         
         ![Cable identification](/images/build-guides/altair/altair-build-guide-20241022-153310994-annotated.avif)  
 
-    4. Insert the short arm of the FFC into the FFC connector of the daughterboard (A).  
+    5. Insert the short arm of the FFC into the FFC connector of the daughterboard (A).  
       Once inserted as far as it will go, make sure that the cable isn't severely bent to one direction or another - the short arm of the cable should be roughly perpendicular to the daughterboard's edge, and the edges of the FFC connector and blue tape should be roughly parallel (B).  
       ![Cable installation](/images/build-guides/altair/altair-build-guide-20241022-153410235-annotated.avif)
 
-    5. Secure the FFC into place by closing the latch on the FFC connector into its "down" position.  
+    6. Secure the FFC into place by closing the latch on the FFC connector into its "down" position.  
       You may want to hold the cable in place during the process so it doesn't bend.  
       ![Latch closing](/images/build-guides/altair/altair-build-guide-20241022-153422922-annotated.avif)  
       Once completed, the latch should be roughly parallel to the PCB, and the FFC should no longer slide out when given a (very gentle) tug.
       ![Latched](/images/build-guides/altair/altair-build-guide-20241022-153435789.avif)
 
-    6. Install this assembled daughterboard-cable assembly into the case.  
+    7. Install this assembled daughterboard-cable assembly into the case.  
       Lower it into the case with the USB port side facing down - the shape of the daughterboard and cable should end up matching the shape of the cutout on the case.
       ![DB installation](/images/build-guides/altair/altair-build-guide-20241022-153449537-annotated.avif)
       ![DB installed](/images/build-guides/altair/altair-build-guide-20241022-153457841.avif)  
@@ -76,7 +102,7 @@ import SimpleButtonV2 from "@components/astro/SimpleButtonV2.astro"
         As confirmation, the USB ports should line up with their cutouts when viewed from the exterior of the case.  
       ![DB confirmation](/images/build-guides/altair/altair-build-guide-20241022-153611338.avif)
 
-    7. At this point, if you ordered the foam kits and plan to use any of the layers below the PCB, fit them into the case.
+    8. At this point, if you ordered the foam kits and plan to use any of the layers below the PCB, fit them into the case.
       ![Bottomfoam](/images/build-guides/altair/altair-build-guide-20241022-153824325.avif)
 
     <br />
